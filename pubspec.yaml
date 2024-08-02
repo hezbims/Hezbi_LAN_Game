@@ -39,6 +39,7 @@ dependencies:
   network_info_plus: ^6.0.0
   flutter_bloc: ^8.1.6
   freezed_annotation: ^2.4.4
+  qr_flutter: ^4.1.0
 
 
 dev_dependencies:
@@ -53,6 +54,7 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   build_runner: ^2.4.11
   freezed: ^2.5.2
+  qr_flutter: ^4.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

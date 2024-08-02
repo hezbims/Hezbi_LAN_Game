@@ -4,6 +4,7 @@ import 'package:hezbi_lan_game/common/presentation/component/response_loader.dar
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_event.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_view_model.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class TicTacToeWaitingRoomScreenInner extends StatefulWidget {
   const TicTacToeWaitingRoomScreenInner({super.key});
@@ -23,7 +24,25 @@ class _TicTacToeWaitingRoomScreenInnerState extends State<TicTacToeWaitingRoomSc
           child: ResponseLoader(
             response: state.wsServerUrl, 
             completeBuilder: (context, url){
-              return Text('Server URL : $url');
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Scan Untuk Join Tic-Tac-Toe!',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const SizedBox(height: 12,),
+
+                  QrImageView(
+                    data: url,
+                    size: 200,
+                  ),
+                ],
+              );
             },
             loadingBuilder: (context){
               return const Text('Menyiapkan server...');
