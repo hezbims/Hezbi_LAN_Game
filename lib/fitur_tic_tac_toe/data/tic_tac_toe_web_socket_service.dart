@@ -24,7 +24,7 @@ class TicTacToeWebSocketService {
 
       server = await shelf_io.serve(handler, ipAddress, ticTacToeServerPort);
       return ResponseWrapper.succeed(
-        "ws://${server?.address.host}:${server?.port}"
+        "${server?.address.host}:${server?.port}"
       );
     } catch(e) {
       debugPrint("qqq exception : $e");

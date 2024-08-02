@@ -9,11 +9,25 @@ class MainMenuScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: FilledButton(
-          onPressed: (){
-            Navigator.of(context).pushNamed(MyRoutes.ticTacToeWaitingRoom);
-          },
-          child: const Text('MAIN!')
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FilledButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed(MyRoutes.ticTacToeWaitingRoom);
+              },
+              child: const Text('Buat Room Baru')
+            ),
+
+            const SizedBox(height: 6,),
+
+            FilledButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(MyRoutes.joinPermainan);
+                },
+                child: const Text('Join Permainan')
+            ),
+          ],
         ),
       ),
     );

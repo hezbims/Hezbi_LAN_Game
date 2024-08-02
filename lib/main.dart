@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
+import 'package:hezbi_lan_game/fitur_join_permainan/presentation/join_permainan_screen.dart';
 import 'package:hezbi_lan_game/fitur_main_menu/main_menu_screen.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/tic_tac_toe_waiting_room_screen.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        MyRoutes.ticTacToeWaitingRoom : (context) => const TicTacToeWaitingRoomScreen()
+        MyRoutes.ticTacToeWaitingRoom : (context) => const TicTacToeWaitingRoomScreen(),
+        MyRoutes.joinPermainan:(context) => const JoinPermainanScreen(),
       },
       title: 'Hezbi Lan Game',
       theme: ThemeData(

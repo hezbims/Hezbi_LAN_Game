@@ -28,7 +28,7 @@ class _TicTacToeWaitingRoomScreenInnerState extends State<TicTacToeWaitingRoomSc
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
-                    'Scan Untuk Join Tic-Tac-Toe!',
+                    'Scan Untuk Join',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
