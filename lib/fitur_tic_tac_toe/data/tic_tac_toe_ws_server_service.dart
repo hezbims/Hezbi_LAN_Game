@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hezbi_lan_game/common/domain/my_games.dart';
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
@@ -9,7 +10,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 typedef IpAddress = String;
 
-class TicTacToeWebSocketService {
+class TicTacToeWsServerService {
   HttpServer? server;
   Future<ResponseWrapper<IpAddress>> prepareWebSocketServer({
     required void Function(dynamic) onHandlingWsClientData,
@@ -20,9 +21,12 @@ class TicTacToeWebSocketService {
       });
 
       final String ipAddress = await _getIpAddress();
-      const ticTacToeServerPort = 11111;
 
-      server = await shelf_io.serve(handler, ipAddress, ticTacToeServerPort);
+      server = await shelf_io.serve(
+          handler,
+          ipAddress,
+          MyGames.ticTacToe.port
+      );
       return ResponseWrapper.succeed(
         "${server?.address.host}:${server?.port}"
       );

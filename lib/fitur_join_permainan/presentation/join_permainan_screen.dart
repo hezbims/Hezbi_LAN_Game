@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hezbi_lan_game/common/domain/my_games.dart';
+import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class JoinPermainanScreen extends StatefulWidget {
@@ -12,7 +14,6 @@ class JoinPermainanScreen extends StatefulWidget {
 
 class _JoinPermainanScreenState extends State<JoinPermainanScreen> with WidgetsBindingObserver {
   var _isScanDelaying = false;
-  bool _isProcessingBarcode = false;
   final _scannerController = MobileScannerController(torchEnabled: false);
 
   @override
@@ -22,7 +23,6 @@ class _JoinPermainanScreenState extends State<JoinPermainanScreen> with WidgetsB
     WidgetsBinding.instance.addObserver(this);
     unawaited(_scannerController.start());
   }
-
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -58,50 +58,83 @@ class _JoinPermainanScreenState extends State<JoinPermainanScreen> with WidgetsB
       ),
       body: Stack(
         children: [
-          MobileScanner(
-              controller: _scannerController,
-              scanWindow: scanWindow,
-              errorBuilder: (context, exception, child){
-                switch(exception.errorCode){
-                  case MobileScannerErrorCode.permissionDenied:
-                    return const Center(
-                      child: Text(
-                        'Tolong izinkan akses kamera',
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  case MobileScannerErrorCode.unsupported:
-                    return const Center(
-                      child: Text(
-                        'Device tidak support camera',
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  default:
-                    debugPrint(exception.toString());
-                    return const Center(
-                      child: Text(
-                        'Terjadi kesalahan yang tidak diketahui',
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                }
+          Builder(
+            builder: (context) {
+              final scaffoldMessangerState = ScaffoldMessenger.of(context);
+              return PopScope(
+                canPop: false,
+                onPopInvoked: (didPop){
+                  if (didPop){
+                    return;
+                  }
+                  scaffoldMessangerState.removeCurrentSnackBar();
+                  Navigator.of(context).pop();
+                },
+                child: MobileScanner(
+                    controller: _scannerController,
+                    scanWindow: scanWindow,
+                    errorBuilder: (context, exception, child){
+                      switch(exception.errorCode){
+                        case MobileScannerErrorCode.permissionDenied:
+                          return const Center(
+                            child: Text(
+                              'Tolong izinkan akses kamera',
+                              textAlign: TextAlign.center,
+                            ),
+                          );
+                        case MobileScannerErrorCode.unsupported:
+                          return const Center(
+                            child: Text(
+                              'Device tidak support camera',
+                              textAlign: TextAlign.center,
+                            ),
+                          );
+                        default:
+                          debugPrint(exception.toString());
+                          return const Center(
+                            child: Text(
+                              'Terjadi kesalahan yang tidak diketahui',
+                              textAlign: TextAlign.center,
+                            ),
+                          );
+                      }
 
-              },
-              onDetect: (barcode) async {
-                if (_isScanDelaying) return;
+                    },
+                    onDetect: (barcode) async {
+                      if (_isScanDelaying) return;
 
-                _isScanDelaying = true;
-                Future.delayed(
-                    const Duration(seconds: 4),
-                        () => _isScanDelaying = false
-                );
-                debugPrint('qqq barcode ${barcode.barcodes.first.rawValue}');
-                // setState(() {
-                //   _isProcessingBarcode = true;
-                // });
+                      _isScanDelaying = true;
+                      Future.delayed(
+                          const Duration(seconds: 3),
+                              () => _isScanDelaying = false
+                      );
 
-              }),
+                      try {
+                        final serverAddress = barcode.barcodes.first.rawValue!;
+                        final port = int.parse(serverAddress.split(':').last);
+                        final gameType = MyGames.values.firstWhere((game) => game.port == port);
+
+                        switch (gameType){
+                          case MyGames.ticTacToe:
+                            Navigator.of(context).pushReplacementNamed(
+                              MyRoutes.ticTacToeClientGameplay,
+                              arguments: serverAddress,
+                            );
+                        }
+                      } catch (e) {
+                        scaffoldMessangerState.removeCurrentSnackBar();
+                        scaffoldMessangerState.showSnackBar(
+                          const SnackBar(
+                            content: Text('QR Code tidak valid!'),
+                            duration: Duration(seconds: 3),
+                          ),
+                        );
+                      }
+
+                    }),
+              );
+            }
+          ),
           _ScanWindow(
             controller: _scannerController,
             scanWindow: scanWindow,

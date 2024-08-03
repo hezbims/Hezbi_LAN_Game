@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/common/presentation/component/response_loader.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_event.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_state.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master_tic_tac_toe_view_model.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_event.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_view_model.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class TicTacToeWaitingRoomScreenInner extends StatefulWidget {
