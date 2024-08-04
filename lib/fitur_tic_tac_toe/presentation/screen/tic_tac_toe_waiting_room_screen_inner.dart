@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/common/presentation/component/response_loader.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_event.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_state.dart';
+import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_view_model.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -18,7 +17,16 @@ class _TicTacToeWaitingRoomScreenInnerState extends State<TicTacToeWaitingRoomSc
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
+    return BlocConsumer<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
+      listener: (context, state){
+        if (state.hasConnection){
+          viewModel.add(const RoomMasterTicTacToeEvent.doneHandlingNewConnection());
+          Navigator.of(context).pushNamed(
+            MyRoutes.ticTacToeRoomMasterGameplay,
+            arguments: viewModel,
+          );
+        }
+      },
       builder: (context, state){
         return Center(
           child: ResponseLoader(

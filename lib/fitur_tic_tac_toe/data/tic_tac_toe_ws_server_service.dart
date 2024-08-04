@@ -13,10 +13,12 @@ typedef IpAddress = String;
 class TicTacToeWsServerService {
   HttpServer? server;
   Future<ResponseWrapper<IpAddress>> prepareWebSocketServer({
+    required void Function() onNewConnection,
     required void Function(dynamic) onHandlingWsClientData,
   }) async {
     try {
       final handler = webSocketHandler((WebSocketChannel websocket) {
+        onNewConnection();
         websocket.stream.listen(onHandlingWsClientData);
       });
 
