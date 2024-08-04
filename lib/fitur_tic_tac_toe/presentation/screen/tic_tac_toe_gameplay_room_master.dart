@@ -18,7 +18,7 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
         appBar: AppBar(),
         body: BlocBuilder<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
           builder: (context, state){
-            return const TicTacToeBoard();
+            return const Center(child: TicTacToeBoard());
           },
         ),
       ),
