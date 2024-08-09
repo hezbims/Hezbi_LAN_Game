@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -11,26 +12,32 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 typedef IpAddress = String;
 
 class TicTacToeWsServerService {
-  HttpServer? server;
+  HttpServer? _wsServer;
+  StreamSubscription<String>? _dataToClientStream;
+
   Future<ResponseWrapper<IpAddress>> prepareWebSocketServer({
-    required void Function() onNewConnection,
+    required StreamController<String> streamControllerToClient,
+    required void Function(StreamSink<String> toClientSink) onNewConnection,
     required void Function(dynamic) onHandlingWsClientData,
   }) async {
     try {
       final handler = webSocketHandler((WebSocketChannel websocket) {
-        onNewConnection();
+        _dataToClientStream = streamControllerToClient.stream.listen(
+          (data) => websocket.sink.add(data)
+        );
+        onNewConnection(streamControllerToClient.sink);
         websocket.stream.listen(onHandlingWsClientData);
       });
 
       final String ipAddress = await _getIpAddress();
 
-      server = await shelf_io.serve(
+      _wsServer = await shelf_io.serve(
           handler,
           ipAddress,
           MyGames.ticTacToe.port
       );
       return ResponseWrapper.succeed(
-        "${server?.address.host}:${server?.port}"
+        "${_wsServer?.address.host}:${_wsServer?.port}"
       );
     } catch(e) {
       debugPrint("qqq exception : $e");
@@ -39,7 +46,9 @@ class TicTacToeWsServerService {
   }
 
   void close(){
-    server?.close(force: true);
+    _dataToClientStream?.cancel();
+    _dataToClientStream = null;
+    _wsServer?.close(force: true);
   }
 
   Future<String> _getIpAddress() async =>

@@ -20,18 +20,21 @@ mixin _$TicTacToeClientEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
+    required TResult Function(TicTacToeGameState gameState) newGameState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
+    TResult? Function(TicTacToeGameState gameState)? newGameState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
+    TResult Function(TicTacToeGameState gameState)? newGameState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$TicTacToeClientEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
+    required TResult Function(NewGameState value) newGameState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(NewGameState value)? newGameState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
+    TResult Function(NewGameState value)? newGameState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +121,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
+    required TResult Function(TicTacToeGameState gameState) newGameState,
   }) {
     return connectToServer();
   }
@@ -124,6 +131,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
+    TResult? Function(TicTacToeGameState gameState)? newGameState,
   }) {
     return connectToServer?.call();
   }
@@ -133,6 +141,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
+    TResult Function(TicTacToeGameState gameState)? newGameState,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -146,6 +155,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
+    required TResult Function(NewGameState value) newGameState,
   }) {
     return connectToServer(this);
   }
@@ -155,6 +165,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(NewGameState value)? newGameState,
   }) {
     return connectToServer?.call(this);
   }
@@ -164,6 +175,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
+    TResult Function(NewGameState value)? newGameState,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -251,6 +263,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
+    required TResult Function(TicTacToeGameState gameState) newGameState,
   }) {
     return clickTile(row, col);
   }
@@ -260,6 +273,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
+    TResult? Function(TicTacToeGameState gameState)? newGameState,
   }) {
     return clickTile?.call(row, col);
   }
@@ -269,6 +283,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
+    TResult Function(TicTacToeGameState gameState)? newGameState,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -282,6 +297,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
+    required TResult Function(NewGameState value) newGameState,
   }) {
     return clickTile(this);
   }
@@ -291,6 +307,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(NewGameState value)? newGameState,
   }) {
     return clickTile?.call(this);
   }
@@ -300,6 +317,7 @@ class _$ClickTileImpl implements ClickTile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
+    TResult Function(NewGameState value)? newGameState,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -321,9 +339,161 @@ abstract class ClickTile implements TicTacToeClientEvent {
 }
 
 /// @nodoc
+abstract class _$$NewGameStateImplCopyWith<$Res> {
+  factory _$$NewGameStateImplCopyWith(
+          _$NewGameStateImpl value, $Res Function(_$NewGameStateImpl) then) =
+      __$$NewGameStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({TicTacToeGameState gameState});
+
+  $TicTacToeGameStateCopyWith<$Res> get gameState;
+}
+
+/// @nodoc
+class __$$NewGameStateImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res, _$NewGameStateImpl>
+    implements _$$NewGameStateImplCopyWith<$Res> {
+  __$$NewGameStateImplCopyWithImpl(
+      _$NewGameStateImpl _value, $Res Function(_$NewGameStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gameState = null,
+  }) {
+    return _then(_$NewGameStateImpl(
+      null == gameState
+          ? _value.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TicTacToeGameStateCopyWith<$Res> get gameState {
+    return $TicTacToeGameStateCopyWith<$Res>(_value.gameState, (value) {
+      return _then(_value.copyWith(gameState: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$NewGameStateImpl implements NewGameState {
+  const _$NewGameStateImpl(this.gameState);
+
+  @override
+  final TicTacToeGameState gameState;
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.newGameState(gameState: $gameState)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewGameStateImpl &&
+            (identical(other.gameState, gameState) ||
+                other.gameState == gameState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, gameState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewGameStateImplCopyWith<_$NewGameStateImpl> get copyWith =>
+      __$$NewGameStateImplCopyWithImpl<_$NewGameStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(TicTacToeGameState gameState) newGameState,
+  }) {
+    return newGameState(gameState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(TicTacToeGameState gameState)? newGameState,
+  }) {
+    return newGameState?.call(gameState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(TicTacToeGameState gameState)? newGameState,
+    required TResult orElse(),
+  }) {
+    if (newGameState != null) {
+      return newGameState(gameState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(NewGameState value) newGameState,
+  }) {
+    return newGameState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(NewGameState value)? newGameState,
+  }) {
+    return newGameState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(NewGameState value)? newGameState,
+    required TResult orElse(),
+  }) {
+    if (newGameState != null) {
+      return newGameState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewGameState implements TicTacToeClientEvent {
+  const factory NewGameState(final TicTacToeGameState gameState) =
+      _$NewGameStateImpl;
+
+  TicTacToeGameState get gameState;
+  @JsonKey(ignore: true)
+  _$$NewGameStateImplCopyWith<_$NewGameStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$TicTacToeClientState {
   ResponseWrapper<dynamic> get connectResponse =>
       throw _privateConstructorUsedError;
+  TicTacToeGameState? get gameState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicTacToeClientStateCopyWith<TicTacToeClientState> get copyWith =>
@@ -336,9 +506,12 @@ abstract class $TicTacToeClientStateCopyWith<$Res> {
           $Res Function(TicTacToeClientState) then) =
       _$TicTacToeClientStateCopyWithImpl<$Res, TicTacToeClientState>;
   @useResult
-  $Res call({ResponseWrapper<dynamic> connectResponse});
+  $Res call(
+      {ResponseWrapper<dynamic> connectResponse,
+      TicTacToeGameState? gameState});
 
   $ResponseWrapperCopyWith<dynamic, $Res> get connectResponse;
+  $TicTacToeGameStateCopyWith<$Res>? get gameState;
 }
 
 /// @nodoc
@@ -356,12 +529,17 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? connectResponse = null,
+    Object? gameState = freezed,
   }) {
     return _then(_value.copyWith(
       connectResponse: null == connectResponse
           ? _value.connectResponse
           : connectResponse // ignore: cast_nullable_to_non_nullable
               as ResponseWrapper<dynamic>,
+      gameState: freezed == gameState
+          ? _value.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState?,
     ) as $Val);
   }
 
@@ -371,6 +549,18 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
     return $ResponseWrapperCopyWith<dynamic, $Res>(_value.connectResponse,
         (value) {
       return _then(_value.copyWith(connectResponse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TicTacToeGameStateCopyWith<$Res>? get gameState {
+    if (_value.gameState == null) {
+      return null;
+    }
+
+    return $TicTacToeGameStateCopyWith<$Res>(_value.gameState!, (value) {
+      return _then(_value.copyWith(gameState: value) as $Val);
     });
   }
 }
@@ -383,10 +573,14 @@ abstract class _$$TicTacToeClientStateImplCopyWith<$Res>
       __$$TicTacToeClientStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ResponseWrapper<dynamic> connectResponse});
+  $Res call(
+      {ResponseWrapper<dynamic> connectResponse,
+      TicTacToeGameState? gameState});
 
   @override
   $ResponseWrapperCopyWith<dynamic, $Res> get connectResponse;
+  @override
+  $TicTacToeGameStateCopyWith<$Res>? get gameState;
 }
 
 /// @nodoc
@@ -401,12 +595,17 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? connectResponse = null,
+    Object? gameState = freezed,
   }) {
     return _then(_$TicTacToeClientStateImpl(
       connectResponse: null == connectResponse
           ? _value.connectResponse
           : connectResponse // ignore: cast_nullable_to_non_nullable
               as ResponseWrapper<dynamic>,
+      gameState: freezed == gameState
+          ? _value.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState?,
     ));
   }
 }
@@ -414,14 +613,17 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
-  const _$TicTacToeClientStateImpl({required this.connectResponse});
+  const _$TicTacToeClientStateImpl(
+      {required this.connectResponse, required this.gameState});
 
   @override
   final ResponseWrapper<dynamic> connectResponse;
+  @override
+  final TicTacToeGameState? gameState;
 
   @override
   String toString() {
-    return 'TicTacToeClientState(connectResponse: $connectResponse)';
+    return 'TicTacToeClientState(connectResponse: $connectResponse, gameState: $gameState)';
   }
 
   @override
@@ -430,11 +632,13 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
         (other.runtimeType == runtimeType &&
             other is _$TicTacToeClientStateImpl &&
             (identical(other.connectResponse, connectResponse) ||
-                other.connectResponse == connectResponse));
+                other.connectResponse == connectResponse) &&
+            (identical(other.gameState, gameState) ||
+                other.gameState == gameState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, connectResponse);
+  int get hashCode => Object.hash(runtimeType, connectResponse, gameState);
 
   @JsonKey(ignore: true)
   @override
@@ -447,11 +651,14 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
 
 abstract class _TicTacToeClientState implements TicTacToeClientState {
   const factory _TicTacToeClientState(
-          {required final ResponseWrapper<dynamic> connectResponse}) =
+          {required final ResponseWrapper<dynamic> connectResponse,
+          required final TicTacToeGameState? gameState}) =
       _$TicTacToeClientStateImpl;
 
   @override
   ResponseWrapper<dynamic> get connectResponse;
+  @override
+  TicTacToeGameState? get gameState;
   @override
   @JsonKey(ignore: true)
   _$$TicTacToeClientStateImplCopyWith<_$TicTacToeClientStateImpl>

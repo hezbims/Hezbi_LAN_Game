@@ -27,7 +27,16 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
               child: ResponseLoader(
                 response: state.connectResponse,
                 completeBuilder: (context, data){
-                  return const TicTacToeBoard();
+                  final gameState = state.gameState;
+                  if (gameState == null){
+                    return const Text('Loading...');
+                  }
+                  return TicTacToeBoard(
+                    onClickCell: ({required int col, required int row}) {
+
+                    },
+                    gameState: gameState,
+                  );
                 },
                 loadingBuilder: (context){
                   return const Text(

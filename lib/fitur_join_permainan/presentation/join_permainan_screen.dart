@@ -44,6 +44,18 @@ class _JoinPermainanScreenState extends State<JoinPermainanScreen> with WidgetsB
     }
   }
 
+
+  @override
+  Future<void> dispose() async {
+    // Stop listening to lifecycle changes.
+    WidgetsBinding.instance.removeObserver(this);
+    // Dispose the widget itself.
+    super.dispose();
+    // Finally, dispose of the controller.
+    await _scannerController.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final scanWindow = Rect.fromCenter(

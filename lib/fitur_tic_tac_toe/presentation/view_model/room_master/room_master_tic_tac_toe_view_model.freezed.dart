@@ -575,6 +575,7 @@ abstract class DoneHandlingNewConnection implements RoomMasterTicTacToeEvent {
 mixin _$RoomMasterTicTacToeState {
   ResponseWrapper<String> get wsServerUrl => throw _privateConstructorUsedError;
   bool get hasConnection => throw _privateConstructorUsedError;
+  TicTacToeGameState get gameState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RoomMasterTicTacToeStateCopyWith<RoomMasterTicTacToeState> get copyWith =>
@@ -587,9 +588,13 @@ abstract class $RoomMasterTicTacToeStateCopyWith<$Res> {
           $Res Function(RoomMasterTicTacToeState) then) =
       _$RoomMasterTicTacToeStateCopyWithImpl<$Res, RoomMasterTicTacToeState>;
   @useResult
-  $Res call({ResponseWrapper<String> wsServerUrl, bool hasConnection});
+  $Res call(
+      {ResponseWrapper<String> wsServerUrl,
+      bool hasConnection,
+      TicTacToeGameState gameState});
 
   $ResponseWrapperCopyWith<String, $Res> get wsServerUrl;
+  $TicTacToeGameStateCopyWith<$Res> get gameState;
 }
 
 /// @nodoc
@@ -608,6 +613,7 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
   $Res call({
     Object? wsServerUrl = null,
     Object? hasConnection = null,
+    Object? gameState = null,
   }) {
     return _then(_value.copyWith(
       wsServerUrl: null == wsServerUrl
@@ -618,6 +624,10 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
           ? _value.hasConnection
           : hasConnection // ignore: cast_nullable_to_non_nullable
               as bool,
+      gameState: null == gameState
+          ? _value.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState,
     ) as $Val);
   }
 
@@ -626,6 +636,14 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
   $ResponseWrapperCopyWith<String, $Res> get wsServerUrl {
     return $ResponseWrapperCopyWith<String, $Res>(_value.wsServerUrl, (value) {
       return _then(_value.copyWith(wsServerUrl: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TicTacToeGameStateCopyWith<$Res> get gameState {
+    return $TicTacToeGameStateCopyWith<$Res>(_value.gameState, (value) {
+      return _then(_value.copyWith(gameState: value) as $Val);
     });
   }
 }
@@ -639,10 +657,15 @@ abstract class _$$RoomMasterTicTacToeStateImplCopyWith<$Res>
       __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ResponseWrapper<String> wsServerUrl, bool hasConnection});
+  $Res call(
+      {ResponseWrapper<String> wsServerUrl,
+      bool hasConnection,
+      TicTacToeGameState gameState});
 
   @override
   $ResponseWrapperCopyWith<String, $Res> get wsServerUrl;
+  @override
+  $TicTacToeGameStateCopyWith<$Res> get gameState;
 }
 
 /// @nodoc
@@ -660,6 +683,7 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? wsServerUrl = null,
     Object? hasConnection = null,
+    Object? gameState = null,
   }) {
     return _then(_$RoomMasterTicTacToeStateImpl(
       wsServerUrl: null == wsServerUrl
@@ -670,6 +694,10 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
           ? _value.hasConnection
           : hasConnection // ignore: cast_nullable_to_non_nullable
               as bool,
+      gameState: null == gameState
+          ? _value.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState,
     ));
   }
 }
@@ -678,16 +706,20 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
 
 class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
   const _$RoomMasterTicTacToeStateImpl(
-      {required this.wsServerUrl, required this.hasConnection});
+      {required this.wsServerUrl,
+      required this.hasConnection,
+      required this.gameState});
 
   @override
   final ResponseWrapper<String> wsServerUrl;
   @override
   final bool hasConnection;
+  @override
+  final TicTacToeGameState gameState;
 
   @override
   String toString() {
-    return 'RoomMasterTicTacToeState(wsServerUrl: $wsServerUrl, hasConnection: $hasConnection)';
+    return 'RoomMasterTicTacToeState(wsServerUrl: $wsServerUrl, hasConnection: $hasConnection, gameState: $gameState)';
   }
 
   @override
@@ -698,11 +730,14 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
             (identical(other.wsServerUrl, wsServerUrl) ||
                 other.wsServerUrl == wsServerUrl) &&
             (identical(other.hasConnection, hasConnection) ||
-                other.hasConnection == hasConnection));
+                other.hasConnection == hasConnection) &&
+            (identical(other.gameState, gameState) ||
+                other.gameState == gameState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, wsServerUrl, hasConnection);
+  int get hashCode =>
+      Object.hash(runtimeType, wsServerUrl, hasConnection, gameState);
 
   @JsonKey(ignore: true)
   @override
@@ -714,13 +749,17 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
 
 abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
   const factory _RoomMasterTicTacToeState(
-      {required final ResponseWrapper<String> wsServerUrl,
-      required final bool hasConnection}) = _$RoomMasterTicTacToeStateImpl;
+          {required final ResponseWrapper<String> wsServerUrl,
+          required final bool hasConnection,
+          required final TicTacToeGameState gameState}) =
+      _$RoomMasterTicTacToeStateImpl;
 
   @override
   ResponseWrapper<String> get wsServerUrl;
   @override
   bool get hasConnection;
+  @override
+  TicTacToeGameState get gameState;
   @override
   @JsonKey(ignore: true)
   _$$RoomMasterTicTacToeStateImplCopyWith<_$RoomMasterTicTacToeStateImpl>
