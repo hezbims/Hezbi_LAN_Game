@@ -12,7 +12,8 @@ part 'room_master_tic_tac_toe_view_model.freezed.dart';
 
 class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> {
   final wsService = TicTacToeWsServerService();
-  StreamController<String>? _streamControllerToClient;
+  StreamController<String>? _dataStreamControllerToClient;
+  StreamController<int?>? _closeCodeStreamControllerToClient;
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
     on(_prepareWebSocketServer);
@@ -27,12 +28,13 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     PrepareWebSocketServer event,
     Emitter<RoomMasterTicTacToeState> emit,
   ) async {
-    _streamControllerToClient?.close();
+    _closeAllStreamController();
     emit(state.copyWith(wsServerPreparationResponse: ResponseWrapper.loading()));
 
-    _streamControllerToClient = StreamController();
+    _initializeAllStreamController();
     final prepareWsServerResult = await wsService.prepareWebSocketServer(
-      dataStreamControllerToClient: _streamControllerToClient!,
+      dataStreamControllerToClient: _dataStreamControllerToClient!,
+      closeCodeStreamController: _closeCodeStreamControllerToClient!,
       onNewConnection: (toClientSink){
         toClientSink.add(jsonEncode(TicTacToeGameState.init().toJson()));
         add(const RoomMasterTicTacToeEvent.newConnection());
@@ -48,12 +50,24 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     Emitter<RoomMasterTicTacToeState> emit,
   ){
     wsService.close();
-    _streamControllerToClient?.close();
-    _streamControllerToClient = null;
+    _closeAllStreamController();
+
     emit(state.copyWith(
       wsServerPreparationResponse: null,
       doneClosingWsServer: true,
     ));
+  }
+
+  void _closeAllStreamController(){
+    unawaited(_dataStreamControllerToClient?.close());
+    unawaited(_closeCodeStreamControllerToClient?.close());
+    _dataStreamControllerToClient = null;
+    _closeCodeStreamControllerToClient = null;
+  }
+
+  void _initializeAllStreamController(){
+    _dataStreamControllerToClient = StreamController();
+    _closeCodeStreamControllerToClient = StreamController();
   }
 
   void _doneHandlingPopAfterClosingWsServer(
