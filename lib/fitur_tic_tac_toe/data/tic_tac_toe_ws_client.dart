@@ -1,28 +1,22 @@
 import 'dart:core';
 
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class TicTacToeWsClient {
-  WebSocketChannel? _wsChannel;
-
-  Future<ResponseWrapper<dynamic>> connectWsServer({
+  Future<ResponseWrapper<IMyWsConnectionHandler>> connectWsServer({
     required String address,
-    required void Function(dynamic data) handleDataFromServer,
   }) async {
     try {
-      _wsChannel = WebSocketChannel.connect(
+      final wsChannel = WebSocketChannel.connect(
         Uri.parse('ws://$address'),
       );
-      _wsChannel?.stream.listen(handleDataFromServer);
-      await _wsChannel?.ready;
-      return ResponseWrapper.succeed(null);
+      await wsChannel.ready;
+      return ResponseWrapper.succeed(MyWsClientHandler(wsChannel: wsChannel));
     }  catch (e) {
       return ResponseWrapper.error(message:  'Gagal terhubung ke room master');
     }
-  }
-
-  void dispose(){
-    _wsChannel?.sink.close();
   }
 }

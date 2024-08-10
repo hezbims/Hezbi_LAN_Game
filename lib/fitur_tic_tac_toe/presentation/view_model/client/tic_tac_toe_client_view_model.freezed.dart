@@ -20,21 +20,24 @@ mixin _$TicTacToeClientEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
-    required TResult Function(TicTacToeGameState gameState) newGameState,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
-    TResult? Function(TicTacToeGameState gameState)? newGameState,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
-    TResult Function(TicTacToeGameState gameState)? newGameState,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +45,25 @@ mixin _$TicTacToeClientEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
-    required TResult Function(NewGameState value) newGameState,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
-    TResult? Function(NewGameState value)? newGameState,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
-    TResult Function(NewGameState value)? newGameState,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,7 +128,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
-    required TResult Function(TicTacToeGameState gameState) newGameState,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
   }) {
     return connectToServer();
   }
@@ -131,7 +139,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
-    TResult? Function(TicTacToeGameState gameState)? newGameState,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
   }) {
     return connectToServer?.call();
   }
@@ -141,7 +150,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
-    TResult Function(TicTacToeGameState gameState)? newGameState,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -155,7 +165,9 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
-    required TResult Function(NewGameState value) newGameState,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
   }) {
     return connectToServer(this);
   }
@@ -165,7 +177,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
-    TResult? Function(NewGameState value)? newGameState,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
   }) {
     return connectToServer?.call(this);
   }
@@ -175,7 +188,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
-    TResult Function(NewGameState value)? newGameState,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -263,7 +277,8 @@ class _$ClickTileImpl implements ClickTile {
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
-    required TResult Function(TicTacToeGameState gameState) newGameState,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
   }) {
     return clickTile(row, col);
   }
@@ -273,7 +288,8 @@ class _$ClickTileImpl implements ClickTile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
-    TResult? Function(TicTacToeGameState gameState)? newGameState,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
   }) {
     return clickTile?.call(row, col);
   }
@@ -283,7 +299,8 @@ class _$ClickTileImpl implements ClickTile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
-    TResult Function(TicTacToeGameState gameState)? newGameState,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -297,7 +314,9 @@ class _$ClickTileImpl implements ClickTile {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
-    required TResult Function(NewGameState value) newGameState,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
   }) {
     return clickTile(this);
   }
@@ -307,7 +326,8 @@ class _$ClickTileImpl implements ClickTile {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
-    TResult? Function(NewGameState value)? newGameState,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
   }) {
     return clickTile?.call(this);
   }
@@ -317,7 +337,8 @@ class _$ClickTileImpl implements ClickTile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
-    TResult Function(NewGameState value)? newGameState,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -339,85 +360,78 @@ abstract class ClickTile implements TicTacToeClientEvent {
 }
 
 /// @nodoc
-abstract class _$$NewGameStateImplCopyWith<$Res> {
-  factory _$$NewGameStateImplCopyWith(
-          _$NewGameStateImpl value, $Res Function(_$NewGameStateImpl) then) =
-      __$$NewGameStateImplCopyWithImpl<$Res>;
+abstract class _$$HandleDataFromServerImplCopyWith<$Res> {
+  factory _$$HandleDataFromServerImplCopyWith(_$HandleDataFromServerImpl value,
+          $Res Function(_$HandleDataFromServerImpl) then) =
+      __$$HandleDataFromServerImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({TicTacToeGameState gameState});
-
-  $TicTacToeGameStateCopyWith<$Res> get gameState;
+  $Res call({dynamic data});
 }
 
 /// @nodoc
-class __$$NewGameStateImplCopyWithImpl<$Res>
-    extends _$TicTacToeClientEventCopyWithImpl<$Res, _$NewGameStateImpl>
-    implements _$$NewGameStateImplCopyWith<$Res> {
-  __$$NewGameStateImplCopyWithImpl(
-      _$NewGameStateImpl _value, $Res Function(_$NewGameStateImpl) _then)
+class __$$HandleDataFromServerImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res, _$HandleDataFromServerImpl>
+    implements _$$HandleDataFromServerImplCopyWith<$Res> {
+  __$$HandleDataFromServerImplCopyWithImpl(_$HandleDataFromServerImpl _value,
+      $Res Function(_$HandleDataFromServerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? gameState = null,
+    Object? data = freezed,
   }) {
-    return _then(_$NewGameStateImpl(
-      null == gameState
-          ? _value.gameState
-          : gameState // ignore: cast_nullable_to_non_nullable
-              as TicTacToeGameState,
+    return _then(_$HandleDataFromServerImpl(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TicTacToeGameStateCopyWith<$Res> get gameState {
-    return $TicTacToeGameStateCopyWith<$Res>(_value.gameState, (value) {
-      return _then(_value.copyWith(gameState: value));
-    });
   }
 }
 
 /// @nodoc
 
-class _$NewGameStateImpl implements NewGameState {
-  const _$NewGameStateImpl(this.gameState);
+class _$HandleDataFromServerImpl implements HandleDataFromServer {
+  const _$HandleDataFromServerImpl(this.data);
 
   @override
-  final TicTacToeGameState gameState;
+  final dynamic data;
 
   @override
   String toString() {
-    return 'TicTacToeClientEvent.newGameState(gameState: $gameState)';
+    return 'TicTacToeClientEvent.handleDataFromServer(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NewGameStateImpl &&
-            (identical(other.gameState, gameState) ||
-                other.gameState == gameState));
+            other is _$HandleDataFromServerImpl &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, gameState);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NewGameStateImplCopyWith<_$NewGameStateImpl> get copyWith =>
-      __$$NewGameStateImplCopyWithImpl<_$NewGameStateImpl>(this, _$identity);
+  _$$HandleDataFromServerImplCopyWith<_$HandleDataFromServerImpl>
+      get copyWith =>
+          __$$HandleDataFromServerImplCopyWithImpl<_$HandleDataFromServerImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connectToServer,
     required TResult Function(int row, int col) clickTile,
-    required TResult Function(TicTacToeGameState gameState) newGameState,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
   }) {
-    return newGameState(gameState);
+    return handleDataFromServer(data);
   }
 
   @override
@@ -425,9 +439,10 @@ class _$NewGameStateImpl implements NewGameState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? connectToServer,
     TResult? Function(int row, int col)? clickTile,
-    TResult? Function(TicTacToeGameState gameState)? newGameState,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
   }) {
-    return newGameState?.call(gameState);
+    return handleDataFromServer?.call(data);
   }
 
   @override
@@ -435,11 +450,12 @@ class _$NewGameStateImpl implements NewGameState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connectToServer,
     TResult Function(int row, int col)? clickTile,
-    TResult Function(TicTacToeGameState gameState)? newGameState,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
     required TResult orElse(),
   }) {
-    if (newGameState != null) {
-      return newGameState(gameState);
+    if (handleDataFromServer != null) {
+      return handleDataFromServer(data);
     }
     return orElse();
   }
@@ -449,9 +465,11 @@ class _$NewGameStateImpl implements NewGameState {
   TResult map<TResult extends Object?>({
     required TResult Function(ConnectToServer value) connectToServer,
     required TResult Function(ClickTile value) clickTile,
-    required TResult Function(NewGameState value) newGameState,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
   }) {
-    return newGameState(this);
+    return handleDataFromServer(this);
   }
 
   @override
@@ -459,9 +477,10 @@ class _$NewGameStateImpl implements NewGameState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ConnectToServer value)? connectToServer,
     TResult? Function(ClickTile value)? clickTile,
-    TResult? Function(NewGameState value)? newGameState,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
   }) {
-    return newGameState?.call(this);
+    return handleDataFromServer?.call(this);
   }
 
   @override
@@ -469,29 +488,178 @@ class _$NewGameStateImpl implements NewGameState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConnectToServer value)? connectToServer,
     TResult Function(ClickTile value)? clickTile,
-    TResult Function(NewGameState value)? newGameState,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     required TResult orElse(),
   }) {
-    if (newGameState != null) {
-      return newGameState(this);
+    if (handleDataFromServer != null) {
+      return handleDataFromServer(this);
     }
     return orElse();
   }
 }
 
-abstract class NewGameState implements TicTacToeClientEvent {
-  const factory NewGameState(final TicTacToeGameState gameState) =
-      _$NewGameStateImpl;
+abstract class HandleDataFromServer implements TicTacToeClientEvent {
+  const factory HandleDataFromServer(final dynamic data) =
+      _$HandleDataFromServerImpl;
 
-  TicTacToeGameState get gameState;
+  dynamic get data;
   @JsonKey(ignore: true)
-  _$$NewGameStateImplCopyWith<_$NewGameStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HandleDataFromServerImplCopyWith<_$HandleDataFromServerImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HandleErrorFromServerImplCopyWith<$Res> {
+  factory _$$HandleErrorFromServerImplCopyWith(
+          _$HandleErrorFromServerImpl value,
+          $Res Function(_$HandleErrorFromServerImpl) then) =
+      __$$HandleErrorFromServerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object error});
+}
+
+/// @nodoc
+class __$$HandleErrorFromServerImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res,
+        _$HandleErrorFromServerImpl>
+    implements _$$HandleErrorFromServerImplCopyWith<$Res> {
+  __$$HandleErrorFromServerImplCopyWithImpl(_$HandleErrorFromServerImpl _value,
+      $Res Function(_$HandleErrorFromServerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$HandleErrorFromServerImpl(
+      null == error ? _value.error : error,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
+  const _$HandleErrorFromServerImpl(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.handleErrorFromServer(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HandleErrorFromServerImpl &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HandleErrorFromServerImplCopyWith<_$HandleErrorFromServerImpl>
+      get copyWith => __$$HandleErrorFromServerImplCopyWithImpl<
+          _$HandleErrorFromServerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
+  }) {
+    return handleErrorFromServer(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
+  }) {
+    return handleErrorFromServer?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
+    required TResult orElse(),
+  }) {
+    if (handleErrorFromServer != null) {
+      return handleErrorFromServer(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
+  }) {
+    return handleErrorFromServer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+  }) {
+    return handleErrorFromServer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    required TResult orElse(),
+  }) {
+    if (handleErrorFromServer != null) {
+      return handleErrorFromServer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HandleErrorFromServer implements TicTacToeClientEvent {
+  const factory HandleErrorFromServer(final Object error) =
+      _$HandleErrorFromServerImpl;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  _$$HandleErrorFromServerImplCopyWith<_$HandleErrorFromServerImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$TicTacToeClientState {
-  ResponseWrapper<dynamic> get connectResponse =>
+  ResponseWrapper<IMyWsConnectionHandler> get connectResponse =>
       throw _privateConstructorUsedError;
   TicTacToeGameState? get gameState => throw _privateConstructorUsedError;
 
@@ -507,10 +675,10 @@ abstract class $TicTacToeClientStateCopyWith<$Res> {
       _$TicTacToeClientStateCopyWithImpl<$Res, TicTacToeClientState>;
   @useResult
   $Res call(
-      {ResponseWrapper<dynamic> connectResponse,
+      {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       TicTacToeGameState? gameState});
 
-  $ResponseWrapperCopyWith<dynamic, $Res> get connectResponse;
+  $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
   $TicTacToeGameStateCopyWith<$Res>? get gameState;
 }
 
@@ -535,7 +703,7 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
       connectResponse: null == connectResponse
           ? _value.connectResponse
           : connectResponse // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<dynamic>,
+              as ResponseWrapper<IMyWsConnectionHandler>,
       gameState: freezed == gameState
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
@@ -545,9 +713,9 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ResponseWrapperCopyWith<dynamic, $Res> get connectResponse {
-    return $ResponseWrapperCopyWith<dynamic, $Res>(_value.connectResponse,
-        (value) {
+  $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse {
+    return $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res>(
+        _value.connectResponse, (value) {
       return _then(_value.copyWith(connectResponse: value) as $Val);
     });
   }
@@ -574,11 +742,11 @@ abstract class _$$TicTacToeClientStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ResponseWrapper<dynamic> connectResponse,
+      {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       TicTacToeGameState? gameState});
 
   @override
-  $ResponseWrapperCopyWith<dynamic, $Res> get connectResponse;
+  $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
   @override
   $TicTacToeGameStateCopyWith<$Res>? get gameState;
 }
@@ -601,7 +769,7 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
       connectResponse: null == connectResponse
           ? _value.connectResponse
           : connectResponse // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<dynamic>,
+              as ResponseWrapper<IMyWsConnectionHandler>,
       gameState: freezed == gameState
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
@@ -617,7 +785,7 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
       {required this.connectResponse, required this.gameState});
 
   @override
-  final ResponseWrapper<dynamic> connectResponse;
+  final ResponseWrapper<IMyWsConnectionHandler> connectResponse;
   @override
   final TicTacToeGameState? gameState;
 
@@ -651,12 +819,12 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
 
 abstract class _TicTacToeClientState implements TicTacToeClientState {
   const factory _TicTacToeClientState(
-          {required final ResponseWrapper<dynamic> connectResponse,
-          required final TicTacToeGameState? gameState}) =
-      _$TicTacToeClientStateImpl;
+      {required final ResponseWrapper<IMyWsConnectionHandler> connectResponse,
+      required final TicTacToeGameState?
+          gameState}) = _$TicTacToeClientStateImpl;
 
   @override
-  ResponseWrapper<dynamic> get connectResponse;
+  ResponseWrapper<IMyWsConnectionHandler> get connectResponse;
   @override
   TicTacToeGameState? get gameState;
   @override

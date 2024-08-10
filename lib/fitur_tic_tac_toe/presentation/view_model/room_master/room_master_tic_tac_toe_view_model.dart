@@ -98,7 +98,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     }
   }
 
-  void _handleErrorFromClient(Object? error){
+  void _handleErrorFromClient(Object error){
 
   }
 }
