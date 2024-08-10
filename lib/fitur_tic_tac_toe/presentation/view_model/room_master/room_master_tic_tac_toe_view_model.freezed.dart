@@ -22,6 +22,7 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function() closeWsServer,
     required TResult Function() newConnection,
     required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function()? closeWsServer,
     TResult? Function()? newConnection,
     TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult Function()? closeWsServer,
     TResult Function()? newConnection,
     TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,8 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function(NewConnection value) newConnection,
     required TResult Function(DoneHandlingNewConnection value)
         doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,8 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function(NewConnection value)? newConnection,
     TResult? Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +74,8 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult Function(NewConnection value)? newConnection,
     TResult Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +146,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function() closeWsServer,
     required TResult Function() newConnection,
     required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
   }) {
     return prepareWebSocketServer();
   }
@@ -148,6 +158,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult? Function()? closeWsServer,
     TResult? Function()? newConnection,
     TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
   }) {
     return prepareWebSocketServer?.call();
   }
@@ -159,6 +170,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult Function()? closeWsServer,
     TResult Function()? newConnection,
     TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -176,6 +188,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function(NewConnection value) newConnection,
     required TResult Function(DoneHandlingNewConnection value)
         doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return prepareWebSocketServer(this);
   }
@@ -188,6 +202,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult? Function(NewConnection value)? newConnection,
     TResult? Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return prepareWebSocketServer?.call(this);
   }
@@ -200,6 +216,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult Function(NewConnection value)? newConnection,
     TResult Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -255,6 +273,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function() closeWsServer,
     required TResult Function() newConnection,
     required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
   }) {
     return closeWsServer();
   }
@@ -266,6 +285,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function()? closeWsServer,
     TResult? Function()? newConnection,
     TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
   }) {
     return closeWsServer?.call();
   }
@@ -277,6 +297,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function()? closeWsServer,
     TResult Function()? newConnection,
     TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -294,6 +315,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function(NewConnection value) newConnection,
     required TResult Function(DoneHandlingNewConnection value)
         doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return closeWsServer(this);
   }
@@ -306,6 +329,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function(NewConnection value)? newConnection,
     TResult? Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return closeWsServer?.call(this);
   }
@@ -318,6 +343,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function(NewConnection value)? newConnection,
     TResult Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -373,6 +400,7 @@ class _$NewConnectionImpl implements NewConnection {
     required TResult Function() closeWsServer,
     required TResult Function() newConnection,
     required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
   }) {
     return newConnection();
   }
@@ -384,6 +412,7 @@ class _$NewConnectionImpl implements NewConnection {
     TResult? Function()? closeWsServer,
     TResult? Function()? newConnection,
     TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
   }) {
     return newConnection?.call();
   }
@@ -395,6 +424,7 @@ class _$NewConnectionImpl implements NewConnection {
     TResult Function()? closeWsServer,
     TResult Function()? newConnection,
     TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (newConnection != null) {
@@ -412,6 +442,8 @@ class _$NewConnectionImpl implements NewConnection {
     required TResult Function(NewConnection value) newConnection,
     required TResult Function(DoneHandlingNewConnection value)
         doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return newConnection(this);
   }
@@ -424,6 +456,8 @@ class _$NewConnectionImpl implements NewConnection {
     TResult? Function(NewConnection value)? newConnection,
     TResult? Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return newConnection?.call(this);
   }
@@ -436,6 +470,8 @@ class _$NewConnectionImpl implements NewConnection {
     TResult Function(NewConnection value)? newConnection,
     TResult Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (newConnection != null) {
@@ -495,6 +531,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function() closeWsServer,
     required TResult Function() newConnection,
     required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
   }) {
     return doneHandlingNewConnection();
   }
@@ -506,6 +543,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult? Function()? closeWsServer,
     TResult? Function()? newConnection,
     TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
   }) {
     return doneHandlingNewConnection?.call();
   }
@@ -517,6 +555,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult Function()? closeWsServer,
     TResult Function()? newConnection,
     TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -534,6 +573,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function(NewConnection value) newConnection,
     required TResult Function(DoneHandlingNewConnection value)
         doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return doneHandlingNewConnection(this);
   }
@@ -546,6 +587,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult? Function(NewConnection value)? newConnection,
     TResult? Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
   }) {
     return doneHandlingNewConnection?.call(this);
   }
@@ -558,6 +601,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult Function(NewConnection value)? newConnection,
     TResult Function(DoneHandlingNewConnection value)?
         doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -572,10 +617,146 @@ abstract class DoneHandlingNewConnection implements RoomMasterTicTacToeEvent {
 }
 
 /// @nodoc
+abstract class _$$DoneHandlingPopAfterClosingWsServerImplCopyWith<$Res> {
+  factory _$$DoneHandlingPopAfterClosingWsServerImplCopyWith(
+          _$DoneHandlingPopAfterClosingWsServerImpl value,
+          $Res Function(_$DoneHandlingPopAfterClosingWsServerImpl) then) =
+      __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl<$Res>
+    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
+        _$DoneHandlingPopAfterClosingWsServerImpl>
+    implements _$$DoneHandlingPopAfterClosingWsServerImplCopyWith<$Res> {
+  __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl(
+      _$DoneHandlingPopAfterClosingWsServerImpl _value,
+      $Res Function(_$DoneHandlingPopAfterClosingWsServerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DoneHandlingPopAfterClosingWsServerImpl
+    implements DoneHandlingPopAfterClosingWsServer {
+  const _$DoneHandlingPopAfterClosingWsServerImpl();
+
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DoneHandlingPopAfterClosingWsServerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareWebSocketServer,
+    required TResult Function() closeWsServer,
+    required TResult Function() newConnection,
+    required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
+  }) {
+    return doneHandlingPopAfterClosingWsServer();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareWebSocketServer,
+    TResult? Function()? closeWsServer,
+    TResult? Function()? newConnection,
+    TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
+  }) {
+    return doneHandlingPopAfterClosingWsServer?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareWebSocketServer,
+    TResult Function()? closeWsServer,
+    TResult Function()? newConnection,
+    TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
+    required TResult orElse(),
+  }) {
+    if (doneHandlingPopAfterClosingWsServer != null) {
+      return doneHandlingPopAfterClosingWsServer();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PrepareWebSocketServer value)
+        prepareWebSocketServer,
+    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(NewConnection value) newConnection,
+    required TResult Function(DoneHandlingNewConnection value)
+        doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
+  }) {
+    return doneHandlingPopAfterClosingWsServer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(NewConnection value)? newConnection,
+    TResult? Function(DoneHandlingNewConnection value)?
+        doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
+  }) {
+    return doneHandlingPopAfterClosingWsServer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(NewConnection value)? newConnection,
+    TResult Function(DoneHandlingNewConnection value)?
+        doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
+    required TResult orElse(),
+  }) {
+    if (doneHandlingPopAfterClosingWsServer != null) {
+      return doneHandlingPopAfterClosingWsServer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DoneHandlingPopAfterClosingWsServer
+    implements RoomMasterTicTacToeEvent {
+  const factory DoneHandlingPopAfterClosingWsServer() =
+      _$DoneHandlingPopAfterClosingWsServerImpl;
+}
+
+/// @nodoc
 mixin _$RoomMasterTicTacToeState {
-  ResponseWrapper<String> get wsServerUrl => throw _privateConstructorUsedError;
+  ResponseWrapper<String>? get wsServerPreparationResponse =>
+      throw _privateConstructorUsedError;
   bool get hasConnection => throw _privateConstructorUsedError;
   TicTacToeGameState get gameState => throw _privateConstructorUsedError;
+  bool get doneClosingWsServer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RoomMasterTicTacToeStateCopyWith<RoomMasterTicTacToeState> get copyWith =>
@@ -589,11 +770,12 @@ abstract class $RoomMasterTicTacToeStateCopyWith<$Res> {
       _$RoomMasterTicTacToeStateCopyWithImpl<$Res, RoomMasterTicTacToeState>;
   @useResult
   $Res call(
-      {ResponseWrapper<String> wsServerUrl,
+      {ResponseWrapper<String>? wsServerPreparationResponse,
       bool hasConnection,
-      TicTacToeGameState gameState});
+      TicTacToeGameState gameState,
+      bool doneClosingWsServer});
 
-  $ResponseWrapperCopyWith<String, $Res> get wsServerUrl;
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
   $TicTacToeGameStateCopyWith<$Res> get gameState;
 }
 
@@ -611,15 +793,16 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? wsServerUrl = null,
+    Object? wsServerPreparationResponse = freezed,
     Object? hasConnection = null,
     Object? gameState = null,
+    Object? doneClosingWsServer = null,
   }) {
     return _then(_value.copyWith(
-      wsServerUrl: null == wsServerUrl
-          ? _value.wsServerUrl
-          : wsServerUrl // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<String>,
+      wsServerPreparationResponse: freezed == wsServerPreparationResponse
+          ? _value.wsServerPreparationResponse
+          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
+              as ResponseWrapper<String>?,
       hasConnection: null == hasConnection
           ? _value.hasConnection
           : hasConnection // ignore: cast_nullable_to_non_nullable
@@ -628,14 +811,23 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState,
+      doneClosingWsServer: null == doneClosingWsServer
+          ? _value.doneClosingWsServer
+          : doneClosingWsServer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ResponseWrapperCopyWith<String, $Res> get wsServerUrl {
-    return $ResponseWrapperCopyWith<String, $Res>(_value.wsServerUrl, (value) {
-      return _then(_value.copyWith(wsServerUrl: value) as $Val);
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse {
+    if (_value.wsServerPreparationResponse == null) {
+      return null;
+    }
+
+    return $ResponseWrapperCopyWith<String, $Res>(
+        _value.wsServerPreparationResponse!, (value) {
+      return _then(_value.copyWith(wsServerPreparationResponse: value) as $Val);
     });
   }
 
@@ -658,12 +850,13 @@ abstract class _$$RoomMasterTicTacToeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ResponseWrapper<String> wsServerUrl,
+      {ResponseWrapper<String>? wsServerPreparationResponse,
       bool hasConnection,
-      TicTacToeGameState gameState});
+      TicTacToeGameState gameState,
+      bool doneClosingWsServer});
 
   @override
-  $ResponseWrapperCopyWith<String, $Res> get wsServerUrl;
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
   @override
   $TicTacToeGameStateCopyWith<$Res> get gameState;
 }
@@ -681,15 +874,16 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? wsServerUrl = null,
+    Object? wsServerPreparationResponse = freezed,
     Object? hasConnection = null,
     Object? gameState = null,
+    Object? doneClosingWsServer = null,
   }) {
     return _then(_$RoomMasterTicTacToeStateImpl(
-      wsServerUrl: null == wsServerUrl
-          ? _value.wsServerUrl
-          : wsServerUrl // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<String>,
+      wsServerPreparationResponse: freezed == wsServerPreparationResponse
+          ? _value.wsServerPreparationResponse
+          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
+              as ResponseWrapper<String>?,
       hasConnection: null == hasConnection
           ? _value.hasConnection
           : hasConnection // ignore: cast_nullable_to_non_nullable
@@ -698,6 +892,10 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState,
+      doneClosingWsServer: null == doneClosingWsServer
+          ? _value.doneClosingWsServer
+          : doneClosingWsServer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -706,20 +904,23 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
 
 class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
   const _$RoomMasterTicTacToeStateImpl(
-      {required this.wsServerUrl,
+      {required this.wsServerPreparationResponse,
       required this.hasConnection,
-      required this.gameState});
+      required this.gameState,
+      required this.doneClosingWsServer});
 
   @override
-  final ResponseWrapper<String> wsServerUrl;
+  final ResponseWrapper<String>? wsServerPreparationResponse;
   @override
   final bool hasConnection;
   @override
   final TicTacToeGameState gameState;
+  @override
+  final bool doneClosingWsServer;
 
   @override
   String toString() {
-    return 'RoomMasterTicTacToeState(wsServerUrl: $wsServerUrl, hasConnection: $hasConnection, gameState: $gameState)';
+    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, doneClosingWsServer: $doneClosingWsServer)';
   }
 
   @override
@@ -727,17 +928,21 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RoomMasterTicTacToeStateImpl &&
-            (identical(other.wsServerUrl, wsServerUrl) ||
-                other.wsServerUrl == wsServerUrl) &&
+            (identical(other.wsServerPreparationResponse,
+                    wsServerPreparationResponse) ||
+                other.wsServerPreparationResponse ==
+                    wsServerPreparationResponse) &&
             (identical(other.hasConnection, hasConnection) ||
                 other.hasConnection == hasConnection) &&
             (identical(other.gameState, gameState) ||
-                other.gameState == gameState));
+                other.gameState == gameState) &&
+            (identical(other.doneClosingWsServer, doneClosingWsServer) ||
+                other.doneClosingWsServer == doneClosingWsServer));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, wsServerUrl, hasConnection, gameState);
+  int get hashCode => Object.hash(runtimeType, wsServerPreparationResponse,
+      hasConnection, gameState, doneClosingWsServer);
 
   @JsonKey(ignore: true)
   @override
@@ -749,17 +954,20 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
 
 abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
   const factory _RoomMasterTicTacToeState(
-          {required final ResponseWrapper<String> wsServerUrl,
+          {required final ResponseWrapper<String>? wsServerPreparationResponse,
           required final bool hasConnection,
-          required final TicTacToeGameState gameState}) =
+          required final TicTacToeGameState gameState,
+          required final bool doneClosingWsServer}) =
       _$RoomMasterTicTacToeStateImpl;
 
   @override
-  ResponseWrapper<String> get wsServerUrl;
+  ResponseWrapper<String>? get wsServerPreparationResponse;
   @override
   bool get hasConnection;
   @override
   TicTacToeGameState get gameState;
+  @override
+  bool get doneClosingWsServer;
   @override
   @JsonKey(ignore: true)
   _$$RoomMasterTicTacToeStateImplCopyWith<_$RoomMasterTicTacToeStateImpl>

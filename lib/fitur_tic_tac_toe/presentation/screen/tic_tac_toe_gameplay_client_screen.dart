@@ -17,9 +17,8 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
       create: (context) => TicTacToeClientViewModel(
         serverAddress: serverAddress,
       ),
-      child: Scaffold(
-        appBar: AppBar(),
-        body: BlocBuilder<TicTacToeClientViewModel, TicTacToeClientState>(
+      child: SafeArea(
+        child: BlocBuilder<TicTacToeClientViewModel, TicTacToeClientState>(
           builder: (context, state){
             final viewModel = context.read<TicTacToeClientViewModel>();
 
@@ -32,10 +31,13 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
                     return const Text('Loading...');
                   }
                   return TicTacToeBoard(
+                    gameState: gameState,
                     onClickCell: ({required int col, required int row}) {
 
                     },
-                    gameState: gameState,
+                    onQuitConfirmed: (){
+
+                    },
                   );
                 },
                 loadingBuilder: (context){

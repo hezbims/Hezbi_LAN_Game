@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
 
 class ResponseLoader<T> extends StatelessWidget {
-  final ResponseWrapper<T> response;
+  final ResponseWrapper<T>? response;
   final Widget Function(BuildContext context, T data) completeBuilder;
   final void Function() onRefresh;
   final Widget Function(BuildContext context)? loadingBuilder;
@@ -52,6 +52,10 @@ class ResponseLoader<T> extends StatelessWidget {
         return localLoadingBuilder != null ?
           localLoadingBuilder(context) :
           const CircularProgressIndicator();
+      case null:
+        return localLoadingBuilder != null ?
+        localLoadingBuilder(context) :
+        const CircularProgressIndicator();
     }
   }
 }

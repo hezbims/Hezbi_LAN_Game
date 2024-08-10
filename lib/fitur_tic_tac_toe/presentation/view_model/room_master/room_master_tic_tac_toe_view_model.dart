@@ -12,33 +12,27 @@ part 'room_master_tic_tac_toe_view_model.freezed.dart';
 
 class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> {
   final wsService = TicTacToeWsServerService();
-  final _streamControllerToClient = StreamController<String>();
+  StreamController<String>? _streamControllerToClient;
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
     on(_prepareWebSocketServer);
     on(_closeWsServer);
     on(_newConnection);
     on(_doneHandlingNewConnection);
-
-    add(const RoomMasterTicTacToeEvent.prepareWebSocketServer());
+    on(_doneHandlingPopAfterClosingWsServer);
   }
 
-
-  @override
-  Future<void> close() async {
-    wsService.close();
-    _streamControllerToClient.close();
-    super.close();
-  }
 
   void _prepareWebSocketServer(
     PrepareWebSocketServer event,
     Emitter<RoomMasterTicTacToeState> emit,
   ) async {
-    emit(state.copyWith(wsServerUrl: ResponseWrapper.loading()));
+    _streamControllerToClient?.close();
+    emit(state.copyWith(wsServerPreparationResponse: ResponseWrapper.loading()));
 
+    _streamControllerToClient = StreamController();
     final prepareWsServerResult = await wsService.prepareWebSocketServer(
-      streamControllerToClient: _streamControllerToClient,
+      dataStreamControllerToClient: _streamControllerToClient!,
       onNewConnection: (toClientSink){
         toClientSink.add(jsonEncode(TicTacToeGameState.init().toJson()));
         add(const RoomMasterTicTacToeEvent.newConnection());
@@ -46,13 +40,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       onHandlingWsClientData: _handleDataFromClient,
     );
 
-    prepareWsServerResult.when(
-      succeed: (wsServerUrl) => debugPrint('sukses membangun ws server : $wsServerUrl'),
-      loading: () => throw Exception(''),
-      error: (message) => debugPrint("gagal membangun ws server : ${message ?? "Unknown error"}"),
-    );
-
-    emit(state.copyWith(wsServerUrl: prepareWsServerResult));
+    emit(state.copyWith(wsServerPreparationResponse: prepareWsServerResult));
   }
 
   void _closeWsServer(
@@ -60,6 +48,22 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     Emitter<RoomMasterTicTacToeState> emit,
   ){
     wsService.close();
+    _streamControllerToClient?.close();
+    _streamControllerToClient = null;
+    emit(state.copyWith(
+      wsServerPreparationResponse: null,
+      doneClosingWsServer: true,
+    ));
+  }
+
+  void _doneHandlingPopAfterClosingWsServer(
+    DoneHandlingPopAfterClosingWsServer event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(state.copyWith(
+      doneClosingWsServer: false,
+      hasConnection: false,
+    ));
   }
 
   void _newConnection(
@@ -94,21 +98,26 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
   const factory RoomMasterTicTacToeEvent.closeWsServer() = CloseWsServer;
   const factory RoomMasterTicTacToeEvent.newConnection() = NewConnection;
   const factory RoomMasterTicTacToeEvent.doneHandlingNewConnection() = DoneHandlingNewConnection;
+  const factory RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer() = DoneHandlingPopAfterClosingWsServer;
 }
 
 @Freezed()
 class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
   const factory RoomMasterTicTacToeState({
-    required ResponseWrapper<String> wsServerUrl,
+    required ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
     required bool hasConnection,
     required TicTacToeGameState gameState,
+    required bool doneClosingWsServer,
   }) = _RoomMasterTicTacToeState;
 
   static RoomMasterTicTacToeState init(){
     return RoomMasterTicTacToeState(
-      wsServerUrl: ResponseWrapper.loading(),
+      wsServerPreparationResponse: null,
       hasConnection: false,
       gameState: TicTacToeGameState.init(),
+      doneClosingWsServer: false,
     );
   }
 }
+
+typedef WsServerUrl = String;
