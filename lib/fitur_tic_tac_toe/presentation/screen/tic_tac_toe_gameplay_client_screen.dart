@@ -18,40 +18,42 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
         serverAddress: serverAddress,
       ),
       child: SafeArea(
-        child: BlocBuilder<TicTacToeClientViewModel, TicTacToeClientState>(
-          builder: (context, state){
-            final viewModel = context.read<TicTacToeClientViewModel>();
+        child: Scaffold(
+          body: BlocBuilder<TicTacToeClientViewModel, TicTacToeClientState>(
+            builder: (context, state){
+              final viewModel = context.read<TicTacToeClientViewModel>();
 
-            return Center(
-              child: ResponseLoader(
-                response: state.connectResponse,
-                completeBuilder: (context, data){
-                  final gameState = state.gameState;
-                  if (gameState == null){
-                    return const Text('Loading...');
-                  }
-                  return TicTacToeBoard(
-                    gameState: gameState,
-                    onClickCell: ({required int col, required int row}) {
+              return Center(
+                child: ResponseLoader(
+                  response: state.connectResponse,
+                  completeBuilder: (context, data){
+                    final gameState = state.gameState;
+                    if (gameState == null){
+                      return const Text('Loading...');
+                    }
+                    return TicTacToeBoard(
+                      gameState: gameState,
+                      onClickCell: ({required int col, required int row}) {
 
-                    },
-                    onQuitConfirmed: (){
+                      },
+                      onQuitConfirmed: (){
 
-                    },
-                  );
-                },
-                loadingBuilder: (context){
-                  return const Text(
-                    'Menyambungkan ke server...',
-                    textAlign: TextAlign.center,
-                  );
-                },
-                onRefresh: (){
-                  viewModel.add(const TicTacToeClientEvent.connectToServer());
-                },
-              ),
-            );
-          }
+                      },
+                    );
+                  },
+                  loadingBuilder: (context){
+                    return const Text(
+                      'Menyambungkan ke server...',
+                      textAlign: TextAlign.center,
+                    );
+                  },
+                  onRefresh: (){
+                    viewModel.add(const TicTacToeClientEvent.connectToServer());
+                  },
+                ),
+              );
+            }
+          ),
         ),
       ),
     );

@@ -5,31 +5,37 @@ class QuitGameConfirmDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const paddingSize = 16.0;
     return Dialog(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text('Apakah anda yakin ingin keluar dari permainan?'),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: paddingSize, left: paddingSize, right: paddingSize,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Apakah anda yakin ingin keluar dari permainan?'),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
-                onPressed: (){
-                  Navigator.of(context).pop(false);
-                },
-                child: const Text('Tidak')
-              ),
-
-              TextButton(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
                   onPressed: (){
-                    Navigator.of(context).pop(true);
+                    Navigator.of(context).pop(false);
                   },
-                  child: const Text('Ya')
-              ),
-            ],
-          )
-        ],
+                  child: const Text('Tidak')
+                ),
+
+                TextButton(
+                    onPressed: (){
+                      Navigator.of(context).pop(true);
+                    },
+                    child: const Text('Ya')
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
