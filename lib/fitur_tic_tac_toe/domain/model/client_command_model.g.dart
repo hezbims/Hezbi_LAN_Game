@@ -10,6 +10,7 @@ _$MarkCoordinateImpl _$$MarkCoordinateImplFromJson(Map<String, dynamic> json) =>
     _$MarkCoordinateImpl(
       row: (json['row'] as num).toInt(),
       col: (json['col'] as num).toInt(),
+      $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$MarkCoordinateImplToJson(
@@ -17,4 +18,16 @@ Map<String, dynamic> _$$MarkCoordinateImplToJson(
     <String, dynamic>{
       'row': instance.row,
       'col': instance.col,
+      'runtimeType': instance.$type,
+    };
+
+_$ConfirmEndGameImpl _$$ConfirmEndGameImplFromJson(Map<String, dynamic> json) =>
+    _$ConfirmEndGameImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ConfirmEndGameImplToJson(
+        _$ConfirmEndGameImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
     };

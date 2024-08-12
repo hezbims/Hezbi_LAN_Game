@@ -19,7 +19,7 @@ class MyWsClientHandler implements IMyWsConnectionHandler {
   }
 
   @override
-  Future<void> closeConnectionToClient(int? closeCode) async {
+  Future<void> closeConnection(int? closeCode) async {
     await _wsChannel.sink.close(closeCode);
   }
 
@@ -29,7 +29,8 @@ class MyWsClientHandler implements IMyWsConnectionHandler {
   }
 
   @override
-  void dispose() {
+  Future<void> dispose() async {
+    await _wsChannel.sink.close();
     _streamSubscription?.cancel();
     _streamSubscription = null;
   }

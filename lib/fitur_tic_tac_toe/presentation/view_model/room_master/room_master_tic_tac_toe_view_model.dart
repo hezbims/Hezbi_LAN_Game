@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -6,7 +7,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_ws_server_service.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_model.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
 
 part 'room_master_tic_tac_toe_view_model.freezed.dart';
 
@@ -20,6 +23,10 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_newConnection);
     on(_doneHandlingNewConnection);
     on(_doneHandlingPopAfterClosingWsServer);
+    on(_quitGame);
+    on(_updateRoomMasterAndClientGameState);
+    on(_showEndGameDialog);
+    on(_doneShowEndGameDialog);
   }
 
 
@@ -32,7 +39,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     final prepareWsServerResult = await wsService.prepareWebSocketServer(
       onClientConnected: (newWsClientHandler){
         if (_wsClientHandler != null){
-          newWsClientHandler.closeConnectionToClient(null);
+          newWsClientHandler.closeConnection(null);
           return;
         }
         _wsClientHandler = newWsClientHandler
@@ -53,9 +60,10 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   void _closeWsServer(
     CloseWsServer event,
     Emitter<RoomMasterTicTacToeState> emit,
-  ){
+  ) async {
+    _quitGameTimer?.cancel();
     wsService.close();
-    _wsClientHandler?.dispose();
+    await _wsClientHandler?.dispose();
     _wsClientHandler = null;
 
     emit(state.copyWith(
@@ -68,10 +76,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     DoneHandlingPopAfterClosingWsServer event,
     Emitter<RoomMasterTicTacToeState> emit,
   ){
-    emit(state.copyWith(
-      doneClosingWsServer: false,
-      hasConnection: false,
-    ));
+    emit(RoomMasterTicTacToeState.init());
   }
 
   void _newConnection(
@@ -91,11 +96,61 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     emit(state.copyWith(hasConnection: false));
   }
 
+  Timer? _quitGameTimer;
+  void _quitGame(
+    QuitGame event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ) async {
+    final newState = state.copyWith(
+      isQuittingGame: true,
+      gameState: state.gameState.copyWith(
+        endGameStatus: TicTacToeEndGameStatus.roomMasterQuitGame
+      ),
+    );
+    add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(newState));
+    _quitGameTimer = Timer(const Duration(seconds: 4), (){
+      add(const RoomMasterTicTacToeEvent.closeWsServer());
+    });
+  }
+
   void _handleDataFromClient(dynamic data){
     if (data is! String){
-      debugPrint('ws client data type : ${data.runtimeType}');
+      debugPrint('qqq salah kirim tipe data dari client : ${data.runtimeType}');
       return;
     }
+    final jsonData = jsonDecode(data);
+    final command = ClientCommandModel.fromJson(jsonData);
+    switch(command){
+      case MarkCoordinate():
+        break;
+      case ConfirmEndGame():
+        if (state.gameState.endGameStatus == TicTacToeEndGameStatus.roomMasterQuitGame) {
+          add(const RoomMasterTicTacToeEvent.closeWsServer());
+        }
+        break;
+    }
+  }
+
+  void _showEndGameDialog(
+    ShowEndGameDialog event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(state.copyWith(endGameDialogStatus: EndGameDialogStatus.mustShow));
+  }
+
+  void _doneShowEndGameDialog(
+    DoneShowEndGameDialog event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(state.copyWith(endGameDialogStatus: EndGameDialogStatus.alreadyShown));
+  }
+
+  void _updateRoomMasterAndClientGameState(
+    UpdateRoomMasterAndClientGameState event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    _wsClientHandler?.sendData(jsonEncode(event.newState.gameState.toJson()));
+    emit(event.newState);
   }
 
   void _handleErrorFromClient(Object error){
@@ -107,9 +162,16 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
 sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
   const factory RoomMasterTicTacToeEvent.prepareWebSocketServer() = PrepareWebSocketServer;
   const factory RoomMasterTicTacToeEvent.closeWsServer() = CloseWsServer;
+  const factory RoomMasterTicTacToeEvent.quitGame() = QuitGame;
   const factory RoomMasterTicTacToeEvent.newConnection() = NewConnection;
   const factory RoomMasterTicTacToeEvent.doneHandlingNewConnection() = DoneHandlingNewConnection;
   const factory RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer() = DoneHandlingPopAfterClosingWsServer;
+  const factory RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(
+    RoomMasterTicTacToeState newState,
+  ) = UpdateRoomMasterAndClientGameState;
+  const factory RoomMasterTicTacToeEvent.showEndGameDialog() = ShowEndGameDialog;
+  const factory RoomMasterTicTacToeEvent.doneShowEndGameDialog() = DoneShowEndGameDialog;
+
 }
 
 @Freezed()
@@ -119,6 +181,8 @@ class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
     required bool hasConnection,
     required TicTacToeGameState gameState,
     required bool doneClosingWsServer,
+    required EndGameDialogStatus endGameDialogStatus,
+    required bool isQuittingGame,
   }) = _RoomMasterTicTacToeState;
 
   static RoomMasterTicTacToeState init(){
@@ -127,6 +191,8 @@ class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
       hasConnection: false,
       gameState: TicTacToeGameState.init(),
       doneClosingWsServer: false,
+      endGameDialogStatus: EndGameDialogStatus.notShown,
+      isQuittingGame: false,
     );
   }
 }

@@ -14,17 +14,30 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: BlocBuilder<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
+        body: BlocConsumer<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
+          listener: (context, state){
+            if (state.doneClosingWsServer){
+              final viewModel = context.read<RoomMasterTicTacToeViewModel>();
+              viewModel.add(const RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer());
+              Navigator.of(context).pop();
+            }
+          },
           builder: (context, state){
             final viewModel = context.read<RoomMasterTicTacToeViewModel>();
 
             return Center(child: TicTacToeBoard(
               gameState: state.gameState,
               onClickCell: ({required int row, required int col}){
-
+                if (state.gameState.endGameStatus != null){
+                  return;
+                }
               },
               onQuitConfirmed: (){
-                viewModel.add(const RoomMasterTicTacToeEvent.closeWsServer());
+                if (state.gameState.endGameStatus != null){
+                  Navigator.of(context).pop();
+                  return;
+                }
+                viewModel.add(const RoomMasterTicTacToeEvent.quitGame());
               },
             ));
           },

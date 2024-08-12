@@ -13,7 +13,7 @@ class TicTacToeGameState with _$TicTacToeGameState {
     required List<Coordinate> circleCoordinates,
     required List<Coordinate> crossCoordinates,
     required bool isRoomMasterTurn,
-    required TicTacToeWinner? winner,
+    required TicTacToeEndGameStatus? endGameStatus,
   }) = _TicTacToeGameState;
 
   factory TicTacToeGameState.fromJson(Map<String, dynamic> json) =>
@@ -24,13 +24,23 @@ class TicTacToeGameState with _$TicTacToeGameState {
       circleCoordinates: [],
       crossCoordinates: [],
       isRoomMasterTurn: Random().nextInt(2) % 2 == 0 ? true : false,
-      winner: null,
+      endGameStatus: null,
     );
   }
 }
 
-enum TicTacToeWinner {
-  client, roomMaster
+enum TicTacToeEndGameStatus {
+  @JsonValue(0)
+  clientNormalWin,
+
+  @JsonValue(1)
+  roomMasterNormalWin,
+
+  @JsonValue(2)
+  clientQuitGame,
+
+  @JsonValue(3)
+  roomMasterQuitGame,
 }
 
 @JsonSerializable()

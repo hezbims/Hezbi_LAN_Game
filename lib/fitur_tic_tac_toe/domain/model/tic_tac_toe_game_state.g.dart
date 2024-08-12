@@ -27,7 +27,8 @@ _$TicTacToeGameStateImpl _$$TicTacToeGameStateImplFromJson(
           .map((e) => Coordinate.fromJson(e as Map<String, dynamic>))
           .toList(),
       isRoomMasterTurn: json['isRoomMasterTurn'] as bool,
-      winner: $enumDecodeNullable(_$TicTacToeWinnerEnumMap, json['winner']),
+      endGameStatus: $enumDecodeNullable(
+          _$TicTacToeEndGameStatusEnumMap, json['endGameStatus']),
     );
 
 Map<String, dynamic> _$$TicTacToeGameStateImplToJson(
@@ -38,10 +39,12 @@ Map<String, dynamic> _$$TicTacToeGameStateImplToJson(
       'crossCoordinates':
           instance.crossCoordinates.map((e) => e.toJson()).toList(),
       'isRoomMasterTurn': instance.isRoomMasterTurn,
-      'winner': _$TicTacToeWinnerEnumMap[instance.winner],
+      'endGameStatus': _$TicTacToeEndGameStatusEnumMap[instance.endGameStatus],
     };
 
-const _$TicTacToeWinnerEnumMap = {
-  TicTacToeWinner.client: 'client',
-  TicTacToeWinner.roomMaster: 'roomMaster',
+const _$TicTacToeEndGameStatusEnumMap = {
+  TicTacToeEndGameStatus.clientNormalWin: 0,
+  TicTacToeEndGameStatus.roomMasterNormalWin: 1,
+  TicTacToeEndGameStatus.clientQuitGame: 2,
+  TicTacToeEndGameStatus.roomMasterQuitGame: 3,
 };

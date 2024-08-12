@@ -22,6 +22,7 @@ mixin _$TicTacToeClientEvent {
     required TResult Function(int row, int col) clickTile,
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(int row, int col)? clickTile,
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(int row, int col)? clickTile,
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,8 @@ mixin _$TicTacToeClientEvent {
     required TResult Function(HandleDataFromServer value) handleDataFromServer,
     required TResult Function(HandleErrorFromServer value)
         handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +61,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(ClickTile value)? clickTile,
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +70,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(ClickTile value)? clickTile,
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +137,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function(int row, int col) clickTile,
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
   }) {
     return connectToServer();
   }
@@ -141,6 +149,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(int row, int col)? clickTile,
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
   }) {
     return connectToServer?.call();
   }
@@ -152,6 +161,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(int row, int col)? clickTile,
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -168,6 +178,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function(HandleDataFromServer value) handleDataFromServer,
     required TResult Function(HandleErrorFromServer value)
         handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
   }) {
     return connectToServer(this);
   }
@@ -179,6 +191,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(ClickTile value)? clickTile,
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
   }) {
     return connectToServer?.call(this);
   }
@@ -190,6 +203,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(ClickTile value)? clickTile,
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -279,6 +293,7 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function(int row, int col) clickTile,
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
   }) {
     return clickTile(row, col);
   }
@@ -290,6 +305,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(int row, int col)? clickTile,
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
   }) {
     return clickTile?.call(row, col);
   }
@@ -301,6 +317,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(int row, int col)? clickTile,
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -317,6 +334,8 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function(HandleDataFromServer value) handleDataFromServer,
     required TResult Function(HandleErrorFromServer value)
         handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
   }) {
     return clickTile(this);
   }
@@ -328,6 +347,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(ClickTile value)? clickTile,
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
   }) {
     return clickTile?.call(this);
   }
@@ -339,6 +359,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(ClickTile value)? clickTile,
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -430,6 +451,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function(int row, int col) clickTile,
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
   }) {
     return handleDataFromServer(data);
   }
@@ -441,6 +463,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(int row, int col)? clickTile,
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
   }) {
     return handleDataFromServer?.call(data);
   }
@@ -452,6 +475,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(int row, int col)? clickTile,
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -468,6 +492,8 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function(HandleDataFromServer value) handleDataFromServer,
     required TResult Function(HandleErrorFromServer value)
         handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
   }) {
     return handleDataFromServer(this);
   }
@@ -479,6 +505,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(ClickTile value)? clickTile,
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
   }) {
     return handleDataFromServer?.call(this);
   }
@@ -490,6 +517,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(ClickTile value)? clickTile,
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -578,6 +606,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function(int row, int col) clickTile,
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
   }) {
     return handleErrorFromServer(error);
   }
@@ -589,6 +618,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(int row, int col)? clickTile,
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
   }) {
     return handleErrorFromServer?.call(error);
   }
@@ -600,6 +630,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(int row, int col)? clickTile,
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -616,6 +647,8 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function(HandleDataFromServer value) handleDataFromServer,
     required TResult Function(HandleErrorFromServer value)
         handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
   }) {
     return handleErrorFromServer(this);
   }
@@ -627,6 +660,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(ClickTile value)? clickTile,
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
   }) {
     return handleErrorFromServer?.call(this);
   }
@@ -638,6 +672,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(ClickTile value)? clickTile,
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -658,10 +693,138 @@ abstract class HandleErrorFromServer implements TicTacToeClientEvent {
 }
 
 /// @nodoc
+abstract class _$$DoneShowEndGameDialogImplCopyWith<$Res> {
+  factory _$$DoneShowEndGameDialogImplCopyWith(
+          _$DoneShowEndGameDialogImpl value,
+          $Res Function(_$DoneShowEndGameDialogImpl) then) =
+      __$$DoneShowEndGameDialogImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DoneShowEndGameDialogImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res,
+        _$DoneShowEndGameDialogImpl>
+    implements _$$DoneShowEndGameDialogImplCopyWith<$Res> {
+  __$$DoneShowEndGameDialogImplCopyWithImpl(_$DoneShowEndGameDialogImpl _value,
+      $Res Function(_$DoneShowEndGameDialogImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
+  const _$DoneShowEndGameDialogImpl();
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.doneShowEndGameDialog()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DoneShowEndGameDialogImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
+  }) {
+    return doneShowEndGameDialog();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
+  }) {
+    return doneShowEndGameDialog?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
+    required TResult orElse(),
+  }) {
+    if (doneShowEndGameDialog != null) {
+      return doneShowEndGameDialog();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+  }) {
+    return doneShowEndGameDialog(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+  }) {
+    return doneShowEndGameDialog?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    required TResult orElse(),
+  }) {
+    if (doneShowEndGameDialog != null) {
+      return doneShowEndGameDialog(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DoneShowEndGameDialog implements TicTacToeClientEvent {
+  const factory DoneShowEndGameDialog() = _$DoneShowEndGameDialogImpl;
+}
+
+/// @nodoc
 mixin _$TicTacToeClientState {
   ResponseWrapper<IMyWsConnectionHandler> get connectResponse =>
       throw _privateConstructorUsedError;
   TicTacToeGameState? get gameState => throw _privateConstructorUsedError;
+  EndGameDialogStatus get endGameDialogStatus =>
+      throw _privateConstructorUsedError;
+  bool get isQuitGameLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicTacToeClientStateCopyWith<TicTacToeClientState> get copyWith =>
@@ -676,7 +839,9 @@ abstract class $TicTacToeClientStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
-      TicTacToeGameState? gameState});
+      TicTacToeGameState? gameState,
+      EndGameDialogStatus endGameDialogStatus,
+      bool isQuitGameLoading});
 
   $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
   $TicTacToeGameStateCopyWith<$Res>? get gameState;
@@ -698,6 +863,8 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
   $Res call({
     Object? connectResponse = null,
     Object? gameState = freezed,
+    Object? endGameDialogStatus = null,
+    Object? isQuitGameLoading = null,
   }) {
     return _then(_value.copyWith(
       connectResponse: null == connectResponse
@@ -708,6 +875,14 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState?,
+      endGameDialogStatus: null == endGameDialogStatus
+          ? _value.endGameDialogStatus
+          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
+              as EndGameDialogStatus,
+      isQuitGameLoading: null == isQuitGameLoading
+          ? _value.isQuitGameLoading
+          : isQuitGameLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -743,7 +918,9 @@ abstract class _$$TicTacToeClientStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
-      TicTacToeGameState? gameState});
+      TicTacToeGameState? gameState,
+      EndGameDialogStatus endGameDialogStatus,
+      bool isQuitGameLoading});
 
   @override
   $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
@@ -764,6 +941,8 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
   $Res call({
     Object? connectResponse = null,
     Object? gameState = freezed,
+    Object? endGameDialogStatus = null,
+    Object? isQuitGameLoading = null,
   }) {
     return _then(_$TicTacToeClientStateImpl(
       connectResponse: null == connectResponse
@@ -774,6 +953,14 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState?,
+      endGameDialogStatus: null == endGameDialogStatus
+          ? _value.endGameDialogStatus
+          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
+              as EndGameDialogStatus,
+      isQuitGameLoading: null == isQuitGameLoading
+          ? _value.isQuitGameLoading
+          : isQuitGameLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -782,16 +969,23 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
 
 class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
   const _$TicTacToeClientStateImpl(
-      {required this.connectResponse, required this.gameState});
+      {required this.connectResponse,
+      required this.gameState,
+      required this.endGameDialogStatus,
+      required this.isQuitGameLoading});
 
   @override
   final ResponseWrapper<IMyWsConnectionHandler> connectResponse;
   @override
   final TicTacToeGameState? gameState;
+  @override
+  final EndGameDialogStatus endGameDialogStatus;
+  @override
+  final bool isQuitGameLoading;
 
   @override
   String toString() {
-    return 'TicTacToeClientState(connectResponse: $connectResponse, gameState: $gameState)';
+    return 'TicTacToeClientState(connectResponse: $connectResponse, gameState: $gameState, endGameDialogStatus: $endGameDialogStatus, isQuitGameLoading: $isQuitGameLoading)';
   }
 
   @override
@@ -802,11 +996,16 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
             (identical(other.connectResponse, connectResponse) ||
                 other.connectResponse == connectResponse) &&
             (identical(other.gameState, gameState) ||
-                other.gameState == gameState));
+                other.gameState == gameState) &&
+            (identical(other.endGameDialogStatus, endGameDialogStatus) ||
+                other.endGameDialogStatus == endGameDialogStatus) &&
+            (identical(other.isQuitGameLoading, isQuitGameLoading) ||
+                other.isQuitGameLoading == isQuitGameLoading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, connectResponse, gameState);
+  int get hashCode => Object.hash(runtimeType, connectResponse, gameState,
+      endGameDialogStatus, isQuitGameLoading);
 
   @JsonKey(ignore: true)
   @override
@@ -820,13 +1019,18 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
 abstract class _TicTacToeClientState implements TicTacToeClientState {
   const factory _TicTacToeClientState(
       {required final ResponseWrapper<IMyWsConnectionHandler> connectResponse,
-      required final TicTacToeGameState?
-          gameState}) = _$TicTacToeClientStateImpl;
+      required final TicTacToeGameState? gameState,
+      required final EndGameDialogStatus endGameDialogStatus,
+      required final bool isQuitGameLoading}) = _$TicTacToeClientStateImpl;
 
   @override
   ResponseWrapper<IMyWsConnectionHandler> get connectResponse;
   @override
   TicTacToeGameState? get gameState;
+  @override
+  EndGameDialogStatus get endGameDialogStatus;
+  @override
+  bool get isQuitGameLoading;
   @override
   @JsonKey(ignore: true)
   _$$TicTacToeClientStateImplCopyWith<_$TicTacToeClientStateImpl>

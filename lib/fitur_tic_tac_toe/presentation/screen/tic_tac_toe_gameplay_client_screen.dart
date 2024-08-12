@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/common/presentation/component/response_loader.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_board.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/client/tic_tac_toe_client_view_model.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
 
 class TicTacToeGameplayClientScreen extends StatelessWidget {
   final String serverAddress;
@@ -19,7 +22,30 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
       ),
       child: SafeArea(
         child: Scaffold(
-          body: BlocBuilder<TicTacToeClientViewModel, TicTacToeClientState>(
+          body: BlocConsumer<TicTacToeClientViewModel, TicTacToeClientState>(
+            listener: (context, state){
+              final endGameDialogstatus = state.endGameDialogStatus;
+              if (endGameDialogstatus != EndGameDialogStatus.notShown){
+                if (endGameDialogstatus == EndGameDialogStatus.mustShow){
+                  context.read<TicTacToeClientViewModel>().add(
+                    const TicTacToeClientEvent.doneShowEndGameDialog()
+                  );
+                  showDialog(
+                    context: context,
+                    builder: (context) =>
+                      EndGameDialog(
+                        endGameStatus: state.gameState?.endGameStatus ?? TicTacToeEndGameStatus.roomMasterQuitGame,
+                        isClient: true,
+                      ),
+                  ).then((isQuitConfirmed){
+                    if (isQuitConfirmed == true){
+                      Navigator.of(context).pop();
+                    }
+                  });
+                }
+                return;
+              }
+            },
             builder: (context, state){
               final viewModel = context.read<TicTacToeClientViewModel>();
 
@@ -34,9 +60,15 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
                     return TicTacToeBoard(
                       gameState: gameState,
                       onClickCell: ({required int col, required int row}) {
-
+                        if (gameState.endGameStatus != null){
+                          return;
+                        }
                       },
                       onQuitConfirmed: (){
+                        if (state.gameState?.endGameStatus != null){
+                          Navigator.of(context).pop();
+                          return;
+                        }
 
                       },
                     );

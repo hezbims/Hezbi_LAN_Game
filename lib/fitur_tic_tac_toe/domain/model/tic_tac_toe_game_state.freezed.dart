@@ -23,7 +23,8 @@ mixin _$TicTacToeGameState {
   List<Coordinate> get circleCoordinates => throw _privateConstructorUsedError;
   List<Coordinate> get crossCoordinates => throw _privateConstructorUsedError;
   bool get isRoomMasterTurn => throw _privateConstructorUsedError;
-  TicTacToeWinner? get winner => throw _privateConstructorUsedError;
+  TicTacToeEndGameStatus? get endGameStatus =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +42,7 @@ abstract class $TicTacToeGameStateCopyWith<$Res> {
       {List<Coordinate> circleCoordinates,
       List<Coordinate> crossCoordinates,
       bool isRoomMasterTurn,
-      TicTacToeWinner? winner});
+      TicTacToeEndGameStatus? endGameStatus});
 }
 
 /// @nodoc
@@ -60,7 +61,7 @@ class _$TicTacToeGameStateCopyWithImpl<$Res, $Val extends TicTacToeGameState>
     Object? circleCoordinates = null,
     Object? crossCoordinates = null,
     Object? isRoomMasterTurn = null,
-    Object? winner = freezed,
+    Object? endGameStatus = freezed,
   }) {
     return _then(_value.copyWith(
       circleCoordinates: null == circleCoordinates
@@ -75,10 +76,10 @@ class _$TicTacToeGameStateCopyWithImpl<$Res, $Val extends TicTacToeGameState>
           ? _value.isRoomMasterTurn
           : isRoomMasterTurn // ignore: cast_nullable_to_non_nullable
               as bool,
-      winner: freezed == winner
-          ? _value.winner
-          : winner // ignore: cast_nullable_to_non_nullable
-              as TicTacToeWinner?,
+      endGameStatus: freezed == endGameStatus
+          ? _value.endGameStatus
+          : endGameStatus // ignore: cast_nullable_to_non_nullable
+              as TicTacToeEndGameStatus?,
     ) as $Val);
   }
 }
@@ -95,7 +96,7 @@ abstract class _$$TicTacToeGameStateImplCopyWith<$Res>
       {List<Coordinate> circleCoordinates,
       List<Coordinate> crossCoordinates,
       bool isRoomMasterTurn,
-      TicTacToeWinner? winner});
+      TicTacToeEndGameStatus? endGameStatus});
 }
 
 /// @nodoc
@@ -112,7 +113,7 @@ class __$$TicTacToeGameStateImplCopyWithImpl<$Res>
     Object? circleCoordinates = null,
     Object? crossCoordinates = null,
     Object? isRoomMasterTurn = null,
-    Object? winner = freezed,
+    Object? endGameStatus = freezed,
   }) {
     return _then(_$TicTacToeGameStateImpl(
       circleCoordinates: null == circleCoordinates
@@ -127,10 +128,10 @@ class __$$TicTacToeGameStateImplCopyWithImpl<$Res>
           ? _value.isRoomMasterTurn
           : isRoomMasterTurn // ignore: cast_nullable_to_non_nullable
               as bool,
-      winner: freezed == winner
-          ? _value.winner
-          : winner // ignore: cast_nullable_to_non_nullable
-              as TicTacToeWinner?,
+      endGameStatus: freezed == endGameStatus
+          ? _value.endGameStatus
+          : endGameStatus // ignore: cast_nullable_to_non_nullable
+              as TicTacToeEndGameStatus?,
     ));
   }
 }
@@ -143,7 +144,7 @@ class _$TicTacToeGameStateImpl implements _TicTacToeGameState {
       {required final List<Coordinate> circleCoordinates,
       required final List<Coordinate> crossCoordinates,
       required this.isRoomMasterTurn,
-      required this.winner})
+      required this.endGameStatus})
       : _circleCoordinates = circleCoordinates,
         _crossCoordinates = crossCoordinates;
 
@@ -171,11 +172,11 @@ class _$TicTacToeGameStateImpl implements _TicTacToeGameState {
   @override
   final bool isRoomMasterTurn;
   @override
-  final TicTacToeWinner? winner;
+  final TicTacToeEndGameStatus? endGameStatus;
 
   @override
   String toString() {
-    return 'TicTacToeGameState(circleCoordinates: $circleCoordinates, crossCoordinates: $crossCoordinates, isRoomMasterTurn: $isRoomMasterTurn, winner: $winner)';
+    return 'TicTacToeGameState(circleCoordinates: $circleCoordinates, crossCoordinates: $crossCoordinates, isRoomMasterTurn: $isRoomMasterTurn, endGameStatus: $endGameStatus)';
   }
 
   @override
@@ -189,7 +190,8 @@ class _$TicTacToeGameStateImpl implements _TicTacToeGameState {
                 .equals(other._crossCoordinates, _crossCoordinates) &&
             (identical(other.isRoomMasterTurn, isRoomMasterTurn) ||
                 other.isRoomMasterTurn == isRoomMasterTurn) &&
-            (identical(other.winner, winner) || other.winner == winner));
+            (identical(other.endGameStatus, endGameStatus) ||
+                other.endGameStatus == endGameStatus));
   }
 
   @JsonKey(ignore: true)
@@ -199,7 +201,7 @@ class _$TicTacToeGameStateImpl implements _TicTacToeGameState {
       const DeepCollectionEquality().hash(_circleCoordinates),
       const DeepCollectionEquality().hash(_crossCoordinates),
       isRoomMasterTurn,
-      winner);
+      endGameStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -218,10 +220,11 @@ class _$TicTacToeGameStateImpl implements _TicTacToeGameState {
 
 abstract class _TicTacToeGameState implements TicTacToeGameState {
   const factory _TicTacToeGameState(
-      {required final List<Coordinate> circleCoordinates,
-      required final List<Coordinate> crossCoordinates,
-      required final bool isRoomMasterTurn,
-      required final TicTacToeWinner? winner}) = _$TicTacToeGameStateImpl;
+          {required final List<Coordinate> circleCoordinates,
+          required final List<Coordinate> crossCoordinates,
+          required final bool isRoomMasterTurn,
+          required final TicTacToeEndGameStatus? endGameStatus}) =
+      _$TicTacToeGameStateImpl;
 
   factory _TicTacToeGameState.fromJson(Map<String, dynamic> json) =
       _$TicTacToeGameStateImpl.fromJson;
@@ -233,7 +236,7 @@ abstract class _TicTacToeGameState implements TicTacToeGameState {
   @override
   bool get isRoomMasterTurn;
   @override
-  TicTacToeWinner? get winner;
+  TicTacToeEndGameStatus? get endGameStatus;
   @override
   @JsonKey(ignore: true)
   _$$TicTacToeGameStateImplCopyWith<_$TicTacToeGameStateImpl> get copyWith =>

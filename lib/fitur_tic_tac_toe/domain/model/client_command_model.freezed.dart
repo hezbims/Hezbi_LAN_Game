@@ -15,49 +15,59 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ClientCommandModel _$ClientCommandModelFromJson(Map<String, dynamic> json) {
-  return MarkCoordinate.fromJson(json);
+  switch (json['runtimeType']) {
+    case 'markCoordinate':
+      return MarkCoordinate.fromJson(json);
+    case 'confirmEndGame':
+      return ConfirmEndGame.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'ClientCommandModel',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
 }
 
 /// @nodoc
 mixin _$ClientCommandModel {
-  int get row => throw _privateConstructorUsedError;
-  int get col => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int row, int col) markCoordinate,
+    required TResult Function() confirmEndGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int row, int col)? markCoordinate,
+    TResult? Function()? confirmEndGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int row, int col)? markCoordinate,
+    TResult Function()? confirmEndGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MarkCoordinate value) markCoordinate,
+    required TResult Function(ConfirmEndGame value) confirmEndGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarkCoordinate value)? markCoordinate,
+    TResult? Function(ConfirmEndGame value)? confirmEndGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MarkCoordinate value)? markCoordinate,
+    TResult Function(ConfirmEndGame value)? confirmEndGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ClientCommandModelCopyWith<ClientCommandModel> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -65,8 +75,6 @@ abstract class $ClientCommandModelCopyWith<$Res> {
   factory $ClientCommandModelCopyWith(
           ClientCommandModel value, $Res Function(ClientCommandModel) then) =
       _$ClientCommandModelCopyWithImpl<$Res, ClientCommandModel>;
-  @useResult
-  $Res call({int row, int col});
 }
 
 /// @nodoc
@@ -78,33 +86,13 @@ class _$ClientCommandModelCopyWithImpl<$Res, $Val extends ClientCommandModel>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? row = null,
-    Object? col = null,
-  }) {
-    return _then(_value.copyWith(
-      row: null == row
-          ? _value.row
-          : row // ignore: cast_nullable_to_non_nullable
-              as int,
-      col: null == col
-          ? _value.col
-          : col // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$MarkCoordinateImplCopyWith<$Res>
-    implements $ClientCommandModelCopyWith<$Res> {
+abstract class _$$MarkCoordinateImplCopyWith<$Res> {
   factory _$$MarkCoordinateImplCopyWith(_$MarkCoordinateImpl value,
           $Res Function(_$MarkCoordinateImpl) then) =
       __$$MarkCoordinateImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({int row, int col});
 }
@@ -139,7 +127,9 @@ class __$$MarkCoordinateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MarkCoordinateImpl implements MarkCoordinate {
-  const _$MarkCoordinateImpl({required this.row, required this.col});
+  const _$MarkCoordinateImpl(
+      {required this.row, required this.col, final String? $type})
+      : $type = $type ?? 'markCoordinate';
 
   factory _$MarkCoordinateImpl.fromJson(Map<String, dynamic> json) =>
       _$$MarkCoordinateImplFromJson(json);
@@ -148,6 +138,9 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   final int row;
   @override
   final int col;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -178,6 +171,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int row, int col) markCoordinate,
+    required TResult Function() confirmEndGame,
   }) {
     return markCoordinate(row, col);
   }
@@ -186,6 +180,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int row, int col)? markCoordinate,
+    TResult? Function()? confirmEndGame,
   }) {
     return markCoordinate?.call(row, col);
   }
@@ -194,6 +189,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int row, int col)? markCoordinate,
+    TResult Function()? confirmEndGame,
     required TResult orElse(),
   }) {
     if (markCoordinate != null) {
@@ -206,6 +202,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MarkCoordinate value) markCoordinate,
+    required TResult Function(ConfirmEndGame value) confirmEndGame,
   }) {
     return markCoordinate(this);
   }
@@ -214,6 +211,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarkCoordinate value)? markCoordinate,
+    TResult? Function(ConfirmEndGame value)? confirmEndGame,
   }) {
     return markCoordinate?.call(this);
   }
@@ -222,6 +220,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MarkCoordinate value)? markCoordinate,
+    TResult Function(ConfirmEndGame value)? confirmEndGame,
     required TResult orElse(),
   }) {
     if (markCoordinate != null) {
@@ -245,12 +244,129 @@ abstract class MarkCoordinate implements ClientCommandModel {
   factory MarkCoordinate.fromJson(Map<String, dynamic> json) =
       _$MarkCoordinateImpl.fromJson;
 
-  @override
   int get row;
-  @override
   int get col;
-  @override
   @JsonKey(ignore: true)
   _$$MarkCoordinateImplCopyWith<_$MarkCoordinateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConfirmEndGameImplCopyWith<$Res> {
+  factory _$$ConfirmEndGameImplCopyWith(_$ConfirmEndGameImpl value,
+          $Res Function(_$ConfirmEndGameImpl) then) =
+      __$$ConfirmEndGameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ConfirmEndGameImplCopyWithImpl<$Res>
+    extends _$ClientCommandModelCopyWithImpl<$Res, _$ConfirmEndGameImpl>
+    implements _$$ConfirmEndGameImplCopyWith<$Res> {
+  __$$ConfirmEndGameImplCopyWithImpl(
+      _$ConfirmEndGameImpl _value, $Res Function(_$ConfirmEndGameImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConfirmEndGameImpl implements ConfirmEndGame {
+  const _$ConfirmEndGameImpl({final String? $type})
+      : $type = $type ?? 'confirmEndGame';
+
+  factory _$ConfirmEndGameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfirmEndGameImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ClientCommandModel.confirmEndGame()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ConfirmEndGameImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int row, int col) markCoordinate,
+    required TResult Function() confirmEndGame,
+  }) {
+    return confirmEndGame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int row, int col)? markCoordinate,
+    TResult? Function()? confirmEndGame,
+  }) {
+    return confirmEndGame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int row, int col)? markCoordinate,
+    TResult Function()? confirmEndGame,
+    required TResult orElse(),
+  }) {
+    if (confirmEndGame != null) {
+      return confirmEndGame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MarkCoordinate value) markCoordinate,
+    required TResult Function(ConfirmEndGame value) confirmEndGame,
+  }) {
+    return confirmEndGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MarkCoordinate value)? markCoordinate,
+    TResult? Function(ConfirmEndGame value)? confirmEndGame,
+  }) {
+    return confirmEndGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MarkCoordinate value)? markCoordinate,
+    TResult Function(ConfirmEndGame value)? confirmEndGame,
+    required TResult orElse(),
+  }) {
+    if (confirmEndGame != null) {
+      return confirmEndGame(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfirmEndGameImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ConfirmEndGame implements ClientCommandModel {
+  const factory ConfirmEndGame() = _$ConfirmEndGameImpl;
+
+  factory ConfirmEndGame.fromJson(Map<String, dynamic> json) =
+      _$ConfirmEndGameImpl.fromJson;
 }
