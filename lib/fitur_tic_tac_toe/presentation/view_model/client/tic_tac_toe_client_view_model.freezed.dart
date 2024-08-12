@@ -824,7 +824,7 @@ mixin _$TicTacToeClientState {
   TicTacToeGameState? get gameState => throw _privateConstructorUsedError;
   EndGameDialogStatus get endGameDialogStatus =>
       throw _privateConstructorUsedError;
-  bool get isQuitGameLoading => throw _privateConstructorUsedError;
+  bool get isQuittingGame => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicTacToeClientStateCopyWith<TicTacToeClientState> get copyWith =>
@@ -841,7 +841,7 @@ abstract class $TicTacToeClientStateCopyWith<$Res> {
       {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       TicTacToeGameState? gameState,
       EndGameDialogStatus endGameDialogStatus,
-      bool isQuitGameLoading});
+      bool isQuittingGame});
 
   $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
   $TicTacToeGameStateCopyWith<$Res>? get gameState;
@@ -864,7 +864,7 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
     Object? connectResponse = null,
     Object? gameState = freezed,
     Object? endGameDialogStatus = null,
-    Object? isQuitGameLoading = null,
+    Object? isQuittingGame = null,
   }) {
     return _then(_value.copyWith(
       connectResponse: null == connectResponse
@@ -879,9 +879,9 @@ class _$TicTacToeClientStateCopyWithImpl<$Res,
           ? _value.endGameDialogStatus
           : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
               as EndGameDialogStatus,
-      isQuitGameLoading: null == isQuitGameLoading
-          ? _value.isQuitGameLoading
-          : isQuitGameLoading // ignore: cast_nullable_to_non_nullable
+      isQuittingGame: null == isQuittingGame
+          ? _value.isQuittingGame
+          : isQuittingGame // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -920,7 +920,7 @@ abstract class _$$TicTacToeClientStateImplCopyWith<$Res>
       {ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       TicTacToeGameState? gameState,
       EndGameDialogStatus endGameDialogStatus,
-      bool isQuitGameLoading});
+      bool isQuittingGame});
 
   @override
   $ResponseWrapperCopyWith<IMyWsConnectionHandler, $Res> get connectResponse;
@@ -942,7 +942,7 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
     Object? connectResponse = null,
     Object? gameState = freezed,
     Object? endGameDialogStatus = null,
-    Object? isQuitGameLoading = null,
+    Object? isQuittingGame = null,
   }) {
     return _then(_$TicTacToeClientStateImpl(
       connectResponse: null == connectResponse
@@ -957,9 +957,9 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
           ? _value.endGameDialogStatus
           : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
               as EndGameDialogStatus,
-      isQuitGameLoading: null == isQuitGameLoading
-          ? _value.isQuitGameLoading
-          : isQuitGameLoading // ignore: cast_nullable_to_non_nullable
+      isQuittingGame: null == isQuittingGame
+          ? _value.isQuittingGame
+          : isQuittingGame // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -972,7 +972,7 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
       {required this.connectResponse,
       required this.gameState,
       required this.endGameDialogStatus,
-      required this.isQuitGameLoading});
+      required this.isQuittingGame});
 
   @override
   final ResponseWrapper<IMyWsConnectionHandler> connectResponse;
@@ -981,11 +981,11 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
   @override
   final EndGameDialogStatus endGameDialogStatus;
   @override
-  final bool isQuitGameLoading;
+  final bool isQuittingGame;
 
   @override
   String toString() {
-    return 'TicTacToeClientState(connectResponse: $connectResponse, gameState: $gameState, endGameDialogStatus: $endGameDialogStatus, isQuitGameLoading: $isQuitGameLoading)';
+    return 'TicTacToeClientState(connectResponse: $connectResponse, gameState: $gameState, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
   }
 
   @override
@@ -999,13 +999,13 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
                 other.gameState == gameState) &&
             (identical(other.endGameDialogStatus, endGameDialogStatus) ||
                 other.endGameDialogStatus == endGameDialogStatus) &&
-            (identical(other.isQuitGameLoading, isQuitGameLoading) ||
-                other.isQuitGameLoading == isQuitGameLoading));
+            (identical(other.isQuittingGame, isQuittingGame) ||
+                other.isQuittingGame == isQuittingGame));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, connectResponse, gameState,
-      endGameDialogStatus, isQuitGameLoading);
+      endGameDialogStatus, isQuittingGame);
 
   @JsonKey(ignore: true)
   @override
@@ -1021,7 +1021,7 @@ abstract class _TicTacToeClientState implements TicTacToeClientState {
       {required final ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       required final TicTacToeGameState? gameState,
       required final EndGameDialogStatus endGameDialogStatus,
-      required final bool isQuitGameLoading}) = _$TicTacToeClientStateImpl;
+      required final bool isQuittingGame}) = _$TicTacToeClientStateImpl;
 
   @override
   ResponseWrapper<IMyWsConnectionHandler> get connectResponse;
@@ -1030,7 +1030,7 @@ abstract class _TicTacToeClientState implements TicTacToeClientState {
   @override
   EndGameDialogStatus get endGameDialogStatus;
   @override
-  bool get isQuitGameLoading;
+  bool get isQuittingGame;
   @override
   @JsonKey(ignore: true)
   _$$TicTacToeClientStateImplCopyWith<_$TicTacToeClientStateImpl>

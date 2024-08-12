@@ -41,6 +41,9 @@ enum TicTacToeEndGameStatus {
 
   @JsonValue(3)
   roomMasterQuitGame,
+
+  @JsonValue(4)
+  disconnected
 }
 
 @JsonSerializable()

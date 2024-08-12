@@ -91,7 +91,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
 
   @override
   Future<void> close() async {
-    _wsChannelToServer?.dispose();
+    await _wsChannelToServer?.dispose();
     super.close();
   }
 
@@ -112,7 +112,7 @@ class TicTacToeClientState with _$TicTacToeClientState {
     required ResponseWrapper<IMyWsConnectionHandler> connectResponse,
     required TicTacToeGameState? gameState,
     required EndGameDialogStatus endGameDialogStatus,
-    required bool isQuitGameLoading,
+    required bool isQuittingGame,
   }) = _TicTacToeClientState;
 
   factory TicTacToeClientState.init(){
@@ -120,7 +120,7 @@ class TicTacToeClientState with _$TicTacToeClientState {
       connectResponse: ResponseWrapper.loading(),
       gameState: null,
       endGameDialogStatus: EndGameDialogStatus.notShown,
-      isQuitGameLoading: false,
+      isQuittingGame: false,
     );
   }
 }

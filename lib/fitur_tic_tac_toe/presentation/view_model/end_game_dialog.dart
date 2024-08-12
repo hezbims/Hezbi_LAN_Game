@@ -32,22 +32,9 @@ class EndGameDialog extends StatelessWidget {
               ],
             ),
 
-            _isCurrentPlayerWinning() ? 
-              const Icon(Icons.mood, color: Colors.green, size: 64,) :
-              const Icon(Icons.sentiment_dissatisfied, color: Colors.red, size: 64,),
-            if (_endGameStatus == TicTacToeEndGameStatus.roomMasterNormalWin ||
-                _endGameStatus == TicTacToeEndGameStatus.clientNormalWin)
-              const Text(
-              'Hore, kamu menang!',
-              textAlign: TextAlign.center,
-              )
-            else
-              const Text(
-                'Kamu menang, lawanmu telah meninggalkan pertandingan!',
-                textAlign: TextAlign.center,
-              ),
+            _getEmojiBasedOnEndGameStatus(),
 
-            const SizedBox(height: 24,),
+            _getTextDescriptionBasedOnEndGameStatus(),
             
             Row(
               mainAxisSize: MainAxisSize.max,
@@ -67,20 +54,38 @@ class EndGameDialog extends StatelessWidget {
       ),
     );
   }
-  
-  bool _isCurrentPlayerWinning(){
-    if (_isClient) {
-      if (_endGameStatus == TicTacToeEndGameStatus.roomMasterQuitGame ||
-          _endGameStatus == TicTacToeEndGameStatus.clientNormalWin) {
-        return true;
-      }
-    }
-    else {
-      if (_endGameStatus == TicTacToeEndGameStatus.roomMasterNormalWin ||
-          _endGameStatus == TicTacToeEndGameStatus.clientQuitGame){
-        return true;
-      }
-    }
-    return false;
+
+  Icon _getEmojiBasedOnEndGameStatus(){
+    const happyEmoji = Icon(Icons.mood, color: Colors.green, size: 64,);
+    const sadEmoji = Icon(Icons.sentiment_dissatisfied, color: Colors.red, size: 64,);
+    const neutralEmoji = Icon(Icons.sentiment_neutral_outlined, color: Colors.grey, size: 64,);
+
+    return switch (_endGameStatus){
+      TicTacToeEndGameStatus.clientNormalWin || TicTacToeEndGameStatus.roomMasterQuitGame =>
+        _isClient ? happyEmoji : sadEmoji,
+      TicTacToeEndGameStatus.roomMasterNormalWin || TicTacToeEndGameStatus.clientQuitGame =>
+        _isClient ? sadEmoji : happyEmoji,
+      TicTacToeEndGameStatus.disconnected => neutralEmoji,
+    };
+  }
+
+  Text _getTextDescriptionBasedOnEndGameStatus(){
+    const winNormal = 'Hore, kamu menang!';
+    const loseNormal = 'Yah, kamu kalah...';
+    const opponentQuit = 'Kamu menang, lawanmu telah meninggalkan pertandingan!';
+    const disconnected = 'Ups, Koneksi antara kamu dan lawan terputus!';
+
+    final String desc = switch (_endGameStatus){
+      TicTacToeEndGameStatus.clientNormalWin =>
+         _isClient ?  loseNormal : winNormal,
+      TicTacToeEndGameStatus.roomMasterNormalWin =>
+         _isClient ? winNormal : loseNormal,
+      TicTacToeEndGameStatus.clientQuitGame || TicTacToeEndGameStatus.roomMasterQuitGame =>
+        opponentQuit,
+      TicTacToeEndGameStatus.disconnected =>
+        disconnected,
+    };
+
+    return Text(desc, textAlign: TextAlign.center,);
   }
 }

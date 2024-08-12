@@ -47,4 +47,5 @@ const _$TicTacToeEndGameStatusEnumMap = {
   TicTacToeEndGameStatus.roomMasterNormalWin: 1,
   TicTacToeEndGameStatus.clientQuitGame: 2,
   TicTacToeEndGameStatus.roomMasterQuitGame: 3,
+  TicTacToeEndGameStatus.disconnected: 4,
 };

@@ -2,16 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/quit_game_confirm_dialog.dart';
 
 class TicTacToeBoard extends StatelessWidget {
   final void Function({required int row, required int col}) onClickCell;
-  final void Function() onQuitConfirmed;
   final TicTacToeGameState gameState;
 
   const TicTacToeBoard({
     required this.onClickCell,
-    required this.onQuitConfirmed,
     required this.gameState,
     super.key,
   });
@@ -26,50 +23,34 @@ class TicTacToeBoard extends StatelessWidget {
       crossCoordinates: gameState.crossCoordinates,
     );
 
-    return PopScope(
-      canPop: false,
-      onPopInvoked: (didPop){
-        if (didPop){
-          return;
-        }
-        showDialog(
-          context: context, 
-          builder: (context) => const QuitGameConfirmDialog()
-        ).then((isQuitConfirmed){
-          if (isQuitConfirmed == true){
-            onQuitConfirmed();
-          }
-        });
-      },
-      child: Table(
-        border: TableBorder.all(
-          width: 2
-        ),
-        defaultColumnWidth: FixedColumnWidth(cellSize),
-        children: [
-          for (int row = 0 ; row < 3 ; row++)
-            TableRow(
-              children: [
-                for (int col = 0 ; col < 3 ; col++)
-                  TableCell(
-                    child: GestureDetector(
-                      onTap: (){
-                        onClickCell(row: row, col: col);
-                      },
-                      child: SizedBox(
-                        height: cellSize,
-                        child: Icon(
-                          _findIconBasedOnCellState(cellsState[row][col]),
-                          color: _findColorBasedOnCellState(cellsState[row][col]),
-                          size: 72,
-                        ),
-                      ),
-                    )
-                  )
-              ]
-            )
-        ],
+    return Table(
+      border: TableBorder.all(
+        width: 2
       ),
+      defaultColumnWidth: FixedColumnWidth(cellSize),
+      children: [
+        for (int row = 0 ; row < 3 ; row++)
+          TableRow(
+            children: [
+              for (int col = 0 ; col < 3 ; col++)
+                TableCell(
+                  child: GestureDetector(
+                    onTap: (){
+                      onClickCell(row: row, col: col);
+                    },
+                    child: SizedBox(
+                      height: cellSize,
+                      child: Icon(
+                        _findIconBasedOnCellState(cellsState[row][col]),
+                        color: _findColorBasedOnCellState(cellsState[row][col]),
+                        size: 72,
+                      ),
+                    ),
+                  )
+                )
+            ]
+          )
+      ],
     );
   }
 
