@@ -31,3 +31,14 @@ Map<String, dynamic> _$$ConfirmEndGameImplToJson(
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
+
+_$ClientQuitGameImpl _$$ClientQuitGameImplFromJson(Map<String, dynamic> json) =>
+    _$ClientQuitGameImpl(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ClientQuitGameImplToJson(
+        _$ClientQuitGameImpl instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };

@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     on(_handleDataFromServer);
     on(_handleErrorFromServer);
     on(_doneShowEndGameDialog);
+    on(_quitGame);
 
     add(const TicTacToeClientEvent.connectToServer());
   }
@@ -59,6 +61,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
         return;
       }
 
+
       var newState = state.copyWith(gameState: newGameState);
       if (newGameState.endGameStatus != null){
         newState = newState.copyWith(endGameDialogStatus: EndGameDialogStatus.mustShow);
@@ -89,6 +92,14 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     }
   }
 
+  void _quitGame(
+    QuitGame event,
+    Emitter<TicTacToeClientState> emit,
+  ){
+    final quitGameJsonString = jsonEncode(const ClientCommandModel.clientQuitGame().toJson());
+    _wsChannelToServer?.sendData(quitGameJsonString);
+  }
+
   @override
   Future<void> close() async {
     await _wsChannelToServer?.dispose();
@@ -104,6 +115,7 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
   const factory TicTacToeClientEvent.handleDataFromServer(dynamic data) = HandleDataFromServer;
   const factory TicTacToeClientEvent.handleErrorFromServer(Object error) = HandleErrorFromServer;
   const factory TicTacToeClientEvent.doneShowEndGameDialog() = DoneShowEndGameDialog;
+  const factory TicTacToeClientEvent.quitGame() = QuitGame;
 }
 
 @Freezed()

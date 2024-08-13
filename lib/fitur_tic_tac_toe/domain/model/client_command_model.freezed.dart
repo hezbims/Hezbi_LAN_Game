@@ -20,6 +20,8 @@ ClientCommandModel _$ClientCommandModelFromJson(Map<String, dynamic> json) {
       return MarkCoordinate.fromJson(json);
     case 'confirmEndGame':
       return ConfirmEndGame.fromJson(json);
+    case 'clientQuitGame':
+      return ClientQuitGame.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'ClientCommandModel',
@@ -33,18 +35,21 @@ mixin _$ClientCommandModel {
   TResult when<TResult extends Object?>({
     required TResult Function(int row, int col) markCoordinate,
     required TResult Function() confirmEndGame,
+    required TResult Function() clientQuitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int row, int col)? markCoordinate,
     TResult? Function()? confirmEndGame,
+    TResult? Function()? clientQuitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int row, int col)? markCoordinate,
     TResult Function()? confirmEndGame,
+    TResult Function()? clientQuitGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,18 +57,21 @@ mixin _$ClientCommandModel {
   TResult map<TResult extends Object?>({
     required TResult Function(MarkCoordinate value) markCoordinate,
     required TResult Function(ConfirmEndGame value) confirmEndGame,
+    required TResult Function(ClientQuitGame value) clientQuitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarkCoordinate value)? markCoordinate,
     TResult? Function(ConfirmEndGame value)? confirmEndGame,
+    TResult? Function(ClientQuitGame value)? clientQuitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MarkCoordinate value)? markCoordinate,
     TResult Function(ConfirmEndGame value)? confirmEndGame,
+    TResult Function(ClientQuitGame value)? clientQuitGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -172,6 +180,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult when<TResult extends Object?>({
     required TResult Function(int row, int col) markCoordinate,
     required TResult Function() confirmEndGame,
+    required TResult Function() clientQuitGame,
   }) {
     return markCoordinate(row, col);
   }
@@ -181,6 +190,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int row, int col)? markCoordinate,
     TResult? Function()? confirmEndGame,
+    TResult? Function()? clientQuitGame,
   }) {
     return markCoordinate?.call(row, col);
   }
@@ -190,6 +200,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int row, int col)? markCoordinate,
     TResult Function()? confirmEndGame,
+    TResult Function()? clientQuitGame,
     required TResult orElse(),
   }) {
     if (markCoordinate != null) {
@@ -203,6 +214,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult map<TResult extends Object?>({
     required TResult Function(MarkCoordinate value) markCoordinate,
     required TResult Function(ConfirmEndGame value) confirmEndGame,
+    required TResult Function(ClientQuitGame value) clientQuitGame,
   }) {
     return markCoordinate(this);
   }
@@ -212,6 +224,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarkCoordinate value)? markCoordinate,
     TResult? Function(ConfirmEndGame value)? confirmEndGame,
+    TResult? Function(ClientQuitGame value)? clientQuitGame,
   }) {
     return markCoordinate?.call(this);
   }
@@ -221,6 +234,7 @@ class _$MarkCoordinateImpl implements MarkCoordinate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MarkCoordinate value)? markCoordinate,
     TResult Function(ConfirmEndGame value)? confirmEndGame,
+    TResult Function(ClientQuitGame value)? clientQuitGame,
     required TResult orElse(),
   }) {
     if (markCoordinate != null) {
@@ -299,6 +313,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult when<TResult extends Object?>({
     required TResult Function(int row, int col) markCoordinate,
     required TResult Function() confirmEndGame,
+    required TResult Function() clientQuitGame,
   }) {
     return confirmEndGame();
   }
@@ -308,6 +323,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int row, int col)? markCoordinate,
     TResult? Function()? confirmEndGame,
+    TResult? Function()? clientQuitGame,
   }) {
     return confirmEndGame?.call();
   }
@@ -317,6 +333,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int row, int col)? markCoordinate,
     TResult Function()? confirmEndGame,
+    TResult Function()? clientQuitGame,
     required TResult orElse(),
   }) {
     if (confirmEndGame != null) {
@@ -330,6 +347,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult map<TResult extends Object?>({
     required TResult Function(MarkCoordinate value) markCoordinate,
     required TResult Function(ConfirmEndGame value) confirmEndGame,
+    required TResult Function(ClientQuitGame value) clientQuitGame,
   }) {
     return confirmEndGame(this);
   }
@@ -339,6 +357,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MarkCoordinate value)? markCoordinate,
     TResult? Function(ConfirmEndGame value)? confirmEndGame,
+    TResult? Function(ClientQuitGame value)? clientQuitGame,
   }) {
     return confirmEndGame?.call(this);
   }
@@ -348,6 +367,7 @@ class _$ConfirmEndGameImpl implements ConfirmEndGame {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MarkCoordinate value)? markCoordinate,
     TResult Function(ConfirmEndGame value)? confirmEndGame,
+    TResult Function(ClientQuitGame value)? clientQuitGame,
     required TResult orElse(),
   }) {
     if (confirmEndGame != null) {
@@ -369,4 +389,130 @@ abstract class ConfirmEndGame implements ClientCommandModel {
 
   factory ConfirmEndGame.fromJson(Map<String, dynamic> json) =
       _$ConfirmEndGameImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$ClientQuitGameImplCopyWith<$Res> {
+  factory _$$ClientQuitGameImplCopyWith(_$ClientQuitGameImpl value,
+          $Res Function(_$ClientQuitGameImpl) then) =
+      __$$ClientQuitGameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClientQuitGameImplCopyWithImpl<$Res>
+    extends _$ClientCommandModelCopyWithImpl<$Res, _$ClientQuitGameImpl>
+    implements _$$ClientQuitGameImplCopyWith<$Res> {
+  __$$ClientQuitGameImplCopyWithImpl(
+      _$ClientQuitGameImpl _value, $Res Function(_$ClientQuitGameImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ClientQuitGameImpl implements ClientQuitGame {
+  const _$ClientQuitGameImpl({final String? $type})
+      : $type = $type ?? 'clientQuitGame';
+
+  factory _$ClientQuitGameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClientQuitGameImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'ClientCommandModel.clientQuitGame()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClientQuitGameImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int row, int col) markCoordinate,
+    required TResult Function() confirmEndGame,
+    required TResult Function() clientQuitGame,
+  }) {
+    return clientQuitGame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int row, int col)? markCoordinate,
+    TResult? Function()? confirmEndGame,
+    TResult? Function()? clientQuitGame,
+  }) {
+    return clientQuitGame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int row, int col)? markCoordinate,
+    TResult Function()? confirmEndGame,
+    TResult Function()? clientQuitGame,
+    required TResult orElse(),
+  }) {
+    if (clientQuitGame != null) {
+      return clientQuitGame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MarkCoordinate value) markCoordinate,
+    required TResult Function(ConfirmEndGame value) confirmEndGame,
+    required TResult Function(ClientQuitGame value) clientQuitGame,
+  }) {
+    return clientQuitGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MarkCoordinate value)? markCoordinate,
+    TResult? Function(ConfirmEndGame value)? confirmEndGame,
+    TResult? Function(ClientQuitGame value)? clientQuitGame,
+  }) {
+    return clientQuitGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MarkCoordinate value)? markCoordinate,
+    TResult Function(ConfirmEndGame value)? confirmEndGame,
+    TResult Function(ClientQuitGame value)? clientQuitGame,
+    required TResult orElse(),
+  }) {
+    if (clientQuitGame != null) {
+      return clientQuitGame(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ClientQuitGameImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ClientQuitGame implements ClientCommandModel {
+  const factory ClientQuitGame() = _$ClientQuitGameImpl;
+
+  factory ClientQuitGame.fromJson(Map<String, dynamic> json) =
+      _$ClientQuitGameImpl.fromJson;
 }

@@ -7,6 +7,7 @@ part 'client_command_model.g.dart';
 sealed class ClientCommandModel with _$ClientCommandModel {
   const factory ClientCommandModel.markCoordinate({required int row, required int col}) = MarkCoordinate;
   const factory ClientCommandModel.confirmEndGame() = ConfirmEndGame;
+  const factory ClientCommandModel.clientQuitGame() = ClientQuitGame;
 
   factory ClientCommandModel.fromJson(Map<String, dynamic> json) => _$ClientCommandModelFromJson(json);
 }

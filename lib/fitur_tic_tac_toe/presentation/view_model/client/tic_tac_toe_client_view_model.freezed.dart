@@ -23,6 +23,7 @@ mixin _$TicTacToeClientEvent {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$TicTacToeClientEvent {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +76,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +144,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) {
     return connectToServer();
   }
@@ -150,6 +157,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) {
     return connectToServer?.call();
   }
@@ -162,6 +170,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -180,6 +189,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) {
     return connectToServer(this);
   }
@@ -192,6 +202,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) {
     return connectToServer?.call(this);
   }
@@ -204,6 +215,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -294,6 +306,7 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) {
     return clickTile(row, col);
   }
@@ -306,6 +319,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) {
     return clickTile?.call(row, col);
   }
@@ -318,6 +332,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -336,6 +351,7 @@ class _$ClickTileImpl implements ClickTile {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) {
     return clickTile(this);
   }
@@ -348,6 +364,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) {
     return clickTile?.call(this);
   }
@@ -360,6 +377,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -452,6 +470,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) {
     return handleDataFromServer(data);
   }
@@ -464,6 +483,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) {
     return handleDataFromServer?.call(data);
   }
@@ -476,6 +496,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -494,6 +515,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) {
     return handleDataFromServer(this);
   }
@@ -506,6 +528,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) {
     return handleDataFromServer?.call(this);
   }
@@ -518,6 +541,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -607,6 +631,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) {
     return handleErrorFromServer(error);
   }
@@ -619,6 +644,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) {
     return handleErrorFromServer?.call(error);
   }
@@ -631,6 +657,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -649,6 +676,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) {
     return handleErrorFromServer(this);
   }
@@ -661,6 +689,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) {
     return handleErrorFromServer?.call(this);
   }
@@ -673,6 +702,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -738,6 +768,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function(dynamic data) handleDataFromServer,
     required TResult Function(Object error) handleErrorFromServer,
     required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
   }) {
     return doneShowEndGameDialog();
   }
@@ -750,6 +781,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function(dynamic data)? handleDataFromServer,
     TResult? Function(Object error)? handleErrorFromServer,
     TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
   }) {
     return doneShowEndGameDialog?.call();
   }
@@ -762,6 +794,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function(dynamic data)? handleDataFromServer,
     TResult Function(Object error)? handleErrorFromServer,
     TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -780,6 +813,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
         handleErrorFromServer,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
   }) {
     return doneShowEndGameDialog(this);
   }
@@ -792,6 +826,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function(HandleDataFromServer value)? handleDataFromServer,
     TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
   }) {
     return doneShowEndGameDialog?.call(this);
   }
@@ -804,6 +839,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function(HandleDataFromServer value)? handleDataFromServer,
     TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -815,6 +851,134 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
 
 abstract class DoneShowEndGameDialog implements TicTacToeClientEvent {
   const factory DoneShowEndGameDialog() = _$DoneShowEndGameDialogImpl;
+}
+
+/// @nodoc
+abstract class _$$QuitGameImplCopyWith<$Res> {
+  factory _$$QuitGameImplCopyWith(
+          _$QuitGameImpl value, $Res Function(_$QuitGameImpl) then) =
+      __$$QuitGameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$QuitGameImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res, _$QuitGameImpl>
+    implements _$$QuitGameImplCopyWith<$Res> {
+  __$$QuitGameImplCopyWithImpl(
+      _$QuitGameImpl _value, $Res Function(_$QuitGameImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$QuitGameImpl implements QuitGame {
+  const _$QuitGameImpl();
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.quitGame()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$QuitGameImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
+  }) {
+    return quitGame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
+  }) {
+    return quitGame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
+    required TResult orElse(),
+  }) {
+    if (quitGame != null) {
+      return quitGame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
+  }) {
+    return quitGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
+  }) {
+    return quitGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
+    required TResult orElse(),
+  }) {
+    if (quitGame != null) {
+      return quitGame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class QuitGame implements TicTacToeClientEvent {
+  const factory QuitGame() = _$QuitGameImpl;
 }
 
 /// @nodoc

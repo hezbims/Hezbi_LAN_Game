@@ -26,6 +26,13 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
             final endGameDialogstatus = state.endGameDialogStatus;
             if (endGameDialogstatus != EndGameDialogStatus.notShown){
               if (endGameDialogstatus == EndGameDialogStatus.mustShow){
+                // Kalau ternyata client telah mengonfirmasi keluar halaman,
+                // langsung keluar saja tanpa perlu keluarin end game dialog
+                if (state.gameState?.endGameStatus == TicTacToeEndGameStatus.clientQuitGame){
+                  Navigator.of(context).pop();
+                  return;
+                }
+
                 context.read<TicTacToeClientViewModel>().add(
                     const TicTacToeClientEvent.doneShowEndGameDialog()
                 );
@@ -56,6 +63,7 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
                   Navigator.of(context).pop();
                   return;
                 }
+                viewModel.add(const TicTacToeClientEvent.quitGame());
               },
               body: Center(
                 child: ResponseLoader(

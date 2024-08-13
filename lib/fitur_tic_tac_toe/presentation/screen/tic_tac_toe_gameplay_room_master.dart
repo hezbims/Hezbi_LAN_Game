@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_board.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_scaffold.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_view_model.dart';
 
 class TicTacToeGameplayRoomMaster extends StatelessWidget {
@@ -19,6 +22,27 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
           final viewModel = context.read<RoomMasterTicTacToeViewModel>();
           viewModel.add(const RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer());
           Navigator.of(context).pop();
+          return;
+        }
+        if (state.endGameDialogStatus != EndGameDialogStatus.notShown){
+          if (state.endGameDialogStatus == EndGameDialogStatus.mustShow){
+            final viewModel = context.read<RoomMasterTicTacToeViewModel>();
+            viewModel.add(const RoomMasterTicTacToeEvent.doneShowEndGameDialog());
+            showDialog(
+              context: context,
+              builder: (context) =>
+                  EndGameDialog(
+                    endGameStatus: state.gameState.endGameStatus ??
+                      TicTacToeEndGameStatus.disconnected,
+                    isClient: false,
+                  ),
+            ).then((isQuitToMainMenuConfirmed){
+              if (isQuitToMainMenuConfirmed == true){
+                Navigator.of(context).pop();
+              }
+            });
+          }
+          return;
         }
       },
       builder: (context, state){

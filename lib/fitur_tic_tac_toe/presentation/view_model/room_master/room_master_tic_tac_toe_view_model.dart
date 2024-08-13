@@ -25,8 +25,10 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_doneHandlingPopAfterClosingWsServer);
     on(_quitGame);
     on(_updateRoomMasterAndClientGameState);
+    on(_updateOnlyRoomMasterState);
     on(_showEndGameDialog);
     on(_doneShowEndGameDialog);
+    on(_updateBoardSafely);
   }
 
 
@@ -118,6 +120,10 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       debugPrint('qqq salah kirim tipe data dari client : ${data.runtimeType}');
       return;
     }
+    if (_isGameEnded){
+      return;
+    }
+
     final jsonData = jsonDecode(data);
     final command = ClientCommandModel.fromJson(jsonData);
     switch(command){
@@ -126,10 +132,23 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       case ConfirmEndGame():
         if (state.gameState.endGameStatus == TicTacToeEndGameStatus.roomMasterQuitGame) {
           add(const RoomMasterTicTacToeEvent.closeWsServer());
+          break;
         }
+        add(RoomMasterTicTacToeEvent.updateOnlyRoomMasterState(
+          state.copyWith(endGameDialogStatus: EndGameDialogStatus.mustShow))
+        );
         break;
+      case ClientQuitGame():
+        final newState = state.copyWith.gameState(endGameStatus: TicTacToeEndGameStatus.clientQuitGame);
+        add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(newState));
+        break;
+
     }
   }
+
+  bool get _endGameDialogIsShown => state.endGameDialogStatus != EndGameDialogStatus.notShown;
+  bool get _serverClosed => _wsClientHandler == null;
+  bool get _isGameEnded => _endGameDialogIsShown || _serverClosed;
 
   void _showEndGameDialog(
     ShowEndGameDialog event,
@@ -143,6 +162,26 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     Emitter<RoomMasterTicTacToeState> emit,
   ){
     emit(state.copyWith(endGameDialogStatus: EndGameDialogStatus.alreadyShown));
+  }
+
+  void _updateOnlyRoomMasterState(
+    UpdateOnlyRoomMasterState event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(event.newState);
+  }
+
+  void _updateBoardSafely(
+    UpdateBoardSafely event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    // Kalau update terjadi di user yang bukan gilirannya
+    if (event.isUpdateFromClient == state.gameState.isRoomMasterTurn){
+      return;
+    }
+    if (state.gameState.endGameStatus != null){
+      return;
+    }
   }
 
   void _updateRoomMasterAndClientGameState(
@@ -169,8 +208,16 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
   const factory RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(
     RoomMasterTicTacToeState newState,
   ) = UpdateRoomMasterAndClientGameState;
+  const factory RoomMasterTicTacToeEvent.updateOnlyRoomMasterState(
+      RoomMasterTicTacToeState newState,
+  ) = UpdateOnlyRoomMasterState;
   const factory RoomMasterTicTacToeEvent.showEndGameDialog() = ShowEndGameDialog;
   const factory RoomMasterTicTacToeEvent.doneShowEndGameDialog() = DoneShowEndGameDialog;
+  const factory RoomMasterTicTacToeEvent.updateBoardSafely({
+    required int row,
+    required int col,
+    required bool isUpdateFromClient,
+  }) = UpdateBoardSafely;
 
 }
 
