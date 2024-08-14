@@ -63,6 +63,9 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
               if (state.gameState.endGameStatus != null){
                 return;
               }
+              viewModel.add(RoomMasterTicTacToeEvent.markBoardSafely(
+                  row: row, col: col, isUpdateFromClient: false
+              ));
             },
           )),
         );

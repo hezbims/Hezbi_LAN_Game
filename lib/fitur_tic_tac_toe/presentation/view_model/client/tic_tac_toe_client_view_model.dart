@@ -1,6 +1,5 @@
 
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +26,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     on(_handleErrorFromServer);
     on(_doneShowEndGameDialog);
     on(_quitGame);
+    on(_markBoard);
 
     add(const TicTacToeClientEvent.connectToServer());
   }
@@ -92,6 +92,16 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     }
   }
 
+  void _markBoard(
+    _MarkBoard event,
+    Emitter<TicTacToeClientState> emit,
+  ){
+    final commandModelJsonString = jsonEncode(
+      ClientCommandModel.markCoordinate(row: event.row, col: event.col).toJson()
+    );
+    _wsChannelToServer?.sendData(commandModelJsonString);
+  }
+
   void _quitGame(
     QuitGame event,
     Emitter<TicTacToeClientState> emit,
@@ -116,6 +126,9 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
   const factory TicTacToeClientEvent.handleErrorFromServer(Object error) = HandleErrorFromServer;
   const factory TicTacToeClientEvent.doneShowEndGameDialog() = DoneShowEndGameDialog;
   const factory TicTacToeClientEvent.quitGame() = QuitGame;
+  const factory TicTacToeClientEvent.markBoard({
+    required int row, required int col
+  }) = _MarkBoard;
 }
 
 @Freezed()

@@ -9,6 +9,7 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_ws_server_serv
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_model.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/player_mark_the_board_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
 
 part 'room_master_tic_tac_toe_view_model.freezed.dart';
@@ -16,6 +17,7 @@ part 'room_master_tic_tac_toe_view_model.freezed.dart';
 class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> {
   final wsService = TicTacToeWsServerService();
   IMyWsConnectionHandler? _wsClientHandler;
+  final _playerMarkTheBoard = PlayerMarkTheBoardUseCase();
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
     on(_prepareWebSocketServer);
@@ -28,7 +30,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_updateOnlyRoomMasterState);
     on(_showEndGameDialog);
     on(_doneShowEndGameDialog);
-    on(_updateBoardSafely);
+    on(_markBoardSafely);
   }
 
 
@@ -128,6 +130,11 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     final command = ClientCommandModel.fromJson(jsonData);
     switch(command){
       case MarkCoordinate():
+        add(RoomMasterTicTacToeEvent.markBoardSafely(
+          row: command.row,
+          col: command.col,
+          isUpdateFromClient: true,
+        ));
         break;
       case ConfirmEndGame():
         if (state.gameState.endGameStatus == TicTacToeEndGameStatus.roomMasterQuitGame) {
@@ -171,17 +178,28 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     emit(event.newState);
   }
 
-  void _updateBoardSafely(
-    UpdateBoardSafely event,
+  void _markBoardSafely(
+    MarkBoardSafely event,
     Emitter<RoomMasterTicTacToeState> emit,
   ){
-    // Kalau update terjadi di user yang bukan gilirannya
-    if (event.isUpdateFromClient == state.gameState.isRoomMasterTurn){
-      return;
-    }
+    // kalau game sudah selesai
     if (state.gameState.endGameStatus != null){
       return;
     }
+    final markResponse = _playerMarkTheBoard(
+      colMarked: event.col,
+      rowMarked: event.row,
+      curGameState: state.gameState,
+      isClientAction: event.isUpdateFromClient,
+    );
+    if (markResponse is Error){
+      return;
+    }
+
+    final nextGameState = (markResponse as Succeed<TicTacToeGameState>).data;
+    add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(
+      state.copyWith(gameState: nextGameState))
+    );
   }
 
   void _updateRoomMasterAndClientGameState(
@@ -213,11 +231,11 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
   ) = UpdateOnlyRoomMasterState;
   const factory RoomMasterTicTacToeEvent.showEndGameDialog() = ShowEndGameDialog;
   const factory RoomMasterTicTacToeEvent.doneShowEndGameDialog() = DoneShowEndGameDialog;
-  const factory RoomMasterTicTacToeEvent.updateBoardSafely({
+  const factory RoomMasterTicTacToeEvent.markBoardSafely({
     required int row,
     required int col,
     required bool isUpdateFromClient,
-  }) = UpdateBoardSafely;
+  }) = MarkBoardSafely;
 
 }
 

@@ -31,7 +31,7 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,7 +49,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,7 +67,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -89,7 +89,7 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,7 +108,7 @@ mixin _$RoomMasterTicTacToeEvent {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -127,7 +127,7 @@ mixin _$RoomMasterTicTacToeEvent {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -207,7 +207,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return prepareWebSocketServer();
   }
@@ -228,7 +228,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return prepareWebSocketServer?.call();
   }
@@ -249,7 +249,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -277,7 +277,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return prepareWebSocketServer(this);
   }
@@ -299,7 +299,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return prepareWebSocketServer?.call(this);
   }
@@ -321,7 +321,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -386,7 +386,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return closeWsServer();
   }
@@ -407,7 +407,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return closeWsServer?.call();
   }
@@ -428,7 +428,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -456,7 +456,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return closeWsServer(this);
   }
@@ -478,7 +478,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return closeWsServer?.call(this);
   }
@@ -500,7 +500,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -565,7 +565,7 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return quitGame();
   }
@@ -586,7 +586,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return quitGame?.call();
   }
@@ -607,7 +607,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -635,7 +635,7 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return quitGame(this);
   }
@@ -657,7 +657,7 @@ class _$QuitGameImpl implements QuitGame {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return quitGame?.call(this);
   }
@@ -679,7 +679,7 @@ class _$QuitGameImpl implements QuitGame {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -744,7 +744,7 @@ class _$NewConnectionImpl implements NewConnection {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return newConnection();
   }
@@ -765,7 +765,7 @@ class _$NewConnectionImpl implements NewConnection {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return newConnection?.call();
   }
@@ -786,7 +786,7 @@ class _$NewConnectionImpl implements NewConnection {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (newConnection != null) {
@@ -814,7 +814,7 @@ class _$NewConnectionImpl implements NewConnection {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return newConnection(this);
   }
@@ -836,7 +836,7 @@ class _$NewConnectionImpl implements NewConnection {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return newConnection?.call(this);
   }
@@ -858,7 +858,7 @@ class _$NewConnectionImpl implements NewConnection {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (newConnection != null) {
@@ -927,7 +927,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneHandlingNewConnection();
   }
@@ -948,7 +948,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneHandlingNewConnection?.call();
   }
@@ -969,7 +969,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -997,7 +997,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return doneHandlingNewConnection(this);
   }
@@ -1019,7 +1019,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return doneHandlingNewConnection?.call(this);
   }
@@ -1041,7 +1041,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -1111,7 +1111,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneHandlingPopAfterClosingWsServer();
   }
@@ -1132,7 +1132,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneHandlingPopAfterClosingWsServer?.call();
   }
@@ -1153,7 +1153,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneHandlingPopAfterClosingWsServer != null) {
@@ -1181,7 +1181,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return doneHandlingPopAfterClosingWsServer(this);
   }
@@ -1203,7 +1203,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return doneHandlingPopAfterClosingWsServer?.call(this);
   }
@@ -1225,7 +1225,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneHandlingPopAfterClosingWsServer != null) {
@@ -1335,7 +1335,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return updateRoomMasterAndClientGameState(newState);
   }
@@ -1356,7 +1356,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return updateRoomMasterAndClientGameState?.call(newState);
   }
@@ -1377,7 +1377,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (updateRoomMasterAndClientGameState != null) {
@@ -1405,7 +1405,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return updateRoomMasterAndClientGameState(this);
   }
@@ -1427,7 +1427,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return updateRoomMasterAndClientGameState?.call(this);
   }
@@ -1449,7 +1449,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (updateRoomMasterAndClientGameState != null) {
@@ -1564,7 +1564,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return updateOnlyRoomMasterState(newState);
   }
@@ -1585,7 +1585,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return updateOnlyRoomMasterState?.call(newState);
   }
@@ -1606,7 +1606,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (updateOnlyRoomMasterState != null) {
@@ -1634,7 +1634,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return updateOnlyRoomMasterState(this);
   }
@@ -1656,7 +1656,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return updateOnlyRoomMasterState?.call(this);
   }
@@ -1678,7 +1678,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (updateOnlyRoomMasterState != null) {
@@ -1751,7 +1751,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return showEndGameDialog();
   }
@@ -1772,7 +1772,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return showEndGameDialog?.call();
   }
@@ -1793,7 +1793,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (showEndGameDialog != null) {
@@ -1821,7 +1821,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return showEndGameDialog(this);
   }
@@ -1843,7 +1843,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return showEndGameDialog?.call(this);
   }
@@ -1865,7 +1865,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (showEndGameDialog != null) {
@@ -1933,7 +1933,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneShowEndGameDialog();
   }
@@ -1954,7 +1954,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
     return doneShowEndGameDialog?.call();
   }
@@ -1975,7 +1975,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -2003,7 +2003,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
     return doneShowEndGameDialog(this);
   }
@@ -2025,7 +2025,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
     return doneShowEndGameDialog?.call(this);
   }
@@ -2047,7 +2047,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -2062,21 +2062,20 @@ abstract class DoneShowEndGameDialog implements RoomMasterTicTacToeEvent {
 }
 
 /// @nodoc
-abstract class _$$UpdateBoardSafelyImplCopyWith<$Res> {
-  factory _$$UpdateBoardSafelyImplCopyWith(_$UpdateBoardSafelyImpl value,
-          $Res Function(_$UpdateBoardSafelyImpl) then) =
-      __$$UpdateBoardSafelyImplCopyWithImpl<$Res>;
+abstract class _$$MarkBoardSafelyImplCopyWith<$Res> {
+  factory _$$MarkBoardSafelyImplCopyWith(_$MarkBoardSafelyImpl value,
+          $Res Function(_$MarkBoardSafelyImpl) then) =
+      __$$MarkBoardSafelyImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int row, int col, bool isUpdateFromClient});
 }
 
 /// @nodoc
-class __$$UpdateBoardSafelyImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$UpdateBoardSafelyImpl>
-    implements _$$UpdateBoardSafelyImplCopyWith<$Res> {
-  __$$UpdateBoardSafelyImplCopyWithImpl(_$UpdateBoardSafelyImpl _value,
-      $Res Function(_$UpdateBoardSafelyImpl) _then)
+class __$$MarkBoardSafelyImplCopyWithImpl<$Res>
+    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res, _$MarkBoardSafelyImpl>
+    implements _$$MarkBoardSafelyImplCopyWith<$Res> {
+  __$$MarkBoardSafelyImplCopyWithImpl(
+      _$MarkBoardSafelyImpl _value, $Res Function(_$MarkBoardSafelyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2086,7 +2085,7 @@ class __$$UpdateBoardSafelyImplCopyWithImpl<$Res>
     Object? col = null,
     Object? isUpdateFromClient = null,
   }) {
-    return _then(_$UpdateBoardSafelyImpl(
+    return _then(_$MarkBoardSafelyImpl(
       row: null == row
           ? _value.row
           : row // ignore: cast_nullable_to_non_nullable
@@ -2105,8 +2104,8 @@ class __$$UpdateBoardSafelyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
-  const _$UpdateBoardSafelyImpl(
+class _$MarkBoardSafelyImpl implements MarkBoardSafely {
+  const _$MarkBoardSafelyImpl(
       {required this.row, required this.col, required this.isUpdateFromClient});
 
   @override
@@ -2118,14 +2117,14 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
 
   @override
   String toString() {
-    return 'RoomMasterTicTacToeEvent.updateBoardSafely(row: $row, col: $col, isUpdateFromClient: $isUpdateFromClient)';
+    return 'RoomMasterTicTacToeEvent.markBoardSafely(row: $row, col: $col, isUpdateFromClient: $isUpdateFromClient)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateBoardSafelyImpl &&
+            other is _$MarkBoardSafelyImpl &&
             (identical(other.row, row) || other.row == row) &&
             (identical(other.col, col) || other.col == col) &&
             (identical(other.isUpdateFromClient, isUpdateFromClient) ||
@@ -2138,8 +2137,8 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateBoardSafelyImplCopyWith<_$UpdateBoardSafelyImpl> get copyWith =>
-      __$$UpdateBoardSafelyImplCopyWithImpl<_$UpdateBoardSafelyImpl>(
+  _$$MarkBoardSafelyImplCopyWith<_$MarkBoardSafelyImpl> get copyWith =>
+      __$$MarkBoardSafelyImplCopyWithImpl<_$MarkBoardSafelyImpl>(
           this, _$identity);
 
   @override
@@ -2158,9 +2157,9 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
     required TResult Function() showEndGameDialog,
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
-        updateBoardSafely,
+        markBoardSafely,
   }) {
-    return updateBoardSafely(row, col, isUpdateFromClient);
+    return markBoardSafely(row, col, isUpdateFromClient);
   }
 
   @override
@@ -2179,9 +2178,9 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
     TResult? Function()? showEndGameDialog,
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
   }) {
-    return updateBoardSafely?.call(row, col, isUpdateFromClient);
+    return markBoardSafely?.call(row, col, isUpdateFromClient);
   }
 
   @override
@@ -2200,11 +2199,11 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
     TResult Function()? showEndGameDialog,
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
-        updateBoardSafely,
+        markBoardSafely,
     required TResult orElse(),
   }) {
-    if (updateBoardSafely != null) {
-      return updateBoardSafely(row, col, isUpdateFromClient);
+    if (markBoardSafely != null) {
+      return markBoardSafely(row, col, isUpdateFromClient);
     }
     return orElse();
   }
@@ -2228,9 +2227,9 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
     required TResult Function(ShowEndGameDialog value) showEndGameDialog,
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
-    required TResult Function(UpdateBoardSafely value) updateBoardSafely,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
   }) {
-    return updateBoardSafely(this);
+    return markBoardSafely(this);
   }
 
   @override
@@ -2250,9 +2249,9 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
         updateOnlyRoomMasterState,
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
   }) {
-    return updateBoardSafely?.call(this);
+    return markBoardSafely?.call(this);
   }
 
   @override
@@ -2272,27 +2271,27 @@ class _$UpdateBoardSafelyImpl implements UpdateBoardSafely {
         updateOnlyRoomMasterState,
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(UpdateBoardSafely value)? updateBoardSafely,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
     required TResult orElse(),
   }) {
-    if (updateBoardSafely != null) {
-      return updateBoardSafely(this);
+    if (markBoardSafely != null) {
+      return markBoardSafely(this);
     }
     return orElse();
   }
 }
 
-abstract class UpdateBoardSafely implements RoomMasterTicTacToeEvent {
-  const factory UpdateBoardSafely(
+abstract class MarkBoardSafely implements RoomMasterTicTacToeEvent {
+  const factory MarkBoardSafely(
       {required final int row,
       required final int col,
-      required final bool isUpdateFromClient}) = _$UpdateBoardSafelyImpl;
+      required final bool isUpdateFromClient}) = _$MarkBoardSafelyImpl;
 
   int get row;
   int get col;
   bool get isUpdateFromClient;
   @JsonKey(ignore: true)
-  _$$UpdateBoardSafelyImplCopyWith<_$UpdateBoardSafelyImpl> get copyWith =>
+  _$$MarkBoardSafelyImplCopyWith<_$MarkBoardSafelyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

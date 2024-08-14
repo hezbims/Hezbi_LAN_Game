@@ -79,6 +79,9 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
                         if (gameState.endGameStatus != null){
                           return;
                         }
+                        viewModel.add(TicTacToeClientEvent.markBoard(
+                          row: row, col: col
+                        ));
                       },
                     );
                   },

@@ -7,6 +7,7 @@ class TicTacToeBoard extends StatelessWidget {
   final void Function({required int row, required int col}) onClickCell;
   final TicTacToeGameState gameState;
 
+
   const TicTacToeBoard({
     required this.onClickCell,
     required this.gameState,
@@ -34,7 +35,7 @@ class TicTacToeBoard extends StatelessWidget {
             children: [
               for (int col = 0 ; col < 3 ; col++)
                 TableCell(
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: (){
                       onClickCell(row: row, col: col);
                     },
@@ -43,7 +44,7 @@ class TicTacToeBoard extends StatelessWidget {
                       child: Icon(
                         _findIconBasedOnCellState(cellsState[row][col]),
                         color: _findColorBasedOnCellState(cellsState[row][col]),
-                        size: 72,
+                        size: cellSize - 36,
                       ),
                     ),
                   )
