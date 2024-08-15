@@ -38,7 +38,7 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
                   ),
             ).then((isQuitToMainMenuConfirmed){
               if (isQuitToMainMenuConfirmed == true){
-                Navigator.of(context).pop();
+                viewModel.add(const RoomMasterTicTacToeEvent.closeWsServer());
               }
             });
           }
@@ -52,12 +52,13 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
           isQuittingGame: state.isQuittingGame,
           onQuitGameConfirmed: (){
             if (state.gameState.endGameStatus != null){
-              Navigator.of(context).pop();
+              viewModel.add(const RoomMasterTicTacToeEvent.closeWsServer());
               return;
             }
             viewModel.add(const RoomMasterTicTacToeEvent.quitGame());
           },
           body: Center(child: TicTacToeBoard(
+            isClientBoard: false,
             gameState: state.gameState,
             onClickCell: ({required int row, required int col}){
               if (state.gameState.endGameStatus != null){

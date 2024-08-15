@@ -77,9 +77,9 @@ class EndGameDialog extends StatelessWidget {
 
     final String desc = switch (_endGameStatus){
       TicTacToeEndGameStatus.clientNormalWin =>
-         _isClient ?  loseNormal : winNormal,
+         _isClient ?  winNormal : loseNormal,
       TicTacToeEndGameStatus.roomMasterNormalWin =>
-         _isClient ? winNormal : loseNormal,
+         _isClient ? loseNormal : winNormal,
       TicTacToeEndGameStatus.clientQuitGame || TicTacToeEndGameStatus.roomMasterQuitGame =>
         opponentQuit,
       TicTacToeEndGameStatus.disconnected =>

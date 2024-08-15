@@ -25,6 +25,7 @@ mixin _$TicTacToeClientEvent {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +37,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +49,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +64,7 @@ mixin _$TicTacToeClientEvent {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +76,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +88,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -152,6 +158,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return connectToServer();
   }
@@ -166,6 +173,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return connectToServer?.call();
   }
@@ -180,6 +188,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -200,6 +209,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return connectToServer(this);
   }
@@ -214,6 +224,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return connectToServer?.call(this);
   }
@@ -228,6 +239,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -320,6 +332,7 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return clickTile(row, col);
   }
@@ -334,6 +347,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return clickTile?.call(row, col);
   }
@@ -348,6 +362,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -368,6 +383,7 @@ class _$ClickTileImpl implements ClickTile {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return clickTile(this);
   }
@@ -382,6 +398,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return clickTile?.call(this);
   }
@@ -396,6 +413,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -490,6 +508,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return handleDataFromServer(data);
   }
@@ -504,6 +523,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return handleDataFromServer?.call(data);
   }
@@ -518,6 +538,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -538,6 +559,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return handleDataFromServer(this);
   }
@@ -552,6 +574,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return handleDataFromServer?.call(this);
   }
@@ -566,6 +589,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -657,6 +681,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return handleErrorFromServer(error);
   }
@@ -671,6 +696,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return handleErrorFromServer?.call(error);
   }
@@ -685,6 +711,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -705,6 +732,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return handleErrorFromServer(this);
   }
@@ -719,6 +747,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return handleErrorFromServer?.call(this);
   }
@@ -733,6 +762,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -800,6 +830,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return doneShowEndGameDialog();
   }
@@ -814,6 +845,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return doneShowEndGameDialog?.call();
   }
@@ -828,6 +860,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -848,6 +881,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return doneShowEndGameDialog(this);
   }
@@ -862,6 +896,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return doneShowEndGameDialog?.call(this);
   }
@@ -876,6 +911,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -934,6 +970,7 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return quitGame();
   }
@@ -948,6 +985,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return quitGame?.call();
   }
@@ -962,6 +1000,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -982,6 +1021,7 @@ class _$QuitGameImpl implements QuitGame {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return quitGame(this);
   }
@@ -996,6 +1036,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return quitGame?.call(this);
   }
@@ -1010,6 +1051,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -1102,6 +1144,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
   }) {
     return markBoard(row, col);
   }
@@ -1116,6 +1159,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
   }) {
     return markBoard?.call(row, col);
   }
@@ -1130,6 +1174,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult Function()? doneShowEndGameDialog,
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
     required TResult orElse(),
   }) {
     if (markBoard != null) {
@@ -1150,6 +1195,7 @@ class _$MarkBoardImpl implements _MarkBoard {
         doneShowEndGameDialog,
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
   }) {
     return markBoard(this);
   }
@@ -1164,6 +1210,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
   }) {
     return markBoard?.call(this);
   }
@@ -1178,6 +1225,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
     required TResult orElse(),
   }) {
     if (markBoard != null) {
@@ -1196,6 +1244,146 @@ abstract class _MarkBoard implements TicTacToeClientEvent {
   @JsonKey(ignore: true)
   _$$MarkBoardImplCopyWith<_$MarkBoardImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ForceQuitImplCopyWith<$Res> {
+  factory _$$ForceQuitImplCopyWith(
+          _$ForceQuitImpl value, $Res Function(_$ForceQuitImpl) then) =
+      __$$ForceQuitImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ForceQuitImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res, _$ForceQuitImpl>
+    implements _$$ForceQuitImplCopyWith<$Res> {
+  __$$ForceQuitImplCopyWithImpl(
+      _$ForceQuitImpl _value, $Res Function(_$ForceQuitImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ForceQuitImpl implements _ForceQuit {
+  const _$ForceQuitImpl();
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.forceQuit()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ForceQuitImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
+    required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
+  }) {
+    return forceQuit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
+    TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
+  }) {
+    return forceQuit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
+    TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
+    required TResult orElse(),
+  }) {
+    if (forceQuit != null) {
+      return forceQuit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
+    required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
+  }) {
+    return forceQuit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
+    TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
+  }) {
+    return forceQuit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
+    TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
+    required TResult orElse(),
+  }) {
+    if (forceQuit != null) {
+      return forceQuit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ForceQuit implements TicTacToeClientEvent {
+  const factory _ForceQuit() = _$ForceQuitImpl;
 }
 
 /// @nodoc

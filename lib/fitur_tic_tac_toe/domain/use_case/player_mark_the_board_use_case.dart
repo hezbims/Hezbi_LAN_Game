@@ -1,7 +1,11 @@
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/get_tic_tac_toe_grid_state_use_case.dart';
 
 class PlayerMarkTheBoardUseCase {
+  final getTicTacToeGridState = const GetTicTacToeGridStateUseCase();
+
   // Room master adalah cross dan client adalah circle
   ResponseWrapper<TicTacToeGameState> call({
     required int rowMarked,
@@ -41,30 +45,11 @@ class PlayerMarkTheBoardUseCase {
     required int col,
     required TicTacToeGameState curGameState,
   }){
-    final ticTacToeGrid = [
-      for (int row = 1 ; row <= 3 ; row++) [
-        for (int col = 1 ; col <= 3 ; col++)
-          _TicTacToeCellState.nothing,
-      ]
-    ];
+    final ticTacToeGrid = getTicTacToeGridState(gameState: curGameState);
 
-    // mark all cross cell
-    for (final crossCoordinate in curGameState.crossCoordinates){
-      ticTacToeGrid[crossCoordinate.row][crossCoordinate.col] = _TicTacToeCellState.hasCross;
-    }
-
-    // mark all cricle cell
-    for (final circleCoordinate in curGameState.circleCoordinates){
-      ticTacToeGrid[circleCoordinate.row][circleCoordinate.col] = _TicTacToeCellState.hasCircle;
-    }
-
-    if (ticTacToeGrid[row][col] != _TicTacToeCellState.nothing){
+    if (ticTacToeGrid[row][col] != TicTacToeCellState.hasNothing){
       return true;
     }
     return false;
   }
-}
-
-enum _TicTacToeCellState {
-  hasCross, hasCircle, nothing
 }

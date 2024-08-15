@@ -7,6 +7,7 @@ import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
 import 'package:network_info_plus/network_info_plus.dart';
+// ignore: depend_on_referenced_packages
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';

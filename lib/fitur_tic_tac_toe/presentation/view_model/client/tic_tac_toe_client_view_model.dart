@@ -1,4 +1,5 @@
 
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     on(_doneShowEndGameDialog);
     on(_quitGame);
     on(_markBoard);
+    on(_forceQuit);
 
     add(const TicTacToeClientEvent.connectToServer());
   }
@@ -102,16 +104,35 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     _wsChannelToServer?.sendData(commandModelJsonString);
   }
 
+  Timer? _quitTimer;
   void _quitGame(
     QuitGame event,
     Emitter<TicTacToeClientState> emit,
   ){
-    final quitGameJsonString = jsonEncode(const ClientCommandModel.clientQuitGame().toJson());
+    final quitGameJsonString = jsonEncode(
+      const ClientCommandModel.clientQuitGame().toJson()
+    );
     _wsChannelToServer?.sendData(quitGameJsonString);
+
+    emit(state.copyWith(isQuittingGame: true));
+    _quitTimer = Timer(const Duration(seconds: 4), (){
+      add(const TicTacToeClientEvent.forceQuit());
+    });
+  }
+
+  void _forceQuit(
+    _ForceQuit event,
+    Emitter<TicTacToeClientState> emit,
+  ){
+    emit(state.copyWith(
+      endGameDialogStatus: EndGameDialogStatus.mustShow,
+      gameState: state.gameState?.copyWith(endGameStatus: TicTacToeEndGameStatus.clientQuitGame),
+    ));
   }
 
   @override
   Future<void> close() async {
+    _quitTimer?.cancel();
     await _wsChannelToServer?.dispose();
     super.close();
   }
@@ -129,6 +150,7 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
   const factory TicTacToeClientEvent.markBoard({
     required int row, required int col
   }) = _MarkBoard;
+  const factory TicTacToeClientEvent.forceQuit() = _ForceQuit;
 }
 
 @Freezed()
