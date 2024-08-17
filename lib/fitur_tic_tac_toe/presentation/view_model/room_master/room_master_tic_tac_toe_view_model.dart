@@ -33,6 +33,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_showEndGameDialog);
     on(_doneShowEndGameDialog);
     on(_markBoardSafely);
+    on(_disconnectedFromClient);
   }
 
 
@@ -82,6 +83,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       ..addOnClientDataListener(
         onData: _handleDataFromClient,
         onError: _handleErrorFromClient,
+        onDone: _handleConnectionDone,
       );
 
     final initialGameState = TicTacToeGameState.init();
@@ -89,7 +91,6 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       hasConnection: true,
       gameState: initialGameState,
     );
-    final initialGameStateJsonString = jsonEncode(initialGameState.toJson());
 
     add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(initialState));
   }
@@ -219,7 +220,25 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   }
 
   void _handleErrorFromClient(Object error){
+    debugPrint('qqq terjadi error pada websocket connection');
+  }
 
+  void _handleConnectionDone(int? closeCode, String? closeReason){
+    add(RoomMasterTicTacToeEvent.disconnectedFromClient(closeCode, closeReason));
+  }
+
+  void _disconnectedFromClient(
+    _DisConnectedFromClient event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    if (state.gameState.endGameStatus != null){
+      return;
+    }
+
+    var nextState = state.copyWith.gameState(endGameStatus: TicTacToeEndGameStatus.disconnected);
+    nextState = nextState.copyWith(endGameDialogStatus: EndGameDialogStatus.mustShow);
+
+    emit(nextState);
   }
 }
 
@@ -243,7 +262,9 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
     required int col,
     required bool isUpdateFromClient,
   }) = MarkBoardSafely;
-
+  const factory RoomMasterTicTacToeEvent.disconnectedFromClient([
+    int? closeCode, String? closeReason,
+  ]) = _DisConnectedFromClient;
 }
 
 @Freezed()

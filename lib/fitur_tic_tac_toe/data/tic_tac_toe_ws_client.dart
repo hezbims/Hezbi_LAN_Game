@@ -16,7 +16,8 @@ class TicTacToeWsClient {
       await wsChannel.ready;
       return ResponseWrapper.succeed(MyWsClientHandler(wsChannel: wsChannel));
     }  catch (e) {
-      return ResponseWrapper.error(message:  'Gagal terhubung ke room master');
+      // TODO : tambahkan error type
+      return ResponseWrapper.error();
     }
   }
 }

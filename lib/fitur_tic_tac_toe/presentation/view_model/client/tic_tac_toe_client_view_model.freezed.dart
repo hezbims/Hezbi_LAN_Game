@@ -26,6 +26,8 @@ mixin _$TicTacToeClientEvent {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,8 @@ mixin _$TicTacToeClientEvent {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,8 @@ mixin _$TicTacToeClientEvent {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +71,8 @@ mixin _$TicTacToeClientEvent {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +85,7 @@ mixin _$TicTacToeClientEvent {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +98,7 @@ mixin _$TicTacToeClientEvent {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +169,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return connectToServer();
   }
@@ -174,6 +186,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return connectToServer?.call();
   }
@@ -189,6 +203,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -210,6 +226,8 @@ class _$ConnectToServerImpl implements ConnectToServer {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return connectToServer(this);
   }
@@ -225,6 +243,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return connectToServer?.call(this);
   }
@@ -240,6 +259,7 @@ class _$ConnectToServerImpl implements ConnectToServer {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (connectToServer != null) {
@@ -333,6 +353,8 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return clickTile(row, col);
   }
@@ -348,6 +370,8 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return clickTile?.call(row, col);
   }
@@ -363,6 +387,8 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -384,6 +410,8 @@ class _$ClickTileImpl implements ClickTile {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return clickTile(this);
   }
@@ -399,6 +427,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return clickTile?.call(this);
   }
@@ -414,6 +443,7 @@ class _$ClickTileImpl implements ClickTile {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (clickTile != null) {
@@ -509,6 +539,8 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return handleDataFromServer(data);
   }
@@ -524,6 +556,8 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return handleDataFromServer?.call(data);
   }
@@ -539,6 +573,8 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -560,6 +596,8 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return handleDataFromServer(this);
   }
@@ -575,6 +613,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return handleDataFromServer?.call(this);
   }
@@ -590,6 +629,7 @@ class _$HandleDataFromServerImpl implements HandleDataFromServer {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (handleDataFromServer != null) {
@@ -682,6 +722,8 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return handleErrorFromServer(error);
   }
@@ -697,6 +739,8 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return handleErrorFromServer?.call(error);
   }
@@ -712,6 +756,8 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -733,6 +779,8 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return handleErrorFromServer(this);
   }
@@ -748,6 +796,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return handleErrorFromServer?.call(this);
   }
@@ -763,6 +812,7 @@ class _$HandleErrorFromServerImpl implements HandleErrorFromServer {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (handleErrorFromServer != null) {
@@ -831,6 +881,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return doneShowEndGameDialog();
   }
@@ -846,6 +898,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return doneShowEndGameDialog?.call();
   }
@@ -861,6 +915,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -882,6 +938,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return doneShowEndGameDialog(this);
   }
@@ -897,6 +955,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return doneShowEndGameDialog?.call(this);
   }
@@ -912,6 +971,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -971,6 +1031,8 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return quitGame();
   }
@@ -986,6 +1048,8 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return quitGame?.call();
   }
@@ -1001,6 +1065,8 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -1022,6 +1088,8 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return quitGame(this);
   }
@@ -1037,6 +1105,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return quitGame?.call(this);
   }
@@ -1052,6 +1121,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -1145,6 +1215,8 @@ class _$MarkBoardImpl implements _MarkBoard {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return markBoard(row, col);
   }
@@ -1160,6 +1232,8 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return markBoard?.call(row, col);
   }
@@ -1175,6 +1249,8 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (markBoard != null) {
@@ -1196,6 +1272,8 @@ class _$MarkBoardImpl implements _MarkBoard {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return markBoard(this);
   }
@@ -1211,6 +1289,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return markBoard?.call(this);
   }
@@ -1226,6 +1305,7 @@ class _$MarkBoardImpl implements _MarkBoard {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (markBoard != null) {
@@ -1292,6 +1372,8 @@ class _$ForceQuitImpl implements _ForceQuit {
     required TResult Function() quitGame,
     required TResult Function(int row, int col) markBoard,
     required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
   }) {
     return forceQuit();
   }
@@ -1307,6 +1389,8 @@ class _$ForceQuitImpl implements _ForceQuit {
     TResult? Function()? quitGame,
     TResult? Function(int row, int col)? markBoard,
     TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
   }) {
     return forceQuit?.call();
   }
@@ -1322,6 +1406,8 @@ class _$ForceQuitImpl implements _ForceQuit {
     TResult Function()? quitGame,
     TResult Function(int row, int col)? markBoard,
     TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (forceQuit != null) {
@@ -1343,6 +1429,8 @@ class _$ForceQuitImpl implements _ForceQuit {
     required TResult Function(QuitGame value) quitGame,
     required TResult Function(_MarkBoard value) markBoard,
     required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
   }) {
     return forceQuit(this);
   }
@@ -1358,6 +1446,7 @@ class _$ForceQuitImpl implements _ForceQuit {
     TResult? Function(QuitGame value)? quitGame,
     TResult? Function(_MarkBoard value)? markBoard,
     TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
   }) {
     return forceQuit?.call(this);
   }
@@ -1373,6 +1462,7 @@ class _$ForceQuitImpl implements _ForceQuit {
     TResult Function(QuitGame value)? quitGame,
     TResult Function(_MarkBoard value)? markBoard,
     TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
     required TResult orElse(),
   }) {
     if (forceQuit != null) {
@@ -1384,6 +1474,204 @@ class _$ForceQuitImpl implements _ForceQuit {
 
 abstract class _ForceQuit implements TicTacToeClientEvent {
   const factory _ForceQuit() = _$ForceQuitImpl;
+}
+
+/// @nodoc
+abstract class _$$DisconnectedFromServerImplCopyWith<$Res> {
+  factory _$$DisconnectedFromServerImplCopyWith(
+          _$DisconnectedFromServerImpl value,
+          $Res Function(_$DisconnectedFromServerImpl) then) =
+      __$$DisconnectedFromServerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? closeCode, String? closeReason});
+}
+
+/// @nodoc
+class __$$DisconnectedFromServerImplCopyWithImpl<$Res>
+    extends _$TicTacToeClientEventCopyWithImpl<$Res,
+        _$DisconnectedFromServerImpl>
+    implements _$$DisconnectedFromServerImplCopyWith<$Res> {
+  __$$DisconnectedFromServerImplCopyWithImpl(
+      _$DisconnectedFromServerImpl _value,
+      $Res Function(_$DisconnectedFromServerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? closeCode = freezed,
+    Object? closeReason = freezed,
+  }) {
+    return _then(_$DisconnectedFromServerImpl(
+      freezed == closeCode
+          ? _value.closeCode
+          : closeCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == closeReason
+          ? _value.closeReason
+          : closeReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DisconnectedFromServerImpl implements _DisconnectedFromServer {
+  const _$DisconnectedFromServerImpl([this.closeCode, this.closeReason]);
+
+  @override
+  final int? closeCode;
+  @override
+  final String? closeReason;
+
+  @override
+  String toString() {
+    return 'TicTacToeClientEvent.disconnectedFromServer(closeCode: $closeCode, closeReason: $closeReason)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DisconnectedFromServerImpl &&
+            (identical(other.closeCode, closeCode) ||
+                other.closeCode == closeCode) &&
+            (identical(other.closeReason, closeReason) ||
+                other.closeReason == closeReason));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, closeCode, closeReason);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DisconnectedFromServerImplCopyWith<_$DisconnectedFromServerImpl>
+      get copyWith => __$$DisconnectedFromServerImplCopyWithImpl<
+          _$DisconnectedFromServerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connectToServer,
+    required TResult Function(int row, int col) clickTile,
+    required TResult Function(dynamic data) handleDataFromServer,
+    required TResult Function(Object error) handleErrorFromServer,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function() quitGame,
+    required TResult Function(int row, int col) markBoard,
+    required TResult Function() forceQuit,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromServer,
+  }) {
+    return disconnectedFromServer(closeCode, closeReason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connectToServer,
+    TResult? Function(int row, int col)? clickTile,
+    TResult? Function(dynamic data)? handleDataFromServer,
+    TResult? Function(Object error)? handleErrorFromServer,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function()? quitGame,
+    TResult? Function(int row, int col)? markBoard,
+    TResult? Function()? forceQuit,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
+  }) {
+    return disconnectedFromServer?.call(closeCode, closeReason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connectToServer,
+    TResult Function(int row, int col)? clickTile,
+    TResult Function(dynamic data)? handleDataFromServer,
+    TResult Function(Object error)? handleErrorFromServer,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function()? quitGame,
+    TResult Function(int row, int col)? markBoard,
+    TResult Function()? forceQuit,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromServer,
+    required TResult orElse(),
+  }) {
+    if (disconnectedFromServer != null) {
+      return disconnectedFromServer(closeCode, closeReason);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConnectToServer value) connectToServer,
+    required TResult Function(ClickTile value) clickTile,
+    required TResult Function(HandleDataFromServer value) handleDataFromServer,
+    required TResult Function(HandleErrorFromServer value)
+        handleErrorFromServer,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+    required TResult Function(QuitGame value) quitGame,
+    required TResult Function(_MarkBoard value) markBoard,
+    required TResult Function(_ForceQuit value) forceQuit,
+    required TResult Function(_DisconnectedFromServer value)
+        disconnectedFromServer,
+  }) {
+    return disconnectedFromServer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ConnectToServer value)? connectToServer,
+    TResult? Function(ClickTile value)? clickTile,
+    TResult? Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult? Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(QuitGame value)? quitGame,
+    TResult? Function(_MarkBoard value)? markBoard,
+    TResult? Function(_ForceQuit value)? forceQuit,
+    TResult? Function(_DisconnectedFromServer value)? disconnectedFromServer,
+  }) {
+    return disconnectedFromServer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConnectToServer value)? connectToServer,
+    TResult Function(ClickTile value)? clickTile,
+    TResult Function(HandleDataFromServer value)? handleDataFromServer,
+    TResult Function(HandleErrorFromServer value)? handleErrorFromServer,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(QuitGame value)? quitGame,
+    TResult Function(_MarkBoard value)? markBoard,
+    TResult Function(_ForceQuit value)? forceQuit,
+    TResult Function(_DisconnectedFromServer value)? disconnectedFromServer,
+    required TResult orElse(),
+  }) {
+    if (disconnectedFromServer != null) {
+      return disconnectedFromServer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DisconnectedFromServer implements TicTacToeClientEvent {
+  const factory _DisconnectedFromServer(
+      [final int? closeCode,
+      final String? closeReason]) = _$DisconnectedFromServerImpl;
+
+  int? get closeCode;
+  String? get closeReason;
+  @JsonKey(ignore: true)
+  _$$DisconnectedFromServerImplCopyWith<_$DisconnectedFromServerImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

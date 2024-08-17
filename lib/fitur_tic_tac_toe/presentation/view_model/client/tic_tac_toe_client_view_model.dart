@@ -29,6 +29,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     on(_quitGame);
     on(_markBoard);
     on(_forceQuit);
+    on(_disconnectedFromServer);
 
     add(const TicTacToeClientEvent.connectToServer());
   }
@@ -37,6 +38,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     ConnectToServer event,
     Emitter<TicTacToeClientState> emit,
   ) async {
+    debugPrint('server address : ${_serverAddress}');
     emit(state.copyWith(connectResponse: ResponseWrapper.loading()));
     final response = await _wsClient.connectWsServer(
       address: _serverAddress,
@@ -46,6 +48,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
           ..addOnClientDataListener(
             onData: (data) => add(TicTacToeClientEvent.handleDataFromServer(data)),
             onError: (error) => add(TicTacToeClientEvent.handleErrorFromServer(error)),
+            onDone: _handleConnectionDone,
           );
     }
     emit(state.copyWith(connectResponse: response));
@@ -94,6 +97,27 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     }
   }
 
+  void _handleConnectionDone(int? closeCode, String? closeReason){
+    add(TicTacToeClientEvent.disconnectedFromServer(closeCode, closeReason,));
+  }
+
+  void _disconnectedFromServer(
+    _DisconnectedFromServer event,
+    Emitter<TicTacToeClientState> emit,
+  ){
+    if (state.gameState?.endGameStatus != null){
+      return;
+    }
+
+    var nextGameState = state.gameState ?? TicTacToeGameState.init();
+    nextGameState = nextGameState.copyWith(endGameStatus: TicTacToeEndGameStatus.disconnected);
+
+    emit(state.copyWith(
+      endGameDialogStatus: EndGameDialogStatus.mustShow,
+      gameState: nextGameState
+    ));
+  }
+
   void _markBoard(
     _MarkBoard event,
     Emitter<TicTacToeClientState> emit,
@@ -124,9 +148,12 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     _ForceQuit event,
     Emitter<TicTacToeClientState> emit,
   ){
+    var nextGameState = state.gameState ?? TicTacToeGameState.init();
+    nextGameState = nextGameState.copyWith(endGameStatus: TicTacToeEndGameStatus.clientQuitGame);
+
     emit(state.copyWith(
       endGameDialogStatus: EndGameDialogStatus.mustShow,
-      gameState: state.gameState?.copyWith(endGameStatus: TicTacToeEndGameStatus.clientQuitGame),
+      gameState: nextGameState,
     ));
   }
 
@@ -151,6 +178,9 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
     required int row, required int col
   }) = _MarkBoard;
   const factory TicTacToeClientEvent.forceQuit() = _ForceQuit;
+  const factory TicTacToeClientEvent.disconnectedFromServer([
+    int? closeCode, String? closeReason
+  ]) = _DisconnectedFromServer;
 }
 
 @Freezed()

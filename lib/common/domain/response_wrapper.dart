@@ -6,5 +6,7 @@ part 'response_wrapper.freezed.dart';
 sealed class ResponseWrapper<T> with _$ResponseWrapper {
   factory ResponseWrapper.succeed(T data) = Succeed;
   factory ResponseWrapper.loading() = Loading;
-  factory ResponseWrapper.error({String? message}) = Error;
+  factory ResponseWrapper.error({ResponseErrorType? errorType}) = Error;
 }
+
+abstract class ResponseErrorType {}

@@ -13,9 +13,16 @@ class MyWsClientHandler implements IMyWsConnectionHandler {
   @override
   void addOnClientDataListener({
     required void Function(dynamic data) onData, 
-    required void Function(Object error) onError
+    required void Function(Object error) onError,
+    required void Function(int? closeCode, String? closeReason) onDone,
   }) {
-    _streamSubscription = _wsChannel.stream.listen(onData, onError: onError,);
+    _streamSubscription = _wsChannel.stream.listen(
+      onData,
+      onError: onError,
+      onDone: (){
+        onDone(_wsChannel.closeCode, _wsChannel.closeReason);
+      }
+    );
   }
 
   @override

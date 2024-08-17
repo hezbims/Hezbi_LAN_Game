@@ -60,24 +60,25 @@ class TicTacToeBoard extends StatelessWidget {
           ],
         ),
 
-        Padding(
-          padding: EdgeInsets.only(top: tableSize + 72),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Sekarang ${_isMyTurn ? 'giliranmu' : 'giliran lawan'} : ',
-                style: const TextStyle(fontSize: 20),
-              ),
+        if (_gameState.endGameStatus != TicTacToeEndGameStatus.disconnected)
+          Padding(
+            padding: EdgeInsets.only(top: tableSize + 72),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Sekarang ${_isMyTurn ? 'giliranmu' : 'giliran lawan'} : ',
+                  style: const TextStyle(fontSize: 20),
+                ),
 
-              Icon(
-                _gameState.isRoomMasterTurn ? _roomMasterIcon : _clientIcon,
-                color: _gameState.isRoomMasterTurn ? Colors.red : Colors.blue,
-              )
-            ],
-          ),
-        )
+                Icon(
+                  _gameState.isRoomMasterTurn ? _roomMasterIcon : _clientIcon,
+                  color: _gameState.isRoomMasterTurn ? Colors.red : Colors.blue,
+                )
+              ],
+            ),
+          )
       ],
     );
   }

@@ -31,6 +31,8 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +50,8 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,8 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +92,8 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -104,6 +112,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +131,7 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -201,6 +211,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return prepareWebSocketServer();
   }
@@ -221,6 +233,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return prepareWebSocketServer?.call();
   }
@@ -241,6 +255,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -268,6 +284,8 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return prepareWebSocketServer(this);
   }
@@ -289,6 +307,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return prepareWebSocketServer?.call(this);
   }
@@ -310,6 +329,7 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (prepareWebSocketServer != null) {
@@ -374,6 +394,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return closeWsServer();
   }
@@ -394,6 +416,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return closeWsServer?.call();
   }
@@ -414,6 +438,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -441,6 +467,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return closeWsServer(this);
   }
@@ -462,6 +490,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return closeWsServer?.call(this);
   }
@@ -483,6 +512,7 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (closeWsServer != null) {
@@ -547,6 +577,8 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return quitGame();
   }
@@ -567,6 +599,8 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return quitGame?.call();
   }
@@ -587,6 +621,8 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -614,6 +650,8 @@ class _$QuitGameImpl implements QuitGame {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return quitGame(this);
   }
@@ -635,6 +673,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return quitGame?.call(this);
   }
@@ -656,6 +695,7 @@ class _$QuitGameImpl implements QuitGame {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (quitGame != null) {
@@ -724,6 +764,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return doneHandlingNewConnection();
   }
@@ -744,6 +786,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return doneHandlingNewConnection?.call();
   }
@@ -764,6 +808,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -791,6 +837,8 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return doneHandlingNewConnection(this);
   }
@@ -812,6 +860,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return doneHandlingNewConnection?.call(this);
   }
@@ -833,6 +882,7 @@ class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneHandlingNewConnection != null) {
@@ -902,6 +952,8 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return doneHandlingPopAfterClosingWsServer();
   }
@@ -922,6 +974,8 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return doneHandlingPopAfterClosingWsServer?.call();
   }
@@ -942,6 +996,8 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneHandlingPopAfterClosingWsServer != null) {
@@ -969,6 +1025,8 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return doneHandlingPopAfterClosingWsServer(this);
   }
@@ -990,6 +1048,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return doneHandlingPopAfterClosingWsServer?.call(this);
   }
@@ -1011,6 +1070,7 @@ class _$DoneHandlingPopAfterClosingWsServerImpl
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneHandlingPopAfterClosingWsServer != null) {
@@ -1120,6 +1180,8 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return updateRoomMasterAndClientGameState(newState);
   }
@@ -1140,6 +1202,8 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return updateRoomMasterAndClientGameState?.call(newState);
   }
@@ -1160,6 +1224,8 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (updateRoomMasterAndClientGameState != null) {
@@ -1187,6 +1253,8 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return updateRoomMasterAndClientGameState(this);
   }
@@ -1208,6 +1276,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return updateRoomMasterAndClientGameState?.call(this);
   }
@@ -1229,6 +1298,7 @@ class _$UpdateRoomMasterAndClientGameStateImpl
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (updateRoomMasterAndClientGameState != null) {
@@ -1343,6 +1413,8 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return updateOnlyRoomMasterState(newState);
   }
@@ -1363,6 +1435,8 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return updateOnlyRoomMasterState?.call(newState);
   }
@@ -1383,6 +1457,8 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (updateOnlyRoomMasterState != null) {
@@ -1410,6 +1486,8 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return updateOnlyRoomMasterState(this);
   }
@@ -1431,6 +1509,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return updateOnlyRoomMasterState?.call(this);
   }
@@ -1452,6 +1531,7 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (updateOnlyRoomMasterState != null) {
@@ -1524,6 +1604,8 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return showEndGameDialog();
   }
@@ -1544,6 +1626,8 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return showEndGameDialog?.call();
   }
@@ -1564,6 +1648,8 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (showEndGameDialog != null) {
@@ -1591,6 +1677,8 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return showEndGameDialog(this);
   }
@@ -1612,6 +1700,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return showEndGameDialog?.call(this);
   }
@@ -1633,6 +1722,7 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (showEndGameDialog != null) {
@@ -1700,6 +1790,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return doneShowEndGameDialog();
   }
@@ -1720,6 +1812,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return doneShowEndGameDialog?.call();
   }
@@ -1740,6 +1834,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -1767,6 +1863,8 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return doneShowEndGameDialog(this);
   }
@@ -1788,6 +1886,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return doneShowEndGameDialog?.call(this);
   }
@@ -1809,6 +1908,7 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (doneShowEndGameDialog != null) {
@@ -1918,6 +2018,8 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     required TResult Function() doneShowEndGameDialog,
     required TResult Function(int row, int col, bool isUpdateFromClient)
         markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
   }) {
     return markBoardSafely(row, col, isUpdateFromClient);
   }
@@ -1938,6 +2040,8 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     TResult? Function()? doneShowEndGameDialog,
     TResult? Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
   }) {
     return markBoardSafely?.call(row, col, isUpdateFromClient);
   }
@@ -1958,6 +2062,8 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     TResult Function()? doneShowEndGameDialog,
     TResult Function(int row, int col, bool isUpdateFromClient)?
         markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (markBoardSafely != null) {
@@ -1985,6 +2091,8 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     required TResult Function(DoneShowEndGameDialog value)
         doneShowEndGameDialog,
     required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
   }) {
     return markBoardSafely(this);
   }
@@ -2006,6 +2114,7 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
     return markBoardSafely?.call(this);
   }
@@ -2027,6 +2136,7 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
     TResult Function(ShowEndGameDialog value)? showEndGameDialog,
     TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
     if (markBoardSafely != null) {
@@ -2048,6 +2158,237 @@ abstract class MarkBoardSafely implements RoomMasterTicTacToeEvent {
   @JsonKey(ignore: true)
   _$$MarkBoardSafelyImplCopyWith<_$MarkBoardSafelyImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DisConnectedFromClientImplCopyWith<$Res> {
+  factory _$$DisConnectedFromClientImplCopyWith(
+          _$DisConnectedFromClientImpl value,
+          $Res Function(_$DisConnectedFromClientImpl) then) =
+      __$$DisConnectedFromClientImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? closeCode, String? closeReason});
+}
+
+/// @nodoc
+class __$$DisConnectedFromClientImplCopyWithImpl<$Res>
+    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
+        _$DisConnectedFromClientImpl>
+    implements _$$DisConnectedFromClientImplCopyWith<$Res> {
+  __$$DisConnectedFromClientImplCopyWithImpl(
+      _$DisConnectedFromClientImpl _value,
+      $Res Function(_$DisConnectedFromClientImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? closeCode = freezed,
+    Object? closeReason = freezed,
+  }) {
+    return _then(_$DisConnectedFromClientImpl(
+      freezed == closeCode
+          ? _value.closeCode
+          : closeCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == closeReason
+          ? _value.closeReason
+          : closeReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
+  const _$DisConnectedFromClientImpl([this.closeCode, this.closeReason]);
+
+  @override
+  final int? closeCode;
+  @override
+  final String? closeReason;
+
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.disconnectedFromClient(closeCode: $closeCode, closeReason: $closeReason)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DisConnectedFromClientImpl &&
+            (identical(other.closeCode, closeCode) ||
+                other.closeCode == closeCode) &&
+            (identical(other.closeReason, closeReason) ||
+                other.closeReason == closeReason));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, closeCode, closeReason);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DisConnectedFromClientImplCopyWith<_$DisConnectedFromClientImpl>
+      get copyWith => __$$DisConnectedFromClientImplCopyWithImpl<
+          _$DisConnectedFromClientImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareWebSocketServer,
+    required TResult Function() closeWsServer,
+    required TResult Function() quitGame,
+    required TResult Function() doneHandlingNewConnection,
+    required TResult Function() doneHandlingPopAfterClosingWsServer,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateRoomMasterAndClientGameState,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateOnlyRoomMasterState,
+    required TResult Function() showEndGameDialog,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function(int row, int col, bool isUpdateFromClient)
+        markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
+  }) {
+    return disconnectedFromClient(closeCode, closeReason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareWebSocketServer,
+    TResult? Function()? closeWsServer,
+    TResult? Function()? quitGame,
+    TResult? Function()? doneHandlingNewConnection,
+    TResult? Function()? doneHandlingPopAfterClosingWsServer,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateRoomMasterAndClientGameState,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateOnlyRoomMasterState,
+    TResult? Function()? showEndGameDialog,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
+  }) {
+    return disconnectedFromClient?.call(closeCode, closeReason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareWebSocketServer,
+    TResult Function()? closeWsServer,
+    TResult Function()? quitGame,
+    TResult Function()? doneHandlingNewConnection,
+    TResult Function()? doneHandlingPopAfterClosingWsServer,
+    TResult Function(RoomMasterTicTacToeState newState)?
+        updateRoomMasterAndClientGameState,
+    TResult Function(RoomMasterTicTacToeState newState)?
+        updateOnlyRoomMasterState,
+    TResult Function()? showEndGameDialog,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
+    required TResult orElse(),
+  }) {
+    if (disconnectedFromClient != null) {
+      return disconnectedFromClient(closeCode, closeReason);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PrepareWebSocketServer value)
+        prepareWebSocketServer,
+    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(QuitGame value) quitGame,
+    required TResult Function(DoneHandlingNewConnection value)
+        doneHandlingNewConnection,
+    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
+        doneHandlingPopAfterClosingWsServer,
+    required TResult Function(UpdateRoomMasterAndClientGameState value)
+        updateRoomMasterAndClientGameState,
+    required TResult Function(UpdateOnlyRoomMasterState value)
+        updateOnlyRoomMasterState,
+    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
+  }) {
+    return disconnectedFromClient(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(QuitGame value)? quitGame,
+    TResult? Function(DoneHandlingNewConnection value)?
+        doneHandlingNewConnection,
+    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
+    TResult? Function(UpdateRoomMasterAndClientGameState value)?
+        updateRoomMasterAndClientGameState,
+    TResult? Function(UpdateOnlyRoomMasterState value)?
+        updateOnlyRoomMasterState,
+    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
+  }) {
+    return disconnectedFromClient?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(QuitGame value)? quitGame,
+    TResult Function(DoneHandlingNewConnection value)?
+        doneHandlingNewConnection,
+    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
+        doneHandlingPopAfterClosingWsServer,
+    TResult Function(UpdateRoomMasterAndClientGameState value)?
+        updateRoomMasterAndClientGameState,
+    TResult Function(UpdateOnlyRoomMasterState value)?
+        updateOnlyRoomMasterState,
+    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
+    required TResult orElse(),
+  }) {
+    if (disconnectedFromClient != null) {
+      return disconnectedFromClient(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DisConnectedFromClient implements RoomMasterTicTacToeEvent {
+  const factory _DisConnectedFromClient(
+      [final int? closeCode,
+      final String? closeReason]) = _$DisConnectedFromClientImpl;
+
+  int? get closeCode;
+  String? get closeReason;
+  @JsonKey(ignore: true)
+  _$$DisConnectedFromClientImplCopyWith<_$DisConnectedFromClientImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

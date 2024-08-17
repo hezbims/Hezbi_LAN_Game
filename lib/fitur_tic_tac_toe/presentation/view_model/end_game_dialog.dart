@@ -73,7 +73,7 @@ class EndGameDialog extends StatelessWidget {
     const winNormal = 'Hore, kamu menang!';
     const loseNormal = 'Yah, kamu kalah...';
     const opponentQuit = 'Kamu menang, lawanmu telah meninggalkan pertandingan!';
-    const disconnected = 'Ups, Koneksi antara kamu dan lawan terputus!';
+    const disconnected = 'Yah, terjadi kesalahan koneksi diantara kamu dan lawanmu...';
 
     final String desc = switch (_endGameStatus){
       TicTacToeEndGameStatus.clientNormalWin =>

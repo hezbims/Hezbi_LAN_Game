@@ -20,21 +20,21 @@ mixin _$ResponseWrapper<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T data) succeed,
     required TResult Function() loading,
-    required TResult Function(String? message) error,
+    required TResult Function(ResponseErrorType? errorType) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? succeed,
     TResult? Function()? loading,
-    TResult? Function(String? message)? error,
+    TResult? Function(ResponseErrorType? errorType)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? succeed,
     TResult Function()? loading,
-    TResult Function(String? message)? error,
+    TResult Function(ResponseErrorType? errorType)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,7 +147,7 @@ class _$SucceedImpl<T> implements Succeed<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T data) succeed,
     required TResult Function() loading,
-    required TResult Function(String? message) error,
+    required TResult Function(ResponseErrorType? errorType) error,
   }) {
     return succeed(data);
   }
@@ -157,7 +157,7 @@ class _$SucceedImpl<T> implements Succeed<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? succeed,
     TResult? Function()? loading,
-    TResult? Function(String? message)? error,
+    TResult? Function(ResponseErrorType? errorType)? error,
   }) {
     return succeed?.call(data);
   }
@@ -167,7 +167,7 @@ class _$SucceedImpl<T> implements Succeed<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? succeed,
     TResult Function()? loading,
-    TResult Function(String? message)? error,
+    TResult Function(ResponseErrorType? errorType)? error,
     required TResult orElse(),
   }) {
     if (succeed != null) {
@@ -260,7 +260,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T data) succeed,
     required TResult Function() loading,
-    required TResult Function(String? message) error,
+    required TResult Function(ResponseErrorType? errorType) error,
   }) {
     return loading();
   }
@@ -270,7 +270,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? succeed,
     TResult? Function()? loading,
-    TResult? Function(String? message)? error,
+    TResult? Function(ResponseErrorType? errorType)? error,
   }) {
     return loading?.call();
   }
@@ -280,7 +280,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? succeed,
     TResult Function()? loading,
-    TResult Function(String? message)? error,
+    TResult Function(ResponseErrorType? errorType)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -334,7 +334,7 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
           _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
       __$$ErrorImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String? message});
+  $Res call({ResponseErrorType? errorType});
 }
 
 /// @nodoc
@@ -348,13 +348,13 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? errorType = freezed,
   }) {
     return _then(_$ErrorImpl<T>(
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+      errorType: freezed == errorType
+          ? _value.errorType
+          : errorType // ignore: cast_nullable_to_non_nullable
+              as ResponseErrorType?,
     ));
   }
 }
@@ -362,14 +362,14 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ErrorImpl<T> implements Error<T> {
-  _$ErrorImpl({this.message});
+  _$ErrorImpl({this.errorType});
 
   @override
-  final String? message;
+  final ResponseErrorType? errorType;
 
   @override
   String toString() {
-    return 'ResponseWrapper<$T>.error(message: $message)';
+    return 'ResponseWrapper<$T>.error(errorType: $errorType)';
   }
 
   @override
@@ -377,11 +377,12 @@ class _$ErrorImpl<T> implements Error<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorImpl<T> &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.errorType, errorType) ||
+                other.errorType == errorType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, errorType);
 
   @JsonKey(ignore: true)
   @override
@@ -394,9 +395,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T data) succeed,
     required TResult Function() loading,
-    required TResult Function(String? message) error,
+    required TResult Function(ResponseErrorType? errorType) error,
   }) {
-    return error(message);
+    return error(errorType);
   }
 
   @override
@@ -404,9 +405,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? succeed,
     TResult? Function()? loading,
-    TResult? Function(String? message)? error,
+    TResult? Function(ResponseErrorType? errorType)? error,
   }) {
-    return error?.call(message);
+    return error?.call(errorType);
   }
 
   @override
@@ -414,11 +415,11 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? succeed,
     TResult Function()? loading,
-    TResult Function(String? message)? error,
+    TResult Function(ResponseErrorType? errorType)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(errorType);
     }
     return orElse();
   }
@@ -459,9 +460,9 @@ class _$ErrorImpl<T> implements Error<T> {
 }
 
 abstract class Error<T> implements ResponseWrapper<T> {
-  factory Error({final String? message}) = _$ErrorImpl<T>;
+  factory Error({final ResponseErrorType? errorType}) = _$ErrorImpl<T>;
 
-  String? get message;
+  ResponseErrorType? get errorType;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
