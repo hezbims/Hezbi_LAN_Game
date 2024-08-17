@@ -38,7 +38,6 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     ConnectToServer event,
     Emitter<TicTacToeClientState> emit,
   ) async {
-    debugPrint('server address : ${_serverAddress}');
     emit(state.copyWith(connectResponse: ResponseWrapper.loading()));
     final response = await _wsClient.connectWsServer(
       address: _serverAddress,
@@ -105,6 +104,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     _DisconnectedFromServer event,
     Emitter<TicTacToeClientState> emit,
   ){
+    debugPrint('qqq disconnect from server');
     if (state.gameState?.endGameStatus != null){
       return;
     }
@@ -112,6 +112,7 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     var nextGameState = state.gameState ?? TicTacToeGameState.init();
     nextGameState = nextGameState.copyWith(endGameStatus: TicTacToeEndGameStatus.disconnected);
 
+    debugPrint('qqq  disconnect emit');
     emit(state.copyWith(
       endGameDialogStatus: EndGameDialogStatus.mustShow,
       gameState: nextGameState

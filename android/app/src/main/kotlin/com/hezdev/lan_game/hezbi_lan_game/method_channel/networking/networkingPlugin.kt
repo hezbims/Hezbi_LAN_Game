@@ -10,16 +10,18 @@ import java.net.NetworkInterface
 fun setupNetworkingPlugin(engine: FlutterEngine){
     MethodChannel(engine.dartExecutor.binaryMessenger, ChannelConfig.Networking.name).setMethodCallHandler{
         call, result ->
-        if (call.method == ChannelConfig.Networking.methodGetHotspotPrivateIpAddress){
+        if (call.method == ChannelConfig.Networking.methodGetLanIpv4Address){
             try {
                 val networkInterfaces = NetworkInterface
                     .getNetworkInterfaces().toList()
 
-                val hotspotInterface = networkInterfaces.single {
-                    it.displayName.contains("ap")
+                // Mencari salah satu network interface untuk hotspot atau wi-fi
+                val lanInterface = networkInterfaces.first {
+                    val interfaceName = it.displayName
+                    interfaceName.contains("ap") || interfaceName.contains("wl")
                 }
 
-                val hotspotIpv4Address = hotspotInterface.inetAddresses.toList().single {
+                val hotspotIpv4Address = lanInterface.inetAddresses.toList().single {
                     !it.isLoopbackAddress && it is Inet4Address
                 }
 

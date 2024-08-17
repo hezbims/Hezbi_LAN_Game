@@ -36,7 +36,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   shelf_web_socket: ^2.0.0
-  network_info_plus: ^6.0.0
   flutter_bloc: ^8.1.6
   freezed_annotation: ^2.4.4
   qr_flutter: ^4.1.0

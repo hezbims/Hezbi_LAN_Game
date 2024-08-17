@@ -7,7 +7,6 @@ import 'package:hezbi_lan_game/common/domain/my_games.dart';
 import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
-import 'package:network_info_plus/network_info_plus.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
@@ -27,7 +26,7 @@ class TicTacToeWsServerService {
         onClientConnected(MyWsClientHandler(wsChannel: websocket));
       }, pingInterval: const Duration(seconds: 4));
 
-      final String? ipAddress = await _getWifiIpAddress() ?? await _getHotspotIpAddress();
+      final String? ipAddress = await _getHotspotOrWifiIpv4Address();
       if (ipAddress == null){
         return ResponseWrapper.error();
       }
@@ -51,10 +50,7 @@ class TicTacToeWsServerService {
     _wsServer?.close(force: true);
   }
 
-  Future<String?> _getWifiIpAddress() =>
-    NetworkInfo().getWifiIP();
-
   static const _networkPlatformChannel = MethodChannel("networking");
-  Future<String?> _getHotspotIpAddress() =>
-    _networkPlatformChannel.invokeMethod("get-hotspot-private-ip-address");
+  Future<String?> _getHotspotOrWifiIpv4Address() =>
+    _networkPlatformChannel.invokeMethod("get-lan-ipv4-address");
 }
