@@ -14,7 +14,7 @@ class MainMenuScreen extends StatelessWidget {
           children: [
             FilledButton(
               onPressed: (){
-                Navigator.of(context).pushNamed(MyRoutes.ticTacToeWaitingRoom);
+                Navigator.of(context).pushNamed(MyRoutes.ticTacToeRoomMasterScreen);
               },
               child: const Text('Buat Room Baru')
             ),

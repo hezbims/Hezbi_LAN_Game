@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/presentation/component/loading_overlay.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/quit_game_confirm_dialog.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/quit_game_confirm_dialog.dart';
 
 class TicTacToeScaffold extends StatelessWidget {
   final Widget body;

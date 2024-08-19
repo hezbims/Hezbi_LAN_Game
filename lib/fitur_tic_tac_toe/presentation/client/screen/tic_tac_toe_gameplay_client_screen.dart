@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/common/presentation/component/response_loader.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_board.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_scaffold.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/client/tic_tac_toe_client_view_model.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_board.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_scaffold.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/client/view_model/tic_tac_toe_client_view_model.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/end_game_dialog.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
 
 class TicTacToeGameplayClientScreen extends StatelessWidget {
   final String serverAddress;

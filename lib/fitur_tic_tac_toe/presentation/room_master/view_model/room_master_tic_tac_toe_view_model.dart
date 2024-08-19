@@ -11,7 +11,7 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_mod
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/decide_the_winner_from_the_board_state_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/player_mark_the_board_use_case.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
 
 part 'room_master_tic_tac_toe_view_model.freezed.dart';
 
@@ -23,10 +23,9 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   final _wsService = TicTacToeWsServerService();
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
+    on(_backToPreviousScreen);
+    on(_doneBackToPreviousScreen);
     on(_prepareWebSocketServer);
-    on(_closeWsServer);
-    on(_doneHandlingNewConnection);
-    on(_doneHandlingPopAfterClosingWsServer);
     on(_quitGame);
     on(_updateRoomMasterAndClientGameState);
     on(_updateOnlyRoomMasterState);
@@ -34,6 +33,20 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_doneShowEndGameDialog);
     on(_markBoardSafely);
     on(_disconnectedFromClient);
+  }
+  
+  void _backToPreviousScreen(
+    _BackToPreviousScreen event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(state.copyWith(mustBackToPreviousScreen: true));
+  }
+
+  void _doneBackToPreviousScreen(
+    _DoneBackToPreviousScreen event,
+    Emitter<RoomMasterTicTacToeState> emit,
+  ){
+    emit(state.copyWith(mustBackToPreviousScreen: false));
   }
 
 
@@ -50,26 +63,14 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     emit(state.copyWith(wsServerPreparationResponse: prepareWsServerResult));
   }
 
-  void _closeWsServer(
-    CloseWsServer event,
-    Emitter<RoomMasterTicTacToeState> emit,
-  ) async {
+
+  @override
+  Future<void> close() async {
     _quitGameTimer?.cancel();
     _wsService.close();
     await _wsClientHandler?.dispose();
     _wsClientHandler = null;
-
-    emit(state.copyWith(
-      wsServerPreparationResponse: null,
-      doneClosingWsServer: true,
-    ));
-  }
-
-  void _doneHandlingPopAfterClosingWsServer(
-    DoneHandlingPopAfterClosingWsServer event,
-    Emitter<RoomMasterTicTacToeState> emit,
-  ){
-    emit(RoomMasterTicTacToeState.init());
+    super.close();
   }
 
   void _handleNewConnection(
@@ -95,13 +96,6 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(initialState));
   }
 
-  void _doneHandlingNewConnection(
-    DoneHandlingNewConnection event,
-    Emitter<RoomMasterTicTacToeState> emit,
-  ){
-    emit(state.copyWith(hasConnection: false));
-  }
-
   Timer? _quitGameTimer;
   void _quitGame(
     QuitGame event,
@@ -114,8 +108,8 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
       ),
     );
     add(RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(newState));
-    _quitGameTimer = Timer(const Duration(seconds: 4), (){
-      add(const RoomMasterTicTacToeEvent.closeWsServer());
+    _quitGameTimer = Timer(const Duration(seconds: 3), (){
+      add(const RoomMasterTicTacToeEvent.backToPreviousScreen());
     });
   }
 
@@ -140,7 +134,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
         break;
       case ConfirmEndGame():
         if (state.gameState.endGameStatus == TicTacToeEndGameStatus.roomMasterQuitGame) {
-          add(const RoomMasterTicTacToeEvent.closeWsServer());
+          add(const RoomMasterTicTacToeEvent.backToPreviousScreen());
           break;
         }
         add(RoomMasterTicTacToeEvent.updateOnlyRoomMasterState(
@@ -245,10 +239,9 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
 @Freezed()
 sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
   const factory RoomMasterTicTacToeEvent.prepareWebSocketServer() = PrepareWebSocketServer;
-  const factory RoomMasterTicTacToeEvent.closeWsServer() = CloseWsServer;
+  const factory RoomMasterTicTacToeEvent.backToPreviousScreen() = _BackToPreviousScreen;
+  const factory RoomMasterTicTacToeEvent.doneBackToPreviousScreen() = _DoneBackToPreviousScreen;
   const factory RoomMasterTicTacToeEvent.quitGame() = QuitGame;
-  const factory RoomMasterTicTacToeEvent.doneHandlingNewConnection() = DoneHandlingNewConnection;
-  const factory RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer() = DoneHandlingPopAfterClosingWsServer;
   const factory RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(
     RoomMasterTicTacToeState newState,
   ) = UpdateRoomMasterAndClientGameState;
@@ -273,7 +266,7 @@ class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
     required ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
     required bool hasConnection,
     required TicTacToeGameState gameState,
-    required bool doneClosingWsServer,
+    required bool mustBackToPreviousScreen,
     required EndGameDialogStatus endGameDialogStatus,
     required bool isQuittingGame,
   }) = _RoomMasterTicTacToeState;
@@ -283,7 +276,7 @@ class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
       wsServerPreparationResponse: null,
       hasConnection: false,
       gameState: TicTacToeGameState.init(),
-      doneClosingWsServer: false,
+      mustBackToPreviousScreen: false,
       endGameDialogStatus: EndGameDialogStatus.notShown,
       isQuittingGame: false,
     );

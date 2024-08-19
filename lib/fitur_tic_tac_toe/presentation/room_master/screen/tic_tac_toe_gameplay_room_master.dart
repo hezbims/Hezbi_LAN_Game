@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_board.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/screen/component/tic_tac_toe_scaffold.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/room_master/room_master_tic_tac_toe_view_model.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_board.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_scaffold.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/end_game_dialog.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/room_master/view_model/room_master_tic_tac_toe_view_model.dart';
 
 class TicTacToeGameplayRoomMaster extends StatelessWidget {
-  final RoomMasterTicTacToeViewModel viewModel;
   const TicTacToeGameplayRoomMaster({
-    required this.viewModel,
     super.key,
   });
 
@@ -18,9 +16,9 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
       listener: (context, state){
-        if (state.doneClosingWsServer){
+        if (state.mustBackToPreviousScreen){
           final viewModel = context.read<RoomMasterTicTacToeViewModel>();
-          viewModel.add(const RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer());
+          viewModel.add(const RoomMasterTicTacToeEvent.doneBackToPreviousScreen());
           Navigator.of(context).pop();
           return;
         }
@@ -38,7 +36,7 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
                   ),
             ).then((isQuitToMainMenuConfirmed){
               if (isQuitToMainMenuConfirmed == true){
-                viewModel.add(const RoomMasterTicTacToeEvent.closeWsServer());
+                Navigator.of(context).pop();
               }
             });
           }
@@ -52,7 +50,7 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
           isQuittingGame: state.isQuittingGame,
           onQuitGameConfirmed: (){
             if (state.gameState.endGameStatus != null){
-              viewModel.add(const RoomMasterTicTacToeEvent.closeWsServer());
+              Navigator.of(context).pop();
               return;
             }
             viewModel.add(const RoomMasterTicTacToeEvent.quitGame());

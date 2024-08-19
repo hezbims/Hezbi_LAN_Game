@@ -19,10 +19,9 @@ mixin _$RoomMasterTicTacToeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -38,10 +37,9 @@ mixin _$RoomMasterTicTacToeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -57,10 +55,9 @@ mixin _$RoomMasterTicTacToeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -78,12 +75,10 @@ mixin _$RoomMasterTicTacToeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -99,12 +94,10 @@ mixin _$RoomMasterTicTacToeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -118,12 +111,9 @@ mixin _$RoomMasterTicTacToeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -199,10 +189,9 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -221,10 +210,9 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -243,10 +231,9 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -270,12 +257,10 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -294,12 +279,10 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -316,12 +299,9 @@ class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -344,35 +324,37 @@ abstract class PrepareWebSocketServer implements RoomMasterTicTacToeEvent {
 }
 
 /// @nodoc
-abstract class _$$CloseWsServerImplCopyWith<$Res> {
-  factory _$$CloseWsServerImplCopyWith(
-          _$CloseWsServerImpl value, $Res Function(_$CloseWsServerImpl) then) =
-      __$$CloseWsServerImplCopyWithImpl<$Res>;
+abstract class _$$BackToPreviousScreenImplCopyWith<$Res> {
+  factory _$$BackToPreviousScreenImplCopyWith(_$BackToPreviousScreenImpl value,
+          $Res Function(_$BackToPreviousScreenImpl) then) =
+      __$$BackToPreviousScreenImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CloseWsServerImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res, _$CloseWsServerImpl>
-    implements _$$CloseWsServerImplCopyWith<$Res> {
-  __$$CloseWsServerImplCopyWithImpl(
-      _$CloseWsServerImpl _value, $Res Function(_$CloseWsServerImpl) _then)
+class __$$BackToPreviousScreenImplCopyWithImpl<$Res>
+    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
+        _$BackToPreviousScreenImpl>
+    implements _$$BackToPreviousScreenImplCopyWith<$Res> {
+  __$$BackToPreviousScreenImplCopyWithImpl(_$BackToPreviousScreenImpl _value,
+      $Res Function(_$BackToPreviousScreenImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CloseWsServerImpl implements CloseWsServer {
-  const _$CloseWsServerImpl();
+class _$BackToPreviousScreenImpl implements _BackToPreviousScreen {
+  const _$BackToPreviousScreenImpl();
 
   @override
   String toString() {
-    return 'RoomMasterTicTacToeEvent.closeWsServer()';
+    return 'RoomMasterTicTacToeEvent.backToPreviousScreen()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CloseWsServerImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$BackToPreviousScreenImpl);
   }
 
   @override
@@ -382,10 +364,9 @@ class _$CloseWsServerImpl implements CloseWsServer {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -397,17 +378,16 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function(int? closeCode, String? closeReason)
         disconnectedFromClient,
   }) {
-    return closeWsServer();
+    return backToPreviousScreen();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -419,17 +399,16 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function(int? closeCode, String? closeReason)?
         disconnectedFromClient,
   }) {
-    return closeWsServer?.call();
+    return backToPreviousScreen?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -442,8 +421,8 @@ class _$CloseWsServerImpl implements CloseWsServer {
         disconnectedFromClient,
     required TResult orElse(),
   }) {
-    if (closeWsServer != null) {
-      return closeWsServer();
+    if (backToPreviousScreen != null) {
+      return backToPreviousScreen();
     }
     return orElse();
   }
@@ -453,12 +432,10 @@ class _$CloseWsServerImpl implements CloseWsServer {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -470,19 +447,17 @@ class _$CloseWsServerImpl implements CloseWsServer {
     required TResult Function(_DisConnectedFromClient value)
         disconnectedFromClient,
   }) {
-    return closeWsServer(this);
+    return backToPreviousScreen(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -492,19 +467,16 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
     TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
   }) {
-    return closeWsServer?.call(this);
+    return backToPreviousScreen?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -515,15 +487,192 @@ class _$CloseWsServerImpl implements CloseWsServer {
     TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
   }) {
-    if (closeWsServer != null) {
-      return closeWsServer(this);
+    if (backToPreviousScreen != null) {
+      return backToPreviousScreen(this);
     }
     return orElse();
   }
 }
 
-abstract class CloseWsServer implements RoomMasterTicTacToeEvent {
-  const factory CloseWsServer() = _$CloseWsServerImpl;
+abstract class _BackToPreviousScreen implements RoomMasterTicTacToeEvent {
+  const factory _BackToPreviousScreen() = _$BackToPreviousScreenImpl;
+}
+
+/// @nodoc
+abstract class _$$DoneBackToPreviousScreenImplCopyWith<$Res> {
+  factory _$$DoneBackToPreviousScreenImplCopyWith(
+          _$DoneBackToPreviousScreenImpl value,
+          $Res Function(_$DoneBackToPreviousScreenImpl) then) =
+      __$$DoneBackToPreviousScreenImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DoneBackToPreviousScreenImplCopyWithImpl<$Res>
+    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
+        _$DoneBackToPreviousScreenImpl>
+    implements _$$DoneBackToPreviousScreenImplCopyWith<$Res> {
+  __$$DoneBackToPreviousScreenImplCopyWithImpl(
+      _$DoneBackToPreviousScreenImpl _value,
+      $Res Function(_$DoneBackToPreviousScreenImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DoneBackToPreviousScreenImpl implements _DoneBackToPreviousScreen {
+  const _$DoneBackToPreviousScreenImpl();
+
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.doneBackToPreviousScreen()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DoneBackToPreviousScreenImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareWebSocketServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
+    required TResult Function() quitGame,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateRoomMasterAndClientGameState,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateOnlyRoomMasterState,
+    required TResult Function() showEndGameDialog,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function(int row, int col, bool isUpdateFromClient)
+        markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
+  }) {
+    return doneBackToPreviousScreen();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareWebSocketServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
+    TResult? Function()? quitGame,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateRoomMasterAndClientGameState,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateOnlyRoomMasterState,
+    TResult? Function()? showEndGameDialog,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
+  }) {
+    return doneBackToPreviousScreen?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareWebSocketServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
+    TResult Function()? quitGame,
+    TResult Function(RoomMasterTicTacToeState newState)?
+        updateRoomMasterAndClientGameState,
+    TResult Function(RoomMasterTicTacToeState newState)?
+        updateOnlyRoomMasterState,
+    TResult Function()? showEndGameDialog,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
+    required TResult orElse(),
+  }) {
+    if (doneBackToPreviousScreen != null) {
+      return doneBackToPreviousScreen();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PrepareWebSocketServer value)
+        prepareWebSocketServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
+    required TResult Function(QuitGame value) quitGame,
+    required TResult Function(UpdateRoomMasterAndClientGameState value)
+        updateRoomMasterAndClientGameState,
+    required TResult Function(UpdateOnlyRoomMasterState value)
+        updateOnlyRoomMasterState,
+    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
+    required TResult Function(DoneShowEndGameDialog value)
+        doneShowEndGameDialog,
+    required TResult Function(MarkBoardSafely value) markBoardSafely,
+    required TResult Function(_DisConnectedFromClient value)
+        disconnectedFromClient,
+  }) {
+    return doneBackToPreviousScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
+    TResult? Function(QuitGame value)? quitGame,
+    TResult? Function(UpdateRoomMasterAndClientGameState value)?
+        updateRoomMasterAndClientGameState,
+    TResult? Function(UpdateOnlyRoomMasterState value)?
+        updateOnlyRoomMasterState,
+    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
+    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult? Function(MarkBoardSafely value)? markBoardSafely,
+    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
+  }) {
+    return doneBackToPreviousScreen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
+    TResult Function(QuitGame value)? quitGame,
+    TResult Function(UpdateRoomMasterAndClientGameState value)?
+        updateRoomMasterAndClientGameState,
+    TResult Function(UpdateOnlyRoomMasterState value)?
+        updateOnlyRoomMasterState,
+    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
+    required TResult orElse(),
+  }) {
+    if (doneBackToPreviousScreen != null) {
+      return doneBackToPreviousScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DoneBackToPreviousScreen implements RoomMasterTicTacToeEvent {
+  const factory _DoneBackToPreviousScreen() = _$DoneBackToPreviousScreenImpl;
 }
 
 /// @nodoc
@@ -565,10 +714,9 @@ class _$QuitGameImpl implements QuitGame {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -587,10 +735,9 @@ class _$QuitGameImpl implements QuitGame {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -609,10 +756,9 @@ class _$QuitGameImpl implements QuitGame {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -636,12 +782,10 @@ class _$QuitGameImpl implements QuitGame {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -660,12 +804,10 @@ class _$QuitGameImpl implements QuitGame {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -682,12 +824,9 @@ class _$QuitGameImpl implements QuitGame {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -707,383 +846,6 @@ class _$QuitGameImpl implements QuitGame {
 
 abstract class QuitGame implements RoomMasterTicTacToeEvent {
   const factory QuitGame() = _$QuitGameImpl;
-}
-
-/// @nodoc
-abstract class _$$DoneHandlingNewConnectionImplCopyWith<$Res> {
-  factory _$$DoneHandlingNewConnectionImplCopyWith(
-          _$DoneHandlingNewConnectionImpl value,
-          $Res Function(_$DoneHandlingNewConnectionImpl) then) =
-      __$$DoneHandlingNewConnectionImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DoneHandlingNewConnectionImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$DoneHandlingNewConnectionImpl>
-    implements _$$DoneHandlingNewConnectionImplCopyWith<$Res> {
-  __$$DoneHandlingNewConnectionImplCopyWithImpl(
-      _$DoneHandlingNewConnectionImpl _value,
-      $Res Function(_$DoneHandlingNewConnectionImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DoneHandlingNewConnectionImpl implements DoneHandlingNewConnection {
-  const _$DoneHandlingNewConnectionImpl();
-
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeEvent.doneHandlingNewConnection()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DoneHandlingNewConnectionImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
-    required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return doneHandlingNewConnection();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
-    TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return doneHandlingNewConnection?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
-    TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneHandlingNewConnection != null) {
-      return doneHandlingNewConnection();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return doneHandlingNewConnection(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return doneHandlingNewConnection?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneHandlingNewConnection != null) {
-      return doneHandlingNewConnection(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DoneHandlingNewConnection implements RoomMasterTicTacToeEvent {
-  const factory DoneHandlingNewConnection() = _$DoneHandlingNewConnectionImpl;
-}
-
-/// @nodoc
-abstract class _$$DoneHandlingPopAfterClosingWsServerImplCopyWith<$Res> {
-  factory _$$DoneHandlingPopAfterClosingWsServerImplCopyWith(
-          _$DoneHandlingPopAfterClosingWsServerImpl value,
-          $Res Function(_$DoneHandlingPopAfterClosingWsServerImpl) then) =
-      __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$DoneHandlingPopAfterClosingWsServerImpl>
-    implements _$$DoneHandlingPopAfterClosingWsServerImplCopyWith<$Res> {
-  __$$DoneHandlingPopAfterClosingWsServerImplCopyWithImpl(
-      _$DoneHandlingPopAfterClosingWsServerImpl _value,
-      $Res Function(_$DoneHandlingPopAfterClosingWsServerImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DoneHandlingPopAfterClosingWsServerImpl
-    implements DoneHandlingPopAfterClosingWsServer {
-  const _$DoneHandlingPopAfterClosingWsServerImpl();
-
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeEvent.doneHandlingPopAfterClosingWsServer()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DoneHandlingPopAfterClosingWsServerImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
-    required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return doneHandlingPopAfterClosingWsServer();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
-    TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return doneHandlingPopAfterClosingWsServer?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
-    TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneHandlingPopAfterClosingWsServer != null) {
-      return doneHandlingPopAfterClosingWsServer();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return doneHandlingPopAfterClosingWsServer(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return doneHandlingPopAfterClosingWsServer?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneHandlingPopAfterClosingWsServer != null) {
-      return doneHandlingPopAfterClosingWsServer(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DoneHandlingPopAfterClosingWsServer
-    implements RoomMasterTicTacToeEvent {
-  const factory DoneHandlingPopAfterClosingWsServer() =
-      _$DoneHandlingPopAfterClosingWsServerImpl;
 }
 
 /// @nodoc
@@ -1168,10 +930,9 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -1190,10 +951,9 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -1212,10 +972,9 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -1239,12 +998,10 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -1263,12 +1020,10 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -1285,12 +1040,9 @@ class _$UpdateRoomMasterAndClientGameStateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -1401,10 +1153,9 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -1423,10 +1174,9 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -1445,10 +1195,9 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -1472,12 +1221,10 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -1496,12 +1243,10 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -1518,12 +1263,9 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -1592,10 +1334,9 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -1614,10 +1355,9 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -1636,10 +1376,9 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -1663,12 +1402,10 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -1687,12 +1424,10 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -1709,12 +1444,9 @@ class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -1778,10 +1510,9 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -1800,10 +1531,9 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -1822,10 +1552,9 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -1849,12 +1578,10 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -1873,12 +1600,10 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -1895,12 +1620,9 @@ class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -2006,10 +1728,9 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -2028,10 +1749,9 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -2050,10 +1770,9 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -2077,12 +1796,10 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -2101,12 +1818,10 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -2123,12 +1838,9 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -2239,10 +1951,9 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() prepareWebSocketServer,
-    required TResult Function() closeWsServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
     required TResult Function() quitGame,
-    required TResult Function() doneHandlingNewConnection,
-    required TResult Function() doneHandlingPopAfterClosingWsServer,
     required TResult Function(RoomMasterTicTacToeState newState)
         updateRoomMasterAndClientGameState,
     required TResult Function(RoomMasterTicTacToeState newState)
@@ -2261,10 +1972,9 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? closeWsServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
     TResult? Function()? quitGame,
-    TResult? Function()? doneHandlingNewConnection,
-    TResult? Function()? doneHandlingPopAfterClosingWsServer,
     TResult? Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult? Function(RoomMasterTicTacToeState newState)?
@@ -2283,10 +1993,9 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? prepareWebSocketServer,
-    TResult Function()? closeWsServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
     TResult Function()? quitGame,
-    TResult Function()? doneHandlingNewConnection,
-    TResult Function()? doneHandlingPopAfterClosingWsServer,
     TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
     TResult Function(RoomMasterTicTacToeState newState)?
@@ -2310,12 +2019,10 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
         prepareWebSocketServer,
-    required TResult Function(CloseWsServer value) closeWsServer,
+    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
+    required TResult Function(_DoneBackToPreviousScreen value)
+        doneBackToPreviousScreen,
     required TResult Function(QuitGame value) quitGame,
-    required TResult Function(DoneHandlingNewConnection value)
-        doneHandlingNewConnection,
-    required TResult Function(DoneHandlingPopAfterClosingWsServer value)
-        doneHandlingPopAfterClosingWsServer,
     required TResult Function(UpdateRoomMasterAndClientGameState value)
         updateRoomMasterAndClientGameState,
     required TResult Function(UpdateOnlyRoomMasterState value)
@@ -2334,12 +2041,10 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(CloseWsServer value)? closeWsServer,
+    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult? Function(_DoneBackToPreviousScreen value)?
+        doneBackToPreviousScreen,
     TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult? Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult? Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult? Function(UpdateOnlyRoomMasterState value)?
@@ -2356,12 +2061,9 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(CloseWsServer value)? closeWsServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
     TResult Function(QuitGame value)? quitGame,
-    TResult Function(DoneHandlingNewConnection value)?
-        doneHandlingNewConnection,
-    TResult Function(DoneHandlingPopAfterClosingWsServer value)?
-        doneHandlingPopAfterClosingWsServer,
     TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
     TResult Function(UpdateOnlyRoomMasterState value)?
@@ -2397,7 +2099,7 @@ mixin _$RoomMasterTicTacToeState {
       throw _privateConstructorUsedError;
   bool get hasConnection => throw _privateConstructorUsedError;
   TicTacToeGameState get gameState => throw _privateConstructorUsedError;
-  bool get doneClosingWsServer => throw _privateConstructorUsedError;
+  bool get mustBackToPreviousScreen => throw _privateConstructorUsedError;
   EndGameDialogStatus get endGameDialogStatus =>
       throw _privateConstructorUsedError;
   bool get isQuittingGame => throw _privateConstructorUsedError;
@@ -2417,7 +2119,7 @@ abstract class $RoomMasterTicTacToeStateCopyWith<$Res> {
       {ResponseWrapper<String>? wsServerPreparationResponse,
       bool hasConnection,
       TicTacToeGameState gameState,
-      bool doneClosingWsServer,
+      bool mustBackToPreviousScreen,
       EndGameDialogStatus endGameDialogStatus,
       bool isQuittingGame});
 
@@ -2442,7 +2144,7 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
     Object? wsServerPreparationResponse = freezed,
     Object? hasConnection = null,
     Object? gameState = null,
-    Object? doneClosingWsServer = null,
+    Object? mustBackToPreviousScreen = null,
     Object? endGameDialogStatus = null,
     Object? isQuittingGame = null,
   }) {
@@ -2459,9 +2161,9 @@ class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState,
-      doneClosingWsServer: null == doneClosingWsServer
-          ? _value.doneClosingWsServer
-          : doneClosingWsServer // ignore: cast_nullable_to_non_nullable
+      mustBackToPreviousScreen: null == mustBackToPreviousScreen
+          ? _value.mustBackToPreviousScreen
+          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
               as bool,
       endGameDialogStatus: null == endGameDialogStatus
           ? _value.endGameDialogStatus
@@ -2509,7 +2211,7 @@ abstract class _$$RoomMasterTicTacToeStateImplCopyWith<$Res>
       {ResponseWrapper<String>? wsServerPreparationResponse,
       bool hasConnection,
       TicTacToeGameState gameState,
-      bool doneClosingWsServer,
+      bool mustBackToPreviousScreen,
       EndGameDialogStatus endGameDialogStatus,
       bool isQuittingGame});
 
@@ -2535,7 +2237,7 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
     Object? wsServerPreparationResponse = freezed,
     Object? hasConnection = null,
     Object? gameState = null,
-    Object? doneClosingWsServer = null,
+    Object? mustBackToPreviousScreen = null,
     Object? endGameDialogStatus = null,
     Object? isQuittingGame = null,
   }) {
@@ -2552,9 +2254,9 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
           ? _value.gameState
           : gameState // ignore: cast_nullable_to_non_nullable
               as TicTacToeGameState,
-      doneClosingWsServer: null == doneClosingWsServer
-          ? _value.doneClosingWsServer
-          : doneClosingWsServer // ignore: cast_nullable_to_non_nullable
+      mustBackToPreviousScreen: null == mustBackToPreviousScreen
+          ? _value.mustBackToPreviousScreen
+          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
               as bool,
       endGameDialogStatus: null == endGameDialogStatus
           ? _value.endGameDialogStatus
@@ -2575,7 +2277,7 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
       {required this.wsServerPreparationResponse,
       required this.hasConnection,
       required this.gameState,
-      required this.doneClosingWsServer,
+      required this.mustBackToPreviousScreen,
       required this.endGameDialogStatus,
       required this.isQuittingGame});
 
@@ -2586,7 +2288,7 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
   @override
   final TicTacToeGameState gameState;
   @override
-  final bool doneClosingWsServer;
+  final bool mustBackToPreviousScreen;
   @override
   final EndGameDialogStatus endGameDialogStatus;
   @override
@@ -2594,7 +2296,7 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
 
   @override
   String toString() {
-    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, doneClosingWsServer: $doneClosingWsServer, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
+    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, mustBackToPreviousScreen: $mustBackToPreviousScreen, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
   }
 
   @override
@@ -2610,8 +2312,9 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
                 other.hasConnection == hasConnection) &&
             (identical(other.gameState, gameState) ||
                 other.gameState == gameState) &&
-            (identical(other.doneClosingWsServer, doneClosingWsServer) ||
-                other.doneClosingWsServer == doneClosingWsServer) &&
+            (identical(
+                    other.mustBackToPreviousScreen, mustBackToPreviousScreen) ||
+                other.mustBackToPreviousScreen == mustBackToPreviousScreen) &&
             (identical(other.endGameDialogStatus, endGameDialogStatus) ||
                 other.endGameDialogStatus == endGameDialogStatus) &&
             (identical(other.isQuittingGame, isQuittingGame) ||
@@ -2624,7 +2327,7 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
       wsServerPreparationResponse,
       hasConnection,
       gameState,
-      doneClosingWsServer,
+      mustBackToPreviousScreen,
       endGameDialogStatus,
       isQuittingGame);
 
@@ -2641,7 +2344,7 @@ abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
       {required final ResponseWrapper<String>? wsServerPreparationResponse,
       required final bool hasConnection,
       required final TicTacToeGameState gameState,
-      required final bool doneClosingWsServer,
+      required final bool mustBackToPreviousScreen,
       required final EndGameDialogStatus endGameDialogStatus,
       required final bool isQuittingGame}) = _$RoomMasterTicTacToeStateImpl;
 
@@ -2652,7 +2355,7 @@ abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
   @override
   TicTacToeGameState get gameState;
   @override
-  bool get doneClosingWsServer;
+  bool get mustBackToPreviousScreen;
   @override
   EndGameDialogStatus get endGameDialogStatus;
   @override

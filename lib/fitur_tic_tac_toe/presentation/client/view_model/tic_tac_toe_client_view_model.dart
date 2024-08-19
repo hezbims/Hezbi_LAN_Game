@@ -10,7 +10,7 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_ws_client.dart
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_model.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/view_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
 
 part 'tic_tac_toe_client_view_model.freezed.dart';
 
