@@ -1,7 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:hezbi_lan_game/common/domain/model/my_games.dart';
+import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScanQrScreen extends StatefulWidget {
@@ -121,15 +122,12 @@ class _ScanQrScreenState extends State<ScanQrScreen> with WidgetsBindingObserver
                       );
 
                       try {
-                        final serverAddress = barcode.barcodes.first.rawValue!;
-                        final port = int.parse(serverAddress.split(':').last);
-                        final gameType = MyGames.values.firstWhere((game) => game.gamePort == port);
+                        final qrModelJsonString = barcode.barcodes.first.rawValue!;
+                        final qrModel = QrGameModel.fromJson(
+                          jsonDecode(qrModelJsonString)
+                        );
 
-                        switch (gameType){
-                          case MyGames.ticTacToe:
-                            Navigator.of(context).pop(serverAddress);
-                            break;
-                        }
+                        Navigator.of(context).pop(qrModel);
                       } catch (e) {
                         scaffoldMessangerState.removeCurrentSnackBar();
                         scaffoldMessangerState.showSnackBar(

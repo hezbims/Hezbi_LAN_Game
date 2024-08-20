@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hezbi_lan_game/common/domain/model/my_games.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 import 'package:hezbi_lan_game/common/domain/service/i_game_ws_server_service.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
@@ -36,7 +35,7 @@ class TicTacToeWsServerService implements IGameWsServerService {
       _wsServer = await shelf_io.serve(
           handler,
           ipAddress,
-          MyGames.ticTacToe.gamePort
+          0,
       );
 
       return ResponseWrapper.succeed(

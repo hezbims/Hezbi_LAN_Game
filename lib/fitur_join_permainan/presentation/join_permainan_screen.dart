@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
+import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 
 class JoinPermainanScreen extends StatelessWidget {
@@ -77,18 +79,22 @@ class JoinPermainanScreen extends StatelessWidget {
 
                 Expanded(
                   child: FilledButton(
-                    onPressed: ()  {
-                      Navigator.of(context).pushNamed(
+                    onPressed: ()  async {
+                      final qrResult = await Navigator.of(context).pushNamed(
                         MyRoutes.scanQr
-                      ).then((qrResult){
-                        if (qrResult is String) {
+                      );
+                      if (!context.mounted || qrResult is! QrGameModel){
+                        return;
+                      }
+
+                      switch(qrResult.gameType){
+                        case MyGameType.ticTacToe:
                           Navigator.of(context).pushReplacementNamed(
                             MyRoutes.ticTacToeClientGameplay,
-                            arguments: qrResult,
+                            arguments: qrResult.gameAddress,
                           );
-                        }
-                      });
-
+                          break;
+                      }
                     },
                     style: FilledButton.styleFrom(
                         minimumSize: const Size.fromHeight(56)

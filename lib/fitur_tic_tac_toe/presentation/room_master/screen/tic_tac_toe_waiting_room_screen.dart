@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
+import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/presentation/component/response_loader.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/room_master/view_model/room_master_tic_tac_toe_view_model.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -40,6 +42,11 @@ class _TicTacToeWaitingRoomScreenState extends State<TicTacToeWaitingRoomScreen>
               child: ResponseLoader(
                   response: state.wsServerPreparationResponse,
                   completeBuilder: (context, url){
+                    final qrModel = QrGameModel(
+                      gameType: MyGameType.ticTacToe,
+                      gameAddress: url,
+                    );
+
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -54,7 +61,7 @@ class _TicTacToeWaitingRoomScreenState extends State<TicTacToeWaitingRoomScreen>
                         const SizedBox(height: 12,),
 
                         QrImageView(
-                          data: url,
+                          data: qrModel.asJsonString(),
                           size: 200,
                         ),
                       ],

@@ -113,8 +113,8 @@ class __$$SucceedImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$SucceedImpl<T> implements Succeed<T> {
-  _$SucceedImpl(this.data);
+class _$SucceedImpl<T> extends Succeed<T> {
+  _$SucceedImpl(this.data) : super._();
 
   @override
   final T data;
@@ -211,8 +211,9 @@ class _$SucceedImpl<T> implements Succeed<T> {
   }
 }
 
-abstract class Succeed<T> implements ResponseWrapper<T> {
+abstract class Succeed<T> extends ResponseWrapper<T> {
   factory Succeed(final T data) = _$SucceedImpl<T>;
+  Succeed._() : super._();
 
   T get data;
   @JsonKey(ignore: true)
@@ -238,8 +239,8 @@ class __$$LoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$LoadingImpl<T> implements Loading<T> {
-  _$LoadingImpl();
+class _$LoadingImpl<T> extends Loading<T> {
+  _$LoadingImpl() : super._();
 
   @override
   String toString() {
@@ -324,8 +325,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   }
 }
 
-abstract class Loading<T> implements ResponseWrapper<T> {
+abstract class Loading<T> extends ResponseWrapper<T> {
   factory Loading() = _$LoadingImpl<T>;
+  Loading._() : super._();
 }
 
 /// @nodoc
@@ -361,8 +363,8 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ErrorImpl<T> implements Error<T> {
-  _$ErrorImpl({this.errorType});
+class _$ErrorImpl<T> extends Error<T> {
+  _$ErrorImpl({this.errorType}) : super._();
 
   @override
   final ResponseErrorType? errorType;
@@ -459,8 +461,9 @@ class _$ErrorImpl<T> implements Error<T> {
   }
 }
 
-abstract class Error<T> implements ResponseWrapper<T> {
+abstract class Error<T> extends ResponseWrapper<T> {
   factory Error({final ResponseErrorType? errorType}) = _$ErrorImpl<T>;
+  Error._() : super._();
 
   ResponseErrorType? get errorType;
   @JsonKey(ignore: true)

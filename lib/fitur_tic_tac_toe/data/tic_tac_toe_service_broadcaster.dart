@@ -1,6 +1,6 @@
 import 'package:bonsoir/bonsoir.dart';
 import 'package:hezbi_lan_game/common/domain/service/i_game_service_broadcaster.dart';
-import 'package:hezbi_lan_game/common/domain/model/my_games.dart';
+import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 
 class TicTacToeServiceBroadcaster implements IGameServiceBroadcaster {
@@ -14,8 +14,8 @@ class TicTacToeServiceBroadcaster implements IGameServiceBroadcaster {
     try {
       BonsoirService service = BonsoirService(
         name: 'Tic Tac Toe',
-        type: MyGames.ticTacToe.serviceName,
-        port: MyGames.ticTacToe.serviceBroadcastPort,
+        type: MyGameType.ticTacToe.serviceName,
+        port: 0,
       );
 
       _broadcast = BonsoirBroadcast(service: service);
