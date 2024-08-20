@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hezbi_lan_game/common/domain/my_games.dart';
+import 'package:hezbi_lan_game/common/domain/model/my_games.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScanQrScreen extends StatefulWidget {
@@ -123,7 +123,7 @@ class _ScanQrScreenState extends State<ScanQrScreen> with WidgetsBindingObserver
                       try {
                         final serverAddress = barcode.barcodes.first.rawValue!;
                         final port = int.parse(serverAddress.split(':').last);
-                        final gameType = MyGames.values.firstWhere((game) => game.port == port);
+                        final gameType = MyGames.values.firstWhere((game) => game.gamePort == port);
 
                         switch (gameType){
                           case MyGames.ticTacToe:

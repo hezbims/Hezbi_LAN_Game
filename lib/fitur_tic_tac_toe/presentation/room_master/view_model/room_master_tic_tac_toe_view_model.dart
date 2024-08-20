@@ -4,9 +4,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/use_case/prepare_game_server_use_case.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_service_broadcaster.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_ws_server_service.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
+import 'package:hezbi_lan_game/common/domain/service/i_my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_model.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/decide_the_winner_from_the_board_state_use_case.dart';
@@ -21,6 +23,11 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   final _playerMarkTheBoard = PlayerMarkTheBoardUseCase();
   final _decideTheWinnerFromTheBoardState = DecideTheWinnerFromTheBoardStateUseCase();
   final _wsService = TicTacToeWsServerService();
+  final _ticTacToeServiceBroadcaster = TicTacToeServiceBroadcaster();
+  late final _prepareGameServerUseCase = PrepareGameServerUseCase(
+    wsServerService: _wsService,
+    serviceBroadcaster: _ticTacToeServiceBroadcaster,
+  );
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
     on(_backToPreviousScreen);
@@ -56,20 +63,20 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   ) async {
     emit(state.copyWith(wsServerPreparationResponse: ResponseWrapper.loading()));
 
-    final prepareWsServerResult = await _wsService.prepareWebSocketServer(
-      onClientConnected: _handleNewConnection
+    final serverPreparationResponse = await _prepareGameServerUseCase(
+      onClientConnected: _handleNewConnection,
+      roomName: 'room-1'
     );
 
-    emit(state.copyWith(wsServerPreparationResponse: prepareWsServerResult));
+    emit(state.copyWith(wsServerPreparationResponse: serverPreparationResponse));
   }
-
 
   @override
   Future<void> close() async {
     _quitGameTimer?.cancel();
-    _wsService.close();
+    await _ticTacToeServiceBroadcaster.unregisterService();
+    await _wsService.close();
     await _wsClientHandler?.dispose();
-    _wsClientHandler = null;
     super.close();
   }
 

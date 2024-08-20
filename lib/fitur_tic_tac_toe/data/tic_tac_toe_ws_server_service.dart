@@ -3,10 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hezbi_lan_game/common/domain/my_games.dart';
-import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/model/my_games.dart';
+import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/service/i_game_ws_server_service.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/i_my_ws_connection_handler.dart';
+import 'package:hezbi_lan_game/common/domain/service/i_my_ws_connection_handler.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
@@ -14,9 +15,10 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 typedef IpAddress = String;
 
-class TicTacToeWsServerService {
+class TicTacToeWsServerService implements IGameWsServerService {
   HttpServer? _wsServer;
 
+  @override
   Future<ResponseWrapper<IpAddress>> prepareWebSocketServer({
     required void Function(IMyWsConnectionHandler) onClientConnected,
   }) async {
@@ -34,7 +36,7 @@ class TicTacToeWsServerService {
       _wsServer = await shelf_io.serve(
           handler,
           ipAddress,
-          MyGames.ticTacToe.port
+          MyGames.ticTacToe.gamePort
       );
 
       return ResponseWrapper.succeed(
@@ -46,8 +48,9 @@ class TicTacToeWsServerService {
     }
   }
 
-  void close(){
-    _wsServer?.close(force: true);
+  @override
+  Future<void> close() async {
+    await _wsServer?.close(force: true);
   }
 
   static const _networkPlatformChannel = MethodChannel("networking");

@@ -43,6 +43,7 @@ dependencies:
   web_socket_channel: ^3.0.1
   json_annotation: ^4.9.0
   fluttertoast: ^8.2.8
+  bonsoir: ^5.1.10
 
 
 dev_dependencies:

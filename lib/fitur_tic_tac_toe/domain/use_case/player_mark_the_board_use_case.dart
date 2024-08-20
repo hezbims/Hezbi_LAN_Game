@@ -1,4 +1,4 @@
-import 'package:hezbi_lan_game/common/domain/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/get_tic_tac_toe_grid_state_use_case.dart';
