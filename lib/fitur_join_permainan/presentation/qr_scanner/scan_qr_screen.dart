@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/domain/my_games.dart';
-import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScanQrScreen extends StatefulWidget {

@@ -10,11 +10,12 @@ class MainMenuScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             FilledButton(
               onPressed: (){
-                Navigator.of(context).pushNamed(MyRoutes.ticTacToeRoomMasterScreen);
+                Navigator.of(context).pushNamed(MyRoutes.chooseNewGame);
               },
               child: const Text('Buat Room Baru')
             ),
