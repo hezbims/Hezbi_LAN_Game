@@ -9,6 +9,8 @@ class MyServiceAttribute {
 
   final MyGameType gameType;
 
+  final String roomId;
+
   final String roomName;
 
   @MyJsonConverterUtils.intToStringConverter
@@ -19,6 +21,7 @@ class MyServiceAttribute {
 
   MyServiceAttribute({
     required this.gameType,
+    required this.roomId,
     required this.roomName,
     required this.currentPlayer,
     required this.maxPlayer,

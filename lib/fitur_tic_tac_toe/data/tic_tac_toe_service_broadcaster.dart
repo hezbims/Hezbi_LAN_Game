@@ -18,6 +18,7 @@ class TicTacToeServiceBroadcaster implements IGameServiceBroadcaster {
       final serviceAttribute = TicTacToeServiceAttribute(
         roomName: roomName,
         currentPlayer: currentPlayerCount,
+        roomId: roomId,
       );
 
       final service = BonsoirService.ignoreNorms(

@@ -6,6 +6,7 @@ class TicTacToeServiceAttribute extends MyServiceAttribute {
   TicTacToeServiceAttribute({
     required super.roomName,
     required super.currentPlayer,
+    required super.roomId,
   }) : super(
     gameType: MyGameType.ticTacToe,
     maxPlayer: 2,

@@ -9,6 +9,7 @@ part of 'my_service_attribute.dart';
 MyServiceAttribute _$MyServiceAttributeFromJson(Map<String, dynamic> json) =>
     MyServiceAttribute(
       gameType: $enumDecode(_$MyGameTypeEnumMap, json['gameType']),
+      roomId: json['roomId'] as String,
       roomName: json['roomName'] as String,
       currentPlayer: MyJsonConverterUtils.intToStringConverter
           .fromJson(json['currentPlayer'] as String),
@@ -19,6 +20,7 @@ MyServiceAttribute _$MyServiceAttributeFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$MyServiceAttributeToJson(MyServiceAttribute instance) =>
     <String, dynamic>{
       'gameType': _$MyGameTypeEnumMap[instance.gameType]!,
+      'roomId': instance.roomId,
       'roomName': instance.roomName,
       'currentPlayer': MyJsonConverterUtils.intToStringConverter
           .toJson(instance.currentPlayer),
