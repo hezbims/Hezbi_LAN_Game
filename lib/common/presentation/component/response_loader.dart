@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/presentation/component/my_default_retry_widget.dart';
 
 class ResponseLoader<T> extends StatelessWidget {
   final ResponseWrapper<T>? response;
@@ -32,26 +33,11 @@ class ResponseLoader<T> extends StatelessWidget {
       case Error():
         return localErrorBuilder != null ? 
           localErrorBuilder(context, localResponse.errorType) :
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(Icons.error_outline, size: 48,),
-              
-              const SizedBox(height: 8,),
-
-              Text(
-                localErrorCodeToMessageTransformer == null ?
-                  "Terjadi kesalahan tidak diketahui" :
-                  localErrorCodeToMessageTransformer(localResponse.errorType),
-                textAlign: TextAlign.center,
-              ),
-              
-              ElevatedButton(
-                onPressed: onRefresh, 
-                child: const Text('Retry'),
-              ),
-            ],
+          MyDefaultRetryWidget(
+            onRetry: onRefresh,
+            errorText: localErrorCodeToMessageTransformer == null ?
+              "Terjadi kesalahan tidak diketahui" :
+              localErrorCodeToMessageTransformer(localResponse.errorType)
           );
       case Loading():
         return localLoadingBuilder != null ?

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hezbi_lan_game/common/domain/model/my_service_attribute.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
+import 'package:hezbi_lan_game/common/domain/utils/list_extension.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/data/service/game_discovery_service.dart';
 
 part 'daftar_permainan_view_model.freezed.dart';
@@ -39,7 +40,10 @@ class DaftarPermainanViewModel extends Bloc<DaftarPermainanEvent, DaftarPermaina
     _AddGame event,
     Emitter<DaftarPermainanState> emit,
   ){
-    final newDiscoveredGames = [...state.discoveredGames, event.gameAttribute];
+    final newDiscoveredGames = state.discoveredGames.newListWithInsertOrReplace(
+      newData: event.gameAttribute,
+      equalCondition: (oldData) => oldData.roomId == event.gameAttribute.roomId,
+    );
     emit(state.copyWith(discoveredGames: newDiscoveredGames));
   }
 

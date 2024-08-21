@@ -24,12 +24,13 @@ class TicTacToeServiceBroadcaster implements IGameServiceBroadcaster {
       final service = BonsoirService.ignoreNorms(
         name: roomId,
         type: MyConstants.serviceDiscoveryType,
-        port: 0,
+        port: 11111,
         attributes:  serviceAttribute.toJson(),
       );
 
       _broadcast = BonsoirBroadcast(service: service);
       await _broadcast?.ready;
+      await _broadcast?.start();
 
       return ResponseWrapper.succeed(null);
     } catch (e) {

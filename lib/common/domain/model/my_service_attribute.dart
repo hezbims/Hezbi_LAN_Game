@@ -33,4 +33,21 @@ class MyServiceAttribute {
   Map<String, String> toJson() => _$MyServiceAttributeToJson(this).map(
     (key, value) => MapEntry(key, value as String)
   );
+
+  @override
+  bool operator ==(Object other) {
+    if (other is! MyServiceAttribute){
+      return false;
+    }
+    return other.roomId == roomId;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    gameType,
+    roomId,
+    roomName,
+    currentPlayer,
+    maxPlayer,
+  );
 }
