@@ -24,7 +24,7 @@ class MainMenuScreen extends StatelessWidget {
 
             FilledButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed(MyRoutes.joinPermainan);
+                  Navigator.of(context).pushNamed(MyRoutes.daftarPermainan);
                 },
                 child: const Text('Join Permainan')
             ),

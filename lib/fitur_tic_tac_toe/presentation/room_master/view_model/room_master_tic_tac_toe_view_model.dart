@@ -4,8 +4,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
-import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 import 'package:hezbi_lan_game/common/domain/use_case/prepare_game_server_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_service_broadcaster.dart';
@@ -67,7 +65,8 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
 
     final serverPreparationResponse = await _prepareGameServerUseCase(
       onClientConnected: _handleNewConnection,
-      roomName: 'room-1'
+      roomName: 'room-1',
+      currentPlayerCount: state.hasConnection ? 2 : 1,
     );
 
     emit(state.copyWith(wsServerPreparationResponse: serverPreparationResponse));

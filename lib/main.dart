@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
-import 'package:hezbi_lan_game/fitur_join_permainan/presentation/join_permainan_screen.dart';
+import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/daftar_permainan_screen.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/presentation/qr_scanner/scan_qr_screen.dart';
 import 'package:hezbi_lan_game/fitur_main_menu/choose_game_screen.dart';
 import 'package:hezbi_lan_game/fitur_main_menu/main_menu_screen.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        MyRoutes.joinPermainan: (context) => const JoinPermainanScreen(),
+        MyRoutes.daftarPermainan: (context) => const DaftarPermainanScreen(),
         MyRoutes.scanQr: (context) => const ScanQrScreen(),
         MyRoutes.ticTacToeClientGameplay: (context) =>
           TicTacToeGameplayClientScreen(

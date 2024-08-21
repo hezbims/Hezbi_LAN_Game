@@ -19,5 +19,5 @@ Map<String, dynamic> _$$QrGameModelImplToJson(_$QrGameModelImpl instance) =>
     };
 
 const _$MyGameTypeEnumMap = {
-  MyGameType.ticTacToe: 0,
+  MyGameType.ticTacToe: '0',
 };

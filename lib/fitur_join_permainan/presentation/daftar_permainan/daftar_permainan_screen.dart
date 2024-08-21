@@ -3,8 +3,8 @@ import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
 import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 
-class JoinPermainanScreen extends StatelessWidget {
-  const JoinPermainanScreen({super.key});
+class DaftarPermainanScreen extends StatelessWidget {
+  const DaftarPermainanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
