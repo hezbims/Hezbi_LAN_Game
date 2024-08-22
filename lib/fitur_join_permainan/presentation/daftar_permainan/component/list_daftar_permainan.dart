@@ -49,7 +49,7 @@ class ListDaftarPermainan extends StatelessWidget {
     }
 
     return ListView.separated(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       itemBuilder: (context, index){
         return DaftarPermainanListItem(game: state.discoveredGames[index]);
       },

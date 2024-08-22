@@ -5,6 +5,7 @@ abstract class IGameServiceBroadcaster {
     required String roomName,
     required String roomId,
     required int currentPlayerCount,
+    required String roomAddress,
   });
   Future<void> unregisterService();
 }

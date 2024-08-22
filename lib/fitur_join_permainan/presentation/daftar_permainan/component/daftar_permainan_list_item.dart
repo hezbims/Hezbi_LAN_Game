@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
 import 'package:hezbi_lan_game/common/domain/model/my_service_attribute.dart';
+import 'package:hezbi_lan_game/common/presentation/routes/routing_utils.dart';
 
 class DaftarPermainanListItem extends StatelessWidget {
   final MyServiceAttribute game;
@@ -50,7 +51,8 @@ class DaftarPermainanListItem extends StatelessWidget {
 
                 OutlinedButton(
                   onPressed: (){
-
+                    final route = RoutingUtils.getRouteBasedOnGameType(game.gameType);
+                    Navigator.of(context).pushReplacementNamed(route, arguments: game.address);
                   },
                   child: const Text('Masuk'),
                 ),

@@ -13,12 +13,14 @@ class TicTacToeServiceBroadcaster implements IGameServiceBroadcaster {
     required String roomName,
     required String roomId,
     required int currentPlayerCount,
+    required String roomAddress,
   }) async {
     try {
       final serviceAttribute = TicTacToeServiceAttribute(
         roomName: roomName,
         currentPlayer: currentPlayerCount,
         roomId: roomId,
+        address: roomAddress,
       );
 
       final service = BonsoirService.ignoreNorms(

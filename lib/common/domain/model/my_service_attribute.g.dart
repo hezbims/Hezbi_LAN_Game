@@ -15,6 +15,7 @@ MyServiceAttribute _$MyServiceAttributeFromJson(Map<String, dynamic> json) =>
           .fromJson(json['currentPlayer'] as String),
       maxPlayer: MyJsonConverterUtils.intToStringConverter
           .fromJson(json['maxPlayer'] as String),
+      address: json['address'] as String,
     );
 
 Map<String, dynamic> _$MyServiceAttributeToJson(MyServiceAttribute instance) =>
@@ -26,6 +27,7 @@ Map<String, dynamic> _$MyServiceAttributeToJson(MyServiceAttribute instance) =>
           .toJson(instance.currentPlayer),
       'maxPlayer':
           MyJsonConverterUtils.intToStringConverter.toJson(instance.maxPlayer),
+      'address': instance.address,
     };
 
 const _$MyGameTypeEnumMap = {

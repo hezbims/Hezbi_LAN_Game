@@ -19,12 +19,15 @@ class MyServiceAttribute {
   @MyJsonConverterUtils.intToStringConverter
   final int maxPlayer;
 
+  final String address;
+
   MyServiceAttribute({
     required this.gameType,
     required this.roomId,
     required this.roomName,
     required this.currentPlayer,
     required this.maxPlayer,
+    required this.address,
   });
 
   factory MyServiceAttribute.fromJson(Map<String, String> json) =>

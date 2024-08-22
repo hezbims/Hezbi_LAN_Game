@@ -45,6 +45,8 @@ dependencies:
   fluttertoast: ^8.2.8
   bonsoir: ^5.1.10
   uuid: ^4.4.2
+  shelf: ^1.4.1
+  http: ^1.2.2
 
 
 dev_dependencies:

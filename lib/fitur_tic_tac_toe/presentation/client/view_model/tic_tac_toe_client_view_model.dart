@@ -139,6 +139,11 @@ class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClien
     );
     _wsChannelToServer?.sendData(quitGameJsonString);
 
+    if (state.gameState == null){
+      add(const TicTacToeClientEvent.forceQuit());
+      return;
+    }
+
     emit(state.copyWith(isQuittingGame: true));
     _quitTimer = Timer(const Duration(seconds: 4), (){
       add(const TicTacToeClientEvent.forceQuit());

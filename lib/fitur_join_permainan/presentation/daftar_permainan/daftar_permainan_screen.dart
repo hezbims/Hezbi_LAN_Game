@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
 import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
+import 'package:hezbi_lan_game/common/presentation/routes/routing_utils.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/component/list_daftar_permainan.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/daftar_permainan_view_model.dart';
 
@@ -85,14 +85,11 @@ class DaftarPermainanScreen extends StatelessWidget {
                               return;
                             }
 
-                            switch(qrResult.gameType){
-                              case MyGameType.ticTacToe:
-                                Navigator.of(context).pushReplacementNamed(
-                                  MyRoutes.ticTacToeClientGameplay,
-                                  arguments: qrResult.gameAddress,
-                                );
-                                break;
-                            }
+                            final route = RoutingUtils.getRouteBasedOnGameType(qrResult.gameType);
+                            Navigator.of(context).pushReplacementNamed(
+                              route,
+                              arguments: qrResult.gameAddress,
+                            );
                           },
                           style: FilledButton.styleFrom(
                               minimumSize: const Size.fromHeight(56)

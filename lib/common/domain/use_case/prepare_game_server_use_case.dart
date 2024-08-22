@@ -20,14 +20,18 @@ class PrepareGameServerUseCase {
   }) async {
     final wsServerPreparationResponse = await wsServerService
         .prepareWebSocketServer(onClientConnected: onClientConnected);
-    final serviceBroadcastPreparationResponse = await serviceBroadcaster
-        .registerService(
+    ResponseWrapper<dynamic> serviceBroadcastPreparationResponse = ResponseWrapper.error();
+    if (wsServerPreparationResponse is Succeed<String>) {
+      serviceBroadcastPreparationResponse = await serviceBroadcaster
+          .registerService(
           roomId: roomId,
           roomName: roomName,
           currentPlayerCount: currentPlayerCount,
-        );
+          roomAddress: (wsServerPreparationResponse as Succeed).data
+      );
+    }
 
-    if (serviceBroadcastPreparationResponse is Error || wsServerPreparationResponse is Error){
+    if (serviceBroadcastPreparationResponse is Error){
       await serviceBroadcaster.unregisterService();
       await wsServerService.close();
       return ResponseWrapper.error();

@@ -3,10 +3,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hezbi_lan_game/common/data/constant/my_constants.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 import 'package:hezbi_lan_game/common/domain/service/i_game_ws_server_service.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/my_ws_connection_handler.dart';
 import 'package:hezbi_lan_game/common/domain/service/i_my_ws_connection_handler.dart';
+import 'package:shelf/shelf.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
@@ -23,9 +25,18 @@ class TicTacToeWsServerService implements IGameWsServerService {
   }) async {
     try {
 
-      final handler = webSocketHandler((WebSocketChannel websocket) {
+      final wsHandler = webSocketHandler((WebSocketChannel websocket) {
         onClientConnected(MyWsClientHandler(wsChannel: websocket));
-      }, pingInterval: const Duration(seconds: 4));
+      }, pingInterval: const Duration(milliseconds: 2500));
+      final handler = const Pipeline().addMiddleware(logRequests()).addHandler((request){
+        if (request.url.path == MyConstants.discoveryUrlPath){
+          return Response(HttpStatus.ok);
+        } else if (request.url.path == MyConstants.websocketUrlPath){
+          return wsHandler(request);
+        } else {
+          throw Exception();
+        }
+      });
 
       final String? ipAddress = await _getHotspotOrWifiIpv4Address();
       if (ipAddress == null){
