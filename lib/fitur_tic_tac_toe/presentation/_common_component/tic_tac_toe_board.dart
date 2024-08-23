@@ -25,10 +25,12 @@ class TicTacToeBoard extends StatefulWidget {
   State<TicTacToeBoard> createState() => _TicTacToeBoardState();
 }
 
-class _TicTacToeBoardState extends State<TicTacToeBoard> {
+class _TicTacToeBoardState extends State<TicTacToeBoard> with SingleTickerProviderStateMixin {
   final _getTicToeGridState = const GetTicTacToeGridStateUseCase();
   late final double tableSize;
   late final double cellSize;
+  late final AnimationController beatMarkAnimationController;
+  late final Animation<double> beatMarkAnimation;
 
 
   @override
@@ -37,11 +39,28 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
 
     tableSize = min(widget.screenSize.width, widget.screenSize.height) - 48;
     cellSize = tableSize / 3;
+    final iconSize = cellSize - 48;
+
+    beatMarkAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    )..addStatusListener((animationStatus){
+      if (animationStatus == AnimationStatus.dismissed){
+        beatMarkAnimationController.forward();
+      } else if (animationStatus == AnimationStatus.completed){
+        beatMarkAnimationController.reverse();
+      }
+    });
+    final animationCurve = CurvedAnimation(parent: beatMarkAnimationController, curve: Curves.linear);
+    beatMarkAnimation = Tween(begin: 0.85 * iconSize, end: 1.2 * iconSize)
+        .animate(animationCurve);
+    beatMarkAnimationController.forward();
   }
 
 
   @override
   void dispose() {
+    beatMarkAnimationController.dispose();
     super.dispose();
   }
 
@@ -70,14 +89,15 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
                         }
                       },
                       curCellState: curGridState[row][col],
-                      isMovedCell: _isCurrentCellMarkWillBeMovedInNextTurn(row: row, col: col),
+                      iconAnimation: _isCurrentCellMarkWillBeMovedInNextTurn(row: row, col: col) ?
+                        beatMarkAnimation : null,
                     ),
                 ]
               )
           ],
         ),
 
-        if (widget.gameState.endGameStatus != TicTacToeEndGameStatus.disconnected)
+        if (widget.gameState.endGameStatus == null)
           Padding(
             padding: EdgeInsets.only(top: tableSize + 72),
             child: AnimatedSwitcher(
@@ -124,6 +144,10 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> {
   }
 
   bool _isCurrentCellMarkWillBeMovedInNextTurn({required int row, required int col}){
+    // game ended
+    if (widget.gameState.endGameStatus != null){
+      return false;
+    }
     final cell = Coordinate(row: row, col: col);
     final isRoomMasterTurn = widget.gameState.isRoomMasterTurn;
     final circleCoordinates = widget.gameState.circleCoordinates;

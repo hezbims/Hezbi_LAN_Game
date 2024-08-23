@@ -4,15 +4,17 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/utils/tic_tac_toe_
 
 class TicTacToeCell extends StatelessWidget {
   final double cellSize;
+  double get iconSize => cellSize - 48;
   final TicTacToeCellState curCellState;
   final void Function() onClickCell;
-  final bool isMovedCell;
+  final Animation<double>? iconAnimation;
+  bool get isMovedCell => iconAnimation != null;
 
   const TicTacToeCell({super.key,
     required this.cellSize,
     required this.onClickCell,
     required this.curCellState,
-    required this.isMovedCell,
+    required this.iconAnimation,
   });
 
   @override
@@ -29,18 +31,29 @@ class TicTacToeCell extends StatelessWidget {
               transitionBuilder: (Widget child, Animation<double> animation) {
                 return ScaleTransition(scale: animation, child: child);
               },
-              child: Icon(
-                TicTacToeUiUtils.findIconBasedOnCellState(curCellState,),
-                color: TicTacToeUiUtils.findColorBasedOnCellState(
-                  curCellState: curCellState,
-                  isCellWillBeMovedInNextTurn: isMovedCell,
+              child: !isMovedCell ?
+                getIcon(iconSize):
+                AnimatedBuilder(
+                    animation: iconAnimation!,
+                    builder: (context, child){
+                      return getIcon(iconSize);
+                    }
                 ),
-                size: cellSize - 48,
-                key: ValueKey(curCellState),
-              ),
             ),
           ),
         )
+    );
+  }
+
+  Widget getIcon(double iconSize){
+    return Icon(
+      TicTacToeUiUtils.findIconBasedOnCellState(curCellState,),
+      color: TicTacToeUiUtils.findColorBasedOnCellState(
+        curCellState: curCellState,
+        isCellWillBeMovedInNextTurn: isMovedCell,
+      ),
+      size: iconAnimation?.value ?? iconSize,
+      key: ValueKey(curCellState),
     );
   }
 }
