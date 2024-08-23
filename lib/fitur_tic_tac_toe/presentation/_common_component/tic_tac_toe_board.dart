@@ -1,15 +1,10 @@
-import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/get_tic_tac_toe_grid_state_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_cell.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_icons.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/client/view_model/tic_tac_toe_client_view_model.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/room_master/view_model/room_master_tic_tac_toe_view_model.dart';
 
 class TicTacToeBoard extends StatefulWidget {
   final void Function({required int row, required int col}) onClickCell;
@@ -30,13 +25,11 @@ class TicTacToeBoard extends StatefulWidget {
   State<TicTacToeBoard> createState() => _TicTacToeBoardState();
 }
 
-class _TicTacToeBoardState extends State<TicTacToeBoard> with TickerProviderStateMixin {
+class _TicTacToeBoardState extends State<TicTacToeBoard> {
   final _getTicToeGridState = const GetTicTacToeGridStateUseCase();
   late final double tableSize;
   late final double cellSize;
-  late final double iconSize;
-  late List<List<TicTacToeCellState>> prevGridState;
-  StreamSubscription<TicTacToeGameState>? gameStateSubscription;
+
 
   @override
   void initState() {
@@ -44,36 +37,11 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> with TickerProviderStat
 
     tableSize = min(widget.screenSize.width, widget.screenSize.height) - 48;
     cellSize = tableSize / 3;
-    iconSize = cellSize - 36;
-    prevGridState = _getTicToeGridState(gameState: widget.gameState).toList();
-    initAnimation();
-
-    final Stream<TicTacToeGameState> gameStateStream = widget.isClientBoard ?
-      context.read<TicTacToeClientViewModel>().stream.map((state) => state.gameState!) :
-      context.read<RoomMasterTicTacToeViewModel>().stream.map((state) => state.gameState);
-    gameStateSubscription = gameStateStream.listen((gameState){
-      final curGridState = _getTicToeGridState(gameState: gameState);
-      for (int row = 0 ; row < 3 ; row++){
-        for (int col = 0 ; col < 3 ; col++){
-          if (curGridState[row][col] == prevGridState[row][col]){
-            continue;
-          }
-          if (curGridState[row][col] == TicTacToeCellState.hasNothing){
-            animationControllers[row][col].reverse();
-          } else {
-            animationControllers[row][col].forward();
-          }
-        }
-      }
-      prevGridState = curGridState;
-    });
   }
 
 
   @override
   void dispose() {
-    gameStateSubscription?.cancel();
-    disposeAnimation();
     super.dispose();
   }
 
@@ -102,8 +70,7 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> with TickerProviderStat
                         }
                       },
                       curCellState: curGridState[row][col],
-                      prevCellState: prevGridState[row][col],
-                      animation: scaleAnimations[row][col],
+                      isMovedCell: _isCurrentCellMarkWillBeMovedInNextTurn(row: row, col: col),
                     ),
                 ]
               )
@@ -113,52 +80,64 @@ class _TicTacToeBoardState extends State<TicTacToeBoard> with TickerProviderStat
         if (widget.gameState.endGameStatus != TicTacToeEndGameStatus.disconnected)
           Padding(
             padding: EdgeInsets.only(top: tableSize + 72),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Sekarang ${widget.isMyTurn ? 'giliranmu' : 'giliran lawan'} : ',
-                  style: const TextStyle(fontSize: 20),
-                ),
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              switchInCurve: Curves.easeInQuint,
+              switchOutCurve: Curves.easeOutQuint,
+              transitionBuilder: (Widget child, Animation<double> animation){
+                final isOut = child.key != ValueKey(widget.isMyTurn);
+                if (isOut){
+                  return FadeTransition(
+                    opacity: animation, // tidak usah buat tween baru, karena animation rangenya udah 0-1
+                    child: child,
+                  );
+                } else {
+                  return ScaleTransition(
+                    scale: animation,
+                    child: child,
+                  );
+                }
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                key: ValueKey(widget.isMyTurn),
+                children: [
+                  Text(
+                    'Sekarang ${widget.isMyTurn ? 'giliranmu' : 'giliran lawan'} : ',
+                    style: const TextStyle(fontSize: 20),
+                  ),
 
-                Icon(
-                  widget.gameState.isRoomMasterTurn ?
-                    TicTacToeIcons.roomMasterMark :
-                    TicTacToeIcons.clientMark,
-                  color: widget.gameState.isRoomMasterTurn ? Colors.red : Colors.blue,
-                )
-              ],
+                  Icon(
+                    widget.gameState.isRoomMasterTurn ?
+                      TicTacToeIcons.roomMasterMark :
+                      TicTacToeIcons.clientMark,
+                    color: widget.gameState.isRoomMasterTurn ?
+                      Colors.red : Colors.blue,
+                  )
+                ],
+              ),
             ),
           )
       ],
     );
   }
-  
-  late List<List<AnimationController>> animationControllers;
-  late List<List<Animation<double>>> scaleAnimations;
-  void initAnimation(){
-    animationControllers = [
-      for (int row = 0 ; row < 3 ; row++) [
-        for (int col = 0 ; col < 3 ; col++)
-          AnimationController(duration: const Duration(milliseconds: 750),vsync: this)
-      ]
-    ];
-    scaleAnimations = [
-      for (int row = 0 ; row < 3 ; row++) [
-        for (int col = 0 ; col < 3 ; col++)
-          Tween<double>(begin: 0, end: iconSize)
-          .animate(
-            CurvedAnimation(
-              parent: animationControllers[row][col],
-              curve: Curves.bounceOut
-            )
-          )
-      ]
-    ];
-  }
 
-  void disposeAnimation(){
-    animationControllers.expand((e) => e).forEach((e) => e.dispose());
+  bool _isCurrentCellMarkWillBeMovedInNextTurn({required int row, required int col}){
+    final cell = Coordinate(row: row, col: col);
+    final isRoomMasterTurn = widget.gameState.isRoomMasterTurn;
+    final circleCoordinates = widget.gameState.circleCoordinates;
+    final crossCoordinates = widget.gameState.crossCoordinates;
+
+    if (circleCoordinates.length < 3 || crossCoordinates.length < 3){
+      return false;
+    }
+
+    if (cell == circleCoordinates.firstOrNull && !isRoomMasterTurn ||
+        cell == crossCoordinates.firstOrNull && isRoomMasterTurn
+    ){
+      return true;
+    }
+    return false;
   }
 }

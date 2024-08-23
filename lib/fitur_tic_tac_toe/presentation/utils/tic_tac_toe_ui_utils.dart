@@ -3,34 +3,28 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_s
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_common_component/tic_tac_toe_icons.dart';
 
 abstract class TicTacToeUiUtils {
-  static IconData findIconBasedOnCellState({
-    required TicTacToeCellState curCellState,
-    required TicTacToeCellState prevCellState,
-  }){
+  static IconData? findIconBasedOnCellState(TicTacToeCellState curCellState){
     return switch (curCellState){
       TicTacToeCellState.hasCross =>
         TicTacToeIcons.roomMasterMark,
       TicTacToeCellState.hasCircle =>
         TicTacToeIcons.clientMark,
       TicTacToeCellState.hasNothing =>
-        prevCellState == TicTacToeCellState.hasCircle ?
-          TicTacToeIcons.clientMark :
-          TicTacToeIcons.roomMasterMark,
+        null,
     };
   }
 
-  static Color findColorBasedOnCellState({
+  static Color? findColorBasedOnCellState({
     required TicTacToeCellState curCellState,
-    required TicTacToeCellState prevCellState,
+    required bool isCellWillBeMovedInNextTurn,
   }){
     switch (curCellState){
       case TicTacToeCellState.hasCross:
-        return Colors.red;
+        return isCellWillBeMovedInNextTurn ? Colors.red[300] : Colors.red[800];
       case TicTacToeCellState.hasCircle:
-        return Colors.blue;
+        return isCellWillBeMovedInNextTurn ? Colors.blue[300] : Colors.blue[800];
       case TicTacToeCellState.hasNothing:
-        return prevCellState == TicTacToeCellState.hasCircle ?
-          Colors.blue : Colors.red;
+        return null;
     }
   }
 }

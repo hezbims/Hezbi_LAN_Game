@@ -54,4 +54,15 @@ class Coordinate {
   factory Coordinate.fromJson(Map<String, dynamic> json) =>
       _$CoordinateFromJson(json);
   Map<String, dynamic> toJson() => _$CoordinateToJson(this);
+
+  @override
+  int get hashCode => Object.hash(row, col);
+
+  @override
+  bool operator ==(Object other) {
+    if (other is! Coordinate) {
+      return false;
+    }
+    return other.row == row && other.col == col;
+  }
 }
