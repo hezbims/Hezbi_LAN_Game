@@ -1824,12 +1824,13 @@ class __$$TicTacToeClientStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
+class _$TicTacToeClientStateImpl extends _TicTacToeClientState {
   const _$TicTacToeClientStateImpl(
       {required this.connectResponse,
       required this.gameState,
       required this.endGameDialogStatus,
-      required this.isQuittingGame});
+      required this.isQuittingGame})
+      : super._();
 
   @override
   final ResponseWrapper<IMyWsConnectionHandler> connectResponse;
@@ -1873,12 +1874,13 @@ class _$TicTacToeClientStateImpl implements _TicTacToeClientState {
               this, _$identity);
 }
 
-abstract class _TicTacToeClientState implements TicTacToeClientState {
+abstract class _TicTacToeClientState extends TicTacToeClientState {
   const factory _TicTacToeClientState(
       {required final ResponseWrapper<IMyWsConnectionHandler> connectResponse,
       required final TicTacToeGameState? gameState,
       required final EndGameDialogStatus endGameDialogStatus,
       required final bool isQuittingGame}) = _$TicTacToeClientStateImpl;
+  const _TicTacToeClientState._() : super._();
 
   @override
   ResponseWrapper<IMyWsConnectionHandler> get connectResponse;

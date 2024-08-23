@@ -2272,14 +2272,15 @@ class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
+class _$RoomMasterTicTacToeStateImpl extends _RoomMasterTicTacToeState {
   const _$RoomMasterTicTacToeStateImpl(
       {required this.wsServerPreparationResponse,
       required this.hasConnection,
       required this.gameState,
       required this.mustBackToPreviousScreen,
       required this.endGameDialogStatus,
-      required this.isQuittingGame});
+      required this.isQuittingGame})
+      : super._();
 
   @override
   final ResponseWrapper<String>? wsServerPreparationResponse;
@@ -2339,7 +2340,7 @@ class _$RoomMasterTicTacToeStateImpl implements _RoomMasterTicTacToeState {
           _$RoomMasterTicTacToeStateImpl>(this, _$identity);
 }
 
-abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
+abstract class _RoomMasterTicTacToeState extends RoomMasterTicTacToeState {
   const factory _RoomMasterTicTacToeState(
       {required final ResponseWrapper<String>? wsServerPreparationResponse,
       required final bool hasConnection,
@@ -2347,6 +2348,7 @@ abstract class _RoomMasterTicTacToeState implements RoomMasterTicTacToeState {
       required final bool mustBackToPreviousScreen,
       required final EndGameDialogStatus endGameDialogStatus,
       required final bool isQuittingGame}) = _$RoomMasterTicTacToeStateImpl;
+  const _RoomMasterTicTacToeState._() : super._();
 
   @override
   ResponseWrapper<String>? get wsServerPreparationResponse;

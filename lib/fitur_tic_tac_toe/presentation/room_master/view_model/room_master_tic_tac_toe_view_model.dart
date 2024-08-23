@@ -14,10 +14,12 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_s
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/decide_the_winner_from_the_board_state_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/use_case/player_mark_the_board_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/i_tic_tac_toe_ui_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/i_tic_tac_toe_view_model.dart';
 
 part 'room_master_tic_tac_toe_view_model.freezed.dart';
 
-class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> {
+class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> implements ITicTacToeViewModel {
   
   IMyWsConnectionHandler? _wsClientHandler;
   final _playerMarkTheBoard = PlayerMarkTheBoardUseCase();
@@ -269,7 +271,8 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
 }
 
 @Freezed()
-class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
+class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState implements ITicTacToeUiState {
+  const RoomMasterTicTacToeState._();
   const factory RoomMasterTicTacToeState({
     required ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
     required bool hasConnection,
@@ -289,6 +292,9 @@ class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState {
       isQuittingGame: false,
     );
   }
+
+  @override
+  TicTacToeGameState getGameState() => gameState;
 }
 
 typedef WsServerUrl = String;

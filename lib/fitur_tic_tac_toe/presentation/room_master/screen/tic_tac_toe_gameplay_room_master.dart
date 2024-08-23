@@ -57,6 +57,7 @@ class TicTacToeGameplayRoomMaster extends StatelessWidget {
           },
           body: Center(child: TicTacToeBoard(
             isClientBoard: false,
+            screenSize: MediaQuery.of(context).size,
             gameState: state.gameState,
             onClickCell: ({required int row, required int col}){
               if (state.gameState.endGameStatus != null){

@@ -11,10 +11,12 @@ import 'package:hezbi_lan_game/common/domain/service/i_my_ws_connection_handler.
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/client_command_model.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_game_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/end_game_dialog_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/i_tic_tac_toe_ui_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/presentation/_ui_model/i_tic_tac_toe_view_model.dart';
 
 part 'tic_tac_toe_client_view_model.freezed.dart';
 
-class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClientState> {
+class TicTacToeClientViewModel extends Bloc<TicTacToeClientEvent, TicTacToeClientState> implements ITicTacToeViewModel {
   final _wsClient = TicTacToeWsClient();
   final String _serverAddress;
   IMyWsConnectionHandler? _wsChannelToServer;
@@ -190,7 +192,8 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
 }
 
 @Freezed()
-class TicTacToeClientState with _$TicTacToeClientState {
+class TicTacToeClientState with _$TicTacToeClientState implements ITicTacToeUiState {
+  const TicTacToeClientState._();
   const factory TicTacToeClientState({
     required ResponseWrapper<IMyWsConnectionHandler> connectResponse,
     required TicTacToeGameState? gameState,
@@ -206,4 +209,9 @@ class TicTacToeClientState with _$TicTacToeClientState {
       isQuittingGame: false,
     );
   }
+
+  @override
+  TicTacToeGameState getGameState() => gameState!;
+
+
 }

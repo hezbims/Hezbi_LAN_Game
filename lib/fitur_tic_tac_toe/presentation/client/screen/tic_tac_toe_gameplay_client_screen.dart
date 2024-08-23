@@ -75,6 +75,7 @@ class TicTacToeGameplayClientScreen extends StatelessWidget {
                     }
                     return TicTacToeBoard(
                       isClientBoard: true,
+                      screenSize: MediaQuery.of(context).size,
                       gameState: gameState,
                       onClickCell: ({required int col, required int row}) {
                         if (gameState.endGameStatus != null){
