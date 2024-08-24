@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hezbi_lan_game/common/domain/model/qr_game_model.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/my_routes.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/routing_utils.dart';
+import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/component/input_ip_port_dialog.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/component/list_daftar_permainan.dart';
 import 'package:hezbi_lan_game/fitur_join_permainan/presentation/daftar_permainan/daftar_permainan_view_model.dart';
 
@@ -17,13 +18,14 @@ class DaftarPermainanScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Join Permainan'),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(
-            top: 80, right: 24, left: 24,
-          ),
-          child: BlocBuilder<DaftarPermainanViewModel, DaftarPermainanState>(
-            builder: (context, state) {
-              return Column(
+        body: BlocBuilder<DaftarPermainanViewModel, DaftarPermainanState>(
+          builder: (context, state) {
+            return SingleChildScrollView(
+              padding: const EdgeInsets.only(
+                top: 80, left: 24, right: 24, bottom: 24,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -62,7 +64,16 @@ class DaftarPermainanScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: FilledButton(
-                          onPressed: (){},
+                          onPressed: () async {
+                            final result = await showInputIpPortDialog(context);
+                            if (result is! String || !context.mounted){
+                              return;
+                            }
+                            Navigator.of(context).pushReplacementNamed(
+                              MyRoutes.ticTacToeClientGameplay,
+                              arguments: result,
+                            );
+                          },
                           style: FilledButton.styleFrom(
                             minimumSize: const Size.fromHeight(56)
                           ),
@@ -107,9 +118,9 @@ class DaftarPermainanScreen extends StatelessWidget {
                     ],
                   )
                 ],
-              );
-            }
-          ),
+              ),
+            );
+          }
         ),
       ),
     );
