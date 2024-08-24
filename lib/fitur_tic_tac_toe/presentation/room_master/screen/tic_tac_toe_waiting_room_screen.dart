@@ -27,57 +27,81 @@ class _TicTacToeWaitingRoomScreenState extends State<TicTacToeWaitingRoomScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: BlocConsumer<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
-          listener: (context, state){
-            if (state.mustBackToPreviousScreen){
-              viewModel.add(const RoomMasterTicTacToeEvent
+    return BlocConsumer<RoomMasterTicTacToeViewModel, RoomMasterTicTacToeState>(
+        listener: (context, state) {
+          if (state.mustBackToPreviousScreen) {
+            viewModel.add(const RoomMasterTicTacToeEvent
                 .doneBackToPreviousScreen());
-              Navigator.of(context).pop();
-            }
-          },
-          builder: (context, state){
-            return Center(
+            Navigator.of(context).pop();
+          }
+        },
+        builder: (context, state) {
+          return Scaffold(
+            appBar: AppBar(
+              title: state.wsServerPreparationResponse != null ?
+              const Text('Menunggu Lawan...') : null,
+            ),
+            body: Center(
               child: ResponseLoader(
                   response: state.wsServerPreparationResponse,
-                  completeBuilder: (context, url){
+                  completeBuilder: (context, url) {
                     final qrModel = QrGameModel(
                       gameType: MyGameType.ticTacToe,
                       gameAddress: url,
                     );
 
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
+                    const qrSize = 200.0;
+
+                    return Stack(
+                      alignment: Alignment.center,
                       children: [
-                        const Text(
-                          'Scan Untuk Join',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: qrSize + 72),
+                          child: Text(
+                            'Infinite Tic-Tac-Toe',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
 
-                        const SizedBox(height: 12,),
-
                         QrImageView(
                           data: qrModel.asJsonString(),
-                          size: 200,
+                          size: qrSize,
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(top: qrSize + 72),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text('IP & Port :'),
+                              Text(
+                                url,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     );
                   },
-                  loadingBuilder: (context){
+                  loadingBuilder: (context) {
                     return const Text('Menyiapkan server...');
                   },
-                  onRefresh: (){
+                  onRefresh: () {
                     viewModel.add(const RoomMasterTicTacToeEvent
                         .prepareWebSocketServer());
                   }
               ),
-            );
-          }
-      ),
+            ),
+          );
+        }
     );
   }
 }
