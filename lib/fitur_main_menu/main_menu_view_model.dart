@@ -57,7 +57,7 @@ class MainMenuViewModel extends Bloc<MainMenuEvent, MainMenuState> {
 }
 
 @freezed
-sealed class MainMenuEvent {
+sealed class MainMenuEvent with _$MainMenuEvent {
   const factory MainMenuEvent.loadProfile() = _LoadProfile;
   factory MainMenuEvent.setNewProfileName(String name) = _SetNewProfileName;
   const factory MainMenuEvent.checkPlayerHasProfileName() = _CheckPlayerHasProfileName;
