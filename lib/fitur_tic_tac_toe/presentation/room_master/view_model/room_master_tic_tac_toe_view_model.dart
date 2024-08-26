@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hezbi_lan_game/common/data/service/player_profile_service.dart';
 import 'package:hezbi_lan_game/common/domain/model/response_wrapper.dart';
 import 'package:hezbi_lan_game/common/domain/use_case/prepare_game_server_use_case.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/data/tic_tac_toe_service_broadcaster.dart';
@@ -22,6 +23,7 @@ part 'room_master_tic_tac_toe_view_model.freezed.dart';
 class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMasterTicTacToeState> implements ITicTacToeViewModel {
   
   IMyWsConnectionHandler? _wsClientHandler;
+  final _playerProfileService = PlayerProfileService();
   final _playerMarkTheBoard = PlayerMarkTheBoardUseCase();
   final _decideTheWinnerFromTheBoardState = DecideTheWinnerFromTheBoardStateUseCase();
   final _wsService = TicTacToeWsServerService();
@@ -65,9 +67,10 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   ) async {
     emit(state.copyWith(wsServerPreparationResponse: ResponseWrapper.loading()));
 
+    final playerProfile = await _playerProfileService.getPlayerProfile();
     final serverPreparationResponse = await _prepareGameServerUseCase(
       onClientConnected: _handleNewConnection,
-      roomName: 'room-1',
+      roomName: '${playerProfile!.name} Room',
       currentPlayerCount: state.hasConnection ? 2 : 1,
     );
 

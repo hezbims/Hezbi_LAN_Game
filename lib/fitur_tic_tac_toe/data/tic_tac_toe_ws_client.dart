@@ -13,7 +13,7 @@ class TicTacToeWsClient {
     try {
       final wsChannel = IOWebSocketChannel.connect(
         Uri.parse('ws://$address/${MyConstants.websocketUrlPath}'),
-        pingInterval: const Duration(seconds: 4),
+        pingInterval: const Duration(milliseconds: 2500),
         connectTimeout: const Duration(seconds: 4),
       );
       await wsChannel.ready;
