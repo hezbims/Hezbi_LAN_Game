@@ -32,6 +32,7 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     wsServerService: _wsService,
     serviceBroadcaster: _ticTacToeServiceBroadcaster,
   );
+  late Future<String> _roomName;
 
   RoomMasterTicTacToeViewModel() : super(RoomMasterTicTacToeState.init()){
     on(_backToPreviousScreen);
@@ -44,6 +45,9 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
     on(_doneShowEndGameDialog);
     on(_markBoardSafely);
     on(_disconnectedFromClient);
+
+    _roomName = _playerProfileService.getPlayerProfile()
+        .then((playerProfile) => playerProfile!.name);
   }
   
   void _backToPreviousScreen(
@@ -67,10 +71,9 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
   ) async {
     emit(state.copyWith(wsServerPreparationResponse: ResponseWrapper.loading()));
 
-    final playerProfile = await _playerProfileService.getPlayerProfile();
     final serverPreparationResponse = await _prepareGameServerUseCase(
       onClientConnected: _handleNewConnection,
-      roomName: '${playerProfile!.name} Room',
+      roomName: await _roomName,
       currentPlayerCount: state.hasConnection ? 2 : 1,
     );
 
@@ -88,11 +91,18 @@ class RoomMasterTicTacToeViewModel extends Bloc<RoomMasterTicTacToeEvent, RoomMa
 
   void _handleNewConnection(
     IMyWsConnectionHandler newWsClientHandler,
-  ){
+  ) async {
     if (_wsClientHandler != null){
       newWsClientHandler.closeConnection(null);
       return;
     }
+    await _ticTacToeServiceBroadcaster.unregisterService();
+    await _ticTacToeServiceBroadcaster.registerService(
+      roomName: await _roomName,
+      currentPlayerCount: 2,
+      roomAddress: state.wsServerPreparationResponse!.asSucceed().data,
+    );
+
     _wsClientHandler = newWsClientHandler
       ..addOnClientDataListener(
         onData: _handleDataFromClient,

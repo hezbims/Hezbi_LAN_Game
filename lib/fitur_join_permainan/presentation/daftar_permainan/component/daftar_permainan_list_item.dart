@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hezbi_lan_game/common/domain/model/my_game_type.dart';
 import 'package:hezbi_lan_game/common/domain/model/my_service_attribute.dart';
 import 'package:hezbi_lan_game/common/presentation/routes/routing_utils.dart';
@@ -51,6 +52,10 @@ class DaftarPermainanListItem extends StatelessWidget {
 
                 OutlinedButton(
                   onPressed: (){
+                    if (game.currentPlayer == game.maxPlayer){
+                      Fluttertoast.showToast(msg: 'Permainan sudah penuh!');
+                      return;
+                    }
                     final route = RoutingUtils.getRouteBasedOnGameType(game.gameType);
                     Navigator.of(context).pushReplacementNamed(route, arguments: game.address);
                   },
