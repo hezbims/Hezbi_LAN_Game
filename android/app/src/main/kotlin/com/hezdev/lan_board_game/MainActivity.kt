@@ -1,6 +1,6 @@
-package com.hezdev.lan_game.hezbi_lan_game
+package com.hezdev.lan_board_game
 
-import com.hezdev.lan_game.hezbi_lan_game.method_channel.networking.setupNetworkingPlugin
+import com.hezdev.lan_board_game.method_channel.networking.setupNetworkingPlugin
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 

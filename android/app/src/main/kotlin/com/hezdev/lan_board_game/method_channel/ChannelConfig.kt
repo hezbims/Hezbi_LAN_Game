@@ -1,4 +1,4 @@
-package com.hezdev.lan_game.hezbi_lan_game.method_channel
+package com.hezdev.lan_board_game.method_channel
 
 object ChannelConfig {
     object Networking {

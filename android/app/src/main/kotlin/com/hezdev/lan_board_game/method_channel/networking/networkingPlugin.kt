@@ -1,6 +1,6 @@
-package com.hezdev.lan_game.hezbi_lan_game.method_channel.networking
+package com.hezdev.lan_board_game.method_channel.networking
 
-import com.hezdev.lan_game.hezbi_lan_game.method_channel.ChannelConfig
+import com.hezdev.lan_board_game.method_channel.ChannelConfig
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import java.net.Inet4Address
