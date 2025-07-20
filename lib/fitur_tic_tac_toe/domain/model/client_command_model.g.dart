@@ -6,39 +6,36 @@ part of 'client_command_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MarkCoordinateImpl _$$MarkCoordinateImplFromJson(Map<String, dynamic> json) =>
-    _$MarkCoordinateImpl(
+MarkCoordinate _$MarkCoordinateFromJson(Map<String, dynamic> json) =>
+    MarkCoordinate(
       row: (json['row'] as num).toInt(),
       col: (json['col'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$MarkCoordinateImplToJson(
-        _$MarkCoordinateImpl instance) =>
+Map<String, dynamic> _$MarkCoordinateToJson(MarkCoordinate instance) =>
     <String, dynamic>{
       'row': instance.row,
       'col': instance.col,
       'runtimeType': instance.$type,
     };
 
-_$ConfirmEndGameImpl _$$ConfirmEndGameImplFromJson(Map<String, dynamic> json) =>
-    _$ConfirmEndGameImpl(
+ConfirmEndGame _$ConfirmEndGameFromJson(Map<String, dynamic> json) =>
+    ConfirmEndGame(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ConfirmEndGameImplToJson(
-        _$ConfirmEndGameImpl instance) =>
+Map<String, dynamic> _$ConfirmEndGameToJson(ConfirmEndGame instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$ClientQuitGameImpl _$$ClientQuitGameImplFromJson(Map<String, dynamic> json) =>
-    _$ClientQuitGameImpl(
+ClientQuitGame _$ClientQuitGameFromJson(Map<String, dynamic> json) =>
+    ClientQuitGame(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ClientQuitGameImplToJson(
-        _$ClientQuitGameImpl instance) =>
+Map<String, dynamic> _$ClientQuitGameToJson(ClientQuitGame instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };

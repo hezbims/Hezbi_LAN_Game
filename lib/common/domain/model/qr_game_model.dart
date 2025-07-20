@@ -7,7 +7,7 @@ part 'qr_game_model.freezed.dart';
 part 'qr_game_model.g.dart';
 
 @freezed
-class QrGameModel with _$QrGameModel{
+abstract class QrGameModel with _$QrGameModel{
   const QrGameModel._();
   const factory QrGameModel({
     required MyGameType gameType,

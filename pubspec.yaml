@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   shelf_web_socket: ^2.0.0
   flutter_bloc: ^8.1.6
-  freezed_annotation: ^2.4.4
+  freezed_annotation: ^3.1.0
   qr_flutter: ^4.1.0
   mobile_scanner: ^5.1.1
   web_socket_channel: ^3.0.1
@@ -48,6 +48,7 @@ dependencies:
   shelf: ^1.4.1
   http: ^1.2.2
   shared_preferences: ^2.3.2
+  meta: ^1.16.0
 
 
 dev_dependencies:
@@ -61,7 +62,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
   build_runner: ^2.4.11
-  freezed: ^2.5.2
+  freezed: ^3.2.0
   json_serializable: ^6.8.0
   flutter_launcher_icons: ^0.13.1
 

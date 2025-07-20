@@ -6,13 +6,12 @@ part of 'qr_game_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QrGameModelImpl _$$QrGameModelImplFromJson(Map<String, dynamic> json) =>
-    _$QrGameModelImpl(
+_QrGameModel _$QrGameModelFromJson(Map<String, dynamic> json) => _QrGameModel(
       gameType: $enumDecode(_$MyGameTypeEnumMap, json['gameType']),
       gameAddress: json['gameAddress'] as String,
     );
 
-Map<String, dynamic> _$$QrGameModelImplToJson(_$QrGameModelImpl instance) =>
+Map<String, dynamic> _$QrGameModelToJson(_QrGameModel instance) =>
     <String, dynamic>{
       'gameType': _$MyGameTypeEnumMap[instance.gameType]!,
       'gameAddress': instance.gameAddress,

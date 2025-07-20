@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,68 +9,103 @@ part of 'room_master_tic_tac_toe_view_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RoomMasterTicTacToeEvent {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is RoomMasterTicTacToeEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeEvent()';
+  }
+}
+
+/// @nodoc
+class $RoomMasterTicTacToeEventCopyWith<$Res> {
+  $RoomMasterTicTacToeEventCopyWith(
+      RoomMasterTicTacToeEvent _, $Res Function(RoomMasterTicTacToeEvent) __);
+}
+
+/// Adds pattern-matching-related methods to [RoomMasterTicTacToeEvent].
+extension RoomMasterTicTacToeEventPatterns on RoomMasterTicTacToeEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
+    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
+    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
+    TResult Function(QuitGame value)? quitGame,
+    TResult Function(UpdateRoomMasterAndClientGameState value)?
         updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
+    TResult Function(UpdateOnlyRoomMasterState value)?
         updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
+    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
+    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
+    TResult Function(MarkBoardSafely value)? markBoardSafely,
+    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer() when prepareWebSocketServer != null:
+        return prepareWebSocketServer(_that);
+      case _BackToPreviousScreen() when backToPreviousScreen != null:
+        return backToPreviousScreen(_that);
+      case _DoneBackToPreviousScreen() when doneBackToPreviousScreen != null:
+        return doneBackToPreviousScreen(_that);
+      case QuitGame() when quitGame != null:
+        return quitGame(_that);
+      case UpdateRoomMasterAndClientGameState()
+          when updateRoomMasterAndClientGameState != null:
+        return updateRoomMasterAndClientGameState(_that);
+      case UpdateOnlyRoomMasterState() when updateOnlyRoomMasterState != null:
+        return updateOnlyRoomMasterState(_that);
+      case ShowEndGameDialog() when showEndGameDialog != null:
+        return showEndGameDialog(_that);
+      case DoneShowEndGameDialog() when doneShowEndGameDialog != null:
+        return doneShowEndGameDialog(_that);
+      case MarkBoardSafely() when markBoardSafely != null:
+        return markBoardSafely(_that);
+      case _DisConnectedFromClient() when disconnectedFromClient != null:
+        return disconnectedFromClient(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PrepareWebSocketServer value)
@@ -89,8 +124,44 @@ mixin _$RoomMasterTicTacToeEvent {
     required TResult Function(MarkBoardSafely value) markBoardSafely,
     required TResult Function(_DisConnectedFromClient value)
         disconnectedFromClient,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer():
+        return prepareWebSocketServer(_that);
+      case _BackToPreviousScreen():
+        return backToPreviousScreen(_that);
+      case _DoneBackToPreviousScreen():
+        return doneBackToPreviousScreen(_that);
+      case QuitGame():
+        return quitGame(_that);
+      case UpdateRoomMasterAndClientGameState():
+        return updateRoomMasterAndClientGameState(_that);
+      case UpdateOnlyRoomMasterState():
+        return updateOnlyRoomMasterState(_that);
+      case ShowEndGameDialog():
+        return showEndGameDialog(_that);
+      case DoneShowEndGameDialog():
+        return doneShowEndGameDialog(_that);
+      case MarkBoardSafely():
+        return markBoardSafely(_that);
+      case _DisConnectedFromClient():
+        return disconnectedFromClient(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
@@ -106,979 +177,328 @@ mixin _$RoomMasterTicTacToeEvent {
     TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
     TResult? Function(MarkBoardSafely value)? markBoardSafely,
     TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer() when prepareWebSocketServer != null:
+        return prepareWebSocketServer(_that);
+      case _BackToPreviousScreen() when backToPreviousScreen != null:
+        return backToPreviousScreen(_that);
+      case _DoneBackToPreviousScreen() when doneBackToPreviousScreen != null:
+        return doneBackToPreviousScreen(_that);
+      case QuitGame() when quitGame != null:
+        return quitGame(_that);
+      case UpdateRoomMasterAndClientGameState()
+          when updateRoomMasterAndClientGameState != null:
+        return updateRoomMasterAndClientGameState(_that);
+      case UpdateOnlyRoomMasterState() when updateOnlyRoomMasterState != null:
+        return updateOnlyRoomMasterState(_that);
+      case ShowEndGameDialog() when showEndGameDialog != null:
+        return showEndGameDialog(_that);
+      case DoneShowEndGameDialog() when doneShowEndGameDialog != null:
+        return doneShowEndGameDialog(_that);
+      case MarkBoardSafely() when markBoardSafely != null:
+        return markBoardSafely(_that);
+      case _DisConnectedFromClient() when disconnectedFromClient != null:
+        return disconnectedFromClient(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? prepareWebSocketServer,
+    TResult Function()? backToPreviousScreen,
+    TResult Function()? doneBackToPreviousScreen,
+    TResult Function()? quitGame,
+    TResult Function(RoomMasterTicTacToeState newState)?
         updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
+    TResult Function(RoomMasterTicTacToeState newState)?
         updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
+    TResult Function()? showEndGameDialog,
+    TResult Function()? doneShowEndGameDialog,
+    TResult Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer() when prepareWebSocketServer != null:
+        return prepareWebSocketServer();
+      case _BackToPreviousScreen() when backToPreviousScreen != null:
+        return backToPreviousScreen();
+      case _DoneBackToPreviousScreen() when doneBackToPreviousScreen != null:
+        return doneBackToPreviousScreen();
+      case QuitGame() when quitGame != null:
+        return quitGame();
+      case UpdateRoomMasterAndClientGameState()
+          when updateRoomMasterAndClientGameState != null:
+        return updateRoomMasterAndClientGameState(_that.newState);
+      case UpdateOnlyRoomMasterState() when updateOnlyRoomMasterState != null:
+        return updateOnlyRoomMasterState(_that.newState);
+      case ShowEndGameDialog() when showEndGameDialog != null:
+        return showEndGameDialog();
+      case DoneShowEndGameDialog() when doneShowEndGameDialog != null:
+        return doneShowEndGameDialog();
+      case MarkBoardSafely() when markBoardSafely != null:
+        return markBoardSafely(_that.row, _that.col, _that.isUpdateFromClient);
+      case _DisConnectedFromClient() when disconnectedFromClient != null:
+        return disconnectedFromClient(_that.closeCode, _that.closeReason);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() prepareWebSocketServer,
+    required TResult Function() backToPreviousScreen,
+    required TResult Function() doneBackToPreviousScreen,
+    required TResult Function() quitGame,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateRoomMasterAndClientGameState,
+    required TResult Function(RoomMasterTicTacToeState newState)
+        updateOnlyRoomMasterState,
+    required TResult Function() showEndGameDialog,
+    required TResult Function() doneShowEndGameDialog,
+    required TResult Function(int row, int col, bool isUpdateFromClient)
+        markBoardSafely,
+    required TResult Function(int? closeCode, String? closeReason)
+        disconnectedFromClient,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer():
+        return prepareWebSocketServer();
+      case _BackToPreviousScreen():
+        return backToPreviousScreen();
+      case _DoneBackToPreviousScreen():
+        return doneBackToPreviousScreen();
+      case QuitGame():
+        return quitGame();
+      case UpdateRoomMasterAndClientGameState():
+        return updateRoomMasterAndClientGameState(_that.newState);
+      case UpdateOnlyRoomMasterState():
+        return updateOnlyRoomMasterState(_that.newState);
+      case ShowEndGameDialog():
+        return showEndGameDialog();
+      case DoneShowEndGameDialog():
+        return doneShowEndGameDialog();
+      case MarkBoardSafely():
+        return markBoardSafely(_that.row, _that.col, _that.isUpdateFromClient);
+      case _DisConnectedFromClient():
+        return disconnectedFromClient(_that.closeCode, _that.closeReason);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? prepareWebSocketServer,
+    TResult? Function()? backToPreviousScreen,
+    TResult? Function()? doneBackToPreviousScreen,
+    TResult? Function()? quitGame,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateRoomMasterAndClientGameState,
+    TResult? Function(RoomMasterTicTacToeState newState)?
+        updateOnlyRoomMasterState,
+    TResult? Function()? showEndGameDialog,
+    TResult? Function()? doneShowEndGameDialog,
+    TResult? Function(int row, int col, bool isUpdateFromClient)?
+        markBoardSafely,
+    TResult? Function(int? closeCode, String? closeReason)?
+        disconnectedFromClient,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case PrepareWebSocketServer() when prepareWebSocketServer != null:
+        return prepareWebSocketServer();
+      case _BackToPreviousScreen() when backToPreviousScreen != null:
+        return backToPreviousScreen();
+      case _DoneBackToPreviousScreen() when doneBackToPreviousScreen != null:
+        return doneBackToPreviousScreen();
+      case QuitGame() when quitGame != null:
+        return quitGame();
+      case UpdateRoomMasterAndClientGameState()
+          when updateRoomMasterAndClientGameState != null:
+        return updateRoomMasterAndClientGameState(_that.newState);
+      case UpdateOnlyRoomMasterState() when updateOnlyRoomMasterState != null:
+        return updateOnlyRoomMasterState(_that.newState);
+      case ShowEndGameDialog() when showEndGameDialog != null:
+        return showEndGameDialog();
+      case DoneShowEndGameDialog() when doneShowEndGameDialog != null:
+        return doneShowEndGameDialog();
+      case MarkBoardSafely() when markBoardSafely != null:
+        return markBoardSafely(_that.row, _that.col, _that.isUpdateFromClient);
+      case _DisConnectedFromClient() when disconnectedFromClient != null:
+        return disconnectedFromClient(_that.closeCode, _that.closeReason);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $RoomMasterTicTacToeEventCopyWith<$Res> {
-  factory $RoomMasterTicTacToeEventCopyWith(RoomMasterTicTacToeEvent value,
-          $Res Function(RoomMasterTicTacToeEvent) then) =
-      _$RoomMasterTicTacToeEventCopyWithImpl<$Res, RoomMasterTicTacToeEvent>;
-}
 
-/// @nodoc
-class _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        $Val extends RoomMasterTicTacToeEvent>
-    implements $RoomMasterTicTacToeEventCopyWith<$Res> {
-  _$RoomMasterTicTacToeEventCopyWithImpl(this._value, this._then);
+class PrepareWebSocketServer implements RoomMasterTicTacToeEvent {
+  const PrepareWebSocketServer();
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PrepareWebSocketServer);
+  }
 
-/// @nodoc
-abstract class _$$PrepareWebSocketServerImplCopyWith<$Res> {
-  factory _$$PrepareWebSocketServerImplCopyWith(
-          _$PrepareWebSocketServerImpl value,
-          $Res Function(_$PrepareWebSocketServerImpl) then) =
-      __$$PrepareWebSocketServerImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PrepareWebSocketServerImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$PrepareWebSocketServerImpl>
-    implements _$$PrepareWebSocketServerImplCopyWith<$Res> {
-  __$$PrepareWebSocketServerImplCopyWithImpl(
-      _$PrepareWebSocketServerImpl _value,
-      $Res Function(_$PrepareWebSocketServerImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$PrepareWebSocketServerImpl implements PrepareWebSocketServer {
-  const _$PrepareWebSocketServerImpl();
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.prepareWebSocketServer()';
   }
+}
+
+/// @nodoc
+
+class _BackToPreviousScreen implements RoomMasterTicTacToeEvent {
+  const _BackToPreviousScreen();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PrepareWebSocketServerImpl);
+        (other.runtimeType == runtimeType && other is _BackToPreviousScreen);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return prepareWebSocketServer();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return prepareWebSocketServer?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (prepareWebSocketServer != null) {
-      return prepareWebSocketServer();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return prepareWebSocketServer(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return prepareWebSocketServer?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (prepareWebSocketServer != null) {
-      return prepareWebSocketServer(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PrepareWebSocketServer implements RoomMasterTicTacToeEvent {
-  const factory PrepareWebSocketServer() = _$PrepareWebSocketServerImpl;
-}
-
-/// @nodoc
-abstract class _$$BackToPreviousScreenImplCopyWith<$Res> {
-  factory _$$BackToPreviousScreenImplCopyWith(_$BackToPreviousScreenImpl value,
-          $Res Function(_$BackToPreviousScreenImpl) then) =
-      __$$BackToPreviousScreenImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BackToPreviousScreenImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$BackToPreviousScreenImpl>
-    implements _$$BackToPreviousScreenImplCopyWith<$Res> {
-  __$$BackToPreviousScreenImplCopyWithImpl(_$BackToPreviousScreenImpl _value,
-      $Res Function(_$BackToPreviousScreenImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BackToPreviousScreenImpl implements _BackToPreviousScreen {
-  const _$BackToPreviousScreenImpl();
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.backToPreviousScreen()';
   }
+}
+
+/// @nodoc
+
+class _DoneBackToPreviousScreen implements RoomMasterTicTacToeEvent {
+  const _DoneBackToPreviousScreen();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BackToPreviousScreenImpl);
+            other is _DoneBackToPreviousScreen);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return backToPreviousScreen();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return backToPreviousScreen?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (backToPreviousScreen != null) {
-      return backToPreviousScreen();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return backToPreviousScreen(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return backToPreviousScreen?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (backToPreviousScreen != null) {
-      return backToPreviousScreen(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BackToPreviousScreen implements RoomMasterTicTacToeEvent {
-  const factory _BackToPreviousScreen() = _$BackToPreviousScreenImpl;
-}
-
-/// @nodoc
-abstract class _$$DoneBackToPreviousScreenImplCopyWith<$Res> {
-  factory _$$DoneBackToPreviousScreenImplCopyWith(
-          _$DoneBackToPreviousScreenImpl value,
-          $Res Function(_$DoneBackToPreviousScreenImpl) then) =
-      __$$DoneBackToPreviousScreenImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DoneBackToPreviousScreenImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$DoneBackToPreviousScreenImpl>
-    implements _$$DoneBackToPreviousScreenImplCopyWith<$Res> {
-  __$$DoneBackToPreviousScreenImplCopyWithImpl(
-      _$DoneBackToPreviousScreenImpl _value,
-      $Res Function(_$DoneBackToPreviousScreenImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DoneBackToPreviousScreenImpl implements _DoneBackToPreviousScreen {
-  const _$DoneBackToPreviousScreenImpl();
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.doneBackToPreviousScreen()';
   }
+}
+
+/// @nodoc
+
+class QuitGame implements RoomMasterTicTacToeEvent {
+  const QuitGame();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DoneBackToPreviousScreenImpl);
+        (other.runtimeType == runtimeType && other is QuitGame);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return doneBackToPreviousScreen();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return doneBackToPreviousScreen?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneBackToPreviousScreen != null) {
-      return doneBackToPreviousScreen();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return doneBackToPreviousScreen(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return doneBackToPreviousScreen?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneBackToPreviousScreen != null) {
-      return doneBackToPreviousScreen(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DoneBackToPreviousScreen implements RoomMasterTicTacToeEvent {
-  const factory _DoneBackToPreviousScreen() = _$DoneBackToPreviousScreenImpl;
-}
-
-/// @nodoc
-abstract class _$$QuitGameImplCopyWith<$Res> {
-  factory _$$QuitGameImplCopyWith(
-          _$QuitGameImpl value, $Res Function(_$QuitGameImpl) then) =
-      __$$QuitGameImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$QuitGameImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res, _$QuitGameImpl>
-    implements _$$QuitGameImplCopyWith<$Res> {
-  __$$QuitGameImplCopyWithImpl(
-      _$QuitGameImpl _value, $Res Function(_$QuitGameImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$QuitGameImpl implements QuitGame {
-  const _$QuitGameImpl();
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.quitGame()';
   }
+}
+
+/// @nodoc
+
+class UpdateRoomMasterAndClientGameState implements RoomMasterTicTacToeEvent {
+  const UpdateRoomMasterAndClientGameState(this.newState);
+
+  final RoomMasterTicTacToeState newState;
+
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateRoomMasterAndClientGameStateCopyWith<
+          UpdateRoomMasterAndClientGameState>
+      get copyWith => _$UpdateRoomMasterAndClientGameStateCopyWithImpl<
+          UpdateRoomMasterAndClientGameState>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$QuitGameImpl);
+        (other.runtimeType == runtimeType &&
+            other is UpdateRoomMasterAndClientGameState &&
+            (identical(other.newState, newState) ||
+                other.newState == newState));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return quitGame();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return quitGame?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (quitGame != null) {
-      return quitGame();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return quitGame(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return quitGame?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (quitGame != null) {
-      return quitGame(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class QuitGame implements RoomMasterTicTacToeEvent {
-  const factory QuitGame() = _$QuitGameImpl;
-}
-
-/// @nodoc
-abstract class _$$UpdateRoomMasterAndClientGameStateImplCopyWith<$Res> {
-  factory _$$UpdateRoomMasterAndClientGameStateImplCopyWith(
-          _$UpdateRoomMasterAndClientGameStateImpl value,
-          $Res Function(_$UpdateRoomMasterAndClientGameStateImpl) then) =
-      __$$UpdateRoomMasterAndClientGameStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({RoomMasterTicTacToeState newState});
-
-  $RoomMasterTicTacToeStateCopyWith<$Res> get newState;
-}
-
-/// @nodoc
-class __$$UpdateRoomMasterAndClientGameStateImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$UpdateRoomMasterAndClientGameStateImpl>
-    implements _$$UpdateRoomMasterAndClientGameStateImplCopyWith<$Res> {
-  __$$UpdateRoomMasterAndClientGameStateImplCopyWithImpl(
-      _$UpdateRoomMasterAndClientGameStateImpl _value,
-      $Res Function(_$UpdateRoomMasterAndClientGameStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? newState = null,
-  }) {
-    return _then(_$UpdateRoomMasterAndClientGameStateImpl(
-      null == newState
-          ? _value.newState
-          : newState // ignore: cast_nullable_to_non_nullable
-              as RoomMasterTicTacToeState,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RoomMasterTicTacToeStateCopyWith<$Res> get newState {
-    return $RoomMasterTicTacToeStateCopyWith<$Res>(_value.newState, (value) {
-      return _then(_value.copyWith(newState: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$UpdateRoomMasterAndClientGameStateImpl
-    implements UpdateRoomMasterAndClientGameState {
-  const _$UpdateRoomMasterAndClientGameStateImpl(this.newState);
-
-  @override
-  final RoomMasterTicTacToeState newState;
+  int get hashCode => Object.hash(runtimeType, newState);
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.updateRoomMasterAndClientGameState(newState: $newState)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateRoomMasterAndClientGameStateImpl &&
-            (identical(other.newState, newState) ||
-                other.newState == newState));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, newState);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateRoomMasterAndClientGameStateImplCopyWith<
-          _$UpdateRoomMasterAndClientGameStateImpl>
-      get copyWith => __$$UpdateRoomMasterAndClientGameStateImplCopyWithImpl<
-          _$UpdateRoomMasterAndClientGameStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return updateRoomMasterAndClientGameState(newState);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return updateRoomMasterAndClientGameState?.call(newState);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (updateRoomMasterAndClientGameState != null) {
-      return updateRoomMasterAndClientGameState(newState);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return updateRoomMasterAndClientGameState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return updateRoomMasterAndClientGameState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (updateRoomMasterAndClientGameState != null) {
-      return updateRoomMasterAndClientGameState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateRoomMasterAndClientGameState
-    implements RoomMasterTicTacToeEvent {
-  const factory UpdateRoomMasterAndClientGameState(
-          final RoomMasterTicTacToeState newState) =
-      _$UpdateRoomMasterAndClientGameStateImpl;
-
-  RoomMasterTicTacToeState get newState;
-  @JsonKey(ignore: true)
-  _$$UpdateRoomMasterAndClientGameStateImplCopyWith<
-          _$UpdateRoomMasterAndClientGameStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateOnlyRoomMasterStateImplCopyWith<$Res> {
-  factory _$$UpdateOnlyRoomMasterStateImplCopyWith(
-          _$UpdateOnlyRoomMasterStateImpl value,
-          $Res Function(_$UpdateOnlyRoomMasterStateImpl) then) =
-      __$$UpdateOnlyRoomMasterStateImplCopyWithImpl<$Res>;
+abstract mixin class $UpdateRoomMasterAndClientGameStateCopyWith<$Res>
+    implements $RoomMasterTicTacToeEventCopyWith<$Res> {
+  factory $UpdateRoomMasterAndClientGameStateCopyWith(
+          UpdateRoomMasterAndClientGameState value,
+          $Res Function(UpdateRoomMasterAndClientGameState) _then) =
+      _$UpdateRoomMasterAndClientGameStateCopyWithImpl;
   @useResult
   $Res call({RoomMasterTicTacToeState newState});
 
@@ -1086,55 +506,58 @@ abstract class _$$UpdateOnlyRoomMasterStateImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdateOnlyRoomMasterStateImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$UpdateOnlyRoomMasterStateImpl>
-    implements _$$UpdateOnlyRoomMasterStateImplCopyWith<$Res> {
-  __$$UpdateOnlyRoomMasterStateImplCopyWithImpl(
-      _$UpdateOnlyRoomMasterStateImpl _value,
-      $Res Function(_$UpdateOnlyRoomMasterStateImpl) _then)
-      : super(_value, _then);
+class _$UpdateRoomMasterAndClientGameStateCopyWithImpl<$Res>
+    implements $UpdateRoomMasterAndClientGameStateCopyWith<$Res> {
+  _$UpdateRoomMasterAndClientGameStateCopyWithImpl(this._self, this._then);
 
+  final UpdateRoomMasterAndClientGameState _self;
+  final $Res Function(UpdateRoomMasterAndClientGameState) _then;
+
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? newState = null,
   }) {
-    return _then(_$UpdateOnlyRoomMasterStateImpl(
+    return _then(UpdateRoomMasterAndClientGameState(
       null == newState
-          ? _value.newState
+          ? _self.newState
           : newState // ignore: cast_nullable_to_non_nullable
               as RoomMasterTicTacToeState,
     ));
   }
 
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RoomMasterTicTacToeStateCopyWith<$Res> get newState {
-    return $RoomMasterTicTacToeStateCopyWith<$Res>(_value.newState, (value) {
-      return _then(_value.copyWith(newState: value));
+    return $RoomMasterTicTacToeStateCopyWith<$Res>(_self.newState, (value) {
+      return _then(_self.copyWith(newState: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
-  const _$UpdateOnlyRoomMasterStateImpl(this.newState);
+class UpdateOnlyRoomMasterState implements RoomMasterTicTacToeEvent {
+  const UpdateOnlyRoomMasterState(this.newState);
 
-  @override
   final RoomMasterTicTacToeState newState;
 
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeEvent.updateOnlyRoomMasterState(newState: $newState)';
-  }
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateOnlyRoomMasterStateCopyWith<UpdateOnlyRoomMasterState> get copyWith =>
+      _$UpdateOnlyRoomMasterStateCopyWithImpl<UpdateOnlyRoomMasterState>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateOnlyRoomMasterStateImpl &&
+            other is UpdateOnlyRoomMasterState &&
             (identical(other.newState, newState) ||
                 other.newState == newState));
   }
@@ -1142,572 +565,119 @@ class _$UpdateOnlyRoomMasterStateImpl implements UpdateOnlyRoomMasterState {
   @override
   int get hashCode => Object.hash(runtimeType, newState);
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.updateOnlyRoomMasterState(newState: $newState)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateOnlyRoomMasterStateCopyWith<$Res>
+    implements $RoomMasterTicTacToeEventCopyWith<$Res> {
+  factory $UpdateOnlyRoomMasterStateCopyWith(UpdateOnlyRoomMasterState value,
+          $Res Function(UpdateOnlyRoomMasterState) _then) =
+      _$UpdateOnlyRoomMasterStateCopyWithImpl;
+  @useResult
+  $Res call({RoomMasterTicTacToeState newState});
+
+  $RoomMasterTicTacToeStateCopyWith<$Res> get newState;
+}
+
+/// @nodoc
+class _$UpdateOnlyRoomMasterStateCopyWithImpl<$Res>
+    implements $UpdateOnlyRoomMasterStateCopyWith<$Res> {
+  _$UpdateOnlyRoomMasterStateCopyWithImpl(this._self, this._then);
+
+  final UpdateOnlyRoomMasterState _self;
+  final $Res Function(UpdateOnlyRoomMasterState) _then;
+
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? newState = null,
+  }) {
+    return _then(UpdateOnlyRoomMasterState(
+      null == newState
+          ? _self.newState
+          : newState // ignore: cast_nullable_to_non_nullable
+              as RoomMasterTicTacToeState,
+    ));
+  }
+
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateOnlyRoomMasterStateImplCopyWith<_$UpdateOnlyRoomMasterStateImpl>
-      get copyWith => __$$UpdateOnlyRoomMasterStateImplCopyWithImpl<
-          _$UpdateOnlyRoomMasterStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return updateOnlyRoomMasterState(newState);
+  $RoomMasterTicTacToeStateCopyWith<$Res> get newState {
+    return $RoomMasterTicTacToeStateCopyWith<$Res>(_self.newState, (value) {
+      return _then(_self.copyWith(newState: value));
+    });
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return updateOnlyRoomMasterState?.call(newState);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (updateOnlyRoomMasterState != null) {
-      return updateOnlyRoomMasterState(newState);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return updateOnlyRoomMasterState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return updateOnlyRoomMasterState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (updateOnlyRoomMasterState != null) {
-      return updateOnlyRoomMasterState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateOnlyRoomMasterState implements RoomMasterTicTacToeEvent {
-  const factory UpdateOnlyRoomMasterState(
-          final RoomMasterTicTacToeState newState) =
-      _$UpdateOnlyRoomMasterStateImpl;
-
-  RoomMasterTicTacToeState get newState;
-  @JsonKey(ignore: true)
-  _$$UpdateOnlyRoomMasterStateImplCopyWith<_$UpdateOnlyRoomMasterStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ShowEndGameDialogImplCopyWith<$Res> {
-  factory _$$ShowEndGameDialogImplCopyWith(_$ShowEndGameDialogImpl value,
-          $Res Function(_$ShowEndGameDialogImpl) then) =
-      __$$ShowEndGameDialogImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ShowEndGameDialogImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$ShowEndGameDialogImpl>
-    implements _$$ShowEndGameDialogImplCopyWith<$Res> {
-  __$$ShowEndGameDialogImplCopyWithImpl(_$ShowEndGameDialogImpl _value,
-      $Res Function(_$ShowEndGameDialogImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ShowEndGameDialogImpl implements ShowEndGameDialog {
-  const _$ShowEndGameDialogImpl();
+class ShowEndGameDialog implements RoomMasterTicTacToeEvent {
+  const ShowEndGameDialog();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ShowEndGameDialog);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.showEndGameDialog()';
   }
+}
+
+/// @nodoc
+
+class DoneShowEndGameDialog implements RoomMasterTicTacToeEvent {
+  const DoneShowEndGameDialog();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShowEndGameDialogImpl);
+        (other.runtimeType == runtimeType && other is DoneShowEndGameDialog);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return showEndGameDialog();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return showEndGameDialog?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (showEndGameDialog != null) {
-      return showEndGameDialog();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return showEndGameDialog(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return showEndGameDialog?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (showEndGameDialog != null) {
-      return showEndGameDialog(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ShowEndGameDialog implements RoomMasterTicTacToeEvent {
-  const factory ShowEndGameDialog() = _$ShowEndGameDialogImpl;
-}
-
-/// @nodoc
-abstract class _$$DoneShowEndGameDialogImplCopyWith<$Res> {
-  factory _$$DoneShowEndGameDialogImplCopyWith(
-          _$DoneShowEndGameDialogImpl value,
-          $Res Function(_$DoneShowEndGameDialogImpl) then) =
-      __$$DoneShowEndGameDialogImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DoneShowEndGameDialogImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$DoneShowEndGameDialogImpl>
-    implements _$$DoneShowEndGameDialogImplCopyWith<$Res> {
-  __$$DoneShowEndGameDialogImplCopyWithImpl(_$DoneShowEndGameDialogImpl _value,
-      $Res Function(_$DoneShowEndGameDialogImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DoneShowEndGameDialogImpl implements DoneShowEndGameDialog {
-  const _$DoneShowEndGameDialogImpl();
 
   @override
   String toString() {
     return 'RoomMasterTicTacToeEvent.doneShowEndGameDialog()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DoneShowEndGameDialogImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return doneShowEndGameDialog();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return doneShowEndGameDialog?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneShowEndGameDialog != null) {
-      return doneShowEndGameDialog();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return doneShowEndGameDialog(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return doneShowEndGameDialog?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (doneShowEndGameDialog != null) {
-      return doneShowEndGameDialog(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DoneShowEndGameDialog implements RoomMasterTicTacToeEvent {
-  const factory DoneShowEndGameDialog() = _$DoneShowEndGameDialogImpl;
-}
-
-/// @nodoc
-abstract class _$$MarkBoardSafelyImplCopyWith<$Res> {
-  factory _$$MarkBoardSafelyImplCopyWith(_$MarkBoardSafelyImpl value,
-          $Res Function(_$MarkBoardSafelyImpl) then) =
-      __$$MarkBoardSafelyImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int row, int col, bool isUpdateFromClient});
-}
-
-/// @nodoc
-class __$$MarkBoardSafelyImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res, _$MarkBoardSafelyImpl>
-    implements _$$MarkBoardSafelyImplCopyWith<$Res> {
-  __$$MarkBoardSafelyImplCopyWithImpl(
-      _$MarkBoardSafelyImpl _value, $Res Function(_$MarkBoardSafelyImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? row = null,
-    Object? col = null,
-    Object? isUpdateFromClient = null,
-  }) {
-    return _then(_$MarkBoardSafelyImpl(
-      row: null == row
-          ? _value.row
-          : row // ignore: cast_nullable_to_non_nullable
-              as int,
-      col: null == col
-          ? _value.col
-          : col // ignore: cast_nullable_to_non_nullable
-              as int,
-      isUpdateFromClient: null == isUpdateFromClient
-          ? _value.isUpdateFromClient
-          : isUpdateFromClient // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$MarkBoardSafelyImpl implements MarkBoardSafely {
-  const _$MarkBoardSafelyImpl(
+class MarkBoardSafely implements RoomMasterTicTacToeEvent {
+  const MarkBoardSafely(
       {required this.row, required this.col, required this.isUpdateFromClient});
 
-  @override
   final int row;
-  @override
   final int col;
-  @override
   final bool isUpdateFromClient;
 
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeEvent.markBoardSafely(row: $row, col: $col, isUpdateFromClient: $isUpdateFromClient)';
-  }
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MarkBoardSafelyCopyWith<MarkBoardSafely> get copyWith =>
+      _$MarkBoardSafelyCopyWithImpl<MarkBoardSafely>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MarkBoardSafelyImpl &&
+            other is MarkBoardSafely &&
             (identical(other.row, row) || other.row == row) &&
             (identical(other.col, col) || other.col == col) &&
             (identical(other.isUpdateFromClient, isUpdateFromClient) ||
@@ -1717,220 +687,76 @@ class _$MarkBoardSafelyImpl implements MarkBoardSafely {
   @override
   int get hashCode => Object.hash(runtimeType, row, col, isUpdateFromClient);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MarkBoardSafelyImplCopyWith<_$MarkBoardSafelyImpl> get copyWith =>
-      __$$MarkBoardSafelyImplCopyWithImpl<_$MarkBoardSafelyImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return markBoardSafely(row, col, isUpdateFromClient);
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.markBoardSafely(row: $row, col: $col, isUpdateFromClient: $isUpdateFromClient)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return markBoardSafely?.call(row, col, isUpdateFromClient);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (markBoardSafely != null) {
-      return markBoardSafely(row, col, isUpdateFromClient);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return markBoardSafely(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return markBoardSafely?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (markBoardSafely != null) {
-      return markBoardSafely(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MarkBoardSafely implements RoomMasterTicTacToeEvent {
-  const factory MarkBoardSafely(
-      {required final int row,
-      required final int col,
-      required final bool isUpdateFromClient}) = _$MarkBoardSafelyImpl;
-
-  int get row;
-  int get col;
-  bool get isUpdateFromClient;
-  @JsonKey(ignore: true)
-  _$$MarkBoardSafelyImplCopyWith<_$MarkBoardSafelyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DisConnectedFromClientImplCopyWith<$Res> {
-  factory _$$DisConnectedFromClientImplCopyWith(
-          _$DisConnectedFromClientImpl value,
-          $Res Function(_$DisConnectedFromClientImpl) then) =
-      __$$DisConnectedFromClientImplCopyWithImpl<$Res>;
+abstract mixin class $MarkBoardSafelyCopyWith<$Res>
+    implements $RoomMasterTicTacToeEventCopyWith<$Res> {
+  factory $MarkBoardSafelyCopyWith(
+          MarkBoardSafely value, $Res Function(MarkBoardSafely) _then) =
+      _$MarkBoardSafelyCopyWithImpl;
   @useResult
-  $Res call({int? closeCode, String? closeReason});
+  $Res call({int row, int col, bool isUpdateFromClient});
 }
 
 /// @nodoc
-class __$$DisConnectedFromClientImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeEventCopyWithImpl<$Res,
-        _$DisConnectedFromClientImpl>
-    implements _$$DisConnectedFromClientImplCopyWith<$Res> {
-  __$$DisConnectedFromClientImplCopyWithImpl(
-      _$DisConnectedFromClientImpl _value,
-      $Res Function(_$DisConnectedFromClientImpl) _then)
-      : super(_value, _then);
+class _$MarkBoardSafelyCopyWithImpl<$Res>
+    implements $MarkBoardSafelyCopyWith<$Res> {
+  _$MarkBoardSafelyCopyWithImpl(this._self, this._then);
 
+  final MarkBoardSafely _self;
+  final $Res Function(MarkBoardSafely) _then;
+
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? closeCode = freezed,
-    Object? closeReason = freezed,
+    Object? row = null,
+    Object? col = null,
+    Object? isUpdateFromClient = null,
   }) {
-    return _then(_$DisConnectedFromClientImpl(
-      freezed == closeCode
-          ? _value.closeCode
-          : closeCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-      freezed == closeReason
-          ? _value.closeReason
-          : closeReason // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(MarkBoardSafely(
+      row: null == row
+          ? _self.row
+          : row // ignore: cast_nullable_to_non_nullable
+              as int,
+      col: null == col
+          ? _self.col
+          : col // ignore: cast_nullable_to_non_nullable
+              as int,
+      isUpdateFromClient: null == isUpdateFromClient
+          ? _self.isUpdateFromClient
+          : isUpdateFromClient // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
-  const _$DisConnectedFromClientImpl([this.closeCode, this.closeReason]);
+class _DisConnectedFromClient implements RoomMasterTicTacToeEvent {
+  const _DisConnectedFromClient([this.closeCode, this.closeReason]);
 
-  @override
   final int? closeCode;
-  @override
   final String? closeReason;
 
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeEvent.disconnectedFromClient(closeCode: $closeCode, closeReason: $closeReason)';
-  }
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DisConnectedFromClientCopyWith<_DisConnectedFromClient> get copyWith =>
+      __$DisConnectedFromClientCopyWithImpl<_DisConnectedFromClient>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DisConnectedFromClientImpl &&
+            other is _DisConnectedFromClient &&
             (identical(other.closeCode, closeCode) ||
                 other.closeCode == closeCode) &&
             (identical(other.closeReason, closeReason) ||
@@ -1940,371 +766,72 @@ class _$DisConnectedFromClientImpl implements _DisConnectedFromClient {
   @override
   int get hashCode => Object.hash(runtimeType, closeCode, closeReason);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DisConnectedFromClientImplCopyWith<_$DisConnectedFromClientImpl>
-      get copyWith => __$$DisConnectedFromClientImplCopyWithImpl<
-          _$DisConnectedFromClientImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() prepareWebSocketServer,
-    required TResult Function() backToPreviousScreen,
-    required TResult Function() doneBackToPreviousScreen,
-    required TResult Function() quitGame,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(RoomMasterTicTacToeState newState)
-        updateOnlyRoomMasterState,
-    required TResult Function() showEndGameDialog,
-    required TResult Function() doneShowEndGameDialog,
-    required TResult Function(int row, int col, bool isUpdateFromClient)
-        markBoardSafely,
-    required TResult Function(int? closeCode, String? closeReason)
-        disconnectedFromClient,
-  }) {
-    return disconnectedFromClient(closeCode, closeReason);
+  String toString() {
+    return 'RoomMasterTicTacToeEvent.disconnectedFromClient(closeCode: $closeCode, closeReason: $closeReason)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? prepareWebSocketServer,
-    TResult? Function()? backToPreviousScreen,
-    TResult? Function()? doneBackToPreviousScreen,
-    TResult? Function()? quitGame,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult? Function()? showEndGameDialog,
-    TResult? Function()? doneShowEndGameDialog,
-    TResult? Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult? Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-  }) {
-    return disconnectedFromClient?.call(closeCode, closeReason);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? prepareWebSocketServer,
-    TResult Function()? backToPreviousScreen,
-    TResult Function()? doneBackToPreviousScreen,
-    TResult Function()? quitGame,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(RoomMasterTicTacToeState newState)?
-        updateOnlyRoomMasterState,
-    TResult Function()? showEndGameDialog,
-    TResult Function()? doneShowEndGameDialog,
-    TResult Function(int row, int col, bool isUpdateFromClient)?
-        markBoardSafely,
-    TResult Function(int? closeCode, String? closeReason)?
-        disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (disconnectedFromClient != null) {
-      return disconnectedFromClient(closeCode, closeReason);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(PrepareWebSocketServer value)
-        prepareWebSocketServer,
-    required TResult Function(_BackToPreviousScreen value) backToPreviousScreen,
-    required TResult Function(_DoneBackToPreviousScreen value)
-        doneBackToPreviousScreen,
-    required TResult Function(QuitGame value) quitGame,
-    required TResult Function(UpdateRoomMasterAndClientGameState value)
-        updateRoomMasterAndClientGameState,
-    required TResult Function(UpdateOnlyRoomMasterState value)
-        updateOnlyRoomMasterState,
-    required TResult Function(ShowEndGameDialog value) showEndGameDialog,
-    required TResult Function(DoneShowEndGameDialog value)
-        doneShowEndGameDialog,
-    required TResult Function(MarkBoardSafely value) markBoardSafely,
-    required TResult Function(_DisConnectedFromClient value)
-        disconnectedFromClient,
-  }) {
-    return disconnectedFromClient(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult? Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult? Function(_DoneBackToPreviousScreen value)?
-        doneBackToPreviousScreen,
-    TResult? Function(QuitGame value)? quitGame,
-    TResult? Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult? Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult? Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult? Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult? Function(MarkBoardSafely value)? markBoardSafely,
-    TResult? Function(_DisConnectedFromClient value)? disconnectedFromClient,
-  }) {
-    return disconnectedFromClient?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(PrepareWebSocketServer value)? prepareWebSocketServer,
-    TResult Function(_BackToPreviousScreen value)? backToPreviousScreen,
-    TResult Function(_DoneBackToPreviousScreen value)? doneBackToPreviousScreen,
-    TResult Function(QuitGame value)? quitGame,
-    TResult Function(UpdateRoomMasterAndClientGameState value)?
-        updateRoomMasterAndClientGameState,
-    TResult Function(UpdateOnlyRoomMasterState value)?
-        updateOnlyRoomMasterState,
-    TResult Function(ShowEndGameDialog value)? showEndGameDialog,
-    TResult Function(DoneShowEndGameDialog value)? doneShowEndGameDialog,
-    TResult Function(MarkBoardSafely value)? markBoardSafely,
-    TResult Function(_DisConnectedFromClient value)? disconnectedFromClient,
-    required TResult orElse(),
-  }) {
-    if (disconnectedFromClient != null) {
-      return disconnectedFromClient(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DisConnectedFromClient implements RoomMasterTicTacToeEvent {
-  const factory _DisConnectedFromClient(
-      [final int? closeCode,
-      final String? closeReason]) = _$DisConnectedFromClientImpl;
-
-  int? get closeCode;
-  String? get closeReason;
-  @JsonKey(ignore: true)
-  _$$DisConnectedFromClientImplCopyWith<_$DisConnectedFromClientImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$RoomMasterTicTacToeState {
-  ResponseWrapper<String>? get wsServerPreparationResponse =>
-      throw _privateConstructorUsedError;
-  bool get hasConnection => throw _privateConstructorUsedError;
-  TicTacToeGameState get gameState => throw _privateConstructorUsedError;
-  bool get mustBackToPreviousScreen => throw _privateConstructorUsedError;
-  EndGameDialogStatus get endGameDialogStatus =>
-      throw _privateConstructorUsedError;
-  bool get isQuittingGame => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $RoomMasterTicTacToeStateCopyWith<RoomMasterTicTacToeState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RoomMasterTicTacToeStateCopyWith<$Res> {
-  factory $RoomMasterTicTacToeStateCopyWith(RoomMasterTicTacToeState value,
-          $Res Function(RoomMasterTicTacToeState) then) =
-      _$RoomMasterTicTacToeStateCopyWithImpl<$Res, RoomMasterTicTacToeState>;
+abstract mixin class _$DisConnectedFromClientCopyWith<$Res>
+    implements $RoomMasterTicTacToeEventCopyWith<$Res> {
+  factory _$DisConnectedFromClientCopyWith(_DisConnectedFromClient value,
+          $Res Function(_DisConnectedFromClient) _then) =
+      __$DisConnectedFromClientCopyWithImpl;
   @useResult
-  $Res call(
-      {ResponseWrapper<String>? wsServerPreparationResponse,
-      bool hasConnection,
-      TicTacToeGameState gameState,
-      bool mustBackToPreviousScreen,
-      EndGameDialogStatus endGameDialogStatus,
-      bool isQuittingGame});
-
-  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
-  $TicTacToeGameStateCopyWith<$Res> get gameState;
+  $Res call({int? closeCode, String? closeReason});
 }
 
 /// @nodoc
-class _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
-        $Val extends RoomMasterTicTacToeState>
-    implements $RoomMasterTicTacToeStateCopyWith<$Res> {
-  _$RoomMasterTicTacToeStateCopyWithImpl(this._value, this._then);
+class __$DisConnectedFromClientCopyWithImpl<$Res>
+    implements _$DisConnectedFromClientCopyWith<$Res> {
+  __$DisConnectedFromClientCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _DisConnectedFromClient _self;
+  final $Res Function(_DisConnectedFromClient) _then;
 
+  /// Create a copy of RoomMasterTicTacToeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? wsServerPreparationResponse = freezed,
-    Object? hasConnection = null,
-    Object? gameState = null,
-    Object? mustBackToPreviousScreen = null,
-    Object? endGameDialogStatus = null,
-    Object? isQuittingGame = null,
+    Object? closeCode = freezed,
+    Object? closeReason = freezed,
   }) {
-    return _then(_value.copyWith(
-      wsServerPreparationResponse: freezed == wsServerPreparationResponse
-          ? _value.wsServerPreparationResponse
-          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<String>?,
-      hasConnection: null == hasConnection
-          ? _value.hasConnection
-          : hasConnection // ignore: cast_nullable_to_non_nullable
-              as bool,
-      gameState: null == gameState
-          ? _value.gameState
-          : gameState // ignore: cast_nullable_to_non_nullable
-              as TicTacToeGameState,
-      mustBackToPreviousScreen: null == mustBackToPreviousScreen
-          ? _value.mustBackToPreviousScreen
-          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
-              as bool,
-      endGameDialogStatus: null == endGameDialogStatus
-          ? _value.endGameDialogStatus
-          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
-              as EndGameDialogStatus,
-      isQuittingGame: null == isQuittingGame
-          ? _value.isQuittingGame
-          : isQuittingGame // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse {
-    if (_value.wsServerPreparationResponse == null) {
-      return null;
-    }
-
-    return $ResponseWrapperCopyWith<String, $Res>(
-        _value.wsServerPreparationResponse!, (value) {
-      return _then(_value.copyWith(wsServerPreparationResponse: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TicTacToeGameStateCopyWith<$Res> get gameState {
-    return $TicTacToeGameStateCopyWith<$Res>(_value.gameState, (value) {
-      return _then(_value.copyWith(gameState: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$RoomMasterTicTacToeStateImplCopyWith<$Res>
-    implements $RoomMasterTicTacToeStateCopyWith<$Res> {
-  factory _$$RoomMasterTicTacToeStateImplCopyWith(
-          _$RoomMasterTicTacToeStateImpl value,
-          $Res Function(_$RoomMasterTicTacToeStateImpl) then) =
-      __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ResponseWrapper<String>? wsServerPreparationResponse,
-      bool hasConnection,
-      TicTacToeGameState gameState,
-      bool mustBackToPreviousScreen,
-      EndGameDialogStatus endGameDialogStatus,
-      bool isQuittingGame});
-
-  @override
-  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
-  @override
-  $TicTacToeGameStateCopyWith<$Res> get gameState;
-}
-
-/// @nodoc
-class __$$RoomMasterTicTacToeStateImplCopyWithImpl<$Res>
-    extends _$RoomMasterTicTacToeStateCopyWithImpl<$Res,
-        _$RoomMasterTicTacToeStateImpl>
-    implements _$$RoomMasterTicTacToeStateImplCopyWith<$Res> {
-  __$$RoomMasterTicTacToeStateImplCopyWithImpl(
-      _$RoomMasterTicTacToeStateImpl _value,
-      $Res Function(_$RoomMasterTicTacToeStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? wsServerPreparationResponse = freezed,
-    Object? hasConnection = null,
-    Object? gameState = null,
-    Object? mustBackToPreviousScreen = null,
-    Object? endGameDialogStatus = null,
-    Object? isQuittingGame = null,
-  }) {
-    return _then(_$RoomMasterTicTacToeStateImpl(
-      wsServerPreparationResponse: freezed == wsServerPreparationResponse
-          ? _value.wsServerPreparationResponse
-          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<String>?,
-      hasConnection: null == hasConnection
-          ? _value.hasConnection
-          : hasConnection // ignore: cast_nullable_to_non_nullable
-              as bool,
-      gameState: null == gameState
-          ? _value.gameState
-          : gameState // ignore: cast_nullable_to_non_nullable
-              as TicTacToeGameState,
-      mustBackToPreviousScreen: null == mustBackToPreviousScreen
-          ? _value.mustBackToPreviousScreen
-          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
-              as bool,
-      endGameDialogStatus: null == endGameDialogStatus
-          ? _value.endGameDialogStatus
-          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
-              as EndGameDialogStatus,
-      isQuittingGame: null == isQuittingGame
-          ? _value.isQuittingGame
-          : isQuittingGame // ignore: cast_nullable_to_non_nullable
-              as bool,
+    return _then(_DisConnectedFromClient(
+      freezed == closeCode
+          ? _self.closeCode
+          : closeCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == closeReason
+          ? _self.closeReason
+          : closeReason // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$RoomMasterTicTacToeState {
+  ResponseWrapper<WsServerUrl>? get wsServerPreparationResponse;
+  bool get hasConnection;
+  TicTacToeGameState get gameState;
+  bool get mustBackToPreviousScreen;
+  EndGameDialogStatus get endGameDialogStatus;
+  bool get isQuittingGame;
 
-class _$RoomMasterTicTacToeStateImpl extends _RoomMasterTicTacToeState {
-  const _$RoomMasterTicTacToeStateImpl(
-      {required this.wsServerPreparationResponse,
-      required this.hasConnection,
-      required this.gameState,
-      required this.mustBackToPreviousScreen,
-      required this.endGameDialogStatus,
-      required this.isQuittingGame})
-      : super._();
-
-  @override
-  final ResponseWrapper<String>? wsServerPreparationResponse;
-  @override
-  final bool hasConnection;
-  @override
-  final TicTacToeGameState gameState;
-  @override
-  final bool mustBackToPreviousScreen;
-  @override
-  final EndGameDialogStatus endGameDialogStatus;
-  @override
-  final bool isQuittingGame;
-
-  @override
-  String toString() {
-    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, mustBackToPreviousScreen: $mustBackToPreviousScreen, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
-  }
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RoomMasterTicTacToeStateCopyWith<RoomMasterTicTacToeState> get copyWith =>
+      _$RoomMasterTicTacToeStateCopyWithImpl<RoomMasterTicTacToeState>(
+          this as RoomMasterTicTacToeState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RoomMasterTicTacToeStateImpl &&
+            other is RoomMasterTicTacToeState &&
             (identical(other.wsServerPreparationResponse,
                     wsServerPreparationResponse) ||
                 other.wsServerPreparationResponse ==
@@ -2332,38 +859,466 @@ class _$RoomMasterTicTacToeStateImpl extends _RoomMasterTicTacToeState {
       endGameDialogStatus,
       isQuittingGame);
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, mustBackToPreviousScreen: $mustBackToPreviousScreen, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RoomMasterTicTacToeStateCopyWith<$Res> {
+  factory $RoomMasterTicTacToeStateCopyWith(RoomMasterTicTacToeState value,
+          $Res Function(RoomMasterTicTacToeState) _then) =
+      _$RoomMasterTicTacToeStateCopyWithImpl;
+  @useResult
+  $Res call(
+      {ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
+      bool hasConnection,
+      TicTacToeGameState gameState,
+      bool mustBackToPreviousScreen,
+      EndGameDialogStatus endGameDialogStatus,
+      bool isQuittingGame});
+
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
+  $TicTacToeGameStateCopyWith<$Res> get gameState;
+}
+
+/// @nodoc
+class _$RoomMasterTicTacToeStateCopyWithImpl<$Res>
+    implements $RoomMasterTicTacToeStateCopyWith<$Res> {
+  _$RoomMasterTicTacToeStateCopyWithImpl(this._self, this._then);
+
+  final RoomMasterTicTacToeState _self;
+  final $Res Function(RoomMasterTicTacToeState) _then;
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? wsServerPreparationResponse = freezed,
+    Object? hasConnection = null,
+    Object? gameState = null,
+    Object? mustBackToPreviousScreen = null,
+    Object? endGameDialogStatus = null,
+    Object? isQuittingGame = null,
+  }) {
+    return _then(_self.copyWith(
+      wsServerPreparationResponse: freezed == wsServerPreparationResponse
+          ? _self.wsServerPreparationResponse
+          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
+              as ResponseWrapper<WsServerUrl>?,
+      hasConnection: null == hasConnection
+          ? _self.hasConnection
+          : hasConnection // ignore: cast_nullable_to_non_nullable
+              as bool,
+      gameState: null == gameState
+          ? _self.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState,
+      mustBackToPreviousScreen: null == mustBackToPreviousScreen
+          ? _self.mustBackToPreviousScreen
+          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
+              as bool,
+      endGameDialogStatus: null == endGameDialogStatus
+          ? _self.endGameDialogStatus
+          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
+              as EndGameDialogStatus,
+      isQuittingGame: null == isQuittingGame
+          ? _self.isQuittingGame
+          : isQuittingGame // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$RoomMasterTicTacToeStateImplCopyWith<_$RoomMasterTicTacToeStateImpl>
-      get copyWith => __$$RoomMasterTicTacToeStateImplCopyWithImpl<
-          _$RoomMasterTicTacToeStateImpl>(this, _$identity);
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse {
+    if (_self.wsServerPreparationResponse == null) {
+      return null;
+    }
+
+    return $ResponseWrapperCopyWith<String, $Res>(
+        _self.wsServerPreparationResponse!, (value) {
+      return _then(_self.copyWith(wsServerPreparationResponse: value));
+    });
+  }
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TicTacToeGameStateCopyWith<$Res> get gameState {
+    return $TicTacToeGameStateCopyWith<$Res>(_self.gameState, (value) {
+      return _then(_self.copyWith(gameState: value));
+    });
+  }
 }
 
-abstract class _RoomMasterTicTacToeState extends RoomMasterTicTacToeState {
-  const factory _RoomMasterTicTacToeState(
-      {required final ResponseWrapper<String>? wsServerPreparationResponse,
-      required final bool hasConnection,
-      required final TicTacToeGameState gameState,
-      required final bool mustBackToPreviousScreen,
-      required final EndGameDialogStatus endGameDialogStatus,
-      required final bool isQuittingGame}) = _$RoomMasterTicTacToeStateImpl;
-  const _RoomMasterTicTacToeState._() : super._();
+/// Adds pattern-matching-related methods to [RoomMasterTicTacToeState].
+extension RoomMasterTicTacToeStatePatterns on RoomMasterTicTacToeState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_RoomMasterTicTacToeState value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_RoomMasterTicTacToeState value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_RoomMasterTicTacToeState value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
+            bool hasConnection,
+            TicTacToeGameState gameState,
+            bool mustBackToPreviousScreen,
+            EndGameDialogStatus endGameDialogStatus,
+            bool isQuittingGame)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState() when $default != null:
+        return $default(
+            _that.wsServerPreparationResponse,
+            _that.hasConnection,
+            _that.gameState,
+            _that.mustBackToPreviousScreen,
+            _that.endGameDialogStatus,
+            _that.isQuittingGame);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
+            bool hasConnection,
+            TicTacToeGameState gameState,
+            bool mustBackToPreviousScreen,
+            EndGameDialogStatus endGameDialogStatus,
+            bool isQuittingGame)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState():
+        return $default(
+            _that.wsServerPreparationResponse,
+            _that.hasConnection,
+            _that.gameState,
+            _that.mustBackToPreviousScreen,
+            _that.endGameDialogStatus,
+            _that.isQuittingGame);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
+            bool hasConnection,
+            TicTacToeGameState gameState,
+            bool mustBackToPreviousScreen,
+            EndGameDialogStatus endGameDialogStatus,
+            bool isQuittingGame)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RoomMasterTicTacToeState() when $default != null:
+        return $default(
+            _that.wsServerPreparationResponse,
+            _that.hasConnection,
+            _that.gameState,
+            _that.mustBackToPreviousScreen,
+            _that.endGameDialogStatus,
+            _that.isQuittingGame);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _RoomMasterTicTacToeState extends RoomMasterTicTacToeState {
+  const _RoomMasterTicTacToeState(
+      {required this.wsServerPreparationResponse,
+      required this.hasConnection,
+      required this.gameState,
+      required this.mustBackToPreviousScreen,
+      required this.endGameDialogStatus,
+      required this.isQuittingGame})
+      : super._();
 
   @override
-  ResponseWrapper<String>? get wsServerPreparationResponse;
+  final ResponseWrapper<WsServerUrl>? wsServerPreparationResponse;
   @override
-  bool get hasConnection;
+  final bool hasConnection;
   @override
-  TicTacToeGameState get gameState;
+  final TicTacToeGameState gameState;
   @override
-  bool get mustBackToPreviousScreen;
+  final bool mustBackToPreviousScreen;
   @override
-  EndGameDialogStatus get endGameDialogStatus;
+  final EndGameDialogStatus endGameDialogStatus;
   @override
-  bool get isQuittingGame;
+  final bool isQuittingGame;
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$RoomMasterTicTacToeStateImplCopyWith<_$RoomMasterTicTacToeStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RoomMasterTicTacToeStateCopyWith<_RoomMasterTicTacToeState> get copyWith =>
+      __$RoomMasterTicTacToeStateCopyWithImpl<_RoomMasterTicTacToeState>(
+          this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RoomMasterTicTacToeState &&
+            (identical(other.wsServerPreparationResponse,
+                    wsServerPreparationResponse) ||
+                other.wsServerPreparationResponse ==
+                    wsServerPreparationResponse) &&
+            (identical(other.hasConnection, hasConnection) ||
+                other.hasConnection == hasConnection) &&
+            (identical(other.gameState, gameState) ||
+                other.gameState == gameState) &&
+            (identical(
+                    other.mustBackToPreviousScreen, mustBackToPreviousScreen) ||
+                other.mustBackToPreviousScreen == mustBackToPreviousScreen) &&
+            (identical(other.endGameDialogStatus, endGameDialogStatus) ||
+                other.endGameDialogStatus == endGameDialogStatus) &&
+            (identical(other.isQuittingGame, isQuittingGame) ||
+                other.isQuittingGame == isQuittingGame));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      wsServerPreparationResponse,
+      hasConnection,
+      gameState,
+      mustBackToPreviousScreen,
+      endGameDialogStatus,
+      isQuittingGame);
+
+  @override
+  String toString() {
+    return 'RoomMasterTicTacToeState(wsServerPreparationResponse: $wsServerPreparationResponse, hasConnection: $hasConnection, gameState: $gameState, mustBackToPreviousScreen: $mustBackToPreviousScreen, endGameDialogStatus: $endGameDialogStatus, isQuittingGame: $isQuittingGame)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$RoomMasterTicTacToeStateCopyWith<$Res>
+    implements $RoomMasterTicTacToeStateCopyWith<$Res> {
+  factory _$RoomMasterTicTacToeStateCopyWith(_RoomMasterTicTacToeState value,
+          $Res Function(_RoomMasterTicTacToeState) _then) =
+      __$RoomMasterTicTacToeStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,
+      bool hasConnection,
+      TicTacToeGameState gameState,
+      bool mustBackToPreviousScreen,
+      EndGameDialogStatus endGameDialogStatus,
+      bool isQuittingGame});
+
+  @override
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse;
+  @override
+  $TicTacToeGameStateCopyWith<$Res> get gameState;
+}
+
+/// @nodoc
+class __$RoomMasterTicTacToeStateCopyWithImpl<$Res>
+    implements _$RoomMasterTicTacToeStateCopyWith<$Res> {
+  __$RoomMasterTicTacToeStateCopyWithImpl(this._self, this._then);
+
+  final _RoomMasterTicTacToeState _self;
+  final $Res Function(_RoomMasterTicTacToeState) _then;
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? wsServerPreparationResponse = freezed,
+    Object? hasConnection = null,
+    Object? gameState = null,
+    Object? mustBackToPreviousScreen = null,
+    Object? endGameDialogStatus = null,
+    Object? isQuittingGame = null,
+  }) {
+    return _then(_RoomMasterTicTacToeState(
+      wsServerPreparationResponse: freezed == wsServerPreparationResponse
+          ? _self.wsServerPreparationResponse
+          : wsServerPreparationResponse // ignore: cast_nullable_to_non_nullable
+              as ResponseWrapper<WsServerUrl>?,
+      hasConnection: null == hasConnection
+          ? _self.hasConnection
+          : hasConnection // ignore: cast_nullable_to_non_nullable
+              as bool,
+      gameState: null == gameState
+          ? _self.gameState
+          : gameState // ignore: cast_nullable_to_non_nullable
+              as TicTacToeGameState,
+      mustBackToPreviousScreen: null == mustBackToPreviousScreen
+          ? _self.mustBackToPreviousScreen
+          : mustBackToPreviousScreen // ignore: cast_nullable_to_non_nullable
+              as bool,
+      endGameDialogStatus: null == endGameDialogStatus
+          ? _self.endGameDialogStatus
+          : endGameDialogStatus // ignore: cast_nullable_to_non_nullable
+              as EndGameDialogStatus,
+      isQuittingGame: null == isQuittingGame
+          ? _self.isQuittingGame
+          : isQuittingGame // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseWrapperCopyWith<String, $Res>? get wsServerPreparationResponse {
+    if (_self.wsServerPreparationResponse == null) {
+      return null;
+    }
+
+    return $ResponseWrapperCopyWith<String, $Res>(
+        _self.wsServerPreparationResponse!, (value) {
+      return _then(_self.copyWith(wsServerPreparationResponse: value));
+    });
+  }
+
+  /// Create a copy of RoomMasterTicTacToeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TicTacToeGameStateCopyWith<$Res> get gameState {
+    return $TicTacToeGameStateCopyWith<$Res>(_self.gameState, (value) {
+      return _then(_self.copyWith(gameState: value));
+    });
+  }
+}
+
+// dart format on

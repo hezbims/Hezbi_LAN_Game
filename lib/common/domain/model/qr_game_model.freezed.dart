@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,165 +9,325 @@ part of 'qr_game_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-QrGameModel _$QrGameModelFromJson(Map<String, dynamic> json) {
-  return _QrGameModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$QrGameModel {
-  MyGameType get gameType => throw _privateConstructorUsedError;
-  String get gameAddress => throw _privateConstructorUsedError;
+  MyGameType get gameType;
+  String get gameAddress;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of QrGameModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $QrGameModelCopyWith<QrGameModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$QrGameModelCopyWithImpl<QrGameModel>(this as QrGameModel, _$identity);
 
-/// @nodoc
-abstract class $QrGameModelCopyWith<$Res> {
-  factory $QrGameModelCopyWith(
-          QrGameModel value, $Res Function(QrGameModel) then) =
-      _$QrGameModelCopyWithImpl<$Res, QrGameModel>;
-  @useResult
-  $Res call({MyGameType gameType, String gameAddress});
-}
-
-/// @nodoc
-class _$QrGameModelCopyWithImpl<$Res, $Val extends QrGameModel>
-    implements $QrGameModelCopyWith<$Res> {
-  _$QrGameModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? gameType = null,
-    Object? gameAddress = null,
-  }) {
-    return _then(_value.copyWith(
-      gameType: null == gameType
-          ? _value.gameType
-          : gameType // ignore: cast_nullable_to_non_nullable
-              as MyGameType,
-      gameAddress: null == gameAddress
-          ? _value.gameAddress
-          : gameAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$QrGameModelImplCopyWith<$Res>
-    implements $QrGameModelCopyWith<$Res> {
-  factory _$$QrGameModelImplCopyWith(
-          _$QrGameModelImpl value, $Res Function(_$QrGameModelImpl) then) =
-      __$$QrGameModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({MyGameType gameType, String gameAddress});
-}
-
-/// @nodoc
-class __$$QrGameModelImplCopyWithImpl<$Res>
-    extends _$QrGameModelCopyWithImpl<$Res, _$QrGameModelImpl>
-    implements _$$QrGameModelImplCopyWith<$Res> {
-  __$$QrGameModelImplCopyWithImpl(
-      _$QrGameModelImpl _value, $Res Function(_$QrGameModelImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? gameType = null,
-    Object? gameAddress = null,
-  }) {
-    return _then(_$QrGameModelImpl(
-      gameType: null == gameType
-          ? _value.gameType
-          : gameType // ignore: cast_nullable_to_non_nullable
-              as MyGameType,
-      gameAddress: null == gameAddress
-          ? _value.gameAddress
-          : gameAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$QrGameModelImpl extends _QrGameModel {
-  const _$QrGameModelImpl({required this.gameType, required this.gameAddress})
-      : super._();
-
-  factory _$QrGameModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QrGameModelImplFromJson(json);
-
-  @override
-  final MyGameType gameType;
-  @override
-  final String gameAddress;
-
-  @override
-  String toString() {
-    return 'QrGameModel(gameType: $gameType, gameAddress: $gameAddress)';
-  }
+  /// Serializes this QrGameModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QrGameModelImpl &&
+            other is QrGameModel &&
             (identical(other.gameType, gameType) ||
                 other.gameType == gameType) &&
             (identical(other.gameAddress, gameAddress) ||
                 other.gameAddress == gameAddress));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, gameType, gameAddress);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$QrGameModelImplCopyWith<_$QrGameModelImpl> get copyWith =>
-      __$$QrGameModelImplCopyWithImpl<_$QrGameModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QrGameModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'QrGameModel(gameType: $gameType, gameAddress: $gameAddress)';
   }
 }
 
-abstract class _QrGameModel extends QrGameModel {
-  const factory _QrGameModel(
-      {required final MyGameType gameType,
-      required final String gameAddress}) = _$QrGameModelImpl;
-  const _QrGameModel._() : super._();
-
-  factory _QrGameModel.fromJson(Map<String, dynamic> json) =
-      _$QrGameModelImpl.fromJson;
-
-  @override
-  MyGameType get gameType;
-  @override
-  String get gameAddress;
-  @override
-  @JsonKey(ignore: true)
-  _$$QrGameModelImplCopyWith<_$QrGameModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+/// @nodoc
+abstract mixin class $QrGameModelCopyWith<$Res> {
+  factory $QrGameModelCopyWith(
+          QrGameModel value, $Res Function(QrGameModel) _then) =
+      _$QrGameModelCopyWithImpl;
+  @useResult
+  $Res call({MyGameType gameType, String gameAddress});
 }
+
+/// @nodoc
+class _$QrGameModelCopyWithImpl<$Res> implements $QrGameModelCopyWith<$Res> {
+  _$QrGameModelCopyWithImpl(this._self, this._then);
+
+  final QrGameModel _self;
+  final $Res Function(QrGameModel) _then;
+
+  /// Create a copy of QrGameModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gameType = null,
+    Object? gameAddress = null,
+  }) {
+    return _then(_self.copyWith(
+      gameType: null == gameType
+          ? _self.gameType
+          : gameType // ignore: cast_nullable_to_non_nullable
+              as MyGameType,
+      gameAddress: null == gameAddress
+          ? _self.gameAddress
+          : gameAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [QrGameModel].
+extension QrGameModelPatterns on QrGameModel {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_QrGameModel value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_QrGameModel value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_QrGameModel value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(MyGameType gameType, String gameAddress)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel() when $default != null:
+        return $default(_that.gameType, _that.gameAddress);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(MyGameType gameType, String gameAddress) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel():
+        return $default(_that.gameType, _that.gameAddress);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(MyGameType gameType, String gameAddress)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QrGameModel() when $default != null:
+        return $default(_that.gameType, _that.gameAddress);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _QrGameModel extends QrGameModel {
+  const _QrGameModel({required this.gameType, required this.gameAddress})
+      : super._();
+  factory _QrGameModel.fromJson(Map<String, dynamic> json) =>
+      _$QrGameModelFromJson(json);
+
+  @override
+  final MyGameType gameType;
+  @override
+  final String gameAddress;
+
+  /// Create a copy of QrGameModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$QrGameModelCopyWith<_QrGameModel> get copyWith =>
+      __$QrGameModelCopyWithImpl<_QrGameModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$QrGameModelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _QrGameModel &&
+            (identical(other.gameType, gameType) ||
+                other.gameType == gameType) &&
+            (identical(other.gameAddress, gameAddress) ||
+                other.gameAddress == gameAddress));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, gameType, gameAddress);
+
+  @override
+  String toString() {
+    return 'QrGameModel(gameType: $gameType, gameAddress: $gameAddress)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$QrGameModelCopyWith<$Res>
+    implements $QrGameModelCopyWith<$Res> {
+  factory _$QrGameModelCopyWith(
+          _QrGameModel value, $Res Function(_QrGameModel) _then) =
+      __$QrGameModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({MyGameType gameType, String gameAddress});
+}
+
+/// @nodoc
+class __$QrGameModelCopyWithImpl<$Res> implements _$QrGameModelCopyWith<$Res> {
+  __$QrGameModelCopyWithImpl(this._self, this._then);
+
+  final _QrGameModel _self;
+  final $Res Function(_QrGameModel) _then;
+
+  /// Create a copy of QrGameModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? gameType = null,
+    Object? gameAddress = null,
+  }) {
+    return _then(_QrGameModel(
+      gameType: null == gameType
+          ? _self.gameType
+          : gameType // ignore: cast_nullable_to_non_nullable
+              as MyGameType,
+      gameAddress: null == gameAddress
+          ? _self.gameAddress
+          : gameAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

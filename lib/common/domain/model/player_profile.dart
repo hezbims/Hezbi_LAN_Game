@@ -4,7 +4,7 @@ part 'player_profile.freezed.dart';
 part 'player_profile.g.dart';
 
 @freezed
-class PlayerProfile with _$PlayerProfile {
+abstract class PlayerProfile with _$PlayerProfile {
   const factory PlayerProfile({
     required String name
   }) = _PlayerPofile;

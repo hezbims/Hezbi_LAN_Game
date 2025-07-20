@@ -6,7 +6,7 @@ part 'tic_tac_toe_game_state.freezed.dart';
 part 'tic_tac_toe_game_state.g.dart';
 
 @Freezed()
-class TicTacToeGameState with _$TicTacToeGameState {
+abstract class TicTacToeGameState with _$TicTacToeGameState {
   // ignore: invalid_annotation_target
   @JsonSerializable(explicitToJson: true)
   const factory TicTacToeGameState({

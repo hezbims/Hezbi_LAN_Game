@@ -65,7 +65,7 @@ sealed class MainMenuEvent with _$MainMenuEvent {
 }
 
 @freezed
-class MainMenuState with _$MainMenuState {
+abstract class MainMenuState with _$MainMenuState {
   const factory MainMenuState({
     required PlayerProfile? playerProfile,
     required bool mustShowInitialDialogProfileNameInput,

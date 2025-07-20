@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,28 +9,52 @@ part of 'daftar_permainan_view_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DaftarPermainanState {
-  List<MyServiceAttribute> get discoveredGames =>
-      throw _privateConstructorUsedError;
-  ResponseWrapper<Object?> get serviceDiscoveryStartupStatus =>
-      throw _privateConstructorUsedError;
+  List<MyServiceAttribute> get discoveredGames;
+  ResponseWrapper<Object?> get serviceDiscoveryStartupStatus;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $DaftarPermainanStateCopyWith<DaftarPermainanState> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$DaftarPermainanStateCopyWithImpl<DaftarPermainanState>(
+          this as DaftarPermainanState, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DaftarPermainanState &&
+            const DeepCollectionEquality()
+                .equals(other.discoveredGames, discoveredGames) &&
+            (identical(other.serviceDiscoveryStartupStatus,
+                    serviceDiscoveryStartupStatus) ||
+                other.serviceDiscoveryStartupStatus ==
+                    serviceDiscoveryStartupStatus));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(discoveredGames),
+      serviceDiscoveryStartupStatus);
+
+  @override
+  String toString() {
+    return 'DaftarPermainanState(discoveredGames: $discoveredGames, serviceDiscoveryStartupStatus: $serviceDiscoveryStartupStatus)';
+  }
 }
 
 /// @nodoc
-abstract class $DaftarPermainanStateCopyWith<$Res> {
+abstract mixin class $DaftarPermainanStateCopyWith<$Res> {
   factory $DaftarPermainanStateCopyWith(DaftarPermainanState value,
-          $Res Function(DaftarPermainanState) then) =
-      _$DaftarPermainanStateCopyWithImpl<$Res, DaftarPermainanState>;
+          $Res Function(DaftarPermainanState) _then) =
+      _$DaftarPermainanStateCopyWithImpl;
   @useResult
   $Res call(
       {List<MyServiceAttribute> discoveredGames,
@@ -40,92 +64,215 @@ abstract class $DaftarPermainanStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DaftarPermainanStateCopyWithImpl<$Res,
-        $Val extends DaftarPermainanState>
+class _$DaftarPermainanStateCopyWithImpl<$Res>
     implements $DaftarPermainanStateCopyWith<$Res> {
-  _$DaftarPermainanStateCopyWithImpl(this._value, this._then);
+  _$DaftarPermainanStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final DaftarPermainanState _self;
+  final $Res Function(DaftarPermainanState) _then;
 
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? discoveredGames = null,
     Object? serviceDiscoveryStartupStatus = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       discoveredGames: null == discoveredGames
-          ? _value.discoveredGames
+          ? _self.discoveredGames
           : discoveredGames // ignore: cast_nullable_to_non_nullable
               as List<MyServiceAttribute>,
       serviceDiscoveryStartupStatus: null == serviceDiscoveryStartupStatus
-          ? _value.serviceDiscoveryStartupStatus
-          : serviceDiscoveryStartupStatus // ignore: cast_nullable_to_non_nullable
-              as ResponseWrapper<Object?>,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ResponseWrapperCopyWith<Object?, $Res> get serviceDiscoveryStartupStatus {
-    return $ResponseWrapperCopyWith<Object?, $Res>(
-        _value.serviceDiscoveryStartupStatus, (value) {
-      return _then(
-          _value.copyWith(serviceDiscoveryStartupStatus: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$DaftarPermainanStateImplCopyWith<$Res>
-    implements $DaftarPermainanStateCopyWith<$Res> {
-  factory _$$DaftarPermainanStateImplCopyWith(_$DaftarPermainanStateImpl value,
-          $Res Function(_$DaftarPermainanStateImpl) then) =
-      __$$DaftarPermainanStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {List<MyServiceAttribute> discoveredGames,
-      ResponseWrapper<Object?> serviceDiscoveryStartupStatus});
-
-  @override
-  $ResponseWrapperCopyWith<Object?, $Res> get serviceDiscoveryStartupStatus;
-}
-
-/// @nodoc
-class __$$DaftarPermainanStateImplCopyWithImpl<$Res>
-    extends _$DaftarPermainanStateCopyWithImpl<$Res, _$DaftarPermainanStateImpl>
-    implements _$$DaftarPermainanStateImplCopyWith<$Res> {
-  __$$DaftarPermainanStateImplCopyWithImpl(_$DaftarPermainanStateImpl _value,
-      $Res Function(_$DaftarPermainanStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? discoveredGames = null,
-    Object? serviceDiscoveryStartupStatus = null,
-  }) {
-    return _then(_$DaftarPermainanStateImpl(
-      discoveredGames: null == discoveredGames
-          ? _value._discoveredGames
-          : discoveredGames // ignore: cast_nullable_to_non_nullable
-              as List<MyServiceAttribute>,
-      serviceDiscoveryStartupStatus: null == serviceDiscoveryStartupStatus
-          ? _value.serviceDiscoveryStartupStatus
+          ? _self.serviceDiscoveryStartupStatus
           : serviceDiscoveryStartupStatus // ignore: cast_nullable_to_non_nullable
               as ResponseWrapper<Object?>,
     ));
   }
+
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseWrapperCopyWith<Object?, $Res> get serviceDiscoveryStartupStatus {
+    return $ResponseWrapperCopyWith<Object?, $Res>(
+        _self.serviceDiscoveryStartupStatus, (value) {
+      return _then(_self.copyWith(serviceDiscoveryStartupStatus: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [DaftarPermainanState].
+extension DaftarPermainanStatePatterns on DaftarPermainanState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DaftarPermainanState value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DaftarPermainanState value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DaftarPermainanState value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(List<MyServiceAttribute> discoveredGames,
+            ResponseWrapper<Object?> serviceDiscoveryStartupStatus)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState() when $default != null:
+        return $default(
+            _that.discoveredGames, _that.serviceDiscoveryStartupStatus);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(List<MyServiceAttribute> discoveredGames,
+            ResponseWrapper<Object?> serviceDiscoveryStartupStatus)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState():
+        return $default(
+            _that.discoveredGames, _that.serviceDiscoveryStartupStatus);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(List<MyServiceAttribute> discoveredGames,
+            ResponseWrapper<Object?> serviceDiscoveryStartupStatus)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DaftarPermainanState() when $default != null:
+        return $default(
+            _that.discoveredGames, _that.serviceDiscoveryStartupStatus);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
 
-class _$DaftarPermainanStateImpl implements _DaftarPermainanState {
-  const _$DaftarPermainanStateImpl(
+class _DaftarPermainanState implements DaftarPermainanState {
+  const _DaftarPermainanState(
       {required final List<MyServiceAttribute> discoveredGames,
       required this.serviceDiscoveryStartupStatus})
       : _discoveredGames = discoveredGames;
@@ -141,16 +288,20 @@ class _$DaftarPermainanStateImpl implements _DaftarPermainanState {
   @override
   final ResponseWrapper<Object?> serviceDiscoveryStartupStatus;
 
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DaftarPermainanState(discoveredGames: $discoveredGames, serviceDiscoveryStartupStatus: $serviceDiscoveryStartupStatus)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DaftarPermainanStateCopyWith<_DaftarPermainanState> get copyWith =>
+      __$DaftarPermainanStateCopyWithImpl<_DaftarPermainanState>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DaftarPermainanStateImpl &&
+            other is _DaftarPermainanState &&
             const DeepCollectionEquality()
                 .equals(other._discoveredGames, _discoveredGames) &&
             (identical(other.serviceDiscoveryStartupStatus,
@@ -165,188 +316,105 @@ class _$DaftarPermainanStateImpl implements _DaftarPermainanState {
       const DeepCollectionEquality().hash(_discoveredGames),
       serviceDiscoveryStartupStatus);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DaftarPermainanStateImplCopyWith<_$DaftarPermainanStateImpl>
-      get copyWith =>
-          __$$DaftarPermainanStateImplCopyWithImpl<_$DaftarPermainanStateImpl>(
-              this, _$identity);
+  String toString() {
+    return 'DaftarPermainanState(discoveredGames: $discoveredGames, serviceDiscoveryStartupStatus: $serviceDiscoveryStartupStatus)';
+  }
 }
 
-abstract class _DaftarPermainanState implements DaftarPermainanState {
-  const factory _DaftarPermainanState(
-      {required final List<MyServiceAttribute> discoveredGames,
-      required final ResponseWrapper<Object?>
-          serviceDiscoveryStartupStatus}) = _$DaftarPermainanStateImpl;
+/// @nodoc
+abstract mixin class _$DaftarPermainanStateCopyWith<$Res>
+    implements $DaftarPermainanStateCopyWith<$Res> {
+  factory _$DaftarPermainanStateCopyWith(_DaftarPermainanState value,
+          $Res Function(_DaftarPermainanState) _then) =
+      __$DaftarPermainanStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<MyServiceAttribute> discoveredGames,
+      ResponseWrapper<Object?> serviceDiscoveryStartupStatus});
 
   @override
-  List<MyServiceAttribute> get discoveredGames;
+  $ResponseWrapperCopyWith<Object?, $Res> get serviceDiscoveryStartupStatus;
+}
+
+/// @nodoc
+class __$DaftarPermainanStateCopyWithImpl<$Res>
+    implements _$DaftarPermainanStateCopyWith<$Res> {
+  __$DaftarPermainanStateCopyWithImpl(this._self, this._then);
+
+  final _DaftarPermainanState _self;
+  final $Res Function(_DaftarPermainanState) _then;
+
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  ResponseWrapper<Object?> get serviceDiscoveryStartupStatus;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? discoveredGames = null,
+    Object? serviceDiscoveryStartupStatus = null,
+  }) {
+    return _then(_DaftarPermainanState(
+      discoveredGames: null == discoveredGames
+          ? _self._discoveredGames
+          : discoveredGames // ignore: cast_nullable_to_non_nullable
+              as List<MyServiceAttribute>,
+      serviceDiscoveryStartupStatus: null == serviceDiscoveryStartupStatus
+          ? _self.serviceDiscoveryStartupStatus
+          : serviceDiscoveryStartupStatus // ignore: cast_nullable_to_non_nullable
+              as ResponseWrapper<Object?>,
+    ));
+  }
+
+  /// Create a copy of DaftarPermainanState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$DaftarPermainanStateImplCopyWith<_$DaftarPermainanStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $ResponseWrapperCopyWith<Object?, $Res> get serviceDiscoveryStartupStatus {
+    return $ResponseWrapperCopyWith<Object?, $Res>(
+        _self.serviceDiscoveryStartupStatus, (value) {
+      return _then(_self.copyWith(serviceDiscoveryStartupStatus: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$DaftarPermainanEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() discoverGame,
-    required TResult Function(MyServiceAttribute gameAttribute) addGame,
-    required TResult Function(MyServiceAttribute gameAttribute) removeGame,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? discoverGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? removeGame,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? discoverGame,
-    TResult Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult Function(MyServiceAttribute gameAttribute)? removeGame,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_DiscoverGame value) discoverGame,
-    required TResult Function(_AddGame value) addGame,
-    required TResult Function(_RemoveGame value) removeGame,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_DiscoverGame value)? discoverGame,
-    TResult? Function(_AddGame value)? addGame,
-    TResult? Function(_RemoveGame value)? removeGame,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_DiscoverGame value)? discoverGame,
-    TResult Function(_AddGame value)? addGame,
-    TResult Function(_RemoveGame value)? removeGame,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DaftarPermainanEventCopyWith<$Res> {
-  factory $DaftarPermainanEventCopyWith(DaftarPermainanEvent value,
-          $Res Function(DaftarPermainanEvent) then) =
-      _$DaftarPermainanEventCopyWithImpl<$Res, DaftarPermainanEvent>;
-}
-
-/// @nodoc
-class _$DaftarPermainanEventCopyWithImpl<$Res,
-        $Val extends DaftarPermainanEvent>
-    implements $DaftarPermainanEventCopyWith<$Res> {
-  _$DaftarPermainanEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$DiscoverGameImplCopyWith<$Res> {
-  factory _$$DiscoverGameImplCopyWith(
-          _$DiscoverGameImpl value, $Res Function(_$DiscoverGameImpl) then) =
-      __$$DiscoverGameImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DiscoverGameImplCopyWithImpl<$Res>
-    extends _$DaftarPermainanEventCopyWithImpl<$Res, _$DiscoverGameImpl>
-    implements _$$DiscoverGameImplCopyWith<$Res> {
-  __$$DiscoverGameImplCopyWithImpl(
-      _$DiscoverGameImpl _value, $Res Function(_$DiscoverGameImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DiscoverGameImpl implements _DiscoverGame {
-  const _$DiscoverGameImpl();
-
-  @override
-  String toString() {
-    return 'DaftarPermainanEvent.discoverGame()';
-  }
-
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DiscoverGameImpl);
+        (other.runtimeType == runtimeType && other is DaftarPermainanEvent);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() discoverGame,
-    required TResult Function(MyServiceAttribute gameAttribute) addGame,
-    required TResult Function(MyServiceAttribute gameAttribute) removeGame,
-  }) {
-    return discoverGame();
+  String toString() {
+    return 'DaftarPermainanEvent()';
   }
+}
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? discoverGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? removeGame,
-  }) {
-    return discoverGame?.call();
-  }
+/// @nodoc
+class $DaftarPermainanEventCopyWith<$Res> {
+  $DaftarPermainanEventCopyWith(
+      DaftarPermainanEvent _, $Res Function(DaftarPermainanEvent) __);
+}
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? discoverGame,
-    TResult Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult Function(MyServiceAttribute gameAttribute)? removeGame,
-    required TResult orElse(),
-  }) {
-    if (discoverGame != null) {
-      return discoverGame();
-    }
-    return orElse();
-  }
+/// Adds pattern-matching-related methods to [DaftarPermainanEvent].
+extension DaftarPermainanEventPatterns on DaftarPermainanEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_DiscoverGame value) discoverGame,
-    required TResult Function(_AddGame value) addGame,
-    required TResult Function(_RemoveGame value) removeGame,
-  }) {
-    return discoverGame(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_DiscoverGame value)? discoverGame,
-    TResult? Function(_AddGame value)? addGame,
-    TResult? Function(_RemoveGame value)? removeGame,
-  }) {
-    return discoverGame?.call(this);
-  }
-
-  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DiscoverGame value)? discoverGame,
@@ -354,183 +422,251 @@ class _$DiscoverGameImpl implements _DiscoverGame {
     TResult Function(_RemoveGame value)? removeGame,
     required TResult orElse(),
   }) {
-    if (discoverGame != null) {
-      return discoverGame(this);
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame() when discoverGame != null:
+        return discoverGame(_that);
+      case _AddGame() when addGame != null:
+        return addGame(_that);
+      case _RemoveGame() when removeGame != null:
+        return removeGame(_that);
+      case _:
+        return orElse();
     }
-    return orElse();
   }
-}
 
-abstract class _DiscoverGame implements DaftarPermainanEvent {
-  const factory _DiscoverGame() = _$DiscoverGameImpl;
-}
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-/// @nodoc
-abstract class _$$AddGameImplCopyWith<$Res> {
-  factory _$$AddGameImplCopyWith(
-          _$AddGameImpl value, $Res Function(_$AddGameImpl) then) =
-      __$$AddGameImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({MyServiceAttribute gameAttribute});
-}
-
-/// @nodoc
-class __$$AddGameImplCopyWithImpl<$Res>
-    extends _$DaftarPermainanEventCopyWithImpl<$Res, _$AddGameImpl>
-    implements _$$AddGameImplCopyWith<$Res> {
-  __$$AddGameImplCopyWithImpl(
-      _$AddGameImpl _value, $Res Function(_$AddGameImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? gameAttribute = null,
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DiscoverGame value) discoverGame,
+    required TResult Function(_AddGame value) addGame,
+    required TResult Function(_RemoveGame value) removeGame,
   }) {
-    return _then(_$AddGameImpl(
-      null == gameAttribute
-          ? _value.gameAttribute
-          : gameAttribute // ignore: cast_nullable_to_non_nullable
-              as MyServiceAttribute,
-    ));
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame():
+        return discoverGame(_that);
+      case _AddGame():
+        return addGame(_that);
+      case _RemoveGame():
+        return removeGame(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DiscoverGame value)? discoverGame,
+    TResult? Function(_AddGame value)? addGame,
+    TResult? Function(_RemoveGame value)? removeGame,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame() when discoverGame != null:
+        return discoverGame(_that);
+      case _AddGame() when addGame != null:
+        return addGame(_that);
+      case _RemoveGame() when removeGame != null:
+        return removeGame(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? discoverGame,
+    TResult Function(MyServiceAttribute gameAttribute)? addGame,
+    TResult Function(MyServiceAttribute gameAttribute)? removeGame,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame() when discoverGame != null:
+        return discoverGame();
+      case _AddGame() when addGame != null:
+        return addGame(_that.gameAttribute);
+      case _RemoveGame() when removeGame != null:
+        return removeGame(_that.gameAttribute);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() discoverGame,
+    required TResult Function(MyServiceAttribute gameAttribute) addGame,
+    required TResult Function(MyServiceAttribute gameAttribute) removeGame,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame():
+        return discoverGame();
+      case _AddGame():
+        return addGame(_that.gameAttribute);
+      case _RemoveGame():
+        return removeGame(_that.gameAttribute);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? discoverGame,
+    TResult? Function(MyServiceAttribute gameAttribute)? addGame,
+    TResult? Function(MyServiceAttribute gameAttribute)? removeGame,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DiscoverGame() when discoverGame != null:
+        return discoverGame();
+      case _AddGame() when addGame != null:
+        return addGame(_that.gameAttribute);
+      case _RemoveGame() when removeGame != null:
+        return removeGame(_that.gameAttribute);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 
-class _$AddGameImpl implements _AddGame {
-  const _$AddGameImpl(this.gameAttribute);
+class _DiscoverGame implements DaftarPermainanEvent {
+  const _DiscoverGame();
 
   @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DiscoverGame);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'DaftarPermainanEvent.discoverGame()';
+  }
+}
+
+/// @nodoc
+
+class _AddGame implements DaftarPermainanEvent {
+  const _AddGame(this.gameAttribute);
+
   final MyServiceAttribute gameAttribute;
+
+  /// Create a copy of DaftarPermainanEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AddGameCopyWith<_AddGame> get copyWith =>
+      __$AddGameCopyWithImpl<_AddGame>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AddGame &&
+            (identical(other.gameAttribute, gameAttribute) ||
+                other.gameAttribute == gameAttribute));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, gameAttribute);
 
   @override
   String toString() {
     return 'DaftarPermainanEvent.addGame(gameAttribute: $gameAttribute)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddGameImpl &&
-            (identical(other.gameAttribute, gameAttribute) ||
-                other.gameAttribute == gameAttribute));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, gameAttribute);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddGameImplCopyWith<_$AddGameImpl> get copyWith =>
-      __$$AddGameImplCopyWithImpl<_$AddGameImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() discoverGame,
-    required TResult Function(MyServiceAttribute gameAttribute) addGame,
-    required TResult Function(MyServiceAttribute gameAttribute) removeGame,
-  }) {
-    return addGame(gameAttribute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? discoverGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? removeGame,
-  }) {
-    return addGame?.call(gameAttribute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? discoverGame,
-    TResult Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult Function(MyServiceAttribute gameAttribute)? removeGame,
-    required TResult orElse(),
-  }) {
-    if (addGame != null) {
-      return addGame(gameAttribute);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_DiscoverGame value) discoverGame,
-    required TResult Function(_AddGame value) addGame,
-    required TResult Function(_RemoveGame value) removeGame,
-  }) {
-    return addGame(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_DiscoverGame value)? discoverGame,
-    TResult? Function(_AddGame value)? addGame,
-    TResult? Function(_RemoveGame value)? removeGame,
-  }) {
-    return addGame?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_DiscoverGame value)? discoverGame,
-    TResult Function(_AddGame value)? addGame,
-    TResult Function(_RemoveGame value)? removeGame,
-    required TResult orElse(),
-  }) {
-    if (addGame != null) {
-      return addGame(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddGame implements DaftarPermainanEvent {
-  const factory _AddGame(final MyServiceAttribute gameAttribute) =
-      _$AddGameImpl;
-
-  MyServiceAttribute get gameAttribute;
-  @JsonKey(ignore: true)
-  _$$AddGameImplCopyWith<_$AddGameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RemoveGameImplCopyWith<$Res> {
-  factory _$$RemoveGameImplCopyWith(
-          _$RemoveGameImpl value, $Res Function(_$RemoveGameImpl) then) =
-      __$$RemoveGameImplCopyWithImpl<$Res>;
+abstract mixin class _$AddGameCopyWith<$Res>
+    implements $DaftarPermainanEventCopyWith<$Res> {
+  factory _$AddGameCopyWith(_AddGame value, $Res Function(_AddGame) _then) =
+      __$AddGameCopyWithImpl;
   @useResult
   $Res call({MyServiceAttribute gameAttribute});
 }
 
 /// @nodoc
-class __$$RemoveGameImplCopyWithImpl<$Res>
-    extends _$DaftarPermainanEventCopyWithImpl<$Res, _$RemoveGameImpl>
-    implements _$$RemoveGameImplCopyWith<$Res> {
-  __$$RemoveGameImplCopyWithImpl(
-      _$RemoveGameImpl _value, $Res Function(_$RemoveGameImpl) _then)
-      : super(_value, _then);
+class __$AddGameCopyWithImpl<$Res> implements _$AddGameCopyWith<$Res> {
+  __$AddGameCopyWithImpl(this._self, this._then);
 
+  final _AddGame _self;
+  final $Res Function(_AddGame) _then;
+
+  /// Create a copy of DaftarPermainanEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? gameAttribute = null,
   }) {
-    return _then(_$RemoveGameImpl(
+    return _then(_AddGame(
       null == gameAttribute
-          ? _value.gameAttribute
+          ? _self.gameAttribute
           : gameAttribute // ignore: cast_nullable_to_non_nullable
               as MyServiceAttribute,
     ));
@@ -539,22 +675,23 @@ class __$$RemoveGameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RemoveGameImpl implements _RemoveGame {
-  const _$RemoveGameImpl(this.gameAttribute);
+class _RemoveGame implements DaftarPermainanEvent {
+  const _RemoveGame(this.gameAttribute);
 
-  @override
   final MyServiceAttribute gameAttribute;
 
-  @override
-  String toString() {
-    return 'DaftarPermainanEvent.removeGame(gameAttribute: $gameAttribute)';
-  }
+  /// Create a copy of DaftarPermainanEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RemoveGameCopyWith<_RemoveGame> get copyWith =>
+      __$RemoveGameCopyWithImpl<_RemoveGame>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RemoveGameImpl &&
+            other is _RemoveGame &&
             (identical(other.gameAttribute, gameAttribute) ||
                 other.gameAttribute == gameAttribute));
   }
@@ -562,87 +699,42 @@ class _$RemoveGameImpl implements _RemoveGame {
   @override
   int get hashCode => Object.hash(runtimeType, gameAttribute);
 
-  @JsonKey(ignore: true)
   @override
+  String toString() {
+    return 'DaftarPermainanEvent.removeGame(gameAttribute: $gameAttribute)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RemoveGameCopyWith<$Res>
+    implements $DaftarPermainanEventCopyWith<$Res> {
+  factory _$RemoveGameCopyWith(
+          _RemoveGame value, $Res Function(_RemoveGame) _then) =
+      __$RemoveGameCopyWithImpl;
+  @useResult
+  $Res call({MyServiceAttribute gameAttribute});
+}
+
+/// @nodoc
+class __$RemoveGameCopyWithImpl<$Res> implements _$RemoveGameCopyWith<$Res> {
+  __$RemoveGameCopyWithImpl(this._self, this._then);
+
+  final _RemoveGame _self;
+  final $Res Function(_RemoveGame) _then;
+
+  /// Create a copy of DaftarPermainanEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  _$$RemoveGameImplCopyWith<_$RemoveGameImpl> get copyWith =>
-      __$$RemoveGameImplCopyWithImpl<_$RemoveGameImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() discoverGame,
-    required TResult Function(MyServiceAttribute gameAttribute) addGame,
-    required TResult Function(MyServiceAttribute gameAttribute) removeGame,
+  $Res call({
+    Object? gameAttribute = null,
   }) {
-    return removeGame(gameAttribute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? discoverGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult? Function(MyServiceAttribute gameAttribute)? removeGame,
-  }) {
-    return removeGame?.call(gameAttribute);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? discoverGame,
-    TResult Function(MyServiceAttribute gameAttribute)? addGame,
-    TResult Function(MyServiceAttribute gameAttribute)? removeGame,
-    required TResult orElse(),
-  }) {
-    if (removeGame != null) {
-      return removeGame(gameAttribute);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_DiscoverGame value) discoverGame,
-    required TResult Function(_AddGame value) addGame,
-    required TResult Function(_RemoveGame value) removeGame,
-  }) {
-    return removeGame(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_DiscoverGame value)? discoverGame,
-    TResult? Function(_AddGame value)? addGame,
-    TResult? Function(_RemoveGame value)? removeGame,
-  }) {
-    return removeGame?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_DiscoverGame value)? discoverGame,
-    TResult Function(_AddGame value)? addGame,
-    TResult Function(_RemoveGame value)? removeGame,
-    required TResult orElse(),
-  }) {
-    if (removeGame != null) {
-      return removeGame(this);
-    }
-    return orElse();
+    return _then(_RemoveGame(
+      null == gameAttribute
+          ? _self.gameAttribute
+          : gameAttribute // ignore: cast_nullable_to_non_nullable
+              as MyServiceAttribute,
+    ));
   }
 }
 
-abstract class _RemoveGame implements DaftarPermainanEvent {
-  const factory _RemoveGame(final MyServiceAttribute gameAttribute) =
-      _$RemoveGameImpl;
-
-  MyServiceAttribute get gameAttribute;
-  @JsonKey(ignore: true)
-  _$$RemoveGameImplCopyWith<_$RemoveGameImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

@@ -192,7 +192,7 @@ sealed class TicTacToeClientEvent with _$TicTacToeClientEvent {
 }
 
 @Freezed()
-class TicTacToeClientState with _$TicTacToeClientState implements ITicTacToeUiState {
+abstract class TicTacToeClientState with _$TicTacToeClientState implements ITicTacToeUiState {
   const TicTacToeClientState._();
   const factory TicTacToeClientState({
     required ResponseWrapper<IMyWsConnectionHandler> connectResponse,

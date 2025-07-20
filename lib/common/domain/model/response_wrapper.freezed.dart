@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,102 +9,278 @@ part of 'response_wrapper.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ResponseWrapper<T> {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) succeed,
-    required TResult Function() loading,
-    required TResult Function(ResponseErrorType? errorType) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? succeed,
-    TResult? Function()? loading,
-    TResult? Function(ResponseErrorType? errorType)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? succeed,
-    TResult Function()? loading,
-    TResult Function(ResponseErrorType? errorType)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Succeed<T> value) succeed,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Error<T> value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Succeed<T> value)? succeed,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Error<T> value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ResponseWrapper<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'ResponseWrapper<$T>()';
+  }
+}
+
+/// @nodoc
+class $ResponseWrapperCopyWith<T, $Res> {
+  $ResponseWrapperCopyWith(
+      ResponseWrapper<T> _, $Res Function(ResponseWrapper<T>) __);
+}
+
+/// Adds pattern-matching-related methods to [ResponseWrapper].
+extension ResponseWrapperPatterns<T> on ResponseWrapper<T> {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Succeed<T> value)? succeed,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed() when succeed != null:
+        return succeed(_that);
+      case Loading() when loading != null:
+        return loading(_that);
+      case Error() when error != null:
+        return error(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Succeed<T> value) succeed,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Error<T> value) error,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed():
+        return succeed(_that);
+      case Loading():
+        return loading(_that);
+      case Error():
+        return error(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Succeed<T> value)? succeed,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Error<T> value)? error,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed() when succeed != null:
+        return succeed(_that);
+      case Loading() when loading != null:
+        return loading(_that);
+      case Error() when error != null:
+        return error(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T data)? succeed,
+    TResult Function()? loading,
+    TResult Function(ResponseErrorType? errorType)? error,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed() when succeed != null:
+        return succeed(_that.data);
+      case Loading() when loading != null:
+        return loading();
+      case Error() when error != null:
+        return error(_that.errorType);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T data) succeed,
+    required TResult Function() loading,
+    required TResult Function(ResponseErrorType? errorType) error,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed():
+        return succeed(_that.data);
+      case Loading():
+        return loading();
+      case Error():
+        return error(_that.errorType);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T data)? succeed,
+    TResult? Function()? loading,
+    TResult? Function(ResponseErrorType? errorType)? error,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case Succeed() when succeed != null:
+        return succeed(_that.data);
+      case Loading() when loading != null:
+        return loading();
+      case Error() when error != null:
+        return error(_that.errorType);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $ResponseWrapperCopyWith<T, $Res> {
-  factory $ResponseWrapperCopyWith(
-          ResponseWrapper<T> value, $Res Function(ResponseWrapper<T>) then) =
-      _$ResponseWrapperCopyWithImpl<T, $Res, ResponseWrapper<T>>;
+
+class Succeed<T> extends ResponseWrapper<T> {
+  Succeed(this.data) : super._();
+
+  final T data;
+
+  /// Create a copy of ResponseWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SucceedCopyWith<T, Succeed<T>> get copyWith =>
+      _$SucceedCopyWithImpl<T, Succeed<T>>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Succeed<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @override
+  String toString() {
+    return 'ResponseWrapper<$T>.succeed(data: $data)';
+  }
 }
 
 /// @nodoc
-class _$ResponseWrapperCopyWithImpl<T, $Res, $Val extends ResponseWrapper<T>>
+abstract mixin class $SucceedCopyWith<T, $Res>
     implements $ResponseWrapperCopyWith<T, $Res> {
-  _$ResponseWrapperCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$SucceedImplCopyWith<T, $Res> {
-  factory _$$SucceedImplCopyWith(
-          _$SucceedImpl<T> value, $Res Function(_$SucceedImpl<T>) then) =
-      __$$SucceedImplCopyWithImpl<T, $Res>;
+  factory $SucceedCopyWith(Succeed<T> value, $Res Function(Succeed<T>) _then) =
+      _$SucceedCopyWithImpl;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$SucceedImplCopyWithImpl<T, $Res>
-    extends _$ResponseWrapperCopyWithImpl<T, $Res, _$SucceedImpl<T>>
-    implements _$$SucceedImplCopyWith<T, $Res> {
-  __$$SucceedImplCopyWithImpl(
-      _$SucceedImpl<T> _value, $Res Function(_$SucceedImpl<T>) _then)
-      : super(_value, _then);
+class _$SucceedCopyWithImpl<T, $Res> implements $SucceedCopyWith<T, $Res> {
+  _$SucceedCopyWithImpl(this._self, this._then);
 
+  final Succeed<T> _self;
+  final $Res Function(Succeed<T>) _then;
+
+  /// Create a copy of ResponseWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$SucceedImpl<T>(
+    return _then(Succeed<T>(
       freezed == data
-          ? _value.data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
     ));
@@ -113,272 +289,43 @@ class __$$SucceedImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$SucceedImpl<T> extends Succeed<T> {
-  _$SucceedImpl(this.data) : super._();
-
-  @override
-  final T data;
-
-  @override
-  String toString() {
-    return 'ResponseWrapper<$T>.succeed(data: $data)';
-  }
+class Loading<T> extends ResponseWrapper<T> {
+  Loading() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SucceedImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SucceedImplCopyWith<T, _$SucceedImpl<T>> get copyWith =>
-      __$$SucceedImplCopyWithImpl<T, _$SucceedImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) succeed,
-    required TResult Function() loading,
-    required TResult Function(ResponseErrorType? errorType) error,
-  }) {
-    return succeed(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? succeed,
-    TResult? Function()? loading,
-    TResult? Function(ResponseErrorType? errorType)? error,
-  }) {
-    return succeed?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? succeed,
-    TResult Function()? loading,
-    TResult Function(ResponseErrorType? errorType)? error,
-    required TResult orElse(),
-  }) {
-    if (succeed != null) {
-      return succeed(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Succeed<T> value) succeed,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Error<T> value) error,
-  }) {
-    return succeed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Succeed<T> value)? succeed,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Error<T> value)? error,
-  }) {
-    return succeed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Succeed<T> value)? succeed,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Error<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (succeed != null) {
-      return succeed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Succeed<T> extends ResponseWrapper<T> {
-  factory Succeed(final T data) = _$SucceedImpl<T>;
-  Succeed._() : super._();
-
-  T get data;
-  @JsonKey(ignore: true)
-  _$$SucceedImplCopyWith<T, _$SucceedImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<T, $Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl<T> value, $Res Function(_$LoadingImpl<T>) then) =
-      __$$LoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<T, $Res>
-    extends _$ResponseWrapperCopyWithImpl<T, $Res, _$LoadingImpl<T>>
-    implements _$$LoadingImplCopyWith<T, $Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LoadingImpl<T> extends Loading<T> {
-  _$LoadingImpl() : super._();
-
-  @override
-  String toString() {
-    return 'ResponseWrapper<$T>.loading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl<T>);
+        (other.runtimeType == runtimeType && other is Loading<T>);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) succeed,
-    required TResult Function() loading,
-    required TResult Function(ResponseErrorType? errorType) error,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? succeed,
-    TResult? Function()? loading,
-    TResult? Function(ResponseErrorType? errorType)? error,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? succeed,
-    TResult Function()? loading,
-    TResult Function(ResponseErrorType? errorType)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Succeed<T> value) succeed,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Error<T> value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Succeed<T> value)? succeed,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Error<T> value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Succeed<T> value)? succeed,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Error<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Loading<T> extends ResponseWrapper<T> {
-  factory Loading() = _$LoadingImpl<T>;
-  Loading._() : super._();
-}
-
-/// @nodoc
-abstract class _$$ErrorImplCopyWith<T, $Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
-      __$$ErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({ResponseErrorType? errorType});
-}
-
-/// @nodoc
-class __$$ErrorImplCopyWithImpl<T, $Res>
-    extends _$ResponseWrapperCopyWithImpl<T, $Res, _$ErrorImpl<T>>
-    implements _$$ErrorImplCopyWith<T, $Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorType = freezed,
-  }) {
-    return _then(_$ErrorImpl<T>(
-      errorType: freezed == errorType
-          ? _value.errorType
-          : errorType // ignore: cast_nullable_to_non_nullable
-              as ResponseErrorType?,
-    ));
+  String toString() {
+    return 'ResponseWrapper<$T>.loading()';
   }
 }
 
 /// @nodoc
 
-class _$ErrorImpl<T> extends Error<T> {
-  _$ErrorImpl({this.errorType}) : super._();
+class Error<T> extends ResponseWrapper<T> {
+  Error({this.errorType}) : super._();
 
-  @override
   final ResponseErrorType? errorType;
 
-  @override
-  String toString() {
-    return 'ResponseWrapper<$T>.error(errorType: $errorType)';
-  }
+  /// Create a copy of ResponseWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ErrorCopyWith<T, Error<T>> get copyWith =>
+      _$ErrorCopyWithImpl<T, Error<T>>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl<T> &&
+            other is Error<T> &&
             (identical(other.errorType, errorType) ||
                 other.errorType == errorType));
   }
@@ -386,87 +333,41 @@ class _$ErrorImpl<T> extends Error<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorType);
 
-  @JsonKey(ignore: true)
   @override
+  String toString() {
+    return 'ResponseWrapper<$T>.error(errorType: $errorType)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ErrorCopyWith<T, $Res>
+    implements $ResponseWrapperCopyWith<T, $Res> {
+  factory $ErrorCopyWith(Error<T> value, $Res Function(Error<T>) _then) =
+      _$ErrorCopyWithImpl;
+  @useResult
+  $Res call({ResponseErrorType? errorType});
+}
+
+/// @nodoc
+class _$ErrorCopyWithImpl<T, $Res> implements $ErrorCopyWith<T, $Res> {
+  _$ErrorCopyWithImpl(this._self, this._then);
+
+  final Error<T> _self;
+  final $Res Function(Error<T>) _then;
+
+  /// Create a copy of ResponseWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
-      __$$ErrorImplCopyWithImpl<T, _$ErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) succeed,
-    required TResult Function() loading,
-    required TResult Function(ResponseErrorType? errorType) error,
+  $Res call({
+    Object? errorType = freezed,
   }) {
-    return error(errorType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? succeed,
-    TResult? Function()? loading,
-    TResult? Function(ResponseErrorType? errorType)? error,
-  }) {
-    return error?.call(errorType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? succeed,
-    TResult Function()? loading,
-    TResult Function(ResponseErrorType? errorType)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(errorType);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Succeed<T> value) succeed,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Error<T> value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Succeed<T> value)? succeed,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Error<T> value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Succeed<T> value)? succeed,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Error<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
+    return _then(Error<T>(
+      errorType: freezed == errorType
+          ? _self.errorType
+          : errorType // ignore: cast_nullable_to_non_nullable
+              as ResponseErrorType?,
+    ));
   }
 }
 
-abstract class Error<T> extends ResponseWrapper<T> {
-  factory Error({final ResponseErrorType? errorType}) = _$ErrorImpl<T>;
-  Error._() : super._();
-
-  ResponseErrorType? get errorType;
-  @JsonKey(ignore: true)
-  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

@@ -65,7 +65,7 @@ class DaftarPermainanViewModel extends Bloc<DaftarPermainanEvent, DaftarPermaina
 }
 
 @freezed
-class DaftarPermainanState with _$DaftarPermainanState {
+abstract class DaftarPermainanState with _$DaftarPermainanState {
   const factory DaftarPermainanState({
     required List<MyServiceAttribute> discoveredGames,
     required ResponseWrapper<Object?> serviceDiscoveryStartupStatus,

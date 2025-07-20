@@ -6,12 +6,12 @@ part of 'player_profile.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PlayerPofileImpl _$$PlayerPofileImplFromJson(Map<String, dynamic> json) =>
-    _$PlayerPofileImpl(
+_PlayerPofile _$PlayerPofileFromJson(Map<String, dynamic> json) =>
+    _PlayerPofile(
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$PlayerPofileImplToJson(_$PlayerPofileImpl instance) =>
+Map<String, dynamic> _$PlayerPofileToJson(_PlayerPofile instance) =>
     <String, dynamic>{
       'name': instance.name,
     };

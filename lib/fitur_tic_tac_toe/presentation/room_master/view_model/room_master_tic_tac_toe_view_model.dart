@@ -284,7 +284,7 @@ sealed class RoomMasterTicTacToeEvent with _$RoomMasterTicTacToeEvent {
 }
 
 @Freezed()
-class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState implements ITicTacToeUiState {
+abstract class RoomMasterTicTacToeState with _$RoomMasterTicTacToeState implements ITicTacToeUiState {
   const RoomMasterTicTacToeState._();
   const factory RoomMasterTicTacToeState({
     required ResponseWrapper<WsServerUrl>? wsServerPreparationResponse,

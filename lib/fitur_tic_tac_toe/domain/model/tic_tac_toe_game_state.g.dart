@@ -17,9 +17,8 @@ Map<String, dynamic> _$CoordinateToJson(Coordinate instance) =>
       'col': instance.col,
     };
 
-_$TicTacToeGameStateImpl _$$TicTacToeGameStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TicTacToeGameStateImpl(
+_TicTacToeGameState _$TicTacToeGameStateFromJson(Map<String, dynamic> json) =>
+    _TicTacToeGameState(
       circleCoordinates: (json['circleCoordinates'] as List<dynamic>)
           .map((e) => Coordinate.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -31,8 +30,7 @@ _$TicTacToeGameStateImpl _$$TicTacToeGameStateImplFromJson(
           _$TicTacToeEndGameStatusEnumMap, json['endGameStatus']),
     );
 
-Map<String, dynamic> _$$TicTacToeGameStateImplToJson(
-        _$TicTacToeGameStateImpl instance) =>
+Map<String, dynamic> _$TicTacToeGameStateToJson(_TicTacToeGameState instance) =>
     <String, dynamic>{
       'circleCoordinates':
           instance.circleCoordinates.map((e) => e.toJson()).toList(),
