@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/release
 pubspec.lock
 devtools_options.yaml
+
+# FVM Version Cache
+.fvm/
+local.properties
