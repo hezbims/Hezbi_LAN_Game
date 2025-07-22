@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player_status.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/tic_tac_toe_game_state_v2.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_action_event.dart';
@@ -7,8 +8,8 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_respon
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/game_status.dart';
 
 void main() {
-  test('''When room master initialized the room, 
-  the initial game state should be correct''',
+  test("When room master initialized the room, " +
+  "the initial game state should be correct",
   (){
     const roomMasterIp = "192.168.43.1:9832";
     const roomMasterName = "jj";
@@ -32,43 +33,70 @@ void main() {
 
   });
 
-  // test('When second player join the game, it should immediately start the game', () {
-  //   final secondPlayerId = "234"
-  //   final StartGameEvent event = waitingGameState
-  //       .handle(new PlayerJoinEvent(id: secondPlayerId));
-  //
-  //   expect(event.data.before.gameStatus , GameStatus.Waiting);
-  //   expect(event.data.after.gameStatus, GameStatus.Playing);
-  // });
-  //
-
-  test("""When third player try to join the game, 
-  they will receive notification that they can't join""",
+  group("Scenario : New Player Join",
   (){
-    const thirdPlayerId = "192.168.45.1";
-    const thirdPlayerName = "player3";
+    test("When second player join the game, " +
+        "it should immediately start the game",
+            () {
+          const secondPlayerId = "192.168.45.43:8001";
+          const secondPlayerName = "lj2";
+          const roomMasterId = "192.168.45.44:8001";
+          const roomMasterName = "room-master";
 
-    TicTacToeGameStateV2 playingGameState = TicTacToeGameStateV2
-      .gamePlayingOnlyForTesting();
-    final CantJoinGameAlreadyPlayingEvent event = playingGameState
-        .handle(PlayerJoinEvent(id: thirdPlayerId, name: thirdPlayerName)) as CantJoinGameAlreadyPlayingEvent;
+          final waitingGameState = TicTacToeGameStateV2.init(
+            roomMasterId: roomMasterId,
+            roomMasterName: roomMasterName,);
 
-    expect(event.playerId, thirdPlayerId);
+          final StartGameEvent event = waitingGameState.handle(PlayerJoinEvent(
+              id: secondPlayerId, name: secondPlayerName)) as StartGameEvent;
+
+          final newGameState = event.data.after;
+
+          expect(newGameState.gameStatus, GameStatus.playing);
+          expect(newGameState.players, hasLength(2));
+          expect(newGameState.players.last, Player(
+              id: secondPlayerId,
+              name: secondPlayerName,
+              status: PlayerStatus.playing));
+          expect(newGameState.currentPlayerIdTurn, anyOf(secondPlayerId, roomMasterId));
+
+          // make sure statennya cuma berubah seperlunya
+          expect(waitingGameState, newGameState.copyWith(
+            gameStatus: GameStatus.waiting,
+            players: newGameState.players.sublist(0, 1),
+            currentPlayerIdTurn: null,
+          ));
+        });
+
+    test("When third player try to join the game, " +
+        "they will receive notification that they can't join",
+            (){
+          const thirdPlayerId = "192.168.45.1";
+          const thirdPlayerName = "player3";
+
+          TicTacToeGameStateV2 playingGameState = TicTacToeGameStateV2
+              .gamePlayingOnlyForTesting();
+          final CantJoinGameAlreadyPlayingEvent event = playingGameState
+              .handle(PlayerJoinEvent(id: thirdPlayerId, name: thirdPlayerName)) as CantJoinGameAlreadyPlayingEvent;
+
+          expect(event.playerId, thirdPlayerId);
+        });
+
+    test("When player try to join the game, " +
+        "but game already ended, " +
+        "they will receive notification that game already ended",
+            (){
+          const playerId = "192.168.23.9";
+          const playerName = "player3";
+
+          final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
+              .gameEndedOnlyForTesting();
+
+          final CantJoinGameAlreadyEndedEvent event = endedGameState.handle(
+              PlayerJoinEvent(id: playerId, name: playerName)) as CantJoinGameAlreadyEndedEvent;
+
+          expect(event.playerId, playerId);
+        });
   });
 
-  test("""When player try to join the game, 
-  but game already ended, 
-  they will receive notification that game already ended""",
-  (){
-    const playerId = "192.168.23.9";
-    const playerName = "player3";
-
-    final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
-        .gameEndedOnlyForTesting();
-
-    final CantJoinGameAlreadyEndedEvent event = endedGameState.handle(
-        PlayerJoinEvent(id: playerId, name: playerName)) as CantJoinGameAlreadyEndedEvent;
-
-    expect(event.playerId, playerId);
-  });
 }

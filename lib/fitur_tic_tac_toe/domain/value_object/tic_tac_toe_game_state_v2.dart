@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_action_event.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_response_event.dart';
@@ -30,37 +32,8 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   });
 
   //region testing only
-  @visibleForTesting
-  static TicTacToeGameStateV2 initOnlyForTesting({
-    GameStatus? gameStatus,
-    List<List<TicTacToeCellState>>? cells,
-    String? roomMasterId,
-    List<Player>? players,
-    String? currentPlayerIdTurn,
-  }){
-    cells ??= [
-      [ for (int i = 0 ; i < 3 ; i++) TicTacToeCellState.hasNothing ]
-    ];
-    gameStatus ??= GameStatus.waiting;
-    roomMasterId ??= "192.168.44.1:97976";
-    players ??= [
-      Player(
-        id: roomMasterId,
-        name: "room master",
-        status: PlayerStatus.playing
-      )
-    ];
-
-    return TicTacToeGameStateV2._privateConstructor(
-      gameStatus: gameStatus,
-      cells: cells,
-      roomMasterId: roomMasterId,
-      players: players,
-      currentPlayerIdTurn: currentPlayerIdTurn
-    );
-  }
-
   /// Mensimulasikan state game ketika permainan berlangsung
+  @visibleForTesting
   static TicTacToeGameStateV2 gamePlayingOnlyForTesting(){
     final roomMaster = Player(
       id: "192.168.44.1",
@@ -87,6 +60,7 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   }
 
   /// Mensimulasikan state game ketika permainan selesai
+  @visibleForTesting
   static TicTacToeGameStateV2 gameEndedOnlyForTesting() {
     final roomMaster = Player(
       id: "192.168.44.1",
@@ -138,23 +112,33 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   TicTacToeResponseEvent handle(TicTacToeActionEvent event){
     return switch (event) {
       PlayerJoinEvent() =>
-        _handlePlayerJoin(event.joinPlayerId),
+        _handlePlayerJoin(event),
     };
   }
 
-  TicTacToeResponseEvent _handlePlayerJoin(String playerId){
+  TicTacToeResponseEvent _handlePlayerJoin(PlayerJoinEvent event){
     return switch(gameStatus){
       GameStatus.waiting =>
-        throw UnimplementedError(),
-        // StartGameEvent(
-        //   before: this,
-        //   after: this.copyWith(
-        //     gameStatus: GameStatus.playing,
-        //   )),
+        StartGameEvent(
+          before: this,
+          after: copyWith(
+            gameStatus: GameStatus.playing,
+            players: [
+              ...players,
+              Player(
+                id: event.joinPlayerId,
+                name: event.joinPlayerName,
+                status: PlayerStatus.playing,
+              )
+            ],
+            currentPlayerIdTurn: Random().nextBool() ?
+              roomMasterId : event.joinPlayerId,
+          ),
+        ),
       GameStatus.playing =>
-          CantJoinGameAlreadyPlayingEvent(playerId: playerId),
+          CantJoinGameAlreadyPlayingEvent(playerId: event.joinPlayerId),
       GameStatus.ended =>
-        CantJoinGameAlreadyEndedEvent(playerId: playerId),
+        CantJoinGameAlreadyEndedEvent(playerId: event.joinPlayerId),
     };
   }
 }
