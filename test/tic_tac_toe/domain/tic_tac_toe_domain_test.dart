@@ -8,8 +8,8 @@ import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_respon
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/game_status.dart';
 
 void main() {
-  test("When room master initialized the room, " +
-  "the initial game state should be correct",
+  test("When room master initialized the room, "
+      "the initial game state should be correct",
   (){
     const roomMasterIp = "192.168.43.1:9832";
     const roomMasterName = "jj";
@@ -35,7 +35,7 @@ void main() {
 
   group("Scenario : New Player Join",
   (){
-    test("When second player join the game, " +
+    test("When second player join the game, "
         "it should immediately start the game",
             () {
           const secondPlayerId = "192.168.45.43:8001";
@@ -68,7 +68,7 @@ void main() {
           ));
         });
 
-    test("When third player try to join the game, " +
+    test("When third player try to join the game, "
         "they will receive notification that they can't join",
             (){
           const thirdPlayerId = "192.168.45.1";
@@ -82,8 +82,8 @@ void main() {
           expect(event.playerId, thirdPlayerId);
         });
 
-    test("When player try to join the game, " +
-        "but game already ended, " +
+    test("When player try to join the game, "
+        "but game already ended, "
         "they will receive notification that game already ended",
             (){
           const playerId = "192.168.23.9";
@@ -99,4 +99,18 @@ void main() {
         });
   });
 
+  group("Scenario : Player Leave",
+  (){
+    test("When player leave, " "but the game already ended, "
+        "there will be no response event",
+        (){
+      final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
+          .gameEndedOnlyForTesting();
+
+      final event = endedGameState.handle(PlayerLeaveEvent(
+          playerId: "192.168.44.1"));
+
+      expect(event, isNull);
+        });
+  });
 }

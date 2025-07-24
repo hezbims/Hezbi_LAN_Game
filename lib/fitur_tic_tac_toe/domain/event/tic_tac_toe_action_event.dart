@@ -10,3 +10,8 @@ class PlayerJoinEvent extends TicTacToeActionEvent {
     required String name,
   }) : joinPlayerId = id, joinPlayerName = name;
 }
+
+class PlayerLeaveEvent extends TicTacToeActionEvent {
+  final String playerId;
+  PlayerLeaveEvent({required this.playerId});
+}

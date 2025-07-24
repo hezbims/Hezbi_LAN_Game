@@ -109,10 +109,12 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
     );
   }
 
-  TicTacToeResponseEvent handle(TicTacToeActionEvent event){
+  TicTacToeResponseEvent? handle(TicTacToeActionEvent event){
     return switch (event) {
       PlayerJoinEvent() =>
         _handlePlayerJoin(event),
+      PlayerLeaveEvent() =>
+        _handlePlayerLeave(event),
     };
   }
 
@@ -139,6 +141,16 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
           CantJoinGameAlreadyPlayingEvent(playerId: event.joinPlayerId),
       GameStatus.ended =>
         CantJoinGameAlreadyEndedEvent(playerId: event.joinPlayerId),
+    };
+  }
+
+  TicTacToeResponseEvent? _handlePlayerLeave(PlayerLeaveEvent event){
+    return switch (gameStatus){
+      GameStatus.waiting =>
+        throw UnimplementedError(),
+      GameStatus.playing =>
+        throw UnimplementedError(),
+      GameStatus.ended => null,
     };
   }
 }
