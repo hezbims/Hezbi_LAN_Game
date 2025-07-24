@@ -145,6 +145,8 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   }
 
   TicTacToeResponseEvent? _handlePlayerLeave(PlayerLeaveEvent event){
+    if (!players.any((player) => player.id == event.playerId))
+      return null;
     return switch (gameStatus){
       GameStatus.waiting =>
         throw UnimplementedError(),

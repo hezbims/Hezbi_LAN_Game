@@ -101,7 +101,8 @@ void main() {
 
   group("Scenario : Player Leave",
   (){
-    test("When player leave, " "but the game already ended, "
+    test("When player leave, "
+        "but the game already ended, "
         "there will be no response event",
         (){
       final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
@@ -111,6 +112,19 @@ void main() {
           playerId: "192.168.44.1"));
 
       expect(event, isNull);
+        });
+
+    test("When player leave, "
+        "but the given player id has no match in game state, "
+        "there will be no response event",
+            (){
+          final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
+              .gamePlayingOnlyForTesting();
+
+          final event = endedGameState.handle(PlayerLeaveEvent(
+              playerId: "192.168.44.99"));
+
+          expect(event, isNull);
         });
   });
 }
