@@ -22,6 +22,15 @@ class StartGameEvent extends TicTacToeSideEffectEvent {
     required super.after,
   });
 }
+
+class GameEndedAfterPlayerLeaving extends TicTacToeSideEffectEvent {
+  final String leavingPlayerId;
+  GameEndedAfterPlayerLeaving({
+    required this.leavingPlayerId,
+    required super.before,
+    required super.after,
+  });
+}
 //endregion
 
 // region No effect event

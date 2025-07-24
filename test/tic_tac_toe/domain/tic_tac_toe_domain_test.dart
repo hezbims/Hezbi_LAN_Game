@@ -101,30 +101,69 @@ void main() {
 
   group("Scenario : Player Leave",
   (){
+    final gameStatusWithNoResponses = [GameStatus.waiting, GameStatus.ended];
+
+    for (final gameStatus in gameStatusWithNoResponses) {
+      test("When player leave, "
+          "and the game status is ${gameStatus.name}, "
+          "then there will be no response event",
+          (){
+        final TicTacToeGameStateV2 gameState = gameStatus == GameStatus.waiting ?
+          TicTacToeGameStateV2.init(
+            roomMasterId: TicTacToeGameStateV2.roomMasterIdForTesting,
+            roomMasterName: TicTacToeGameStateV2.roomMasterNameForTesting) :
+          TicTacToeGameStateV2
+            .gameEndedOnlyForTesting();
+
+        final event = gameState.handle(PlayerLeaveEvent(
+            playerId: TicTacToeGameStateV2.roomMasterIdForTesting));
+
+        expect(event, isNull);
+          });
+    }
+
     test("When player leave, "
-        "but the game already ended, "
-        "there will be no response event",
-        (){
-      final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
-          .gameEndedOnlyForTesting();
-
-      final event = endedGameState.handle(PlayerLeaveEvent(
-          playerId: "192.168.44.1"));
-
-      expect(event, isNull);
-        });
-
-    test("When player leave, "
-        "but the given player id has no match in game state, "
-        "there will be no response event",
+        "and the given player id has no match in game state, "
+        "then there will be no response event",
             (){
           final TicTacToeGameStateV2 endedGameState = TicTacToeGameStateV2
               .gamePlayingOnlyForTesting();
 
           final event = endedGameState.handle(PlayerLeaveEvent(
-              playerId: "192.168.44.99"));
+              playerId: "999.99.99.99"));
 
           expect(event, isNull);
+        });
+
+    test("When player leave, "
+        "and the id has match and game status is playing, "
+        "then the next game status will be ended, "
+        "and the leaving player will be losing, "
+        "and the other player will be winning",
+            (){
+          final TicTacToeGameStateV2 playingGameState = TicTacToeGameStateV2
+              .gamePlayingOnlyForTesting();
+          const leavingPlayerId = TicTacToeGameStateV2.clientIdForTesting;
+
+          final event = playingGameState.handle(PlayerLeaveEvent(
+              playerId: leavingPlayerId)) as GameEndedAfterPlayerLeaving;
+
+          expect(event.leavingPlayerId, TicTacToeGameStateV2.clientIdForTesting);
+          expect(event.data.after.gameStatus, GameStatus.ended);
+          expect(event.data.after.players.singleWhere((player) =>
+            player.id == leavingPlayerId).status, PlayerStatus.losing);
+          expect(event.data.after.players.singleWhere((player) =>
+            player.id != leavingPlayerId).status, PlayerStatus.winning);
+
+          // make sure data hanya berubah seperlunya
+          expect(
+            playingGameState,
+            event.data.after.copyWith(
+              players: event.data.after.players.map((player) =>
+                player.copyWith(status: PlayerStatus.playing)).toList(),
+              gameStatus: GameStatus.playing,
+            )
+          );
         });
   });
 }

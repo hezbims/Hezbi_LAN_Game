@@ -32,17 +32,27 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   });
 
   //region testing only
+  @visibleForTesting
+  static const String roomMasterIdForTesting = "192.168.44.1";
+  @visibleForTesting
+  static const String roomMasterNameForTesting = "room-master";
+  @visibleForTesting
+  static const String clientIdForTesting = "192.168.44.2";
+  @visibleForTesting
+  static const String clientNameForTesting = "other-player";
+
+
   /// Mensimulasikan state game ketika permainan berlangsung
   @visibleForTesting
   static TicTacToeGameStateV2 gamePlayingOnlyForTesting(){
     final roomMaster = Player(
-      id: "192.168.44.1",
-      name: "room-master",
+      id: roomMasterIdForTesting,
+      name: roomMasterNameForTesting,
       status: PlayerStatus.playing,
     );
     final otherPlayer = Player(
-      id: "192.168.44.2",
-      name: "other-player",
+      id: clientIdForTesting,
+      name: clientNameForTesting,
       status: PlayerStatus.playing,
     );
 
@@ -63,13 +73,13 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   @visibleForTesting
   static TicTacToeGameStateV2 gameEndedOnlyForTesting() {
     final roomMaster = Player(
-      id: "192.168.44.1",
-      name: "room-master",
+      id: roomMasterIdForTesting,
+      name: roomMasterNameForTesting,
       status: PlayerStatus.winning,
     );
     final otherPlayer = Player(
-      id: "192.168.44.2",
-      name: "other-player",
+      id: clientIdForTesting,
+      name: clientNameForTesting,
       status: PlayerStatus.losing,
     );
 
@@ -145,14 +155,24 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   }
 
   TicTacToeResponseEvent? _handlePlayerLeave(PlayerLeaveEvent event){
-    if (!players.any((player) => player.id == event.playerId))
+    if (!players.any((player) => player.id == event.playerId)) {
       return null;
+    }
+
     return switch (gameStatus){
-      GameStatus.waiting =>
-        throw UnimplementedError(),
-      GameStatus.playing =>
-        throw UnimplementedError(),
+      GameStatus.waiting => null,
       GameStatus.ended => null,
+      GameStatus.playing => GameEndedAfterPlayerLeaving(
+        leavingPlayerId: event.playerId,
+        before: this,
+        after: copyWith(
+          gameStatus: GameStatus.ended,
+          players: players.map((player) =>
+            player.id == event.playerId ?
+              player.copyWith(status: PlayerStatus.losing) :
+              player.copyWith(status: PlayerStatus.winning)
+          ).toList(),
+        )),
     };
   }
 }
