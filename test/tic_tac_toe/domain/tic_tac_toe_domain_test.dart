@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player_status.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/tic_tac_toe_game_state_v2.dart';
@@ -23,11 +22,10 @@ void main() {
     expect(gameState.players.first.status, PlayerStatus.playing);
     expect(gameState.roomMasterId, "192.168.43.1:9832");
     expect(gameState.currentPlayerIdTurn, null);
-    for (int i = 0 ; i < 3 ; i++){
-      expect(gameState.cells[i], hasLength(3));
-      for (int j = 0 ; j < 3 ; j++) {
-        expect(gameState.cells[i][j], TicTacToeCellState.hasNothing);
-      }
+    expect(gameState.cells, hasLength(3));
+    for (int row = 0 ; row < 3 ; row++){
+      expect(gameState.cells[row], hasLength(3));
+      expect(gameState.cells[row].every((cell) => cell == null), isTrue);
     }
     expect(gameState.gameStatus, GameStatus.waiting);
 
@@ -57,7 +55,8 @@ void main() {
           expect(newGameState.players.last, Player(
               id: secondPlayerId,
               name: secondPlayerName,
-              status: PlayerStatus.playing));
+              status: PlayerStatus.playing,
+              markType: waitingGameState.players.single.markType.getInverse()));
           expect(newGameState.currentPlayerIdTurn, anyOf(secondPlayerId, roomMasterId));
 
           // make sure statennya cuma berubah seperlunya

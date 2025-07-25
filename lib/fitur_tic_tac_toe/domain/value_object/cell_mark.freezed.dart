@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'player.dart';
+part of 'cell_mark.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,78 +13,65 @@ part of 'player.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$Player {
-  String get id;
-  String get name;
-  PlayerStatus get status;
+mixin _$CellMark {
+  int get sequence;
   MarkType get markType;
 
-  /// Create a copy of Player
+  /// Create a copy of CellMark
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $PlayerCopyWith<Player> get copyWith =>
-      _$PlayerCopyWithImpl<Player>(this as Player, _$identity);
+  $CellMarkCopyWith<CellMark> get copyWith =>
+      _$CellMarkCopyWithImpl<CellMark>(this as CellMark, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Player &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.status, status) || other.status == status) &&
+            other is CellMark &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
             (identical(other.markType, markType) ||
                 other.markType == markType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, status, markType);
+  int get hashCode => Object.hash(runtimeType, sequence, markType);
 
   @override
   String toString() {
-    return 'Player(id: $id, name: $name, status: $status, markType: $markType)';
+    return 'CellMark(sequence: $sequence, markType: $markType)';
   }
 }
 
 /// @nodoc
-abstract mixin class $PlayerCopyWith<$Res> {
-  factory $PlayerCopyWith(Player value, $Res Function(Player) _then) =
-      _$PlayerCopyWithImpl;
+abstract mixin class $CellMarkCopyWith<$Res> {
+  factory $CellMarkCopyWith(CellMark value, $Res Function(CellMark) _then) =
+      _$CellMarkCopyWithImpl;
   @useResult
-  $Res call({String id, String name, PlayerStatus status, MarkType markType});
+  $Res call({int sequence, MarkType markType});
 }
 
 /// @nodoc
-class _$PlayerCopyWithImpl<$Res> implements $PlayerCopyWith<$Res> {
-  _$PlayerCopyWithImpl(this._self, this._then);
+class _$CellMarkCopyWithImpl<$Res> implements $CellMarkCopyWith<$Res> {
+  _$CellMarkCopyWithImpl(this._self, this._then);
 
-  final Player _self;
-  final $Res Function(Player) _then;
+  final CellMark _self;
+  final $Res Function(CellMark) _then;
 
-  /// Create a copy of Player
+  /// Create a copy of CellMark
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? status = null,
+    Object? sequence = null,
     Object? markType = null,
   }) {
-    return _then(Player(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as PlayerStatus,
+    return _then(CellMark(
+      sequence: null == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int,
       markType: null == markType
           ? _self.markType
           : markType // ignore: cast_nullable_to_non_nullable
@@ -93,8 +80,8 @@ class _$PlayerCopyWithImpl<$Res> implements $PlayerCopyWith<$Res> {
   }
 }
 
-/// Adds pattern-matching-related methods to [Player].
-extension PlayerPatterns on Player {
+/// Adds pattern-matching-related methods to [CellMark].
+extension CellMarkPatterns on CellMark {
   /// A variant of `map` that fallback to returning `orElse`.
   ///
   /// It is equivalent to doing:

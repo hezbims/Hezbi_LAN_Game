@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TicTacToeGameStateV2 {
   GameStatus get gameStatus;
-  List<List<TicTacToeCellState>> get cells;
+  List<List<CellMark?>> get cells;
   String get roomMasterId;
   List<Player> get players;
   String? get currentPlayerIdTurn;
@@ -66,7 +66,7 @@ abstract mixin class $TicTacToeGameStateV2CopyWith<$Res> {
   @useResult
   $Res call(
       {GameStatus gameStatus,
-      List<List<TicTacToeCellState>> cells,
+      List<List<CellMark?>> cells,
       String roomMasterId,
       List<Player> players,
       String? currentPlayerIdTurn});
@@ -99,7 +99,7 @@ class _$TicTacToeGameStateV2CopyWithImpl<$Res>
       cells: null == cells
           ? _self.cells
           : cells // ignore: cast_nullable_to_non_nullable
-              as List<List<TicTacToeCellState>>,
+              as List<List<CellMark?>>,
       roomMasterId: null == roomMasterId
           ? _self.roomMasterId
           : roomMasterId // ignore: cast_nullable_to_non_nullable

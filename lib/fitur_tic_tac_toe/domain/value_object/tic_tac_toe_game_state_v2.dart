@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_action_event.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/event/tic_tac_toe_response_event.dart';
-import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/model/tic_tac_toe_cell_state.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/cell_mark.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/game_status.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player.dart';
 import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/player_status.dart';
+import 'package:hezbi_lan_game/fitur_tic_tac_toe/domain/value_object/mark_type.dart';
 
 part 'tic_tac_toe_game_state_v2.freezed.dart';
 
@@ -15,7 +16,7 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
   @override
   final GameStatus gameStatus;
   @override
-  final List<List<TicTacToeCellState>> cells;
+  final List<List<CellMark?>> cells;
   @override
   final String roomMasterId;
   @override
@@ -49,19 +50,21 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
       id: roomMasterIdForTesting,
       name: roomMasterNameForTesting,
       status: PlayerStatus.playing,
+      markType: MarkType.circle,
     );
     final otherPlayer = Player(
       id: clientIdForTesting,
       name: clientNameForTesting,
       status: PlayerStatus.playing,
+      markType: MarkType.cross,
     );
 
     return TicTacToeGameStateV2._privateConstructor(
       gameStatus: GameStatus.playing,
       cells: [
-        [TicTacToeCellState.hasNothing, TicTacToeCellState.hasCircle, TicTacToeCellState.hasCircle],
-        [TicTacToeCellState.hasNothing, TicTacToeCellState.hasCross, TicTacToeCellState.hasNothing],
-        [TicTacToeCellState.hasNothing, TicTacToeCellState.hasNothing, TicTacToeCellState.hasCross],
+        [null, CellMark(sequence: 3, markType: MarkType.circle), CellMark(sequence: 1, markType: MarkType.circle)],
+        [null, CellMark(sequence: 4, markType: MarkType.cross), null],
+        [null, null, CellMark(sequence: 2, markType: MarkType.cross)],
       ],
       roomMasterId: roomMaster.id,
       players: [roomMaster, otherPlayer],
@@ -76,23 +79,25 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
       id: roomMasterIdForTesting,
       name: roomMasterNameForTesting,
       status: PlayerStatus.winning,
+      markType: MarkType.circle,
     );
     final otherPlayer = Player(
       id: clientIdForTesting,
       name: clientNameForTesting,
       status: PlayerStatus.losing,
+      markType: MarkType.cross,
     );
 
     return TicTacToeGameStateV2._privateConstructor(
       gameStatus: GameStatus.ended,
       cells: [
-        [TicTacToeCellState.hasCross, TicTacToeCellState.hasCircle, TicTacToeCellState.hasCircle],
-        [TicTacToeCellState.hasNothing, TicTacToeCellState.hasCross, TicTacToeCellState.hasNothing],
-        [TicTacToeCellState.hasNothing, TicTacToeCellState.hasNothing, TicTacToeCellState.hasCross],
+        [CellMark(sequence: 5, markType: MarkType.cross), CellMark(sequence: 4, markType: MarkType.circle), CellMark(sequence: 2, markType: MarkType.circle)],
+        [null, CellMark(sequence: 3, markType: MarkType.cross), null],
+        [null, null, CellMark(sequence: 1, markType: MarkType.cross)],
       ],
       roomMasterId: roomMaster.id,
       players: [roomMaster, otherPlayer],
-      currentPlayerIdTurn: otherPlayer.id,
+      currentPlayerIdTurn: roomMasterIdForTesting,
     );
   }
   //endregion
@@ -101,18 +106,17 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
     required final String roomMasterId,
     required final String roomMasterName,
   }){
-    List<List<TicTacToeCellState>> cells = [
-      for (int row = 1 ; row <= 3 ; row++)
-        [for (int col = 0 ; col < 3 ; col++) TicTacToeCellState.hasNothing]
-    ];
-
     return TicTacToeGameStateV2._privateConstructor(
       gameStatus: GameStatus.waiting,
-      cells: cells,
+      cells: [
+        for (int row = 1 ; row <= 3 ; row++)
+          [for (int col = 0 ; col < 3 ; col++) null ]
+      ],
       players: [Player(
         id: roomMasterId,
         name: roomMasterName,
         status: PlayerStatus.playing,
+        markType: MarkType.random(),
       )],
       roomMasterId: roomMasterId,
       currentPlayerIdTurn: null,
@@ -141,6 +145,7 @@ class TicTacToeGameStateV2 with _$TicTacToeGameStateV2{
                 id: event.joinPlayerId,
                 name: event.joinPlayerName,
                 status: PlayerStatus.playing,
+                markType: players.single.markType.getInverse(),
               )
             ],
             currentPlayerIdTurn: Random().nextBool() ?
